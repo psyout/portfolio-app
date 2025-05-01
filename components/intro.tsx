@@ -23,13 +23,13 @@ const Intro = () => {
           ]}
           speed={50}
           repeat={Infinity}
-          className='text font-serif text-xl'
+          className='font-serif text-xl sm:text-2xl'
         />
         <p className='text mt-3 font-light sm:w-2xl sm:text-lg'>
           With over 4 years of experience as a
-          <span style={{ fontWeight: '700' }}> Front-End Developer</span> and
+          <span style={{ fontWeight: '800' }}> Front-End Developer</span> and
           additional years as a Web Designer, I am skilled in HTML, CSS,
-          JavaScript, React and Git. I have a strong focus on writing clean,
+          JavaScript and React. I have a strong focus on writing clean,
           maintainable code and performance to build efficient, user-friendly
           web applications.
         </p>

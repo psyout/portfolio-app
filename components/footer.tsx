@@ -9,10 +9,10 @@ const navigation = [
 const Footer = () => {
   return (
     <footer>
-      <div className='container mx-auto max-w-3xl'>
+      <div className='container mx-auto max-w-5xl'>
         <div className='md:items-left flex flex-col gap-4'>
           <div>
-            <p className='text-l mt-8 text-gray-400 md:mt-0'>
+            <p className='text-l text mt-8 md:mt-0'>
               Developed by me, Felipe, in Vancouver &#9786;
             </p>
           </div>
@@ -23,10 +23,10 @@ const Footer = () => {
                 href={item.href}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='text-muted-foreground hover:text-foreground transition-colors duration-200'
+                className='bg-muted hover:bg-primary text hover:text-foreground flex h-12 w-12 items-center justify-center rounded-full transition-colors duration-200'
               >
+                <item.icon className='text-2xl' aria-hidden='true' />
                 <span className='sr-only'>{item.name}</span>
-                <item.icon aria-hidden='true' />
               </a>
             ))}
           </div>
