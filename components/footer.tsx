@@ -16,14 +16,14 @@ const Footer = () => {
               Developed by me, Felipe, in Vancouver &#9786;
             </p>
           </div>
-          <div className='flex items-center space-x-6'>
+          <div className='flex items-center gap-3'>
             {navigation.map(item => (
               <a
                 key={item.name}
                 href={item.href}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='bg-muted hover:bg-primary text hover:text-foreground flex h-12 w-12 items-center justify-center rounded-full transition-colors duration-200'
+                className='bg-muted hover:bg-primary text hover:text-foreground flex items-center justify-center rounded-full transition-colors duration-200'
               >
                 <item.icon className='text-2xl' aria-hidden='true' />
                 <span className='sr-only'>{item.name}</span>

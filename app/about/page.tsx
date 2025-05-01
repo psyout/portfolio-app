@@ -36,11 +36,11 @@ const About = () => {
             </p>
           </div>
         </div>
-        <div className='float-end inline-flex flex-1 justify-end sm:items-start'>
+        <div className='float-end mt-10 inline-flex flex-1 justify-end sm:mt-0 sm:items-start'>
           <Image
             src={ProfilePicture}
             alt='Intro Image'
-            className='h-70 w-70 scale-100 rounded-full object-cover grayscale'
+            className='h-70 w-70 scale-100 rounded-full object-cover'
             priority
           />
         </div>
