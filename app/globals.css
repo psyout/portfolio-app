@@ -45,8 +45,8 @@
 @layer base {
   @layer base {
     :root {
-      --text-color: #4d4b4b;
-      --title-color: hsl(270, 92%, 33%);
+      --text-color: #5e5d5d;
+      --title-color: hsl(259, 39%, 48%);
       --background: 0 0% 100%;
       --foreground: 224 71.4% 4.1%;
       --card: 0 0% 100%;

@@ -25,7 +25,7 @@ const Header = () => {
         {/* Logo */}
         <Link
           href='/'
-          className={`title text-2xl font-extrabold ${getZIndexClass()}`}
+          className={`title text-3xl font-extrabold md:text-2xl ${getZIndexClass()}`}
         >
           Felipe<span style={{ color: '#81E6D9' }}>.</span>
         </Link>
@@ -37,19 +37,25 @@ const Header = () => {
             className={`order-1 cursor-pointer focus:outline-none sm:hidden ${getZIndexClass()}`}
             aria-label='Toggle menu'
           >
-            {menuOpen ? <X size={30} /> : <Menu size={30} />}
+            {menuOpen ? (
+              <X size={30} className='cursor-pointer' />
+            ) : (
+              <Menu size={30} className='cursor-pointer' />
+            )}
           </button>
 
           {/* Navigation Menu */}
           <div
             className={`bg-primary fixed inset-0 z-40 transform backdrop-blur-xs ${
-              menuOpen ? 'translate-x-0' : 'translate-x-full'
-            } transition-transform duration-200 ease-in-out sm:static sm:flex sm:translate-x-0 sm:bg-transparent`}
+              menuOpen
+                ? 'translate-x-0 opacity-100'
+                : 'translate-x-full opacity-0'
+            } transition-all duration-300 ease-in-out sm:static sm:flex sm:translate-x-0 sm:bg-transparent sm:opacity-100`}
           >
             <ul
-              className={`text-muted-foreground mt-30 mr-7 flex h-full flex-col items-end gap-6 justify-self-end font-medium sm:mt-0 sm:hidden ${
+              className={`text-muted-foreground mt-30 mr-7 flex h-full flex-col items-end gap-6 justify-self-end font-medium ${
                 menuOpen ? 'text-2xl' : 'text-lg'
-              } sm:h-auto sm:flex-row sm:gap-6 sm:text-sm`}
+              } sm:hidden`}
             >
               <li className='hover:text-foreground transition-colors duration-200'>
                 <Link
