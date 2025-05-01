@@ -25,7 +25,7 @@ const Header = () => {
         {/* Logo */}
         <Link
           href='/'
-          className={`text-2xl font-extrabold ${getZIndexClass()}`}
+          className={`title text-2xl font-extrabold ${getZIndexClass()}`}
         >
           Felipe<span style={{ color: '#81E6D9' }}>.</span>
         </Link>
@@ -34,19 +34,15 @@ const Header = () => {
           {/* Burger Icon */}
           <button
             onClick={toggleMenu}
-            className={`text-muted-foreground order-1 cursor-pointer focus:outline-none sm:hidden ${getZIndexClass()}`}
+            className={`order-1 cursor-pointer focus:outline-none sm:hidden ${getZIndexClass()}`}
             aria-label='Toggle menu'
           >
-            {menuOpen ? (
-              <X size={24} className='cursor-pointer' />
-            ) : (
-              <Menu size={24} className='cursor-pointer' />
-            )}
+            {menuOpen ? <X size={30} /> : <Menu size={30} />}
           </button>
 
           {/* Navigation Menu */}
           <div
-            className={`fixed inset-0 z-40 transform bg-indigo-50/85 backdrop-blur-xs ${
+            className={`bg-primary fixed inset-0 z-40 transform backdrop-blur-xs ${
               menuOpen ? 'translate-x-0' : 'translate-x-full'
             } transition-transform duration-200 ease-in-out sm:static sm:flex sm:translate-x-0 sm:bg-transparent`}
           >
