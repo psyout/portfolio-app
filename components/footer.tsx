@@ -8,10 +8,15 @@ const navigation = [
 
 const Footer = () => {
   return (
-    <footer className='p-5 py-8'>
+    <footer>
       <div className='container mx-auto max-w-3xl'>
-        <div className='md:flex md:items-center md:justify-between'>
-          <div className='flex items-center space-x-6 md:order-2'>
+        <div className='md:items-left flex flex-col gap-4'>
+          <div>
+            <p className='text-l mt-8 text-gray-400 md:mt-0'>
+              Developed by me, Felipe, in Vancouver &#9786;
+            </p>
+          </div>
+          <div className='flex items-center space-x-6'>
             {navigation.map(item => (
               <a
                 key={item.name}
@@ -24,11 +29,6 @@ const Footer = () => {
                 <item.icon aria-hidden='true' />
               </a>
             ))}
-          </div>
-          <div>
-            <p className='mt-8 text-sm text-gray-400 md:order-1 md:mt-0'>
-              &copy; {new Date().getFullYear()} Felipe. All rights reserved.
-            </p>
           </div>
         </div>
       </div>

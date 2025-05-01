@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
-// import { SunIcon, MoonIcon } from '@radix-ui/react-icons'
 import { Button } from '@/components/ui/button'
 import { BsMoonStarsFill } from 'react-icons/bs'
 import { BsSunFill } from 'react-icons/bs'
@@ -15,6 +14,7 @@ export default function ThemeToggle() {
 
   return (
     <Button
+      className='z-100 hover:rounded-3xl'
       variant='ghost'
       size='icon'
       onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}

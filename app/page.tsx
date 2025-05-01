@@ -1,13 +1,12 @@
 import React from 'react'
+import Intro from '@/components/intro'
 
-const Home = () => {
+export default function Home() {
   return (
     <section className='py-24'>
-      <div className='container max-w-3xl px-4'>
-        <h1 className='font-serif text-4xl font-bold'>Portfolio</h1>
+      <div className='container mx-auto max-w-3xl'>
+        <Intro />
       </div>
     </section>
   )
 }
-
-export default Home

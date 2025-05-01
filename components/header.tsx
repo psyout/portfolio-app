@@ -1,33 +1,86 @@
+'use client'
+
 import Link from 'next/link'
 import ThemeToggle from '@/components/theme-toggle'
+import { useState } from 'react'
+import { Menu, X } from 'lucide-react'
 
 const Header = () => {
-  return (
-    <header className='bg-background fixed inset-x-0 top-0 z-50 p-5 py-6'>
-      <nav className='container mx-auto flex max-w-3xl items-center justify-between'>
-        <div>
-          <Link href='/' className='text-lg font-bold'>
-            Felipe
-          </Link>
-        </div>
+  const [menuOpen, setMenuOpen] = useState(false)
 
-        <ul className='text-muted-foreground sm flex items-center gap-6 text-sm font-light'>
-          <li className='hover:text-foreground text-sky-950 transition-colors duration-200'>
-            <Link href='/about' className='text-sm'>
-              About
-            </Link>
-          </li>
-          <li className='hover:text-foreground text-sky-950 transition-colors duration-200'>
-            <Link href='/projects' className='text-sm'>
-              Projects
-            </Link>
-          </li>
-          <li className='hover:text-foreground text-sky-950 transition-colors duration-200'>
-            <Link href='/contact' className='text-sm'></Link>
-          </li>
-        </ul>
-        <div>
-          <ThemeToggle />
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen)
+  }
+
+  const closeMenu = () => {
+    setMenuOpen(false)
+  }
+
+  // Helper function to handle conditional z-index
+  const getZIndexClass = () => (menuOpen ? 'relative z-50' : '')
+
+  return (
+    <header className='bg-background inset-x-0 top-0 z-50'>
+      <nav className='container mx-auto flex max-w-3xl items-center justify-between py-4'>
+        {/* Logo */}
+        <Link
+          href='/'
+          className={`text-2xl font-extrabold ${getZIndexClass()}`}
+        >
+          Felipe<span style={{ color: '#81E6D9' }}>.</span>
+        </Link>
+
+        <div className='flex items-center'>
+          {/* Burger Icon */}
+          <button
+            onClick={toggleMenu}
+            className={`text-muted-foreground order-1 cursor-pointer focus:outline-none sm:hidden ${getZIndexClass()}`}
+            aria-label='Toggle menu'
+          >
+            {menuOpen ? (
+              <X size={24} className='cursor-pointer' />
+            ) : (
+              <Menu size={24} className='cursor-pointer' />
+            )}
+          </button>
+
+          {/* Navigation Menu */}
+          <div
+            className={`fixed inset-0 z-40 transform bg-indigo-50/85 backdrop-blur-xs ${
+              menuOpen ? 'translate-x-0' : 'translate-x-full'
+            } transition-transform duration-200 ease-in-out sm:static sm:flex sm:translate-x-0 sm:bg-transparent`}
+          >
+            <ul
+              className={`text-muted-foreground mt-30 mr-7 flex h-full flex-col items-end gap-6 justify-self-end font-medium sm:mt-0 sm:hidden ${
+                menuOpen ? 'text-2xl' : 'text-lg'
+              } sm:h-auto sm:flex-row sm:gap-6 sm:text-sm`}
+            >
+              <li className='hover:text-foreground transition-colors duration-200'>
+                <Link
+                  href='/about'
+                  onClick={closeMenu}
+                  className='cursor-pointer'
+                >
+                  About
+                </Link>
+              </li>
+
+              <li className='hover:text-foreground transition-colors duration-200'>
+                <Link
+                  href='/contact'
+                  onClick={closeMenu}
+                  className='cursor-pointer'
+                >
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Theme Toggle */}
+          <div className={`ml-1 ${getZIndexClass()}`}>
+            <ThemeToggle />
+          </div>
         </div>
       </nav>
     </header>

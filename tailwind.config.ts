@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import defaultTheme from 'tailwindcss/defaultTheme'
 
 const config: Config = {
   darkMode: ['class', '[data-theme="dark"]'], // Fixed closing bracket
@@ -14,13 +15,13 @@ const config: Config = {
       center: true,
       padding: '1rem',
       screens: {
-        '2xl': '1400px'
+        '2xl': '800px'
       }
     },
     extend: {
       fontFamily: {
-        sans: ['var(--font-sora)', 'sans-serif'],
-        serif: ['var(--font-serif)', 'serif']
+        sans: ['var(--font-sora)', ...defaultTheme.fontFamily.sans],
+        serif: ['var(--font-serif)', ...defaultTheme.fontFamily.serif]
       },
       colors: {
         background: 'hsl(var(--background))',
