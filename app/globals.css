@@ -101,6 +101,17 @@
     color: #81e6d9;
   }
 
+  .button {
+    background-color: #81e6d9;
+    border-radius: 0.4rem;
+    color: var(--foreground);
+  }
+  .border {
+    border-width: 3px;
+    border-color: var(--text-color);
+    border-radius: 0.4rem;
+  }
+
   .hamburger {
     display: flex;
     flex-direction: column;

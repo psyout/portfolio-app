@@ -6,7 +6,7 @@ import ProfilePicture from '../../public/static/images/profile-picture.jpg'
 
 const About = () => {
   return (
-    <div className='container mx-auto max-w-5xl py-10'>
+    <div className='container mx-auto max-w-5xl py-34'>
       <Head>
         <title>About Me - Felipe</title>
         <meta
@@ -14,7 +14,7 @@ const About = () => {
           content='Learn more about Felipe, a creative and driven developer based in Vancouver.'
         />
       </Head>
-      <section className='flex flex-col gap-3 py-24 sm:flex-row sm:justify-between sm:gap-0'>
+      <section className='flex flex-col gap-3 sm:flex-row sm:justify-between sm:gap-0'>
         <div className='mt-2 flex-1 md:mt-0'>
           <h1 className='title font-extrabold no-underline'>About Me</h1>
           <p className='text mt-3 max-w-2xl font-light sm:text-lg'>
@@ -36,7 +36,7 @@ const About = () => {
             </p>
           </div>
         </div>
-        <div className='float-end mt-10 inline-flex flex-1 justify-end sm:mt-0 sm:items-start'>
+        <div className='mt-10 inline-flex flex-1 justify-end sm:mt-0 sm:items-start'>
           <Image
             src={ProfilePicture}
             alt='Intro Image'
