@@ -4,13 +4,23 @@ import React from 'react'
 import { Files } from 'lucide-react'
 import Form from '@/components/ui/form'
 import Link from 'next/link'
-
-const navigation = [
-  { name: 'in', href: 'https://linkedin.com' },
-  { name: 'git', href: 'https://github.com' }
-]
+import Social from '@/components/ui/social'
 
 const Contact = () => {
+  const copyToClipboard = (text: string) => {
+    navigator.clipboard
+      .writeText(text)
+      .then(() => {
+        console.log(`${text} copied to clipboard!`)
+      })
+      .then(() => {
+        alert('Copied')
+      })
+      .catch(err => {
+        console.error('Failed to copy', err)
+      })
+  }
+
   return (
     <section className='container mx-auto max-w-5xl py-34'>
       <h1 className='title mb-10'>Contact Me</h1>
@@ -24,7 +34,11 @@ const Contact = () => {
                 <Link className='text' href='mailto:hello@felipegonzalez.io'>
                   hello@felipegonzalez.io
                 </Link>
-                <Files className='z-100 cursor-pointer' />
+                <Files
+                  onClick={() => copyToClipboard('hello@felipegonzalez.io')}
+                  aria-label='Copy email'
+                  className='z-100 cursor-pointer'
+                />
               </div>
             </div>
 
@@ -34,25 +48,16 @@ const Contact = () => {
                 <Link href='callto:+17786977909' className='text'>
                   +1 (778) 697-7909
                 </Link>
-                <Files className='z-100 cursor-pointer' />
+                <Files
+                  onClick={() => copyToClipboard('+17786977909')}
+                  className='z-100 cursor-pointer'
+                />
               </div>
             </div>
 
             <div className='flex flex-col gap-3'>
               <h3 className='text-lg font-bold'>Social</h3>
-              <div className='flex flex-wrap items-center gap-3'>
-                {navigation.map(item => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='text-md social flex h-11 w-11 items-center justify-center rounded-full transition-colors duration-200'
-                  >
-                    {item.name}
-                  </a>
-                ))}
-              </div>
+              <Social color='text-white' />
             </div>
           </div>
         </div>

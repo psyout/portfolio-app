@@ -49,7 +49,7 @@ const Skills = () => {
         </div>
 
         {/* Text Section */}
-        <div className='text flex flex-col gap-5 text-lg lg:text-right'>
+        <div className='text flex flex-col gap-5 text-lg font-light lg:text-right'>
           <p>
             Proficient across front end languages such as{' '}
             <span className='font-bold'>HTML, CSS, JavaScript & React</span> as
