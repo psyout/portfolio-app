@@ -10,8 +10,8 @@ import Footer from '@/components/footer'
 
 const sora = Sora({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-sora'
+  weight: ['100', '200', '300', '400', '700'],
+  variable: '--font-sans'
 })
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -33,7 +33,7 @@ export default function RootLayout({
     <html lang='en' suppressHydrationWarning>
       <body
         className={cn(
-          'font-sora flex min-h-screen flex-col antialiased',
+          'font-lato flex min-h-screen flex-col antialiased',
           sora.variable,
           playfair.variable
         )}

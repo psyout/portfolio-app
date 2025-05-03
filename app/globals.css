@@ -46,6 +46,7 @@
   @layer base {
     :root {
       --text-color: #5e5d5d;
+      --social-color: hsl(0, 0%, 99%);
       --title-color: hsl(259, 39%, 48%);
       --background: 0 0% 100%;
       --foreground: 224 71.4% 4.1%;
@@ -57,6 +58,7 @@
       --secondary-foreground: 220.9 39.3% 11%;
       --muted: 220 14.3% 95.9%;
       --muted-foreground: 220 8.9% 46.1%;
+      --iconColor: #455d7a;
     }
 
     .dark {
@@ -69,6 +71,8 @@
       --primary-foreground: 210 20% 98%;
       --secondary: 215 27.9% 16.9%;
       --secondary-foreground: 210 20% 98%;
+      --iconColor: #8fd1c2;
+      --social-color: #5e5d5d;
     }
   }
 }
@@ -78,12 +82,13 @@
     @apply outline-ring/50;
   }
   body {
-    @apply bg-background text-primary p-7 sm:p-7;
+    @apply bg-background text-primary p-7 font-sans sm:p-7;
+    font-family: var(--font-sans), sans-serif;
     color: var(--main-text-color); /* Use the custom main text color */
   }
 
   .title {
-    @apply font-sans text-4xl font-bold decoration-2 underline-offset-8 sm:text-5xl;
+    @apply font-sans text-4xl font-bold decoration-2 sm:text-5xl;
     color: var(--title-color); /* Use the custom title color */
   }
 
@@ -106,10 +111,18 @@
     border-radius: 0.4rem;
     color: var(--foreground);
   }
-  .border {
-    border-width: 3px;
-    border-color: var(--text-color);
+  .input {
     border-radius: 0.4rem;
+    border: solid 2px;
+  }
+
+  .icon-color {
+    color: var(--iconColor);
+  }
+
+  .social {
+    background-color: var(--text-color);
+    color: var(--social-color);
   }
 
   .hamburger {

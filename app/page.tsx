@@ -2,6 +2,7 @@ import React from 'react'
 import Intro from '@/components/intro'
 import Anchor from '@/components/ui/anchor'
 import Contact from './contact/page'
+import Skills from '@/components/skills'
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
             { href: './contact', label: 'Contact' }
           ]}
         />
+        <Skills />
         <Contact />
       </div>
     </section>

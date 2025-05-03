@@ -1,14 +1,14 @@
 'use client'
 
 import React from 'react'
-import Image from 'next/image'
 
 import { TypeAnimation } from 'react-type-animation'
 
 const Intro = () => {
   return (
-    <section className='flex flex-col items-start justify-between gap-x-10 gap-y-4 py-24'>
-      <div className='mt-2 flex-1 md:mt-0'>
+    <section className='grid grid-cols-1 items-center justify-center py-24 sm:grid-cols-1 md:grid-cols-2'>
+      {/* Content Section */}
+      <div className='col-span-1 mx-auto flex flex-col items-start gap-4'>
         <h1 className='title font-extrabold no-underline'>
           Hey there, I&#39;m Felipe
         </h1>
@@ -25,7 +25,7 @@ const Intro = () => {
           repeat={Infinity}
           className='font-serif text-xl sm:text-2xl'
         />
-        <p className='text mt-3 font-light sm:w-2xl sm:text-lg'>
+        <p className='text mt-3 font-light sm:text-lg'>
           With over 4 years of experience as a
           <span style={{ fontWeight: '800' }}> Front-End Developer</span> and
           additional years as a Web Designer, I am skilled in HTML, CSS,
@@ -33,16 +33,6 @@ const Intro = () => {
           maintainable code and performance to build efficient, user-friendly
           web applications.
         </p>
-      </div>
-      <div className='relative'>
-        <Image
-          src='https://picsum.photos/200/300'
-          alt='Intro Image'
-          width={500}
-          height={500}
-          className='hidden flex-1 grayscale'
-          priority
-        />
       </div>
     </section>
   )

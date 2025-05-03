@@ -3,6 +3,7 @@
 import React from 'react'
 import { Files } from 'lucide-react'
 import Form from '@/components/ui/form'
+import Link from 'next/link'
 
 const navigation = [
   { name: 'in', href: 'https://linkedin.com' },
@@ -16,20 +17,24 @@ const Contact = () => {
       <div className='grid grid-cols-1 gap-12 md:grid-cols-2'>
         {/* Contact Info */}
         <div>
-          <div className='grid grid-cols-1 gap-8'>
+          <div className='grid grid-cols-1 gap-4'>
             <div className='flex flex-col'>
               <h3 className='text-lg font-bold'>Email</h3>
               <div className='flex gap-3'>
-                <p className='text'>hello@felipegonzalez.io</p>
-                <Files className='z-100 scale-80 cursor-pointer' />
+                <Link className='text' href='mailto:hello@felipegonzalez.io'>
+                  hello@felipegonzalez.io
+                </Link>
+                <Files className='z-100 cursor-pointer' />
               </div>
             </div>
 
             <div className='flex flex-col'>
               <h3 className='text-lg font-bold'>Phone</h3>
               <div className='flex gap-3'>
-                <p className='text'>+1 (778) 697-7909</p>
-                <Files className='z-100 scale-80 cursor-pointer' />
+                <Link href='callto:+17786977909' className='text'>
+                  +1 (778) 697-7909
+                </Link>
+                <Files className='z-100 cursor-pointer' />
               </div>
             </div>
 
@@ -42,7 +47,7 @@ const Contact = () => {
                     href={item.href}
                     target='_blank'
                     rel='noopener noreferrer'
-                    className='flex h-15 w-15 items-center justify-center rounded-full bg-blue-800 text-lg font-semibold text-white transition-colors duration-200'
+                    className='text-md social flex h-11 w-11 items-center justify-center rounded-full transition-colors duration-200'
                   >
                     {item.name}
                   </a>
