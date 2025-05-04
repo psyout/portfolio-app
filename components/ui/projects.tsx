@@ -27,7 +27,7 @@ export default function ProjectCard({
           alt={title}
           width={800}
           height={300}
-          className='card-border h-64 w-full border object-cover'
+          className='card-border h-50 w-full border object-cover sm:h-70'
         />
         <div className='absolute -top-3 left-3 flex flex-wrap gap-2'>
           {tags.map((tag, index) => {
