@@ -6,7 +6,7 @@ import ProfilePicture from '../../public/static/images/profile-picture.jpg'
 
 const About = () => {
   return (
-    <div className='container mx-auto max-w-5xl py-34'>
+    <div className='container mx-auto max-w-6xl py-34'>
       <Head>
         <title>About Me - Felipe</title>
         <meta
@@ -40,7 +40,7 @@ const About = () => {
           <Image
             src={ProfilePicture}
             alt='Intro Image'
-            className='h-70 w-70 scale-100 rounded-full object-cover'
+            className='h-90 w-90 scale-100 rounded-full object-cover'
             priority
           />
         </div>

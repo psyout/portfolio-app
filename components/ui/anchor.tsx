@@ -7,7 +7,7 @@ type AnchorProps = {
 
 const Anchor: React.FC<AnchorProps> = ({ links }) => {
   return (
-    <div className='bg-primary mb-30 w-full text-2xl'>
+    <div className='bg-primary my-30 mb-20 w-full text-2xl sm:mt-30'>
       <ul className='list-none'>
         <li className='flex flex-col gap-10 font-sans font-medium'>
           {links.map(link => (

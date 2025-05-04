@@ -6,7 +6,7 @@ import { TypeAnimation } from 'react-type-animation'
 
 const Intro = () => {
   return (
-    <section className='grid grid-cols-1 items-center justify-center py-24 sm:grid-cols-1 md:grid-cols-2'>
+    <section className='grid grid-cols-1 items-center justify-center sm:grid-cols-1 md:grid-cols-1'>
       {/* Content Section */}
       <div className='col-span-1 mx-auto flex flex-col items-start gap-1'>
         <h1 className='title font-extrabold no-underline'>
@@ -21,7 +21,7 @@ const Intro = () => {
             'Enthusiast',
             400
           ]}
-          speed={50}
+          speed={40}
           repeat={Infinity}
           className='font-serif text-xl sm:text-2xl'
         />

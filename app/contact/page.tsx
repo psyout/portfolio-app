@@ -22,7 +22,7 @@ const Contact = () => {
   }
 
   return (
-    <section className='container mx-auto max-w-5xl py-10'>
+    <section id='contact' className='container mx-auto max-w-6xl py-20'>
       <h1 className='title mb-10'>Contact Me</h1>
       <div className='grid grid-cols-1 gap-12 md:grid-cols-2'>
         {/* Contact Info */}

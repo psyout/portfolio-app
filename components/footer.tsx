@@ -3,7 +3,7 @@ import Social from './ui/social'
 const Footer = () => {
   return (
     <footer>
-      <div className='container mx-auto max-w-5xl'>
+      <div className='container mx-auto max-w-6xl'>
         <div className='md:items-left flex flex-col gap-4'>
           <div>
             <p className='text-l text md:mt-0'>

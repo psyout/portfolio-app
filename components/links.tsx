@@ -8,7 +8,7 @@ export const links = [
     label: 'About'
   },
   {
-    href: './contact',
+    href: '#contact',
     label: 'Contact'
   }
 ]

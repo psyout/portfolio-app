@@ -30,25 +30,12 @@ const SkillsIcon = [
 
 const Skills = () => {
   return (
-    <section className='container w-full max-w-none py-24'>
+    <section className='ml-auto w-full py-24 md:w-1/2 md:pl-10'>
       <h1 className='title font-extrabold'>What I can do</h1>
-      <div className='mt-10 grid grid-cols-1 items-center gap-12 md:grid-cols-2'>
-        {/* Icons Section */}
-        <div className='py-6'>
-          <ul className='grid grid-cols-4 gap-6 text-6xl sm:grid-cols-4'>
-            {SkillsIcon.map((Icon, index) => (
-              <li
-                key={index}
-                className='icon-color transform text-center transition-transform duration-300 hover:scale-110'
-              >
-                <Icon />
-              </li>
-            ))}
-          </ul>
-        </div>
 
+      <div className='mt-10 flex flex-col gap-8'>
         {/* Text Section */}
-        <div className='text flex flex-col gap-5 text-lg font-light lg:text-right'>
+        <div className='text flex flex-col gap-5 text-lg font-light'>
           <p>
             Proficient across front end languages such as{' '}
             <span className='font-bold'>HTML, CSS, JavaScript & React</span> as
@@ -59,9 +46,23 @@ const Skills = () => {
           <p>
             Alongside my development skills, I am also very experienced with a
             broad range of design software such as{' '}
-            <span className='font-bold'>Figma, Photoshoop</span> and
+            <span className='font-bold'>Figma, Photoshop</span> and
             <span className='font-bold'> Illustrator</span>.
           </p>
+        </div>
+
+        {/* Icons Section */}
+        <div>
+          <ul className='sm:grid-col-5 grid grid-cols-6 gap-6 text-5xl sm:text-5xl'>
+            {SkillsIcon.map((Icon, index) => (
+              <li
+                key={index}
+                className='icon-color transform text-center transition-transform duration-300 hover:scale-110'
+              >
+                <Icon />
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>
