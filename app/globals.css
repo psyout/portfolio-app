@@ -84,7 +84,7 @@
     @apply outline-ring/50;
   }
   body {
-    @apply bg-background text-primary scroll-smooth p-10 font-sans;
+    @apply bg-background text-primary scroll-smooth p-8 font-sans;
     font-family: var(--font-sans), sans-serif;
     color: var(--main-text-color); /* Use the custom main text color */
   }
