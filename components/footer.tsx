@@ -6,7 +6,7 @@ const Footer = () => {
       <div className='container mx-auto max-w-5xl'>
         <div className='md:items-left flex flex-col gap-4'>
           <div>
-            <p className='text-l text mt-8 md:mt-0'>
+            <p className='text-l text md:mt-0'>
               Developed by me, Felipe, in Vancouver &#9786;
             </p>
           </div>

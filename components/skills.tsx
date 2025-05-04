@@ -6,13 +6,12 @@ import {
   FaSquareJs,
   FaReact,
   FaWordpressSimple,
-  FaSass,
-  FaNode,
   FaGitAlt,
   FaFigma
 } from 'react-icons/fa6'
-import { SiNextdotjs, SiExpress } from 'react-icons/si'
+import { SiNextdotjs, SiExpress, SiTailwindcss } from 'react-icons/si'
 import { BsFiletypeJson } from 'react-icons/bs'
+import { FaNodeJs } from 'react-icons/fa6'
 
 const SkillsIcon = [
   FaHtml5,
@@ -20,12 +19,12 @@ const SkillsIcon = [
   FaSquareJs,
   FaReact,
   SiNextdotjs,
-  FaSass,
-  FaNode,
+  SiTailwindcss,
+  FaNodeJs,
   SiExpress,
+  BsFiletypeJson,
   FaWordpressSimple,
   FaGitAlt,
-  BsFiletypeJson,
   FaFigma
 ]
 
@@ -60,8 +59,8 @@ const Skills = () => {
           <p>
             Alongside my development skills, I am also very experienced with a
             broad range of design software such as{' '}
-            <span className='font-bold'>Figma, Sketch</span> and
-            <span className='font-bold'> Adobe XD</span>.
+            <span className='font-bold'>Figma, Photoshoop</span> and
+            <span className='font-bold'> Illustrator</span>.
           </p>
         </div>
       </div>

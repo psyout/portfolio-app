@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Sora, Playfair_Display } from 'next/font/google'
+import { Ubuntu, Aleo } from 'next/font/google'
 
 import { cn } from '@/lib/utils'
 
@@ -8,14 +8,15 @@ import Providers from '@/components/providers'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 
-const sora = Sora({
+const ubuntu = Ubuntu({
   subsets: ['latin'],
-  weight: ['100', '200', '300', '400', '700'],
+  weight: ['300', '400', '500', '700'],
   variable: '--font-sans'
 })
-const playfair = Playfair_Display({
+const aleo = Aleo({
   subsets: ['latin'],
-  variable: '--font-serif'
+  variable: '--font-serif',
+  weight: '400'
 })
 export const metadata: Metadata = {
   title: 'Felipe',
@@ -34,8 +35,8 @@ export default function RootLayout({
       <body
         className={cn(
           'font-lato flex min-h-screen flex-col antialiased',
-          sora.variable,
-          playfair.variable
+          ubuntu.variable,
+          aleo.variable
         )}
       >
         <Providers>
