@@ -26,7 +26,7 @@ export default function ProjectCard({
           src={imageUrl}
           alt={title}
           width={800}
-          height={500}
+          height={300}
           className='card-border h-64 w-full border object-cover'
         />
         <div className='absolute -top-3 left-3 flex flex-wrap gap-2'>
