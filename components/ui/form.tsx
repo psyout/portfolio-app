@@ -25,7 +25,7 @@ const Form = () => {
       ></textarea>
       <button
         type='submit'
-        className='hover:bg-primary-light text-sans button mt-6 w-1/3 cursor-pointer px-6 py-4 font-bold transition-colors hover:text-white'
+        className='text-sans button mt-6 w-1/3 cursor-pointer px-6 py-4 font-bold transition-colors hover:bg-[var(--tertiary)] hover:text-white'
       >
         Send
       </button>

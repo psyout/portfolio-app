@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 
 // Components
@@ -12,28 +14,35 @@ import { projects } from '@/components/projectData'
 import { links } from '@/components/links'
 
 export default function Home() {
+  // Create a ref for the contact section
+
   return (
     <main className='pt-40 pb-10'>
       <div className='container mx-auto max-w-6xl'>
         {/* Intro and Anchor */}
         <section className='flex flex-col gap-20 md:flex-row md:items-start'>
-          <div className='w-full space-y-8 md:w-1/2'>
+          <div className='w-full space-y-8 md:w-1/2 lg:mt-10'>
             <Intro />
             <Anchor links={links} />
           </div>
 
-          {/* Projects */}
-          <div id='projects' className='w-full scroll-mt-24 space-y-8 md:w-1/2'>
-            {projects.map((project, index) => (
-              <ProjectCard key={index} {...project} />
-            ))}
+          {/* Scrollable Content (Projects and Skills) */}
+          <div className='w-full space-y-8 md:max-h-[calc(100vh-200px)] md:w-1/2 md:overflow-y-auto md:pr-6 md:pl-6'>
+            {/* Projects Section */}
+            <div id='projects' className='scroll-mt-10'>
+              {projects.map((project, index) => (
+                <ProjectCard key={index} {...project} />
+              ))}
+            </div>
+
+            {/* Skills Section */}
+            <Skills />
           </div>
         </section>
-        {/* Skills */}
-        <Skills />
-        <hr />
+        <hr className='mt-10' />
         {/* Contact */}
         <Contact />
+
         <hr />
       </div>
     </main>

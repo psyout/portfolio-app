@@ -30,7 +30,7 @@ const SkillsIcon = [
 
 const Skills = () => {
   return (
-    <section className='ml-auto w-full py-24 md:w-1/2 md:pl-10'>
+    <section className='ml-auto w-full py-24'>
       <h1 className='title font-extrabold'>What I can do</h1>
 
       <div className='mt-10 flex flex-col gap-8'>
@@ -53,7 +53,7 @@ const Skills = () => {
 
         {/* Icons Section */}
         <div>
-          <ul className='sm:grid-col-5 grid grid-cols-6 gap-6 text-5xl sm:text-5xl'>
+          <ul className='sm:grid-col-4 grid grid-cols-4 gap-6 text-5xl sm:grid-cols-6 sm:text-5xl md:grid-cols-5 lg:grid-cols-6'>
             {SkillsIcon.map((Icon, index) => (
               <li
                 key={index}

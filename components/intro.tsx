@@ -25,7 +25,7 @@ const Intro = () => {
           repeat={Infinity}
           className='font-serif text-xl sm:text-2xl'
         />
-        <p className='text mt-3 font-light sm:text-lg'>
+        <p className='text text-md mt-3 font-light sm:text-lg'>
           With over 4 years of experience as a
           <span className='font-bold'> Front-End Developer</span> and additional
           years as a Web Designer, I am skilled in HTML, CSS, JavaScript and

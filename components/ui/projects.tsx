@@ -20,16 +20,13 @@ export default function ProjectCard({
   buttonLink
 }: ProjectCardProps) {
   return (
-    <section id='projects' className='mb-15 w-full scroll-mt-24 md:max-w-lg'>
-      <div className='relative'>
-        <Image
-          src={imageUrl}
-          alt={title}
-          width={800}
-          height={300}
-          className='card-border h-48 min-h-30 w-full border object-cover sm:h-60 md:h-64'
-        />
-        <div className='absolute -top-3 left-3 flex flex-wrap gap-2'>
+    <section
+      id='projects'
+      className='mt-10 mb-15 w-full scroll-mt-24 md:max-w-lg'
+    >
+      <div className='group relative'>
+        {/* Tags ABOVE the image wrapper so they aren't cut */}
+        <div className='absolute -top-3 left-3 z-10 flex flex-wrap gap-2'>
           {tags.map((tag, index) => {
             const isNew = tag.trim().toLowerCase() === 'new'
             return (
@@ -46,17 +43,27 @@ export default function ProjectCard({
             )
           })}
         </div>
+
+        <div className='overflow-hidden rounded-md'>
+          <Image
+            src={imageUrl}
+            alt={title}
+            width={800}
+            height={200}
+            className='card-border h-48 max-h-50 w-full transform object-cover transition duration-500 ease-in-out group-hover:scale-115'
+          />
+        </div>
       </div>
 
       <div className='py-4'>
         <h2 className='text text-2xl font-bold'>{title}</h2>
-        <h3 className='text mt-1 text-sm tracking-wide uppercase'>
+        <h3 className='text mt-1 text-sm font-semibold tracking-wide uppercase'>
           {subtitle}
         </h3>
-        <p className='text mt-3'>{description}</p>
+        <p className='text mt-3 font-light sm:text-lg'>{description}</p>
         <Link
           href={buttonLink}
-          className='button mt-3 inline-block bg-blue-600 px-4 py-2 text-white transition hover:bg-blue-700'
+          className='button hover:text-whit mt-3 inline-block px-4 py-2 transition-colors hover:bg-[var(--tertiary)]'
         >
           Go to Project
         </Link>
