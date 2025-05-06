@@ -1,4 +1,6 @@
 import React from 'react'
+import Link from 'next/link'
+import { Button } from './button'
 
 const Form = () => {
   return (
@@ -23,12 +25,14 @@ const Form = () => {
         rows={5}
         className='focus:ring-primary form-input input mt-3 w-full p-4 focus:ring-2 focus:outline-none'
       ></textarea>
-      <button
-        type='submit'
-        className='text-sans button mt-6 w-1/3 cursor-pointer px-6 py-4 font-bold transition-colors hover:bg-[var(--tertiary)] hover:text-white'
+      <Button
+        asChild
+        variant='ghost'
+        size='lg'
+        className='ext-sans button mt-6 w-1/3 cursor-pointer px-6 py-4 transition-colors hover:bg-[var(--tertiary)] hover:text-white'
       >
-        Send
-      </button>
+        <Link href={'./'}>Send</Link>
+      </Button>
     </form>
   )
 }

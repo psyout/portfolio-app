@@ -11,7 +11,11 @@ const Anchor: React.FC<AnchorProps> = ({ links }) => {
       <ul className='list-none'>
         <li className='flex flex-col gap-10 font-sans font-medium'>
           {links.map(link => (
-            <Link key={link.href} href={link.href}>
+            <Link
+              className={link.label === 'Work' ? 'font-bold' : 'font-normal'}
+              key={link.href}
+              href={link.href}
+            >
               {link.label}
             </Link>
           ))}

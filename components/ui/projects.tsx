@@ -1,6 +1,7 @@
 'use client'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Button } from './button'
 
 type ProjectCardProps = {
   imageUrl: string
@@ -26,7 +27,7 @@ export default function ProjectCard({
     >
       <div className='group relative'>
         {/* Tags ABOVE the image wrapper so they aren't cut */}
-        <div className='absolute -top-3 left-3 z-10 flex flex-wrap gap-2'>
+        <div className='absolute -top-3 left-3 z-10 flex flex-wrap gap-2 font-serif'>
           {tags.map((tag, index) => {
             const isNew = tag.trim().toLowerCase() === 'new'
             return (
@@ -44,7 +45,7 @@ export default function ProjectCard({
           })}
         </div>
 
-        <div className='overflow-hidden rounded-md'>
+        <div className='overflow-hidden'>
           <Image
             src={imageUrl}
             alt={title}
@@ -57,16 +58,18 @@ export default function ProjectCard({
 
       <div className='py-4'>
         <h2 className='text text-2xl font-bold'>{title}</h2>
-        <h3 className='text mt-1 text-sm font-semibold tracking-wide uppercase'>
+        <h3 className='text mt-1 text-sm font-normal tracking-wide uppercase'>
           {subtitle}
         </h3>
-        <p className='text mt-3 font-light sm:text-lg'>{description}</p>
-        <Link
-          href={buttonLink}
-          className='button hover:text-whit mt-3 inline-block px-4 py-2 transition-colors hover:bg-[var(--tertiary)]'
+        <p className='sm:text-md mt-3 font-light'>{description}</p>
+        <Button
+          asChild
+          variant='ghost'
+          size='lg'
+          className='button mt-5 rounded-md transition-colors hover:bg-[var(--tertiary)] hover:text-white'
         >
-          Go to Project
-        </Link>
+          <Link href={buttonLink}>Go to Project</Link>
+        </Button>
       </div>
     </section>
   )

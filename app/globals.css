@@ -62,6 +62,7 @@
     --muted-foreground: 220 8.9% 46.1%;
     --tertiary: hsl(0, 0%, 57%);
     --iconColor: #455d7a;
+    --highlight-color: #81e6d9;
   }
 
   .dark {
@@ -75,7 +76,7 @@
     --secondary: 215 27.9% 16.9%;
     --secondary-foreground: 210 20% 98%;
     --tertiary: hsl(0, 0%, 57%);
-    --iconColor: #8fd1c2;
+    --iconColor: #81e6d9;
     --social-color: #5e5d5d;
   }
 }
@@ -116,7 +117,6 @@
 
   .button {
     background-color: var(--text-color);
-    border-radius: 0.4rem;
     color: var(--social-color);
   }
 
@@ -137,6 +137,21 @@
 
   .icon-color {
     color: var(--iconColor);
+  }
+
+  .icon-hover {
+    background-color: #81e6d9;
+  }
+
+  .rtl-list {
+    direction: rtl;
+    list-style: disc;
+    list-style-position: inside;
+  }
+
+  .rtl-list::marker {
+    float: right;
+    margin-left: 0.5rem;
   }
 
   .hamburger {

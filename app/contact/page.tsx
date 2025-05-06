@@ -29,7 +29,7 @@ const Contact = () => {
         <div>
           <div className='grid grid-cols-1 gap-4'>
             <div className='flex flex-col'>
-              <h3 className='text-lg font-bold'>Email</h3>
+              <h3 className='text text-lg font-bold'>Email</h3>
               <div className='flex gap-3'>
                 <Link className='text' href='mailto:hello@felipegonzalez.io'>
                   hello@felipegonzalez.io
@@ -43,7 +43,7 @@ const Contact = () => {
             </div>
 
             <div className='flex flex-col'>
-              <h3 className='text-lg font-bold'>Phone</h3>
+              <h3 className='text text-lg font-bold'>Phone</h3>
               <div className='flex gap-3'>
                 <Link href='callto:+17786977909' className='text'>
                   +1 (778) 697-7909
@@ -56,8 +56,8 @@ const Contact = () => {
             </div>
 
             <div className='flex flex-col gap-3'>
-              <h3 className='text-lg font-bold'>Social</h3>
-              <Social color='text-white' />
+              <h3 className='text text-lg font-bold'>Social</h3>
+              <Social backgroundColor='bg-blue-400' color='text-white' />
             </div>
           </div>
         </div>
