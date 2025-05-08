@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 
 // Components
 import Intro from '@/components/intro'
@@ -14,12 +14,18 @@ import { projects } from '@/components/projectData'
 import { links } from '@/components/links'
 
 export default function Home() {
+  const [visibleCount, setVisibleCount] = useState(3)
+
+  const handleLoadMore = () => {
+    setVisibleCount(prev => prev + 3)
+  }
+
   return (
     <main className='pb-10'>
       <div className='container mx-auto max-w-6xl pt-40'>
         {/* Intro and Anchor */}
         <section className='flex flex-col gap-20 md:flex-row md:items-start'>
-          <div className='0 w-full space-y-8 md:w-1/2'>
+          <div className='w-full space-y-8 md:w-1/2'>
             <Intro />
             <Anchor links={links} />
           </div>
@@ -27,9 +33,28 @@ export default function Home() {
           <div className='w-full space-y-8 md:w-1/2 md:pr-6 md:pl-6'>
             {/* Projects Section */}
             <div id='projects' className='scroll-mt-10'>
-              {projects.map((project, index) => (
-                <ProjectCard key={index} {...project} />
-              ))}
+              <div
+                className={`grid grid-cols-1 gap-0 transition-all duration-500 md:grid-cols-1 ${
+                  visibleCount === 3
+                    ? 'max-h-[1300px] overflow-hidden border-b-1 md:max-h-[1100px]'
+                    : ''
+                }`}
+              >
+                {projects.slice(0, visibleCount).map((project, index) => (
+                  <ProjectCard key={index} {...project} />
+                ))}
+              </div>
+
+              {visibleCount < projects.length && (
+                <div className='my-10 text-center'>
+                  <button
+                    onClick={handleLoadMore}
+                    className='rounded bg-gray-800 px-6 py-2 text-white hover:bg-gray-700'
+                  >
+                    Load More
+                  </button>
+                </div>
+              )}
             </div>
             <Skills />
           </div>
