@@ -12,9 +12,9 @@ const Anchor: React.FC<AnchorProps> = ({ links }) => {
         <li className='flex flex-col gap-10 font-sans font-medium'>
           {links.map(link => (
             <Link
-              className={link.label === 'Work' ? 'font-bold' : 'font-normal'}
               key={link.href}
               href={link.href}
+              className={`relative block w-fit after:absolute after:block after:h-[3px] after:w-full after:origin-left after:scale-x-0 after:bg-black after:transition after:duration-300 after:content-[''] hover:after:scale-x-100 ${link.label === 'Work' ? 'font-bold' : 'font-normal'} `}
             >
               {link.label}
             </Link>

@@ -21,10 +21,7 @@ export default function ProjectCard({
   buttonLink
 }: ProjectCardProps) {
   return (
-    <section
-      id='projects'
-      className='mt-10 mb-15 w-full scroll-mt-24 md:max-w-lg'
-    >
+    <section id='projects' className='mt-10 mb-15 w-full scroll-mt-24'>
       <div className='group relative'>
         {/* Tags ABOVE the image wrapper so they aren't cut */}
         <div className='absolute -top-3 left-3 z-10 flex flex-wrap gap-2 font-serif'>

@@ -40,7 +40,7 @@ const About = () => {
           <div className='group mt-20 hidden items-center gap-2 md:flex'>
             <ArrowLeft className='group-hover:animate-bounce-x transition-transform' />
             <Link href='./' className='hover:underline'>
-              <p className='hover:text-primary text font-bold underline transition-colors duration-300'>
+              <p className='hover:text-primary text text-xl font-bold underline transition-colors duration-300'>
                 Back to Work
               </p>
             </Link>
