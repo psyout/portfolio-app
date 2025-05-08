@@ -54,7 +54,6 @@ const ProjectPage = () => {
   const params = useParams()
   const index = parseInt(params?.id as string)
 
-  const projectData = projects
   const [visibleCount, setVisibleCount] = useState(2) // Initially show 2 projects
 
   const handleLoadMore = () => {
