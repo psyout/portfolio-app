@@ -169,13 +169,12 @@ const ProjectPage = () => {
         <div className='relative'>
           <div
             className={`grid grid-cols-1 transition-all duration-500 md:grid-cols-2 md:gap-10 ${
-              visibleCount === 2
-                ? 'max-h-[650px] overflow-hidden border-b-1 md:max-h-[650px]'
-                : ''
+              visibleCount === 2 ? 'overflow-hidden border-b-1' : ''
             }`}
           >
             {projects
               .filter((_, i) => i !== index)
+              .slice(0, visibleCount)
               .map((project, i) => (
                 <div key={i}>
                   <ProjectCard

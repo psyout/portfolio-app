@@ -14,10 +14,10 @@ import { projects } from '@/components/projectData'
 import { links } from '@/components/links'
 
 export default function Home() {
-  const [visibleCount, setVisibleCount] = useState(3)
+  const [visibleCount, setVisibleCount] = useState(2)
 
   const handleLoadMore = () => {
-    setVisibleCount(prev => prev + 3)
+    setVisibleCount(prev => prev + 2)
   }
 
   return (
@@ -35,9 +35,7 @@ export default function Home() {
             <div id='projects' className='scroll-mt-10'>
               <div
                 className={`grid grid-cols-1 gap-0 transition-all duration-500 md:grid-cols-1 ${
-                  visibleCount === 3
-                    ? 'max-h-[1300px] overflow-hidden border-b-1 md:max-h-[1100px]'
-                    : ''
+                  visibleCount === 2 ? 'overflow-hidden border-b-1' : ''
                 }`}
               >
                 {projects.slice(0, visibleCount).map((project, index) => (
