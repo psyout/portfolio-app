@@ -8,7 +8,7 @@ import { ArrowLeft } from 'lucide-react'
 
 const About = () => {
   return (
-    <div className='container mx-auto max-w-6xl py-34'>
+    <div className='container mx-auto max-w-6xl py-40'>
       <Head>
         <title>About Me - Felipe</title>
         <meta
@@ -16,8 +16,8 @@ const About = () => {
           content='Learn more about Felipe, a creative and driven developer based in Vancouver.'
         />
       </Head>
-      <section className='flex flex-col gap-3 sm:flex-row sm:justify-between sm:gap-10'>
-        <div className='mt-2 flex-1 md:mt-0'>
+      <section className='flex flex-col gap-3 sm:justify-between sm:gap-10 md:flex-row'>
+        <div className='flex-1 md:mt-0'>
           <h1 className='title font-extrabold no-underline'>About Me</h1>
           <p className='text mt-3 max-w-2xl font-light sm:text-lg'>
             I&apos;m driven by a relentless desire to learn and explore novel
@@ -46,11 +46,12 @@ const About = () => {
             </Link>
           </div>
         </div>
-        <div className='mt-10 inline-flex flex-1 justify-end sm:mt-0 sm:items-start'>
+        <div className='mt-10 flex flex-1 sm:mt-0 md:justify-end'>
           <Image
             src={ProfilePicture}
+            loading='lazy'
             alt='Intro Image'
-            width={320} // Optional for layout stability
+            width={320}
             height={320}
             className='h-60 w-60 rounded-full object-cover sm:h-72 sm:w-72 md:h-80 md:w-80'
           />

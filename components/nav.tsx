@@ -17,12 +17,7 @@ const Nav = () => {
   return (
     <nav className='container mx-auto flex max-w-6xl items-center justify-between'>
       {/* Logo */}
-      <Link
-        href='/'
-        className={`title text-3xl font-extrabold ${
-          menuOpen ? 'relative z-50' : ''
-        }`}
-      >
+      <Link href='/' className={`logo ${menuOpen ? 'relative z-50' : ''}`}>
         Fe<span className='span'>_</span>
       </Link>
 

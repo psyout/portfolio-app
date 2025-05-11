@@ -10,7 +10,12 @@ const Footer = () => {
               Developed by me, Felipe, in Vancouver &#9786;
             </p>
           </div>
-          <Social backgroundColor='bg-neutral-400' color='font-color' />
+          <Social
+            backgroundColor='bg-neutral-400'
+            color='font-color'
+            hoverBackgroundColor='hover:bg-neutral-500'
+            hoverColor='hover:text-white'
+          />
         </div>
       </div>
     </footer>

@@ -33,15 +33,19 @@ const Skills = () => {
     <section className='ml-auto w-full py-24'>
       <h1 className='title font-extrabold'>What I can do</h1>
 
-      <div className='mt-10 flex flex-col gap-8'>
+      <div className='mt-5 flex flex-col gap-8'>
         {/* Text Section */}
-        <div className='text flex flex-col gap-5 text-lg font-light'>
+        <div className='text order-2 mt-10 flex flex-col gap-5 text-lg font-light text-pretty'>
           <p>
-            Proficient across front end languages such as{' '}
-            <span className='font-bold'>HTML, CSS, JavaScript & React</span> as
-            well as Back-End experience using{' '}
-            <span className='font-bold'>Axios</span> and{' '}
-            <span className='font-bold'> NodeJS.</span>
+            Proficient in Front-End languages including{' '}
+            <span className='font-bold'>HTML, CSS, JavaScript and React</span>,
+            with Back-End experience using
+            <span className='font-bold'> Node.js</span> and{' '}
+            <span className='font-bold'> Express</span> for building and
+            handling API requests. I have experience building responsive
+            interfaces, working with <span className='font-bold'> RESTful</span>{' '}
+            services and using <span className='font-bold'> MongoDB</span> for
+            data management.
           </p>
           <p>
             Alongside my development skills, I am also very experienced with a
@@ -52,8 +56,8 @@ const Skills = () => {
         </div>
 
         {/* Icons Section */}
-        <div>
-          <ul className='sm:grid-col-4 grid grid-cols-4 gap-6 text-5xl sm:grid-cols-6 sm:text-5xl md:grid-cols-5 lg:grid-cols-6'>
+        <div className='mt-10'>
+          <ul className='grid grid-cols-4 justify-center gap-6 text-5xl sm:grid-cols-6 sm:text-5xl md:grid-cols-4 lg:grid-cols-6'>
             {SkillsIcon.map((Icon, index) => (
               <li
                 key={index}

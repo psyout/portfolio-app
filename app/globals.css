@@ -47,14 +47,14 @@
 
 @layer base {
   :root {
-    --text-color: #5e5d5d;
+    --text-color: #454545;
     --social-color: hsl(0, 0%, 99%);
     --title-color: hsl(259, 39%, 48%);
     --background: 0 0% 100%;
     --foreground: 224 71.4% 4.1%;
     --card: 0 0% 100%;
     --card-foreground: 224 71.4% 4.1%;
-    --primary: 262.1 83.3% 57.8%;
+    --primary: 142.1 76.2% 36.3%;
     --primary-foreground: oklch(0.606 0.25 292.717);
     --secondary: 220 14.3% 95.9%;
     --secondary-foreground: 220.9 39.3% 11%;
@@ -77,7 +77,8 @@
     --secondary-foreground: 210 20% 98%;
     --tertiary: hsl(0, 0%, 57%);
     --iconColor: #81e6d9;
-    --social-color: #5e5d5d;
+    --social-color: #8b8b8b;
+    --title-color: hsl(0, 0%, 100%);
   }
 }
 
@@ -91,7 +92,7 @@
   }
 
   body {
-    @apply bg-background text-primary scroll-smooth p-6 font-sans;
+    @apply bg-background text-primary scroll-smooth p-7 font-sans sm:p-9;
     font-family: var(--font-sans), sans-serif;
     color: var(--main-text-color); /* Use the custom main text color */
   }
@@ -103,6 +104,11 @@
 
   .subtitle {
     @apply font-sans text-lg;
+    color: var(--title-color);
+  }
+
+  .logo {
+    @apply font-sans text-4xl font-extrabold;
     color: var(--title-color);
   }
 
@@ -126,32 +132,45 @@
     border-color: var(--text-color);
   }
 
-  .tag {
-    background-color: var(--text-color);
-    border-radius: 0.4rem;
-  }
-
   .card-border {
-    border-radius: 0.4rem;
-  }
-
-  .icon-color {
-    color: var(--iconColor);
+    border-radius: 0.3rem;
   }
 
   .icon-hover {
     background-color: #81e6d9;
   }
 
-  .rtl-list {
-    direction: rtl;
-    list-style: disc;
-    list-style-position: inside;
+  .icons-bg {
+    background-color: var(--tertiary);
+    border-radius: 0.4rem;
   }
 
-  .rtl-list::marker {
-    float: right;
-    margin-left: 0.5rem;
+  .icon-container {
+    display: inline-block;
+    animation: bounce 1s infinite;
+  }
+
+  .transition-all {
+    transition:
+      transform 0.5s ease-in-out,
+      opacity 0.5s ease-in-out;
+  }
+
+  @keyframes roll-down {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .project-card-container {
+    opacity: 0;
+    transform: translateY(-20px); /* Initially position above the view */
+    animation: roll-down 0.4s ease-out forwards; /* Reduced duration */
   }
 
   .hamburger {
@@ -197,19 +216,5 @@
 
   .card_grid-sm {
     @apply grid gap-5 sm:grid-cols-2;
-  }
-
-  @keyframes bounce-x {
-    0%,
-    100% {
-      transform: translateX(0);
-    }
-    50% {
-      transform: translateX(-6px);
-    }
-  }
-
-  .animate-bounce-x {
-    animation: bounce-x 0.5s ease-in-out infinite;
   }
 }

@@ -15,7 +15,7 @@ export default function ThemeToggle() {
 
   return (
     <Button
-      className='z-100 mr-1 hover:rounded-3xl'
+      className='z-100 mr-1 transition-all hover:rounded-full hover:bg-gray-200 dark:hover:bg-gray-700'
       variant='ghost'
       size='icon'
       onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
@@ -23,7 +23,7 @@ export default function ThemeToggle() {
       {resolvedTheme === 'dark' ? (
         <BsSunFill className='size-7 text-orange-300' />
       ) : (
-        <FaMoon className='primary size-6' />
+        <FaMoon className='text-primary size-6' />
       )}
       <span className='sr-only'>Toggle theme</span>
     </Button>

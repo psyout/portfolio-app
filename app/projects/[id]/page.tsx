@@ -194,10 +194,10 @@ const ProjectPage = () => {
         {visibleCount === 2 && (
           <div className='my-20 text-center'>
             <button
-              className='rounded bg-gray-800 px-6 py-2 text-white hover:bg-gray-700'
+              className='button mt-5 rounded-[0.3rem] px-6 py-2 transition-colors hover:bg-[var(--tertiary)] hover:text-white'
               onClick={handleLoadMore}
             >
-              Load More
+              See More
             </button>
           </div>
         )}

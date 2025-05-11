@@ -22,7 +22,7 @@ const Contact = () => {
   }
 
   return (
-    <section id='contact' className='container mx-auto max-w-6xl py-20'>
+    <section id='contact' className='container mx-auto max-w-6xl py-20 pt-40'>
       <h1 className='title mb-10'>Contact Me</h1>
       <div className='grid grid-cols-1 gap-12 md:grid-cols-2'>
         {/* Contact Info */}
@@ -57,7 +57,12 @@ const Contact = () => {
 
             <div className='flex flex-col gap-3'>
               <h3 className='text text-lg font-bold'>Social</h3>
-              <Social backgroundColor='bg-blue-400' color='text-white' />
+              <Social
+                backgroundColor='bg-blue-400'
+                color='text-white'
+                hoverBackgroundColor='hover:bg-blue-600'
+                hoverColor='hover:text-white'
+              />
             </div>
           </div>
         </div>
