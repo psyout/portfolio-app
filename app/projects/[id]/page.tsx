@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -42,6 +42,18 @@ interface Project {
 }
 
 const ProjectPage = () => {
+  const titleRef = useRef<HTMLHeadingElement>(null)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (titleRef.current) {
+        titleRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    }, 200)
+
+    return () => clearTimeout(timer)
+  }, [])
+
   const params = useParams()
   const index = parseInt(params?.id as string)
   const [visibleCount, setVisibleCount] = useState(2)
@@ -61,11 +73,14 @@ const ProjectPage = () => {
       {/* Title & Description */}
       <div className='flex flex-col md:flex-row md:gap-20'>
         <div className='flex-1'>
-          <h1 className='logo mb-1 text-4xl font-bold md:text-5xl'>
+          <h1
+            ref={titleRef}
+            className='logo mb-1 scroll-mt-10 text-4xl font-bold md:text-5xl'
+          >
             {project.title}
           </h1>
-          <h4 className='mb-4 text-xl font-light'>{project.subtitle}</h4>
-          <p className='mb-6 text-lg md:justify-end lg:w-120'>
+          <h4 className='mb-4 text-xl'>{project.subtitle}</h4>
+          <p className='text-md mb-6 font-light md:justify-end lg:w-120'>
             {project.fullDescription}
           </p>
         </div>
@@ -108,14 +123,14 @@ const ProjectPage = () => {
           alt={project.title}
           width={1200}
           height={700}
-          className='h-100 rounded bg-cover shadow md:h-150'
+          className='h-70 rounded bg-cover shadow md:h-150'
         />
-        <p className='mx-auto mt-5 w-full text-center text-sm md:w-120'>
+        <p className='mx-auto mt-5 w-full text-center text-sm font-light md:w-120'>
           {project.imageCaption1}
         </p>
 
         {/* Paragraph */}
-        <div className='mx-auto my-20 w-full text-lg md:w-1/2'>
+        <div className='text-md mx-auto my-20 w-full font-light md:w-1/2 md:text-lg'>
           <p className='text mt-5'>{project.paragraph1}</p>
           <ul className='ml-5 list-inside list-disc py-5'>
             {project.list1?.map((list, index) => <li key={index}>{list}</li>)}
@@ -136,18 +151,18 @@ const ProjectPage = () => {
               alt={`Feature ${i + 1}`}
               width={1000}
               height={600}
-              className='h-90 rounded shadow'
+              className='h-60 rounded shadow'
             />
             <h4 className='subtitle mt-4 text-xl font-semibold'>
               Example Feature
             </h4>
-            <p className='text-md'>{caption}</p>
+            <p className='text-md font-light'>{caption}</p>
           </div>
         ))}
       </section>
 
       {/* Repeat Paragraph */}
-      <div className='mx-auto my-20 w-full text-lg md:w-1/2'>
+      <div className='text-md mx-auto my-20 w-full font-light md:w-1/2 md:text-lg'>
         <p className='text mt-5'>{project.paragraph1}</p>
         <ul className='ml-5 list-inside list-disc py-5'>
           {project.list1?.map((list, index) => <li key={index}>{list}</li>)}
