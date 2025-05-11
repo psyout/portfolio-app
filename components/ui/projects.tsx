@@ -1,4 +1,5 @@
 'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from './button'
@@ -31,7 +32,7 @@ export default function ProjectCard({
                 key={index}
                 className={`card-border px-4 py-2 text-xs ${
                   isNew
-                    ? 'bg-amber-500 text-white'
+                    ? 'bg-amber-300 text-white'
                     : 'bg-[var(--tertiary)] text-[var(--social-color)] dark:bg-[var(--social-color)] dark:text-[var(--text-color)]'
                 }`}
               >

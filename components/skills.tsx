@@ -61,7 +61,7 @@ const Skills = () => {
             {SkillsIcon.map((Icon, index) => (
               <li
                 key={index}
-                className='transform text-center text-[color:var(--iconColor)] transition-colors duration-300 hover:text-[#81e6d9]'
+                className='transform text-center text-[color:var(--text)] transition-colors duration-300 hover:text-[color:var(--primary)]'
               >
                 <Icon />
               </li>

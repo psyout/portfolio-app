@@ -37,7 +37,7 @@ const Contact = () => {
                 <Files
                   onClick={() => copyToClipboard('hello@felipegonzalez.io')}
                   aria-label='Copy email'
-                  className='z-100 cursor-pointer'
+                  className='z-100 scale-150 cursor-pointer rounded-full py-1 transition-all hover:rounded-full hover:bg-gray-200 dark:hover:bg-gray-700'
                 />
               </div>
             </div>
@@ -50,7 +50,7 @@ const Contact = () => {
                 </Link>
                 <Files
                   onClick={() => copyToClipboard('+17786977909')}
-                  className='z-100 cursor-pointer'
+                  className='z-100 scale-150 cursor-pointer rounded-full py-1 transition-all hover:rounded-full hover:bg-gray-200 dark:hover:bg-gray-700'
                 />
               </div>
             </div>
@@ -58,9 +58,9 @@ const Contact = () => {
             <div className='flex flex-col gap-3'>
               <h3 className='text text-lg font-bold'>Social</h3>
               <Social
-                backgroundColor='bg-blue-400'
+                backgroundColor='bg-[var(--primary)]'
                 color='text-white'
-                hoverBackgroundColor='hover:bg-blue-600'
+                hoverBackgroundColor='hover:bg-green-900'
                 hoverColor='hover:text-white'
               />
             </div>

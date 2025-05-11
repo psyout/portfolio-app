@@ -23,7 +23,7 @@ export default function ThemeToggle() {
       {resolvedTheme === 'dark' ? (
         <BsSunFill className='size-7 text-orange-300' />
       ) : (
-        <FaMoon className='text-primary size-6' />
+        <FaMoon className='text-text size-6' />
       )}
       <span className='sr-only'>Toggle theme</span>
     </Button>

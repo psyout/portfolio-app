@@ -1,14 +1,19 @@
+import { CircleUserRound, BriefcaseBusiness, Send } from 'lucide-react'
+
 export const links = [
   {
     href: '#projects',
-    label: 'Work'
+    label: 'Work',
+    icon: <BriefcaseBusiness />
   },
   {
     href: './about',
-    label: 'About'
+    label: 'About',
+    icon: <CircleUserRound />
   },
   {
     href: '#contact',
-    label: 'Contact'
+    label: 'Contact',
+    icon: <Send />
   }
 ]

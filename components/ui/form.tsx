@@ -12,18 +12,18 @@ const Form = () => {
         <input
           placeholder='Name'
           type='text'
-          className='focus:ring-primary input w-full p-4 focus:ring-3 focus:outline-none'
+          className='focus:ring-secondary input w-full p-4 focus:ring-3 focus:outline-none'
         />
         <input
           placeholder='Email address'
           type='email'
-          className='focus:ring-primary input w-full p-4 focus:ring-2 focus:outline-none'
+          className='focus:ring-secondary input w-full p-4 focus:ring-2 focus:outline-none'
         />
       </div>
       <textarea
         placeholder='Write your message here...'
         rows={5}
-        className='focus:ring-primary form-input input mt-3 w-full p-4 focus:ring-2 focus:outline-none'
+        className='focus:ring-secondary form-input input mt-3 w-full p-4 focus:ring-2 focus:outline-none'
       ></textarea>
       <Button
         asChild
