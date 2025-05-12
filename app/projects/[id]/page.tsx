@@ -128,9 +128,11 @@ const ProjectPage = () => {
           </Link>
         </Button>
 
-        <Link href={project.gitHub || '#'} target='_blank'>
-          <TbBrandGithub className='p-1.5 text-5xl transition-all hover:rounded-full hover:bg-[var(--tertiary)] hover:text-[var(--button-text)]' />
-        </Link>
+        {project.gitHub && (
+          <Link href={project.gitHub} target='_blank'>
+            <TbBrandGithub className='p-1.5 text-5xl transition-all hover:rounded-full hover:bg-[var(--tertiary)] hover:text-[var(--button-text)]' />
+          </Link>
+        )}
       </div>
 
       {/* Project Main Image */}
@@ -148,24 +150,22 @@ const ProjectPage = () => {
         </p>
 
         {/* Paragraph */}
-        <div className='text-md \\ mx-auto my-20 w-full font-light md:w-2/3 md:text-lg'>
-          <p className='text mt-5'>{project.paragraph1}</p>
-          <ul className='ml-5 list-inside list-disc py-5'>
-            {project.list1?.map((item, index) => (
-              <li key={index}>
-                {typeof item === 'string' ? (
-                  item
-                ) : (
-                  <>
-                    <span className='font-semibold'>{item.title}</span>
-                    {item.description && ` – ${item.description}`}
-                  </>
-                )}
-              </li>
-            ))}
-          </ul>
+        <div className='text-md mx-auto my-20 flex w-full flex-col items-center font-light md:w-2/3 md:text-lg'>
+          <p className='text mt-5 text-center'>{project.paragraph1}</p>
+          {project.list1 && project.list1.length > 0 && (
+            <ul className='ml-5 flex list-disc flex-col py-5'>
+              {project.list1.map((item, index) => (
+                <li key={index}>
+                  <span className='font-semibold'>
+                    {item.title.split('–')[0].trim()}
+                  </span>{' '}
+                  – {item.title.split('–')[1].trim()}
+                </li>
+              ))}
+            </ul>
+          )}
 
-          <p className='text mt-5'>{project.paragraph2}</p>
+          <p className='text mt-5 text-center'>{project.paragraph2}</p>
         </div>
 
         {project.imageSmall?.[0] ? (
@@ -178,58 +178,67 @@ const ProjectPage = () => {
             className='rounded bg-cover shadow md:h-150'
           />
         ) : null}
-        <p className='mx-auto mt-5 mb-20 w-full text-center text-sm font-light md:w-180'>
+        <p className='mx-auto mt-5 mb-20 w-full text-center text-sm font-light text-pretty md:w-180'>
           {project.paragraph5}
         </p>
       </div>
 
       {/* Features Section */}
       {/* Features Section */}
-      <section className='flex flex-col md:flex-row md:gap-10'>
-        {/* First Image Block */}
-        <div className='mb-10 flex flex-col items-center md:mb-0 md:w-1/2'>
-          <div className='flex gap-5'>
-            {project.imageSmall?.[1] ? (
-              <Image
-                src={project.imageSmall[1]}
-                alt='Feature 1'
-                width={400}
-                height={100}
-                layout='intrinsic'
-                className='mb-10 rounded'
-              />
-            ) : null}
-          </div>
-          <div className='flex flex-col items-center'>
-            <h4 className='subtitle text-xl font-semibold'>{project.title1}</h4>
-            <p className='text-md max-w-130 text-center font-light md:max-w-7/8'>
-              {project.imageCaption3}
-            </p>
-          </div>
-        </div>
+      {(project.imageSmall?.[1] ||
+        project.imageSmall?.[2] ||
+        project.title1 ||
+        project.title2) && (
+        <section className='flex flex-col md:flex-row md:gap-10'>
+          {/* First Image Block */}
+          {project.imageSmall?.[1] && (
+            <div className='mb-10 flex flex-col items-center md:mb-0 md:w-1/2'>
+              <div className='flex gap-5'>
+                <Image
+                  src={project.imageSmall[1]}
+                  alt='Feature 1'
+                  width={400}
+                  height={100}
+                  layout='intrinsic'
+                  className='mb-5 rounded'
+                />
+              </div>
+              <div className='flex flex-col items-center'>
+                <h4 className='subtitle mb-3 text-xl font-semibold'>
+                  {project.title1}
+                </h4>
+                <p className='text-md max-w-130 text-center font-light text-pretty md:max-w-7/8'>
+                  {project.imageCaption3}
+                </p>
+              </div>
+            </div>
+          )}
 
-        {/* Second Image Block */}
-        <div className='flex flex-col items-center md:w-1/2'>
-          <div className='flex gap-5'>
-            {project.imageSmall?.[2] ? (
-              <Image
-                src={project.imageSmall[2]}
-                alt='Feature 2'
-                width={400}
-                height={100}
-                layout='intrinsic'
-                className='mb-5 rounded md:mb-10'
-              />
-            ) : null}
-          </div>
-          <div className='flex flex-col items-center'>
-            <h4 className='subtitle text-xl font-semibold'>{project.title2}</h4>
-            <p className='text-md max-w-130 text-center font-light md:max-w-7/8'>
-              {project.imageCaption4}
-            </p>
-          </div>
-        </div>
-      </section>
+          {/* Second Image Block */}
+          {project.imageSmall?.[2] && (
+            <div className='mt-10 flex flex-col items-center md:mt-0 md:w-1/2'>
+              <div className='flex gap-5'>
+                <Image
+                  src={project.imageSmall[2]}
+                  alt='Feature 2'
+                  width={400}
+                  height={100}
+                  layout='intrinsic'
+                  className='mb-5 rounded'
+                />
+              </div>
+              <div className='flex flex-col items-center'>
+                <h4 className='subtitle mb-3 text-xl font-semibold'>
+                  {project.title2}
+                </h4>
+                <p className='text-md max-w-130 text-center font-light text-pretty md:max-w-7/8'>
+                  {project.imageCaption4}
+                </p>
+              </div>
+            </div>
+          )}
+        </section>
+      )}
 
       <div className='text-md mx-auto my-30 w-full font-light md:w-2/3 md:text-lg'>
         {(project.paragraph3 ||
@@ -237,35 +246,28 @@ const ProjectPage = () => {
           project.paragraph4) && (
           <>
             {project.paragraph3 && (
-              <p className='text mt-5'>{project.paragraph3}</p>
+              <p className='text mt-5 text-center text-pretty'>
+                {project.paragraph3}
+              </p>
             )}
 
             {project.list1 && project.list1.length > 0 && (
               <ul className='ml-5 hidden list-inside list-disc py-5'>
                 {project.list1.map((item, index) => (
                   <li key={index}>
-                    {typeof item === 'string' ? (
-                      item
-                    ) : (
-                      <>
-                        {item.title}
-                        {item.description && (
-                          <>
-                            {' – '}
-                            <span className='font-semibold'>
-                              {item.description}
-                            </span>
-                          </>
-                        )}
-                      </>
-                    )}
+                    <span className='font-semibold'>
+                      {item.title.split('–')[0].trim()}
+                    </span>{' '}
+                    – {item.title.split('–')[1].trim()}
                   </li>
                 ))}
               </ul>
             )}
 
             {project.paragraph4 && (
-              <p className='text mt-5'>{project.paragraph4}</p>
+              <p className='text mt-5 text-center text-pretty'>
+                {project.paragraph4}
+              </p>
             )}
           </>
         )}
@@ -310,12 +312,6 @@ const ProjectPage = () => {
         {/* Load More Button */}
         {visibleCount === 2 && (
           <div className='relative z-20 mt-6 text-center'>
-            {/* <button
-              className='rounded bg-gray-800 px-6 py-2 text-white hover:bg-gray-700'
-              onClick={handleLoadMore}
-            >
-              Load More
-            </button> */}
             <Button
               variant='ghost'
               size='lg'

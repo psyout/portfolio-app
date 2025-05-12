@@ -42,9 +42,11 @@ export const projects = [
     paragraph2:
       'Together, these technologies create a seamless platform for users to find local deals quickly and visually, making the happy hour hunt both efficient and enjoyable.',
     paragraph3:
-      'In the early stages of development, Vansippy relied on the Yelp Fusion API to fetch data for each bussiness. While it offered a quick way to populate content, it introduced several limitations, including restrictive rate limits, inconsistent data quality (especially for images) and limited control over the structure and filtering of returned data. These constraints made it difficult to deliver a reliable, focused user experience tailored around Happy Hour deals.',
+      'Vansippy initially used the Yelp Fusion API to quickly source business data, but strict rate limits, poor image quality, and limited filtering made it difficult to build a reliable, Happy Hour–focused experience.',
     paragraph4:
       'To solve this, I built a custom Back-End API with Node.js and MongoDB. This gave me full control over the data schema, allowed real-time content updates, using CRUD and eliminated external dependencies. Now, the application supports more accurate, curated listings, improved performance and a flexible foundation for future features like an admin dashboard.',
+    paragraph5:
+      'The app uses the browser’s Geolocation API to get the user’s location, sends it to a Node.js backend, and fetches nearby venues from MongoDB using geospatial queries. Results are shown in real time on a React interface with Mapbox.',
     buttonText: 'Go to Project',
     gitHub: 'https://github.com/psyout/capstone-client',
     buttonVisit: 'View Site',
@@ -58,7 +60,7 @@ export const projects = [
     imageThumb: '/static/images/transportes-moran-card.jpg',
     imageUrl: '/static/images/transportes-moran-card.jpg',
     imageSmall: [
-      '/static/images/transportes-moran-mockup.jpg',
+      '/static/images/transportes-moran-servicios.jpg',
       '/static/images/transportes-moran-mockup.jpg',
       '/static/images/transportes-moran-servicios.jpg'
     ],
@@ -68,23 +70,22 @@ export const projects = [
     description:
       'Reliable Aggregate Manufacturing & Trucking Services for your construction needs.',
     fullDescription:
-      'This website is a single-page application built with React and styled using SCSS for modular and maintainable styling. The project follows a component-based architecture, using custom components like Navbar, Hero, Projects, and Contact Form to organize and reuse interface elements efficiently. It leverages JavaScript (ES6+) for dynamic behavior and uses React Hooks for state and lifecycle management.',
+      'This website is a single-page application built with React and styled using SCSS for modular and maintainable styling. The project follows a component-based architecture, using custom components like Navbar, Hero, Projects, and Contact Form to organize and reuse interface elements efficiently. ',
     buttonText: 'Go to Project',
     buttonLink: '/projects/1',
     buttonHref: 'https://www.transportesmoran.cl/',
     gitHub: 'https://github.com/psyout/transportes-moran',
-    skills: ['React.js', 'SCSS', 'JavaScript', 'Figma'],
+    skills: ['React', 'SCSS', 'JavaScript', 'Figma'],
     imageCaption1:
       'The Transportes Moran website uses a straightforward and lightweight tech stack focused on performance and usability.',
     imageCaption2:
       'Use a caption IF the image is needed. Most images won’t BUT you can style like this. Line length should be about 10-12 words on average.',
     imageCaption3:
-      'Use a caption IF the image is needed. Most images won’t BUT you can style like this. Line length should be about 10-12 words on average.',
-    imageCaption4:
-      'Use a caption IF the image is needed. Most images won’t BUT you can style like this. Line length should be about 10-12 words on average.',
-    title1: 'Example Feature',
+      'A well-designed website interface created using Figma, featuring a clean layout with intuitive navigation and responsive elements that adjust smoothly across different devices. The design includes detailed sections for project descriptions, images, and key skills, providing an engaging user experience.',
+    imageCaption4: 'Lalala',
+    title1: '',
     subtitle1: 'Describe a feature or step of the process here.',
-    title2: 'Example Feature',
+    title2: '',
     subtitle2: 'Describe a feature or step of the process here.',
     title3: 'Example Feature',
     subtitle3: 'Describe a feature or step of the process here.',
@@ -93,6 +94,8 @@ export const projects = [
     paragraph2: '',
     paragraph3: '',
     paragraph4: '',
+    paragraph5:
+      'The website was built using Sass, leveraging its powerful features like grid layouts and mixins for a more efficient and maintainable design. The grid system ensures a flexible, responsive structure, while the mixins streamline repetitive styles, making the codebase more organized and scalable.',
     list1: [],
     list2: []
   },
@@ -117,7 +120,7 @@ export const projects = [
     buttonText: 'Go to Project',
     buttonLink: '/projects/2',
     buttonHref: '',
-    gitHub: '',
+    gitHub: 'https://github.com/mannyv123/instock-client',
     skills: ['React.js', 'Node', 'Express', 'Postman', 'Figma'],
     imageCaption1:
       'When a new warehouse is added, the UI automatically updates if the list is rendered dynamically (e.g., using .map()). The new warehouse appears in the list as soon as it’s added to the data source, such as a state variable or database, without needing to reload the page.',
@@ -140,32 +143,33 @@ export const projects = [
 
   // BrainFlix
   {
-    imageThumb: '/static/images/vansippy-card.jpg',
-    imageUrl: '/static/images/vansippy-card.jpg',
+    imageThumb: '/static/images/brainflix.jpg',
+    imageUrl: '/static/images/brainflix.jpg',
     imageSmall: [
       '',
-      '/static/images/vansippy-mobile2.png',
-      '/static/images/instock-mockup.jpg'
+      '/static/images/brainflix-add-comment.jpg',
+      '/static/images/brainflix-server.jpg'
     ],
-    tags: ['Portfolio', 'Design', 'Tailwind'],
+    tags: ['React', 'React Router', 'Sass'],
     title: 'BrainFlix',
     subtitle: 'Youtube clone web app',
+    fullDescription:
+      'This app is built with React for the UI, using functional components and hooks for state and lifecycle management. It uses React Router for client-side routing and Axios to handle RESTful API requests from a local backend. ',
     description:
-      'A sleek and modern developer portfolio built with Next.js and Tailwind CSS.',
+      'This application is built using React for the frontend, leveraging React Router for client-side routing.',
     buttonText: 'Go to Project',
     buttonLink: '/projects/3',
-    buttonHref: 'https://vansippy.com/',
-    skills: ['React.js', 'MongoDB', 'MaterialUI'],
-    imageCaption1:
-      'Use a caption IF the image is needed. Most images won’t BUT you can style like this. Line length should be about 10-12 words on average.',
-    imageCaption2:
-      'Use a caption IF the image is needed. Most images won’t BUT you can style like this. Line length should be about 10-12 words on average.',
+    buttonHref: '#',
+    gitHub: 'https://github.com/psyout/felipe-gonzalez-brainflix',
+    skills: ['Axios', 'RESTful API', 'Sass', 'Node', 'Express'],
+    imageCaption1: '',
+    imageCaption2: '',
     imageCaption3:
-      'Use a caption IF the image is needed. Most images won’t BUT you can style like this. Line length should be about 10-12 words on average.',
+      'The comments section component reads comment data directly from the selected video object and maps through each comment to render it in a styled layout, with consistent structure and BEM naming conventions',
     imageCaption4:
-      'Use a caption IF the image is needed. Most images won’t BUT you can style like this. Line length should be about 10-12 words on average.',
+      'Developed a server using Express.js, which handles API requests for retrieving and managing video data. The server uses static assets from a public directory and exposes RESTful endpoints under the /videos route, making it easy to interact with video content, including uploading, fetching, and displaying data on the Front-End',
     paragraph1:
-      'This web app renders its data by statically importing an array of objects containing project details like title, body, and image. This approach eliminates the need for external API calls, resulting in a simple and fast component. The imported data is then mapped over to dynamically generate content within the Slider component, enabling easy display of project information. This method works well for small-scale projects with fixed content but can be extended to fetch dynamic data from an API if necessary.',
+      'This application is built using React for the frontend, leveraging React Router for client-side routing and dynamic URL-based video selection. It uses Axios to perform HTTP requests to a Node.js/Express backend API. The component structure is modular, with separate files for layout elements like Header, Hero, MainContent, and AsideContent, promoting reusability and maintainability. The app also manages video data using React’s useState and useEffect hooks, and ensures smoother user experience with features like useCallback for memoized fetching. Styling is handled using Sass, suggested by the use of BEM-style class names and structure.',
     paragraph2: '',
     paragraph3: '',
     paragraph4: '',
@@ -175,35 +179,33 @@ export const projects = [
 
   // Bandsite Web
   {
-    imageThumb: '/static/images/vansippy-card.jpg',
-    imageUrl: '/static/images/vansippy-card.jpg',
-    imageSmall: [
-      '',
-      '/static/images/vansippy-mobile2.png',
-      '/static/images/instock-mockup.jpg'
-    ],
-    tags: ['Portfolio', 'Design', 'Tailwind'],
+    imageThumb: '/static/images/bandsite.jpg',
+    imageUrl: '/static/images/bandsite.jpg',
+    imageSmall: ['/static/images/bandsite-shows.jpg', '', ''],
+    tags: ['Design', 'Development', 'HTML'],
     title: 'Bandsite Web',
     subtitle: 'Web platform for indie bands',
     description:
-      'A sleek and modern developer portfolio built with Next.js and Tailwind CSS.',
+      'This website is built using a traditional front-end web development stack.',
+    fullDescription:
+      'This is a full-stack website that combines HTML5, CSS, and vanilla JavaScript on the front end. It uses Axios (via CDN) to handle HTTP requests and interacts with a locally hosted Express API to manage features like the comments section.',
     buttonText: 'Go to Project',
     buttonLink: '/projects/4',
-    buttonHref: 'https://vansippy.com/',
-    skills: ['React.js', 'MongoDB', 'MaterialUI'],
+    buttonHref: 'https://felipegonzalez.io/bandsite/',
+    skills: ['CSS3', 'JavaScript', 'Axios'],
     imageCaption1:
-      'Use a caption IF the image is needed. Most images won’t BUT you can style like this. Line length should be about 10-12 words on average.',
+      'The back-end API handles GET and POST requests for user-submitted data, enabling dynamic rendering of comments and other interactive elements without relying on a front-end framework.',
     imageCaption2:
       'Use a caption IF the image is needed. Most images won’t BUT you can style like this. Line length should be about 10-12 words on average.',
-    imageCaption3:
-      'Use a caption IF the image is needed. Most images won’t BUT you can style like this. Line length should be about 10-12 words on average.',
-    imageCaption4:
-      'Use a caption IF the image is needed. Most images won’t BUT you can style like this. Line length should be about 10-12 words on average.',
+    imageCaption3: '',
+    imageCaption4: '',
     paragraph1:
-      'This web app renders its data by statically importing an array of objects containing project details like title, body, and image. This approach eliminates the need for external API calls, resulting in a simple and fast component. The imported data is then mapped over to dynamically generate content within the Slider component, enabling easy display of project information. This method works well for small-scale projects with fixed content but can be extended to fetch dynamic data from an API if necessary.',
+      'The front-end structure follows semantic and accessible HTML markup, styled with BEM-named CSS classes compiled into a single stylesheet. The back-end API likely handles GET and POST requests for user-submitted data, enabling dynamic rendering of comments and other interactive elements without relying on a front-end framework.',
     paragraph2: '',
     paragraph3: '',
     paragraph4: '',
+    paragraph5:
+      'This page is structured with clear, semantic sections that improve readability and maintainability. The shows list is designed as a flexible, responsive layout using CSS Flexbox, allowing each row of show details to adapt smoothly across screen sizes. Instead of relying on a traditional fixed table, the content behaves like a table visually but is more mobile-friendly—Flexbox distributes space evenly, aligns text and buttons neatly, and enables stacking or wrapping of elements for smaller viewports, making the layout more versatile and accessible.',
     list1: [],
     list2: []
   }

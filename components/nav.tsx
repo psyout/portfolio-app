@@ -15,7 +15,7 @@ const Nav = () => {
     : 'translate-x-full opacity-0'
 
   return (
-    <nav className='container mx-auto flex max-w-6xl items-center justify-between'>
+    <nav className='mx-auto flex max-w-7xl items-center justify-between'>
       {/* Logo */}
       <Link
         href='/'
@@ -43,7 +43,7 @@ const Nav = () => {
 
         {/* Navigation Menu */}
         <div
-          className={`bg-primary fixed inset-0 z-40 transform backdrop-blur-xs transition-all duration-300 ease-in-out sm:static sm:flex sm:translate-x-0 sm:bg-transparent sm:opacity-100 ${menuClasses}`}
+          className={`bg-social--color fixed inset-0 z-40 transform backdrop-blur-xs transition-all duration-300 ease-in-out sm:static sm:flex sm:translate-x-0 sm:bg-transparent sm:opacity-100 ${menuClasses}`}
         >
           <ul className='text-muted-foreground mt-30 mr-7 flex h-full flex-col items-end gap-6 justify-self-end font-medium sm:hidden'>
             {['About', 'Contact'].map(item => (

@@ -58,7 +58,9 @@ export default function ProjectCard({
         <h3 className='text mt-1 text-sm font-normal tracking-wide text-pretty uppercase'>
           {subtitle}
         </h3>
-        <p className='text sm:text-md mt-3 font-light'>{description}</p>
+        <p className='text sm:text-md mt-3 font-light text-pretty'>
+          {description}
+        </p>
         <Button
           asChild
           variant='ghost'
