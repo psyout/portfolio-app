@@ -55,52 +55,6 @@ export const projects = [
     skills: ['React.js', 'MongoDB', 'MaterialUI']
   },
 
-  // Transportes Moran
-  {
-    imageThumb: '/static/images/transportes-moran-card.jpg',
-    imageUrl: '/static/images/transportes-moran-card.jpg',
-    imageSmall: [
-      '/static/images/transportes-moran-servicios.jpg',
-      '/static/images/transportes-moran-laptop-mockup.png',
-      '/static/images/transportes-moran-laptop-mockup2.png'
-    ],
-    tags: ['Development', 'Design'],
-    title: 'Transportes Moran',
-    subtitle: 'Aggregate Solutions Co.',
-    description:
-      'Reliable Aggregate Manufacturing & Trucking Services for your construction needs.',
-    fullDescription:
-      'This website is a single-page application built with React and styled using SCSS for modular and maintainable styling. The project follows a component-based architecture, using custom components like Navbar, Hero, Projects, and Contact Form to organize and reuse interface elements efficiently. ',
-    buttonText: 'Go to Project',
-    buttonLink: '/projects/1',
-    buttonHref: 'https://www.transportesmoran.cl/',
-    gitHub: 'https://github.com/psyout/transportes-moran',
-    skills: ['React', 'SCSS', 'JavaScript', 'Figma'],
-    imageCaption1:
-      'The Transportes Moran website uses a straightforward and lightweight tech stack focused on performance and usability.',
-    imageCaption2:
-      'Use a caption IF the image is needed. Most images won’t BUT you can style like this. Line length should be about 10-12 words on average.',
-    imageCaption3:
-      'A well-designed website interface created using Figma, featuring a clean layout with intuitive navigation and responsive elements that adjust smoothly across different devices. The design includes detailed sections for project descriptions, images, and key skills, providing an engaging user experience.',
-    imageCaption4:
-      'Figma makes mobile-first design simple with grid layouts. Start with a mobile frame, apply a 4–6 column grid, and use consistent spacing. This helps keep layouts clean, readable, and easy to adapt for tablets and desktops. Designing for smaller screens first also forces you to prioritize content and usability.',
-    title1: '',
-    subtitle1: 'Describe a feature or step of the process here.',
-    title2: '',
-    subtitle2: 'Describe a feature or step of the process here.',
-    title3: 'Example Feature',
-    subtitle3: 'Describe a feature or step of the process here.',
-    paragraph1:
-      'This web app renders its data by statically importing an array of objects containing project details like title, body, and image. This approach eliminates the need for external API calls, resulting in a simple and fast component. The imported data is then mapped over to dynamically generate content within the Slider component, enabling easy display of project information. This method works well for small-scale projects with fixed content but can be extended to fetch dynamic data from an API if necessary.',
-    paragraph2: '',
-    paragraph3: '',
-    paragraph4: '',
-    paragraph5:
-      'The website was built using Sass, leveraging its powerful features like grid layouts and mixins for a more efficient and maintainable design. The grid system ensures a flexible, responsive structure, while the mixins streamline repetitive styles, making the codebase more organized and scalable.',
-    list1: [],
-    list2: []
-  },
-
   // Instock App
   {
     imageThumb: '/static/images/instock-card.jpg',
@@ -119,10 +73,18 @@ export const projects = [
     fullDescription:
       'The InStock project was developed during a web development bootcamp as a collaborative group project. The goal was to deliver a modern and scalable Inventory Management System for a client. The project required working as an Agile team, following Scrum methodologies and using tools like JIRA, Figma, and Git/GitHub for efficient collaboration and project management.',
     buttonText: 'Go to Project',
-    buttonLink: '/projects/2',
+    buttonLink: '/projects/1',
     buttonHref: '',
     gitHub: 'https://github.com/mannyv123/instock-client',
-    skills: ['React.js', 'Node', 'Express', 'Postman', 'Figma'],
+    skills: [
+      'React.js',
+      'Node',
+      'Express',
+      'MySQL',
+      'Postman',
+      'Figma',
+      'RESTful'
+    ],
     imageCaption1:
       'When a new warehouse is added, the UI automatically updates if the list is rendered dynamically (e.g., using .map()). The new warehouse appears in the list as soon as it’s added to the data source, such as a state variable or database, without needing to reload the page.',
     imageCaption2:
@@ -132,12 +94,58 @@ export const projects = [
     imageCaption4:
       'When deleting a product, a common visual error is that the item still appears in the UI even after it is been removed from the backend. This usually happens when the frontend state is not updated correctly after the delete action, or if the product list is not re-fetched to reflect the latest data.',
     paragraph1:
-      'Designed with Agile and Scrum methodologies, it allows users to manage warehouses and inventory with features like add/edit/delete, dynamic search, filtering, and responsive design. The front end uses React, React Router, and BEM/SASS for styling, while the back end runs on Node.js, Express, MySQL, and Knex. All data interactions are handled through a RESTful API, and the system includes full form validation and real-time feedback for usability across devices.',
+      'Warehouse & Inventory Management System built with Agile/Scrum: React (Router, BEM/SASS) front end, Node.js/Express & MySQL (Knex) back end, RESTful API, offering CRUD, dynamic search/filter, responsive design, and real-time validation.',
     paragraph2: '',
     paragraph5:
       "When a new warehouse is added, the UI updates dynamically, showing the new warehouse once it's added to the data source. This triggers state changes, re-renders, and actions like form resets. If the data is incomplete or invalid, validation errors may occur. When using MongoDB, an API call stores the data, and the UI fetches the updated list. Incorrect data structure or missing fields may cause errors in the app.",
     paragraph3: '',
     paragraph4: '',
+    list1: [],
+    list2: []
+  },
+
+  // Transportes Moran
+  {
+    imageThumb: '/static/images/transportes-moran-card.jpg',
+    imageUrl: '/static/images/transportes-moran-card.jpg',
+    imageSmall: [
+      '/static/images/transportes-moran-servicios.jpg',
+      '/static/images/transportes-moran-laptop-mockup.png',
+      '/static/images/transportes-moran-laptop-mockup2.png'
+    ],
+    tags: ['Development', 'Design'],
+    title: 'Transportes Moran',
+    subtitle: 'Aggregate Solutions Co.',
+    description:
+      'Reliable Aggregate Manufacturing & Trucking Services for your construction needs.',
+    fullDescription:
+      'This website is a single-page application built with React and styled using SCSS for modular and maintainable styling. The project follows a component-based architecture, using custom components like Navbar, Hero, Projects, and Contact Form to organize and reuse interface elements efficiently. ',
+    buttonText: 'Go to Project',
+    buttonLink: '/projects/2',
+    buttonHref: 'https://www.transportesmoran.cl/',
+    gitHub: 'https://github.com/psyout/transportes-moran',
+    skills: ['React', 'SCSS', 'JavaScript', 'Figma'],
+    imageCaption1:
+      'This website uses a straightforward and lightweight tech stack focused on performance and usability.',
+    imageCaption2:
+      'Use a caption IF the image is needed. Most images won’t BUT you can style like this. Line length should be about 10-12 words on average.',
+    imageCaption3:
+      'A well-designed website interface created using Figma, featuring a clean layout with intuitive navigation and responsive elements that adjust smoothly across different devices. The design includes detailed sections for project descriptions, images, and key skills, providing an engaging user experience.',
+    imageCaption4:
+      'Figma makes mobile-first design simple with grid layouts. Start with a mobile frame, apply a 4–6 column grid, and use consistent spacing. This helps keep layouts clean, readable, and easy to adapt for tablets and desktops. Designing for smaller screens first also forces you to prioritize content and usability.',
+    title1: '',
+    subtitle1: 'Describe a feature or step of the process here.',
+    title2: '',
+    subtitle2: 'Describe a feature or step of the process here.',
+    title3: 'Example Feature',
+    subtitle3: 'Describe a feature or step of the process here.',
+    paragraph1:
+      'The imported data is then mapped over to dynamically generate content within the Slider component, enabling easy display of project information. This method works well for small-scale projects with fixed content but can be extended to fetch dynamic data from an API if necessary.',
+    paragraph2: '',
+    paragraph3: '',
+    paragraph4: '',
+    paragraph5:
+      'The website was built using Sass, leveraging its powerful features like grid layouts and mixins for a more efficient and maintainable design. The grid system ensures a flexible, responsive structure, while the mixins streamline repetitive styles, making the codebase more organized and scalable.',
     list1: [],
     list2: []
   },

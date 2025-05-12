@@ -1,12 +1,24 @@
 'use client'
 
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import { Files } from 'lucide-react'
 import Form from '@/components/ui/form'
 import Link from 'next/link'
 import Social from '@/components/ui/social'
 
 const Contact = () => {
+  const titleRef = useRef<HTMLHeadingElement>(null)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (titleRef.current) {
+        titleRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    }, 200)
+
+    return () => clearTimeout(timer)
+  }, [])
+
   const copyToClipboard = (text: string) => {
     navigator.clipboard
       .writeText(text)
@@ -23,7 +35,7 @@ const Contact = () => {
 
   return (
     <section id='contact' className='container mx-auto max-w-6xl py-20 pt-40'>
-      <h1 className='title mb-10'>Contact Me</h1>
+      <h1 className='title mb-10 scroll-mt-10'>Contact Me</h1>
       <div className='grid grid-cols-1 gap-12 md:grid-cols-2'>
         {/* Contact Info */}
         <div>

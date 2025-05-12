@@ -1,4 +1,6 @@
-import React from 'react'
+'use client'
+
+import React, { useEffect, useRef } from 'react'
 import Head from 'next/head'
 import Resume from '@/components/resume'
 import Image from 'next/image'
@@ -7,18 +9,35 @@ import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 
 const About = () => {
+  const titleRef = useRef<HTMLHeadingElement>(null)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (titleRef.current) {
+        titleRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    }, 200)
+
+    return () => clearTimeout(timer)
+  }, [])
+
   return (
     <div className='container mx-auto max-w-6xl py-40'>
       <Head>
         <title>About Me - Felipe</title>
         <meta
           name='description'
-          content='Learn more about Felipe, a creative and driven developer based in Vancouver.'
+          content='Felipe, a creative and driven developer based in Vancouver.'
         />
       </Head>
       <section className='flex flex-col gap-3 sm:justify-between sm:gap-10 md:flex-row'>
         <div className='flex-1 md:mt-0'>
-          <h1 className='title font-extrabold no-underline'>About Me</h1>
+          <h1
+            ref={titleRef}
+            className='title scroll-mt-10 font-extrabold no-underline'
+          >
+            About Me
+          </h1>
           <p className='text mt-3 max-w-2xl font-light sm:text-lg'>
             I&apos;m driven by a relentless desire to learn and explore novel
             ideas. Presently located in the vibrant city of Vancouver where
@@ -53,7 +72,7 @@ const About = () => {
             alt='Intro Image'
             width={320}
             height={320}
-            className='h-60 w-60 rounded-full object-cover sm:h-72 sm:w-72 md:h-80 md:w-80'
+            className='h-80 w-80 rounded-full object-cover sm:h-72 sm:w-72 md:h-80 md:w-80'
           />
         </div>
       </section>
