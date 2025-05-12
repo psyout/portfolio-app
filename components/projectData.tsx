@@ -76,15 +76,7 @@ export const projects = [
     buttonLink: '/projects/1',
     buttonHref: '',
     gitHub: 'https://github.com/mannyv123/instock-client',
-    skills: [
-      'React.js',
-      'Node',
-      'Express',
-      'MySQL',
-      'Postman',
-      'Figma',
-      'RESTful'
-    ],
+    skills: ['React.js', 'Node', 'Express', 'MySQL', 'Postman', 'Figma'],
     imageCaption1:
       'When a new warehouse is added, the UI automatically updates if the list is rendered dynamically (e.g., using .map()). The new warehouse appears in the list as soon as it’s added to the data source, such as a state variable or database, without needing to reload the page.',
     imageCaption2:
@@ -97,7 +89,7 @@ export const projects = [
       'Warehouse & Inventory Management System built with Agile/Scrum: React (Router, BEM/SASS) front end, Node.js/Express & MySQL (Knex) back end, RESTful API, offering CRUD, dynamic search/filter, responsive design, and real-time validation.',
     paragraph2: '',
     paragraph5:
-      "When a new warehouse is added, the UI updates dynamically, showing the new warehouse once it's added to the data source. This triggers state changes, re-renders, and actions like form resets. If the data is incomplete or invalid, validation errors may occur. When using MongoDB, an API call stores the data, and the UI fetches the updated list. Incorrect data structure or missing fields may cause errors in the app.",
+      "When a new warehouse is added, the UI updates dynamically, showing the new warehouse once it's added to the data source. This triggers state changes, re-renders, and actions like form resets. If the data is incomplete or invalid, validation errors may occur. When using MySQL, an API call stores the data, and the UI fetches the updated list. ",
     paragraph3: '',
     paragraph4: '',
     list1: [],
@@ -211,10 +203,10 @@ export const projects = [
     paragraph1:
       'The front-end structure follows semantic and accessible HTML markup, styled with BEM-named CSS classes compiled into a single stylesheet. The back-end API likely handles GET and POST requests for user-submitted data, enabling dynamic rendering of comments and other interactive elements without relying on a front-end framework.',
     paragraph2: '',
-    paragraph3: '',
-    paragraph4: '',
-    paragraph5:
+    paragraph3:
       'This page is structured with clear, semantic sections that improve readability and maintainability. The shows list is designed as a flexible, responsive layout using CSS Flexbox, allowing each row of show details to adapt smoothly across screen sizes. Instead of relying on a traditional fixed table, the content behaves like a table visually but is more mobile-friendly—Flexbox distributes space evenly, aligns text and buttons neatly, and enables stacking or wrapping of elements for smaller viewports, making the layout more versatile and accessible.',
+    paragraph4: '',
+    paragraph5: '',
     list1: [],
     list2: []
   }

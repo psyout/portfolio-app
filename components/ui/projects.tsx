@@ -24,7 +24,7 @@ export default function ProjectCard({
   return (
     <section id='projects' className='mt-10 w-full scroll-mt-24'>
       <div className='group relative'>
-        <div className='absolute -top-3 left-3 z-10 flex flex-wrap gap-2 font-serif'>
+        <div className='absolute -top-3 left-3 z-10 flex flex-wrap gap-2 font-semibold'>
           {tags.map((tag, index) => {
             const isNew = tag.trim().toLowerCase() === 'new'
             return (
@@ -42,7 +42,7 @@ export default function ProjectCard({
           })}
         </div>
 
-        <div className='card-border group h-60 max-h-50 overflow-hidden md:max-h-40 lg:max-h-50'>
+        <div className='card-border group h-60 max-h-50 overflow-hidden shadow-sm md:max-h-40 lg:max-h-50'>
           <Image
             src={imageThumb}
             alt={title}
@@ -55,7 +55,7 @@ export default function ProjectCard({
 
       <div className='py-4'>
         <h2 className='text text-2xl font-bold'>{title}</h2>
-        <h3 className='text mt-1 text-sm font-normal tracking-wide text-pretty uppercase'>
+        <h3 className='text mt-1 font-serif text-sm font-normal tracking-wide text-pretty uppercase'>
           {subtitle}
         </h3>
         <p className='text sm:text-md mt-3 text-sm font-light text-pretty'>

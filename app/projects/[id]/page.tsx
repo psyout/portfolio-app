@@ -90,7 +90,7 @@ const ProjectPage = () => {
           >
             {project.title}
           </h1>
-          <h4 className='mb-4 text-xl'>{project.subtitle}</h4>
+          <h4 className='mb-4 font-serif text-xl'>{project.subtitle}</h4>
           <p className='text-md mb-6 text-left font-light text-pretty md:justify-end md:text-left lg:w-120'>
             {project.fullDescription}
           </p>
@@ -143,7 +143,7 @@ const ProjectPage = () => {
           layout='intrinsic' // Let the image size adjust to its intrinsic dimensions
           width={1200}
           height={675}
-          className='rounded bg-cover shadow md:h-150'
+          className='rounded bg-cover shadow-md md:h-150'
         />
         <p className='mx-auto mt-5 w-full text-left text-sm font-light md:w-130 md:text-center'>
           {project.imageCaption1}
@@ -179,10 +179,10 @@ const ProjectPage = () => {
             layout='intrinsic' // Let the image size adjust to its intrinsic dimensions
             width={1200}
             height={675}
-            className='rounded bg-cover shadow md:h-150'
+            className='rounded bg-cover shadow-md md:h-150'
           />
         ) : null}
-        <p className='mx-auto mt-5 mb-20 w-full text-left text-sm font-light text-pretty md:w-180 md:text-center'>
+        <p className='text-md mx-auto mt-5 mb-20 w-full text-left font-light text-pretty md:w-180 md:text-center md:text-sm'>
           {project.paragraph5}
         </p>
       </div>
