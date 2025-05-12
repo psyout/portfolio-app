@@ -67,7 +67,7 @@ export const projects = [
     ],
     tags: ['React', 'React Router', 'Express'],
     title: 'Instock Web App',
-    subtitle: 'React-based Inventory Management System',
+    subtitle: 'Inventory Management System',
     description:
       'A modern and scalable Inventory Management System for a client.',
     fullDescription:
@@ -76,7 +76,7 @@ export const projects = [
     buttonLink: '/projects/1',
     buttonHref: '',
     gitHub: 'https://github.com/mannyv123/instock-client',
-    skills: ['React.js', 'Node', 'Express', 'MySQL', 'Postman', 'Figma'],
+    skills: ['React.js', 'Node', 'Express', 'MySQL', 'Figma'],
     imageCaption1:
       'When a new warehouse is added, the UI automatically updates if the list is rendered dynamically (e.g., using .map()). The new warehouse appears in the list as soon as it’s added to the data source, such as a state variable or database, without needing to reload the page.',
     imageCaption2:
@@ -86,7 +86,7 @@ export const projects = [
     imageCaption4:
       'When deleting a product, a common visual error is that the item still appears in the UI even after it is been removed from the backend. This usually happens when the frontend state is not updated correctly after the delete action, or if the product list is not re-fetched to reflect the latest data.',
     paragraph1:
-      'Warehouse & Inventory Management System built with Agile/Scrum: React (Router, BEM/SASS) front end, Node.js/Express & MySQL (Knex) back end, RESTful API, offering CRUD, dynamic search/filter, responsive design, and real-time validation.',
+      'Warehouse & Inventory Management System built with Agile/Scrum: React (Router, BEM/SASS) Front-End, Node.js/Express & MySQL (Knex) back end, RESTful API, offering CRUD, dynamic search/filter, responsive design, and real-time validation.',
     paragraph2: '',
     paragraph5:
       "When a new warehouse is added, the UI updates dynamically, showing the new warehouse once it's added to the data source. This triggers state changes, re-renders, and actions like form resets. If the data is incomplete or invalid, validation errors may occur. When using MySQL, an API call stores the data, and the UI fetches the updated list. ",
@@ -189,7 +189,7 @@ export const projects = [
     description:
       'This website is built using a traditional front-end web development stack.',
     fullDescription:
-      'This is a full-stack website that combines HTML5, CSS, and vanilla JavaScript on the front end. It uses Axios (via CDN) to handle HTTP requests and interacts with a locally hosted Express API to manage features like the comments section.',
+      'This is a full-stack website that combines HTML5, CSS and JavaScript on the Front-End. It uses Axios (via CDN) to handle HTTP requests and interacts with a locally hosted Express API to manage features like the comments section.',
     buttonText: 'Go to Project',
     buttonLink: '/projects/4',
     buttonHref: 'https://felipegonzalez.io/bandsite/',
@@ -203,10 +203,11 @@ export const projects = [
     paragraph1:
       'The front-end structure follows semantic and accessible HTML markup, styled with BEM-named CSS classes compiled into a single stylesheet. The back-end API likely handles GET and POST requests for user-submitted data, enabling dynamic rendering of comments and other interactive elements without relying on a front-end framework.',
     paragraph2: '',
-    paragraph3:
-      'This page is structured with clear, semantic sections that improve readability and maintainability. The shows list is designed as a flexible, responsive layout using CSS Flexbox, allowing each row of show details to adapt smoothly across screen sizes. Instead of relying on a traditional fixed table, the content behaves like a table visually but is more mobile-friendly—Flexbox distributes space evenly, aligns text and buttons neatly, and enables stacking or wrapping of elements for smaller viewports, making the layout more versatile and accessible.',
-    paragraph4: '',
-    paragraph5: '',
+    paragraph3: '',
+    paragraph4:
+      'Instead of relying on a traditional fixed table, the content behaves like a table visually but is more mobile-friendly—Flexbox distributes space evenly, aligns text and buttons neatly, and enables stacking or wrapping of elements for smaller viewports, making the layout more versatile and accessible.',
+    paragraph5:
+      'This page is structured with clear, semantic sections that improve readability and maintainability. The shows list is designed as a flexible, responsive layout using CSS Flexbox, allowing each row of show details to adapt smoothly across screen sizes.',
     list1: [],
     list2: []
   }

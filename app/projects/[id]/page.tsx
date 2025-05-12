@@ -250,7 +250,7 @@ const ProjectPage = () => {
           project.paragraph4) && (
           <>
             {project.paragraph3 && (
-              <p className='text mt-5 text-justify text-pretty md:text-center'>
+              <p className='text mt-5 text-left text-pretty md:text-center'>
                 {project.paragraph3}
               </p>
             )}
@@ -269,7 +269,7 @@ const ProjectPage = () => {
             )}
 
             {project.paragraph4 && (
-              <p className='text mt-10 text-justify text-pretty md:text-center'>
+              <p className='text mt-10 text-left text-pretty md:text-center'>
                 {project.paragraph4}
               </p>
             )}
