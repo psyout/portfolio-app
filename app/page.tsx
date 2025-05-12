@@ -32,8 +32,6 @@ export default function Home() {
           {/* Right: Featured Projects + Skills */}
           <div className='w-full space-y-8 md:w-1/2 md:px-6'>
             <div id='projects' className='scroll-mt-10'>
-              <h2 className='mb-6 text-2xl font-bold'>Featured Projects</h2>
-
               <div className='relative'>
                 {/* Project Cards Grid */}
                 <div

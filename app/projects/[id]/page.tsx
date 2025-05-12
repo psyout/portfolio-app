@@ -91,7 +91,7 @@ const ProjectPage = () => {
             {project.title}
           </h1>
           <h4 className='mb-4 text-xl'>{project.subtitle}</h4>
-          <p className='text-md mb-6 font-light md:justify-end lg:w-120'>
+          <p className='text-md mb-6 text-justify font-light md:justify-end md:text-left lg:w-120'>
             {project.fullDescription}
           </p>
         </div>
@@ -145,13 +145,15 @@ const ProjectPage = () => {
           height={675}
           className='rounded bg-cover shadow md:h-150'
         />
-        <p className='mx-auto mt-5 w-full text-center text-sm font-light md:w-130'>
+        <p className='mx-auto mt-5 w-full text-justify text-sm font-light md:w-130 md:text-center'>
           {project.imageCaption1}
         </p>
 
         {/* Paragraph */}
         <div className='text-md mx-auto my-20 flex w-full flex-col items-center font-light md:w-2/3 md:text-lg'>
-          <p className='text mt-5 text-center'>{project.paragraph1}</p>
+          <p className='text mt-5 text-justify md:text-center'>
+            {project.paragraph1}
+          </p>
           {project.list1 && project.list1.length > 0 && (
             <ul className='ml-5 flex list-disc flex-col py-5'>
               {project.list1.map((item, index) => (
@@ -165,7 +167,9 @@ const ProjectPage = () => {
             </ul>
           )}
 
-          <p className='text mt-5 text-center'>{project.paragraph2}</p>
+          <p className='text mt-5 text-justify text-pretty md:text-center'>
+            {project.paragraph2}
+          </p>
         </div>
 
         {project.imageSmall?.[0] ? (
@@ -178,7 +182,7 @@ const ProjectPage = () => {
             className='rounded bg-cover shadow md:h-150'
           />
         ) : null}
-        <p className='mx-auto mt-5 mb-20 w-full text-center text-sm font-light text-pretty md:w-180'>
+        <p className='mx-auto mt-5 mb-20 w-full text-justify text-sm font-light text-pretty md:w-180 md:text-center'>
           {project.paragraph5}
         </p>
       </div>
@@ -200,7 +204,7 @@ const ProjectPage = () => {
                   width={400}
                   height={100}
                   layout='intrinsic'
-                  className='mb-5 rounded'
+                  className='mb-5 w-50 rounded object-contain md:w-xs'
                 />
               </div>
               <div className='flex flex-col items-center'>
@@ -224,7 +228,7 @@ const ProjectPage = () => {
                   width={400}
                   height={100}
                   layout='intrinsic'
-                  className='mb-5 rounded'
+                  className='mb-5 w-50 rounded object-contain md:w-xs'
                 />
               </div>
               <div className='flex flex-col items-center'>
@@ -246,7 +250,7 @@ const ProjectPage = () => {
           project.paragraph4) && (
           <>
             {project.paragraph3 && (
-              <p className='text mt-5 text-center text-pretty'>
+              <p className='text mt-5 text-justify text-pretty md:text-center'>
                 {project.paragraph3}
               </p>
             )}
@@ -265,7 +269,7 @@ const ProjectPage = () => {
             )}
 
             {project.paragraph4 && (
-              <p className='text mt-5 text-center text-pretty'>
+              <p className='text mt-5 text-justify text-pretty md:text-center'>
                 {project.paragraph4}
               </p>
             )}

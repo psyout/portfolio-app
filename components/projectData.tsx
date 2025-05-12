@@ -4,7 +4,7 @@ export const projects = [
     imageThumb: '/static/images/vansippy-card.jpg',
     imageUrl: '/static/images/vansippy-card.jpg',
     imageSmall: [
-      '/static/images/vansippy-location.png',
+      '/static/images/vansippy-location.jpg',
       '/static/images/vansippy-mobile1.png',
       '/static/images/vansippy-mobile2.png',
       ''
@@ -30,7 +30,7 @@ export const projects = [
     description:
       'Helping deal-seekers around Vancouver find Happy Hours at restaurants and bars close to them.',
     imageCaption1:
-      'This app bridges that gap by bringing all those deals together into one sleek, user-friendly map interface — making it easier to plan your night or stumble into a new favorite spot.',
+      'This app bridges that gap by bringing all those deals together into one sleek, user-friendly map interface, making it easier to plan your night or stumble into a new favorite spot.',
     imageCaption2:
       'Use a caption IF the image is needed. Most images won’t BUT you can style like this. Line length should be about 10-12 words on average.',
     imageCaption3:
@@ -61,8 +61,8 @@ export const projects = [
     imageUrl: '/static/images/transportes-moran-card.jpg',
     imageSmall: [
       '/static/images/transportes-moran-servicios.jpg',
-      '/static/images/transportes-moran-mockup.jpg',
-      '/static/images/transportes-moran-servicios.jpg'
+      '/static/images/transportes-moran-laptop-mockup.png',
+      '/static/images/transportes-moran-laptop-mockup2.png'
     ],
     tags: ['Development', 'Design'],
     title: 'Transportes Moran',
@@ -82,7 +82,8 @@ export const projects = [
       'Use a caption IF the image is needed. Most images won’t BUT you can style like this. Line length should be about 10-12 words on average.',
     imageCaption3:
       'A well-designed website interface created using Figma, featuring a clean layout with intuitive navigation and responsive elements that adjust smoothly across different devices. The design includes detailed sections for project descriptions, images, and key skills, providing an engaging user experience.',
-    imageCaption4: 'Lalala',
+    imageCaption4:
+      'Figma makes mobile-first design simple with grid layouts. Start with a mobile frame, apply a 4–6 column grid, and use consistent spacing. This helps keep layouts clean, readable, and easy to adapt for tablets and desktops. Designing for smaller screens first also forces you to prioritize content and usability.',
     title1: '',
     subtitle1: 'Describe a feature or step of the process here.',
     title2: '',

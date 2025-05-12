@@ -15,7 +15,7 @@ const Nav = () => {
     : 'translate-x-full opacity-0'
 
   return (
-    <nav className='mx-auto flex max-w-7xl items-center justify-between'>
+    <nav className='mx-auto flex max-w-6xl items-center justify-between'>
       {/* Logo */}
       <Link
         href='/'
