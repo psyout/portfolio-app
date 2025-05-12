@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { Button } from './button'
 
 type ProjectCardProps = {
-  imageUrl: string
+  imageThumb: string
   tags: string[]
   title: string
   subtitle: string
@@ -14,7 +14,7 @@ type ProjectCardProps = {
 }
 
 export default function ProjectCard({
-  imageUrl,
+  imageThumb,
   tags,
   title,
   subtitle,
@@ -30,7 +30,7 @@ export default function ProjectCard({
             return (
               <span
                 key={index}
-                className={`card-border px-4 py-2 text-xs ${
+                className={`card-tag px-4 py-2 text-xs ${
                   isNew
                     ? 'bg-amber-300 text-white'
                     : 'bg-[var(--tertiary)] text-[var(--social-color)] dark:bg-[var(--social-color)] dark:text-[var(--text-color)]'
@@ -42,13 +42,13 @@ export default function ProjectCard({
           })}
         </div>
 
-        <div className='card-border group h-48 max-h-50 overflow-hidden md:max-h-40 lg:max-h-50'>
+        <div className='card-border group h-60 max-h-50 overflow-hidden md:max-h-40 lg:max-h-50'>
           <Image
-            src={imageUrl}
+            src={imageThumb}
             alt={title}
             width={800}
-            height={200}
-            className='h-full w-full transform object-cover transition-transform duration-500 ease-in-out group-hover:scale-115'
+            height={300}
+            className='transform object-contain transition-transform duration-500 ease-in-out group-hover:scale-115'
           />
         </div>
       </div>
@@ -63,7 +63,7 @@ export default function ProjectCard({
           asChild
           variant='ghost'
           size='lg'
-          className='button mt-5 rounded-[0.3rem] transition-colors hover:bg-[var(--tertiary)] hover:text-white'
+          className='button mt-5 rounded-[0.3rem] transition-colors hover:bg-[var(--primary)] hover:text-white dark:hover:bg-[var(--button-bg)]'
         >
           <Link href={buttonLink}>Go to Project</Link>
         </Button>

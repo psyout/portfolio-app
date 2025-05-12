@@ -57,11 +57,11 @@ const Skills = () => {
 
         {/* Icons Section */}
         <div className='mt-10'>
-          <ul className='grid grid-cols-4 justify-center gap-6 text-5xl sm:grid-cols-6 sm:text-5xl md:grid-cols-4 lg:grid-cols-6'>
+          <ul className='grid grid-cols-4 justify-center gap-6 text-6xl sm:grid-cols-6 md:grid-cols-4 lg:grid-cols-6'>
             {SkillsIcon.map((Icon, index) => (
               <li
                 key={index}
-                className='transform text-center text-[color:var(--text)] transition-colors duration-300 hover:text-[color:var(--primary)]'
+                className='skills transform text-center transition-colors duration-300 hover:text-[color:var(--primary)]'
               >
                 <Icon />
               </li>

@@ -26,7 +26,7 @@ const Social: React.FC<SocialProps> = ({
           href={item.href}
           target='_blank'
           rel='noopener noreferrer'
-          className={`flex h-11 w-11 items-center justify-center rounded-full font-semibold transition-colors duration-200 ${color} ${backgroundColor} ${hoverBackgroundColor} ${hoverColor}`}
+          className={`flex h-11 w-11 items-center justify-center rounded-full font-semibold transition-colors duration-200 ${color} ${backgroundColor} ${hoverBackgroundColor} ${hoverColor} dark:hover:bg-[var(--button-bg)]`}
         >
           {item.name}
         </a>

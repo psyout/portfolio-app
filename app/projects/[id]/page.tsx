@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
-import { notFound } from 'next/navigation'
+// import { notFound } from 'next/navigation'
 
 import { Button } from '@/components/ui/button'
 import { TbBrandGithub } from 'react-icons/tb'
@@ -22,7 +22,11 @@ interface Project {
   buttonLink: string
   buttonText?: string
   buttonVisit?: string
+  buttonHref?: string
+  gitHub?: string
   imageUrl: string
+  imageThumb: string
+  imageSmall?: string[]
   imageCaption1?: string
   imageCaption2?: string
   imageCaption3?: string
@@ -31,7 +35,8 @@ interface Project {
   paragraph2?: string
   paragraph3?: string
   paragraph4?: string
-  list1?: string[]
+  paragraph5?: string
+  list1?: { title: string; description?: string }[]
   list2?: string[]
   title1?: string
   title2?: string
@@ -62,9 +67,16 @@ const ProjectPage = () => {
     setVisibleCount(prevCount => prevCount + 2)
   }
 
-  if (isNaN(index) || index < 0 || index >= projects.length) {
-    return notFound()
+  const handleClick = event => {
+    if (!project.buttonHref || project.buttonHref === '#') {
+      event.preventDefault()
+      alert('No site available.')
+    }
   }
+
+  // if (isNaN(index) || index < 0 || index >= projects.length) {
+  //   return notFound()
+  // }
 
   const project: Project = projects[index]
 
@@ -87,11 +99,13 @@ const ProjectPage = () => {
 
         {/* Skills */}
         {project.skills && (
-          <section className='mb-8 md:mt-23 md:flex-1'>
+          <section className='mb-8 md:mt-24 md:flex-1'>
             <h3 className='logo mb-2 text-xl font-semibold'>Skills Used</h3>
-            <ul className='flex list-inside gap-3 space-y-1'>
+            <ul className='flex list-inside'>
               {project.skills.map((skill, index) => (
-                <li key={index}>{skill}</li>
+                <li className='flex items-center' key={index}>
+                  {skill} <span className='span text-3xl'>・</span>
+                </li>
               ))}
             </ul>
           </section>
@@ -104,15 +118,19 @@ const ProjectPage = () => {
           asChild
           variant='ghost'
           size='lg'
-          className='button w-1/3 cursor-pointer rounded-[0.3rem] px-6 py-4 transition-colors hover:bg-[var(--tertiary)] hover:text-white md:w-1/6'
+          className='button w-1/3 cursor-pointer rounded-[0.3rem] px-6 py-4 hover:bg-[var(--primary)] hover:text-white md:w-1/6 dark:hover:bg-[var(--button-bg)]'
         >
-          <Link href={project.buttonLink}>
+          <Link
+            href={project.buttonHref || '#'}
+            target='_blank'
+            onClick={handleClick}
+          >
             {project.buttonVisit || 'View Site'}
           </Link>
         </Button>
 
-        <Link href='https://github.com/psyout' target='_blank'>
-          <TbBrandGithub className='p-1.5 text-5xl transition-all hover:rounded-full hover:bg-gray-200 dark:hover:bg-gray-700' />
+        <Link href={project.gitHub || '#'} target='_blank'>
+          <TbBrandGithub className='p-1.5 text-5xl transition-all hover:rounded-full hover:bg-[var(--tertiary)] hover:text-[var(--button-text)]' />
         </Link>
       </div>
 
@@ -121,56 +139,133 @@ const ProjectPage = () => {
         <Image
           src={project.imageUrl}
           alt={project.title}
+          layout='intrinsic' // Let the image size adjust to its intrinsic dimensions
           width={1200}
-          height={700}
-          className='h-70 rounded bg-cover shadow md:h-150'
+          height={675}
+          className='rounded bg-cover shadow md:h-150'
         />
-        <p className='mx-auto mt-5 w-full text-center text-sm font-light md:w-120'>
+        <p className='mx-auto mt-5 w-full text-center text-sm font-light md:w-130'>
           {project.imageCaption1}
         </p>
 
         {/* Paragraph */}
-        <div className='text-md mx-auto my-20 w-full font-light md:w-1/2 md:text-lg'>
+        <div className='text-md \\ mx-auto my-20 w-full font-light md:w-2/3 md:text-lg'>
           <p className='text mt-5'>{project.paragraph1}</p>
           <ul className='ml-5 list-inside list-disc py-5'>
-            {project.list1?.map((list, index) => <li key={index}>{list}</li>)}
+            {project.list1?.map((item, index) => (
+              <li key={index}>
+                {typeof item === 'string' ? (
+                  item
+                ) : (
+                  <>
+                    <span className='font-semibold'>{item.title}</span>
+                    {item.description && ` – ${item.description}`}
+                  </>
+                )}
+              </li>
+            ))}
           </ul>
-          <p className='text mt-5'>
-            Vestibulum faucibus eu orci ut ullamcorper duis tortor rhoncus nam.
-            Velit viverra cras gravida ornare turpis commodo placerat.
-          </p>
+
+          <p className='text mt-5'>{project.paragraph2}</p>
         </div>
+
+        {project.imageSmall?.[2] ? (
+          <Image
+            src={project.imageSmall[2]}
+            alt={project.title}
+            layout='intrinsic' // Let the image size adjust to its intrinsic dimensions
+            width={1200}
+            height={675}
+            className='rounded bg-cover shadow md:h-150'
+          />
+        ) : null}
+        <p className='mx-auto mt-5 mb-20 w-full text-center text-sm font-light md:w-180'>
+          {project.paragraph5}
+        </p>
       </div>
 
       {/* Features Section */}
-      <section className='mt-10 space-y-15 md:flex md:gap-10'>
-        {[project.imageCaption3, project.imageCaption4].map((caption, i) => (
-          <div key={i}>
+      {/* Features Section */}
+      <section className='flex flex-col md:flex-row md:gap-10'>
+        {/* First Image Block */}
+        <div className='mb-10 flex flex-col items-center md:mb-0 md:w-1/2'>
+          <div className='flex gap-5'>
             <Image
-              src='https://picsum.photos/200/300'
-              alt={`Feature ${i + 1}`}
-              width={1000}
-              height={600}
-              className='h-60 rounded shadow'
+              src={project.imageSmall?.[3] || ''}
+              alt='Feature 1'
+              width={400}
+              height={100}
+              layout='intrinsic'
+              className='mb-10 rounded'
             />
-            <h4 className='subtitle mt-4 text-xl font-semibold'>
-              Example Feature
-            </h4>
-            <p className='text-md font-light'>{caption}</p>
           </div>
-        ))}
+          <div className='flex flex-col items-center'>
+            <h4 className='subtitle text-xl font-semibold'>{project.title1}</h4>
+            <p className='text-md max-w-130 text-center font-light md:max-w-7/8'>
+              {project.imageCaption3}
+            </p>
+          </div>
+        </div>
+
+        {/* Second Image Block */}
+        <div className='flex flex-col items-center md:w-1/2'>
+          <div className='flex gap-5'>
+            <Image
+              src={project.imageSmall?.[4] || ''}
+              alt=''
+              width={400}
+              height={100}
+              layout='intrinsic'
+              className='mb-5 rounded md:mb-10'
+            />
+          </div>
+          <div className='flex flex-col items-center'>
+            <h4 className='subtitle text-xl font-semibold'>{project.title2}</h4>
+            <p className='text-md max-w-130 text-center font-light md:max-w-7/8'>
+              {project.imageCaption4}
+            </p>
+          </div>
+        </div>
       </section>
 
-      {/* Repeat Paragraph */}
-      <div className='text-md mx-auto my-20 w-full font-light md:w-1/2 md:text-lg'>
-        <p className='text mt-5'>{project.paragraph1}</p>
-        <ul className='ml-5 list-inside list-disc py-5'>
-          {project.list1?.map((list, index) => <li key={index}>{list}</li>)}
-        </ul>
-        <p className='text mt-5'>
-          Vestibulum faucibus eu orci ut ullamcorper duis tortor rhoncus nam.
-          Velit viverra cras gravida ornare turpis commodo placerat.
-        </p>
+      <div className='text-md mx-auto my-30 w-full font-light md:w-2/3 md:text-lg'>
+        {(project.paragraph3 ||
+          project.list1?.length ||
+          project.paragraph4) && (
+          <>
+            {project.paragraph3 && (
+              <p className='text mt-5'>{project.paragraph3}</p>
+            )}
+
+            {project.list1 && project.list1.length > 0 && (
+              <ul className='ml-5 hidden list-inside list-disc py-5'>
+                {project.list1.map((item, index) => (
+                  <li key={index}>
+                    {typeof item === 'string' ? (
+                      item
+                    ) : (
+                      <>
+                        {item.title}
+                        {item.description && (
+                          <>
+                            {' – '}
+                            <span className='font-semibold'>
+                              {item.description}
+                            </span>
+                          </>
+                        )}
+                      </>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            {project.paragraph4 && (
+              <p className='text mt-5'>{project.paragraph4}</p>
+            )}
+          </>
+        )}
       </div>
 
       <hr className='mt-10' />
@@ -192,7 +287,7 @@ const ProjectPage = () => {
               .map((project, i) => (
                 <div key={i}>
                   <ProjectCard
-                    imageUrl={project.imageUrl}
+                    imageThumb={project.imageUrl}
                     tags={project.tags}
                     title={project.title}
                     subtitle={project.subtitle}
@@ -221,7 +316,7 @@ const ProjectPage = () => {
             <Button
               variant='ghost'
               size='lg'
-              className='button mt-5 rounded-[0.3rem] transition-colors hover:bg-[var(--tertiary)] hover:text-white'
+              className='button mt-5 cursor-pointer rounded-[0.3rem] transition-colors hover:bg-[var(--primary)] hover:text-white dark:hover:bg-[var(--button-bg)]'
               onClick={handleLoadMore}
             >
               Load more

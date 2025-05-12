@@ -64,6 +64,8 @@
     --iconColor: #455d7a;
     --highlight-color: hsl(230, 34%, 53%);
     --span: hsl(187, 100%, 40%);
+    --button-text: hsl(0, 0%, 99%);
+    --button-bg: hsl(142.1 76.2% 36.3%);
   }
 
   .dark {
@@ -72,15 +74,17 @@
     --foreground: 210 20% 98%;
     --card: 224 71.4% 4.1%;
     --card-foreground: 210 20% 98%;
-    --primary: 263.4 70% 50.4%;
+    --primary: hsl(0, 0%, 95%);
     --primary-foreground: 210 20% 98%;
     --secondary: 215 27.9% 16.9%;
     --secondary-foreground: 210 20% 98%;
-    --tertiary: hsl(0, 0%, 57%);
+    --tertiary: hsl(0, 0%, 95%);
     --iconColor: #81e6d9;
     --social-color: #8b8b8b;
     --title-color: hsl(0, 0%, 100%);
     --highlight-color: #fcfcfc;
+    --button-text: #454545;
+    --button-bg: hsl(142.1 76.2% 36.3%);
   }
 }
 
@@ -102,6 +106,14 @@
   .title {
     @apply font-sans text-4xl font-bold decoration-2 sm:text-4xl;
     color: var(--highlight-color); /* Use the custom title color */
+  }
+
+  .button {
+    background-color: var(--text-color);
+    color: var(--button-text);
+    transition:
+      background-color 0.3s,
+      color 0.3s;
   }
 
   .subtitle {
@@ -127,9 +139,13 @@
     color: var(--primary);
   }
 
-  .button {
-    background-color: var(--text-color);
-    color: var(--social-color);
+  .skills {
+    @apply sm:text-5xl;
+    color: var(--text-color);
+  }
+
+  li:last-child .span {
+    visibility: hidden;
   }
 
   .input {
@@ -139,6 +155,11 @@
   }
 
   .card-border {
+    border-radius: 0.3rem;
+    /* border: solid 1px #454545; */
+  }
+
+  .card-tag {
     border-radius: 0.3rem;
   }
 

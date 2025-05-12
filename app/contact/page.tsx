@@ -59,7 +59,7 @@ const Contact = () => {
               <h3 className='text text-lg font-bold'>Social</h3>
               <Social
                 backgroundColor='bg-[var(--primary)]'
-                color='text-white'
+                color='text-[var(--button-text)]'
                 hoverBackgroundColor='hover:bg-green-900'
                 hoverColor='hover:text-white'
               />

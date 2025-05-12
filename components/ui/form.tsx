@@ -29,7 +29,7 @@ const Form = () => {
         asChild
         variant='ghost'
         size='lg'
-        className='button mt-5 w-1/3 cursor-pointer rounded-[0.3rem] px-6 py-4 transition-colors hover:bg-[var(--tertiary)] hover:text-white'
+        className='button mt-5 w-1/3 cursor-pointer rounded-[0.3rem] px-6 py-4 transition-colors hover:bg-[var(--primary)] hover:text-white dark:hover:bg-[var(--button-bg)]'
       >
         <Link href={'./'}>Send</Link>
       </Button>
