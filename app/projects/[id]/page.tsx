@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
-// import { notFound } from 'next/navigation'
+import { notFound } from 'next/navigation'
 
 import { Button } from '@/components/ui/button'
 import { TbBrandGithub } from 'react-icons/tb'
@@ -73,9 +73,9 @@ const ProjectPage = () => {
     }
   }
 
-  // if (isNaN(index) || index < 0 || index >= projects.length) {
-  //   return notFound()
-  // }
+  if (isNaN(index) || index < 0 || index >= projects.length) {
+    return notFound()
+  }
 
   const project: Project = projects[index]
 
@@ -168,9 +168,9 @@ const ProjectPage = () => {
           <p className='text mt-5'>{project.paragraph2}</p>
         </div>
 
-        {project.imageSmall?.[2] ? (
+        {project.imageSmall?.[0] ? (
           <Image
-            src={project.imageSmall[2]}
+            src={project.imageSmall[0]}
             alt={project.title}
             layout='intrinsic' // Let the image size adjust to its intrinsic dimensions
             width={1200}
@@ -189,14 +189,16 @@ const ProjectPage = () => {
         {/* First Image Block */}
         <div className='mb-10 flex flex-col items-center md:mb-0 md:w-1/2'>
           <div className='flex gap-5'>
-            <Image
-              src={project.imageSmall?.[3] || ''}
-              alt='Feature 1'
-              width={400}
-              height={100}
-              layout='intrinsic'
-              className='mb-10 rounded'
-            />
+            {project.imageSmall?.[1] ? (
+              <Image
+                src={project.imageSmall[1]}
+                alt='Feature 1'
+                width={400}
+                height={100}
+                layout='intrinsic'
+                className='mb-10 rounded'
+              />
+            ) : null}
           </div>
           <div className='flex flex-col items-center'>
             <h4 className='subtitle text-xl font-semibold'>{project.title1}</h4>
@@ -209,14 +211,16 @@ const ProjectPage = () => {
         {/* Second Image Block */}
         <div className='flex flex-col items-center md:w-1/2'>
           <div className='flex gap-5'>
-            <Image
-              src={project.imageSmall?.[4] || ''}
-              alt=''
-              width={400}
-              height={100}
-              layout='intrinsic'
-              className='mb-5 rounded md:mb-10'
-            />
+            {project.imageSmall?.[2] ? (
+              <Image
+                src={project.imageSmall[2]}
+                alt='Feature 2'
+                width={400}
+                height={100}
+                layout='intrinsic'
+                className='mb-5 rounded md:mb-10'
+              />
+            ) : null}
           </div>
           <div className='flex flex-col items-center'>
             <h4 className='subtitle text-xl font-semibold'>{project.title2}</h4>
