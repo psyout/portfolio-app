@@ -100,9 +100,9 @@ const ProjectPage = () => {
         {project.skills && (
           <section className='mb-8 md:mt-24 md:flex-1'>
             <h3 className='logo mb-2 text-xl font-semibold'>Skills Used</h3>
-            <ul className='flex list-inside'>
+            <ul className='flex list-inside flex-wrap'>
               {project.skills.map((skill, index) => (
-                <li className='flex items-center' key={index}>
+                <li className='mr-2 mb-2 flex items-center' key={index}>
                   {skill} <span className='span text-3xl'>・</span>
                 </li>
               ))}
