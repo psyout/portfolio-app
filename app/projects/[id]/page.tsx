@@ -37,7 +37,7 @@ interface Project {
   paragraph4?: string
   paragraph5?: string
   list1?: { title: string; description?: string }[]
-  list2?: string[]
+  list2?: { title: string; description?: string }[]
   title1?: string
   title2?: string
   title3?: string
@@ -66,10 +66,9 @@ const ProjectPage = () => {
   const handleLoadMore = () => {
     setVisibleCount(prevCount => prevCount + 2)
   }
-
-  const handleClick = event => {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     if (!project.buttonHref || project.buttonHref === '#') {
-      event.preventDefault()
+      e.preventDefault()
       alert('No site available.')
     }
   }
