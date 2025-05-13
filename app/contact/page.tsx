@@ -52,8 +52,8 @@ const Contact = () => {
             <div className='flex flex-col'>
               <h3 className='text text-lg font-bold'>Email</h3>
               <div className='flex gap-3'>
-                <Link className='text' href='mailto:hello@felipegonzalez.io'>
-                  hello@felipegonzalez.io
+                <Link className='text' href='mailto:hello@felipegonzalez.dev'>
+                  hello@felipegonzalez.dev
                 </Link>
                 {copied === 'hello@felipegonzalez.io' ? (
                   <CircleCheck
