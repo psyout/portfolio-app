@@ -15,7 +15,7 @@ export default function ThemeToggle() {
 
   return (
     <Button
-      className='z-100 mr-1 transition-all hover:rounded-full hover:bg-gray-200 dark:hover:bg-gray-700'
+      className='z-100 mr-1 cursor-pointer transition-all hover:rounded-full hover:bg-gray-200 dark:hover:bg-gray-700'
       variant='ghost'
       size='icon'
       onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}

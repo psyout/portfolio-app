@@ -1,6 +1,8 @@
 export const projects = [
   // Vansippy
   {
+    id: 'vansippy',
+    slug: 'vansippy',
     imageThumb: '/static/images/vansippy-card.jpg',
     imageUrl: '/static/images/vansippy-card.jpg',
     imageSmall: [
@@ -50,13 +52,15 @@ export const projects = [
     buttonText: 'Go to Project',
     gitHub: 'https://github.com/psyout/capstone-client',
     buttonVisit: 'View Site',
-    buttonLink: '/projects/0',
+    buttonLink: '/projects/vasippy',
     buttonHref: 'https://vansippy.com/',
     skills: ['React.js', 'MongoDB', 'MaterialUI']
   },
 
   // Instock App
   {
+    id: 'instock',
+    slug: 'instock',
     imageThumb: '/static/images/instock-card.jpg',
     imageUrl: '/static/images/instock-card.jpg',
     imageSmall: [
@@ -98,6 +102,8 @@ export const projects = [
 
   // Transportes Moran
   {
+    id: 'transportes-moran',
+    slug: 'transportes-moran',
     imageThumb: '/static/images/transportes-moran-card.jpg',
     imageUrl: '/static/images/transportes-moran-card.jpg',
     imageSmall: [
@@ -144,6 +150,8 @@ export const projects = [
 
   // BrainFlix
   {
+    id: 'brainflix',
+    slug: 'brainflix',
     imageThumb: '/static/images/brainflix.jpg',
     imageUrl: '/static/images/brainflix.jpg',
     imageSmall: [
@@ -180,6 +188,8 @@ export const projects = [
 
   // Bandsite Web
   {
+    id: 'bandsite',
+    slug: 'bandsite',
     imageThumb: '/static/images/bandsite.jpg',
     imageUrl: '/static/images/bandsite.jpg',
     imageSmall: ['/static/images/bandsite-shows.jpg', '', ''],

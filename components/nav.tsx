@@ -19,12 +19,14 @@ const Nav = () => {
     <nav className='mx-auto flex max-w-6xl items-center justify-between'>
       {/* Logo */}
       <Link
+        title='Home'
+        aria-label='Home'
         href='/'
         onClick={closeMenu}
         className={`logo ${menuOpen ? 'relative z-50' : ''}`}
       >
         <LogoIcon
-          aria-label='Logo'
+          aria-label='Home'
           className='h-16 w-16'
           fill='var(--highlight-color)' // Change color using fill
         />
