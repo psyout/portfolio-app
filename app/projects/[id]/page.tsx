@@ -90,8 +90,8 @@ const ProjectPage = () => {
           >
             {project.title}
           </h1>
-          <h4 className='mb-4 font-serif text-xl'>{project.subtitle}</h4>
-          <p className='text-md mb-6 text-left font-light text-pretty md:justify-end md:text-left lg:w-120'>
+          <h4 className='mb-4 text-xl'>{project.subtitle}</h4>
+          <p className='text-md mb-6 text-justify font-light md:justify-end md:text-left lg:w-120'>
             {project.fullDescription}
           </p>
         </div>
@@ -143,19 +143,19 @@ const ProjectPage = () => {
           layout='intrinsic' // Let the image size adjust to its intrinsic dimensions
           width={1200}
           height={675}
-          className='rounded bg-cover shadow-md md:h-150'
+          className='rounded bg-cover shadow md:h-150'
         />
-        <p className='mx-auto mt-5 w-full text-left text-sm font-light md:w-130 md:text-center'>
+        <p className='mx-auto mt-5 w-full text-justify text-sm font-light md:w-130 md:text-center'>
           {project.imageCaption1}
         </p>
 
         {/* Paragraph */}
         <div className='text-md mx-auto my-20 flex w-full flex-col items-center font-light md:w-2/3 md:text-lg'>
-          <p className='text mt-5 text-left md:text-center'>
+          <p className='text mt-5 text-justify md:text-center'>
             {project.paragraph1}
           </p>
           {project.list1 && project.list1.length > 0 && (
-            <ul className='ml-5 flex list-disc flex-col py-8'>
+            <ul className='ml-5 flex list-disc flex-col py-5'>
               {project.list1.map((item, index) => (
                 <li key={index}>
                   <span className='font-semibold'>
@@ -167,7 +167,7 @@ const ProjectPage = () => {
             </ul>
           )}
 
-          <p className='text mt-5 text-left text-pretty md:text-center'>
+          <p className='text mt-5 text-justify text-pretty md:text-center'>
             {project.paragraph2}
           </p>
         </div>
@@ -179,10 +179,10 @@ const ProjectPage = () => {
             layout='intrinsic' // Let the image size adjust to its intrinsic dimensions
             width={1200}
             height={675}
-            className='rounded bg-cover shadow-md md:h-150'
+            className='rounded bg-cover shadow md:h-150'
           />
         ) : null}
-        <p className='text-md mx-auto mt-5 mb-20 w-full text-left font-light text-pretty md:w-180 md:text-center md:text-sm'>
+        <p className='mx-auto mt-5 mb-20 w-full text-justify text-sm font-light text-pretty md:w-180 md:text-center'>
           {project.paragraph5}
         </p>
       </div>
@@ -204,7 +204,7 @@ const ProjectPage = () => {
                   width={400}
                   height={100}
                   layout='intrinsic'
-                  className='mb-5 w-80 rounded object-contain md:w-xs'
+                  className='mb-5 w-50 rounded object-contain md:w-xs'
                 />
               </div>
               <div className='flex flex-col items-center'>
@@ -228,7 +228,7 @@ const ProjectPage = () => {
                   width={400}
                   height={100}
                   layout='intrinsic'
-                  className='mb-5 w-80 rounded object-contain md:w-xs'
+                  className='mb-5 w-60 rounded object-contain md:w-xs'
                 />
               </div>
               <div className='flex flex-col items-center'>
@@ -250,7 +250,7 @@ const ProjectPage = () => {
           project.paragraph4) && (
           <>
             {project.paragraph3 && (
-              <p className='text mt-5 text-left text-pretty md:text-center'>
+              <p className='text mt-5 text-justify text-pretty md:text-center'>
                 {project.paragraph3}
               </p>
             )}
@@ -269,7 +269,7 @@ const ProjectPage = () => {
             )}
 
             {project.paragraph4 && (
-              <p className='text mt-10 text-left text-pretty md:text-center'>
+              <p className='text mt-5 text-justify text-pretty md:text-center'>
                 {project.paragraph4}
               </p>
             )}
@@ -281,13 +281,13 @@ const ProjectPage = () => {
 
       {/* Sneak Peek Section */}
       <div className='mt-10 w-full'>
-        <h2 className='title mb-6 text-2xl font-bold'>Browse Other Projects</h2>
+        <h2 className='mb-6 text-2xl font-bold'>Browse Other Projects</h2>
 
         {/* Sneak Peek Wrapper */}
         <div className='relative'>
           {/* Cards Container - initially limited height */}
           <div
-            className={`grid grid-cols-1 gap-x-50 gap-y-10 transition-all duration-500 md:grid-cols-2 ${
+            className={`grid grid-cols-1 gap-10 transition-all duration-500 md:grid-cols-2 ${
               visibleCount === 2 ? 'max-h-[600px] overflow-hidden' : ''
             }`}
           >
