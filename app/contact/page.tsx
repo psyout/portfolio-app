@@ -5,22 +5,28 @@ import { Files, CircleCheck } from 'lucide-react' // Import the Check icon
 import Form from '@/components/ui/form'
 import Link from 'next/link'
 import Social from '@/components/ui/social'
+import { usePathname } from 'next/navigation'
 
 const Contact = () => {
   const [copied, setCopied] = useState<string | null>(null) // Track which item was copied
-
   const titleRef = useRef<HTMLHeadingElement>(null)
+  const pathname = usePathname()
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      if (titleRef.current) {
-        titleRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      }
-    }, 200)
+    // Only scroll to the title if the current route is "/contact"
+    if (pathname === '/contact') {
+      const timer = setTimeout(() => {
+        if (titleRef.current) {
+          titleRef.current.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          })
+        }
+      }, 200)
 
-    return () => clearTimeout(timer)
-  }, [])
-
+      return () => clearTimeout(timer)
+    }
+  }, [pathname])
   const copyToClipboard = (text: string) => {
     navigator.clipboard
       .writeText(text)
@@ -35,7 +41,9 @@ const Contact = () => {
 
   return (
     <section id='contact' className='container mx-auto max-w-6xl py-20 pt-40'>
-      <h1 className='title mb-10 scroll-mt-10'>Contact Me</h1>
+      <h1 ref={titleRef} className='title mb-10 scroll-mt-10'>
+        Contact Me
+      </h1>
       <div className='grid grid-cols-1 gap-12 md:grid-cols-2'>
         {/* Contact Info */}
         <div>
@@ -50,13 +58,13 @@ const Contact = () => {
                 {copied === 'hello@felipegonzalez.io' ? (
                   <CircleCheck
                     aria-label='Copied'
-                    className='z-100 text-[var(--primary)]'
+                    className='text-[var(--primary)]'
                   />
                 ) : (
                   <Files
                     onClick={() => copyToClipboard('hello@felipegonzalez.io')}
                     aria-label='Copy email'
-                    className='z-100 scale-150 cursor-pointer rounded-full py-1 transition-all hover:rounded-full hover:bg-gray-200 dark:hover:bg-gray-700'
+                    className='scale-150 cursor-pointer rounded-full py-1 transition-all hover:rounded-full hover:bg-gray-200 dark:hover:bg-gray-700'
                   />
                 )}
               </div>
@@ -72,13 +80,13 @@ const Contact = () => {
                 {copied === '+17786977909' ? (
                   <CircleCheck
                     aria-label='Copied'
-                    className='z-100 text-[var(--primary)]'
+                    className='text-[var(--primary)]'
                   />
                 ) : (
                   <Files
                     onClick={() => copyToClipboard('+17786977909')}
                     aria-label='Copy phone number'
-                    className='z-100 scale-150 cursor-pointer rounded-full py-1 transition-all hover:rounded-full hover:bg-gray-200 dark:hover:bg-gray-700'
+                    className='scale-150 cursor-pointer rounded-full py-1 transition-all hover:rounded-full hover:bg-gray-200 dark:hover:bg-gray-700'
                   />
                 )}
               </div>
@@ -96,8 +104,6 @@ const Contact = () => {
             </div>
           </div>
         </div>
-
-        {/* Contact Form */}
         <Form />
       </div>
     </section>

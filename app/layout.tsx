@@ -19,8 +19,8 @@ const aleo = Aleo({
   weight: '400'
 })
 export const metadata: Metadata = {
-  title: 'Felipe',
-  description: "Felipe's personal website",
+  title: 'Felipe Gonzalez Front-End Developer',
+  description: 'Crafting digital experiences',
   icons: {
     icon: '/favicon.ico'
   }
