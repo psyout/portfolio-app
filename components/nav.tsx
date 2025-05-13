@@ -25,7 +25,7 @@ const Nav = () => {
       >
         <LogoIcon
           aria-label='Logo'
-          className='h-18 w-18'
+          className='h-16 w-16'
           fill='var(--highlight-color)' // Change color using fill
         />
         <span className='sr-only'>Felipe Gonzalez</span>
