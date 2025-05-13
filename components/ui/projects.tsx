@@ -46,6 +46,7 @@ export default function ProjectCard({
           <Image
             src={imageThumb}
             alt={title}
+            priority
             width={800}
             height={300}
             className='transform object-contain transition-transform duration-500 ease-in-out group-hover:scale-115'

@@ -20,7 +20,7 @@ const aleo = Aleo({
 })
 export const metadata: Metadata = {
   title: 'Felipe Gonzalez Front-End Developer',
-  description: 'Crafting digital experiences',
+  description: 'Helping you look good on the internet',
   icons: {
     icon: '/favicon.ico'
   }

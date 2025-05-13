@@ -16,24 +16,20 @@ import { links } from '@/components/links'
 
 export default function Home() {
   const [visibleCount, setVisibleCount] = useState(2)
-
   const handleLoadMore = () => setVisibleCount(prev => prev + 2)
 
   return (
     <main className='pb-10'>
       <div className='container mx-auto max-w-6xl pt-40'>
         <section className='flex flex-col gap-20 border-b md:flex-row md:items-start'>
-          {/* Left: Intro + Anchor */}
           <div className='w-full space-y-8 md:w-1/2'>
             <Intro />
             <Anchor links={links} />
           </div>
 
-          {/* Right: Featured Projects + Skills */}
           <div className='w-full space-y-8 md:w-1/2 md:px-6'>
             <div id='projects' className='scroll-mt-10'>
               <div className='relative'>
-                {/* Project Cards Grid */}
                 <div
                   className={`grid grid-cols-1 gap-10 transition-all duration-500 md:grid-cols-1 ${
                     visibleCount === 2 ? 'max-h-[600px] overflow-hidden' : ''

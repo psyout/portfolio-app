@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -12,43 +12,9 @@ import { TbBrandGithub } from 'react-icons/tb'
 import { projects } from '../../../components/projectData'
 import ProjectCard from '@/components/ui/projects'
 
-interface Project {
-  title: string
-  subtitle: string
-  description: string
-  fullDescription?: string
-  tags: string[]
-  skills?: string[]
-  buttonLink: string
-  buttonText?: string
-  buttonVisit?: string
-  buttonHref?: string
-  gitHub?: string
-  imageUrl: string
-  imageThumb: string
-  imageSmall?: string[]
-  imageCaption1?: string
-  imageCaption2?: string
-  imageCaption3?: string
-  imageCaption4?: string
-  paragraph1?: string
-  paragraph2?: string
-  paragraph3?: string
-  paragraph4?: string
-  paragraph5?: string
-  list1?: { title: string; description?: string }[]
-  list2?: { title: string; description?: string }[]
-  title1?: string
-  title2?: string
-  title3?: string
-  subtitle1?: string
-  subtitle2?: string
-  subtitle3?: string
-}
-
 const ProjectPage = () => {
+  // Scroll to the title after a short delay
   const titleRef = useRef<HTMLHeadingElement>(null)
-
   useEffect(() => {
     const timer = setTimeout(() => {
       if (titleRef.current) {
@@ -59,25 +25,35 @@ const ProjectPage = () => {
     return () => clearTimeout(timer)
   }, [])
 
+  // Get the slug from the URL
   const params = useParams()
-  const index = parseInt(params?.id as string)
+  const slug = params?.slug // Use slug from the URL
+
+  // State to manage the number of visible projects
   const [visibleCount, setVisibleCount] = useState(2)
 
+  // Find the project by slug
+  const project = projects.find(p => p.slug === slug)
+
+  if (!project) {
+    return notFound() // Show a 404 page if the project is not found
+  }
+
+  // Handle loading more projects
+  // This function increases the number of visible projects by 2
+  // and is called when the "Load more" button is clicked
   const handleLoadMore = () => {
     setVisibleCount(prevCount => prevCount + 2)
   }
+
+  // Handle click event for the button
+  // This function checks if the button link is valid
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     if (!project.buttonHref || project.buttonHref === '#') {
       e.preventDefault()
       alert('No site available.')
     }
   }
-
-  if (isNaN(index) || index < 0 || index >= projects.length) {
-    return notFound()
-  }
-
-  const project: Project = projects[index]
 
   return (
     <section className='text mx-auto max-w-6xl py-40'>
@@ -141,6 +117,7 @@ const ProjectPage = () => {
           src={project.imageUrl}
           alt={project.title}
           layout='intrinsic' // Let the image size adjust to its intrinsic dimensions
+          priority
           width={1200}
           height={675}
           className='rounded bg-cover shadow md:h-150'
@@ -187,7 +164,6 @@ const ProjectPage = () => {
         </p>
       </div>
 
-      {/* Features Section */}
       {/* Features Section */}
       {(project.imageSmall?.[1] ||
         project.imageSmall?.[2] ||
@@ -292,7 +268,7 @@ const ProjectPage = () => {
             }`}
           >
             {projects
-              .filter((_, i) => i !== index)
+              .filter((_, i) => i !== projects.findIndex(p => p.slug === slug))
               .map((project, i) => (
                 <div key={i}>
                   <ProjectCard

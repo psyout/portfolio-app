@@ -52,7 +52,7 @@ export const projects = [
     buttonText: 'Go to Project',
     gitHub: 'https://github.com/psyout/capstone-client',
     buttonVisit: 'View Site',
-    buttonLink: '/projects/01',
+    buttonLink: '/projects/vansippy',
     buttonHref: 'https://vansippy.com/',
     skills: ['React.js', 'MongoDB', 'MaterialUI']
   },
@@ -77,7 +77,7 @@ export const projects = [
     fullDescription:
       'The InStock project was developed during a web development bootcamp as a collaborative group project. The goal was to deliver a modern and scalable Inventory Management System for a client. The project required working as an Agile team, following Scrum methodologies and using tools like JIRA, Figma, and Git/GitHub for efficient collaboration and project management.',
     buttonText: 'Go to Project',
-    buttonLink: '/projects/1',
+    buttonLink: '/projects/instock',
     buttonHref: '',
     gitHub: 'https://github.com/mannyv123/instock-client',
     skills: ['React.js', 'Node', 'Express', 'MySQL', 'Figma'],
@@ -119,7 +119,7 @@ export const projects = [
     fullDescription:
       'This website is a single-page application built with React and styled using SCSS for modular and maintainable styling. The project follows a component-based architecture, using custom components like Navbar, Hero, Projects, and Contact Form to organize and reuse interface elements efficiently. ',
     buttonText: 'Go to Project',
-    buttonLink: '/projects/2',
+    buttonLink: '/projects/transportes-moran',
     buttonHref: 'https://www.transportesmoran.cl/',
     gitHub: 'https://github.com/psyout/transportes-moran',
     skills: ['React', 'SCSS', 'JavaScript', 'Figma'],
@@ -167,7 +167,7 @@ export const projects = [
     description:
       'This application is built using React for the frontend, leveraging React Router for client-side routing.',
     buttonText: 'Go to Project',
-    buttonLink: '/projects/3',
+    buttonLink: '/projects/brainflix',
     buttonHref: '#',
     gitHub: 'https://github.com/psyout/felipe-gonzalez-brainflix',
     skills: ['Axios', 'RESTful API', 'Sass', 'Node', 'Express'],
@@ -201,7 +201,7 @@ export const projects = [
     fullDescription:
       'This is a full-stack website that combines HTML5, CSS and JavaScript on the Front-End. It uses Axios (via CDN) to handle HTTP requests and interacts with a locally hosted Express API to manage features like the comments section.',
     buttonText: 'Go to Project',
-    buttonLink: '/projects/4',
+    buttonLink: '/projects/bandsite',
     buttonHref: 'https://felipegonzalez.io/bandsite/',
     skills: ['CSS3', 'JavaScript', 'Axios'],
     imageCaption1:
