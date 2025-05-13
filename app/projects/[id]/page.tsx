@@ -91,7 +91,7 @@ const ProjectPage = () => {
             {project.title}
           </h1>
           <h4 className='mb-4 text-xl'>{project.subtitle}</h4>
-          <p className='text-md mb-6 text-justify font-light md:justify-end md:text-left lg:w-120'>
+          <p className='text-md mb-6 text-left font-light md:justify-end md:text-left lg:w-120'>
             {project.fullDescription}
           </p>
         </div>
