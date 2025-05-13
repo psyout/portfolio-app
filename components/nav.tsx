@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import ThemeToggle from '@/components/theme-toggle'
 import { useState } from 'react'
+import LogoIcon from './ui/logo'
 
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -22,7 +23,12 @@ const Nav = () => {
         onClick={closeMenu}
         className={`logo ${menuOpen ? 'relative z-50' : ''}`}
       >
-        Fe<span className='span'>_</span>
+        <LogoIcon
+          aria-label='Logo'
+          className='h-18 w-18'
+          fill='var(--highlight-color)' // Change color using fill
+        />
+        <span className='sr-only'>Felipe Gonzalez</span>
       </Link>
 
       <div className='flex items-center'>

@@ -1,12 +1,14 @@
 'use client'
 
-import React, { useRef, useEffect } from 'react'
-import { Files } from 'lucide-react'
+import React, { useRef, useEffect, useState } from 'react'
+import { Files, CircleCheck } from 'lucide-react' // Import the Check icon
 import Form from '@/components/ui/form'
 import Link from 'next/link'
 import Social from '@/components/ui/social'
 
 const Contact = () => {
+  const [copied, setCopied] = useState<string | null>(null) // Track which item was copied
+
   const titleRef = useRef<HTMLHeadingElement>(null)
 
   useEffect(() => {
@@ -23,10 +25,8 @@ const Contact = () => {
     navigator.clipboard
       .writeText(text)
       .then(() => {
-        console.log(`${text} copied to clipboard!`)
-      })
-      .then(() => {
-        alert('Copied')
+        setCopied(text) // Set the copied state to the text
+        setTimeout(() => setCopied(null), 1500) // Reset after 2 seconds
       })
       .catch(err => {
         console.error('Failed to copy', err)
@@ -40,33 +40,51 @@ const Contact = () => {
         {/* Contact Info */}
         <div>
           <div className='grid grid-cols-1 gap-4'>
+            {/* Email Section */}
             <div className='flex flex-col'>
               <h3 className='text text-lg font-bold'>Email</h3>
               <div className='flex gap-3'>
                 <Link className='text' href='mailto:hello@felipegonzalez.io'>
                   hello@felipegonzalez.io
                 </Link>
-                <Files
-                  onClick={() => copyToClipboard('hello@felipegonzalez.io')}
-                  aria-label='Copy email'
-                  className='z-100 scale-150 cursor-pointer rounded-full py-1 transition-all hover:rounded-full hover:bg-gray-200 dark:hover:bg-gray-700'
-                />
+                {copied === 'hello@felipegonzalez.io' ? (
+                  <CircleCheck
+                    aria-label='Copied'
+                    className='z-100 text-[var(--primary)]'
+                  />
+                ) : (
+                  <Files
+                    onClick={() => copyToClipboard('hello@felipegonzalez.io')}
+                    aria-label='Copy email'
+                    className='z-100 scale-150 cursor-pointer rounded-full py-1 transition-all hover:rounded-full hover:bg-gray-200 dark:hover:bg-gray-700'
+                  />
+                )}
               </div>
             </div>
 
+            {/* Phone Section */}
             <div className='flex flex-col'>
               <h3 className='text text-lg font-bold'>Phone</h3>
               <div className='flex gap-3'>
                 <Link href='callto:+17786977909' className='text'>
                   +1 (778) 697-7909
                 </Link>
-                <Files
-                  onClick={() => copyToClipboard('+17786977909')}
-                  className='z-100 scale-150 cursor-pointer rounded-full py-1 transition-all hover:rounded-full hover:bg-gray-200 dark:hover:bg-gray-700'
-                />
+                {copied === '+17786977909' ? (
+                  <CircleCheck
+                    aria-label='Copied'
+                    className='z-100 text-[var(--primary)]'
+                  />
+                ) : (
+                  <Files
+                    onClick={() => copyToClipboard('+17786977909')}
+                    aria-label='Copy phone number'
+                    className='z-100 scale-150 cursor-pointer rounded-full py-1 transition-all hover:rounded-full hover:bg-gray-200 dark:hover:bg-gray-700'
+                  />
+                )}
               </div>
             </div>
 
+            {/* Social Section */}
             <div className='flex flex-col gap-3'>
               <h3 className='text text-lg font-bold'>Social</h3>
               <Social

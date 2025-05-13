@@ -45,6 +45,7 @@ const About = () => {
             well as working remotely for clients worldwide.
           </p>
           <p className='text mt-3 max-w-2xl font-light sm:text-lg'>
+            I’m <span className='text font-semibold'>Felipe Gonzalez,</span> and
             I take a personal and creative approach to solving my clients&apos;
             problems - whether that&apos;s developing a web app, landing page,
             or managing a creative project from start to finish.

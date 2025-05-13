@@ -287,7 +287,7 @@ const ProjectPage = () => {
         <div className='relative'>
           {/* Cards Container - initially limited height */}
           <div
-            className={`grid grid-cols-1 gap-10 transition-all duration-500 md:grid-cols-2 ${
+            className={`grid grid-cols-1 gap-x-30 gap-y-10 transition-all duration-500 md:grid-cols-2 ${
               visibleCount === 2 ? 'max-h-[600px] overflow-hidden' : ''
             }`}
           >
