@@ -52,7 +52,7 @@ export const projects = [
     buttonText: 'Go to Project',
     gitHub: 'https://github.com/psyout/capstone-client',
     buttonVisit: 'View Site',
-    buttonLink: '/projects/vasippy',
+    buttonLink: '/projects/01',
     buttonHref: 'https://vansippy.com/',
     skills: ['React.js', 'MongoDB', 'MaterialUI']
   },
