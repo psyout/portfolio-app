@@ -20,7 +20,7 @@ const ProjectPage = () => {
       if (titleRef.current) {
         titleRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
       }
-    }, 200)
+    }, 400)
 
     return () => clearTimeout(timer)
   }, [])
