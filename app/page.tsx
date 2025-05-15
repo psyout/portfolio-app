@@ -47,7 +47,7 @@ export default function Home() {
                 </div>
                 {/* Fade gradient if not all projects are visible */}
                 {visibleCount === 3 && (
-                  <div className='pointer-events-none absolute bottom-0 left-0 z-10 h-32 w-full bg-gradient-to-t from-white to-transparent dark:from-black'></div>
+                  <div className='pointer-events-none absolute bottom-0 left-0 z-10 h-32 w-full bg-gradient-to-t from-[rgba(255,255,255,0.9)] via-[rgba(255,255,255,0.5)] to-transparent dark:from-[rgba(0,0,0,0.9)] dark:via-[rgba(0,0,0,0.5)]'></div>
                 )}
               </div>
 

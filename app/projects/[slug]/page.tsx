@@ -12,6 +12,8 @@ import { TbBrandGithub } from 'react-icons/tb'
 import { projects } from '../../../components/projectData'
 import ProjectCard from '@/components/ui/projects'
 
+import { parseHighlightedText } from '@/components/ui/highlight'
+
 const ProjectPage = () => {
   // Scroll to the title after a short delay
   const titleRef = useRef<HTMLHeadingElement>(null)
@@ -68,7 +70,7 @@ const ProjectPage = () => {
           </h1>
           <h4 className='mb-4 text-xl'>{project.subtitle}</h4>
           <p className='text-md mb-6 text-left font-light md:justify-end md:text-left lg:w-120'>
-            {project.fullDescription}
+            {parseHighlightedText(project.fullDescription)}
           </p>
         </div>
 
@@ -128,8 +130,8 @@ const ProjectPage = () => {
 
         {/* Paragraph */}
         <div className='text-md mx-auto my-20 flex w-full flex-col items-center font-light md:w-2/3 md:text-lg'>
-          <p className='text mt-5 text-left sm:text-center'>
-            {project.paragraph1}
+          <p className='text mt-5 text-left text-pretty sm:text-center'>
+            {parseHighlightedText(project.paragraph1)}
           </p>
           {project.list1 && project.list1.length > 0 && (
             <ul className='ml-5 flex list-disc flex-col py-5'>
@@ -188,7 +190,7 @@ const ProjectPage = () => {
                   {project.title1}
                 </h4>
                 <p className='text-md max-w-130 text-center font-light text-pretty md:max-w-7/8'>
-                  {project.imageCaption3}
+                  {parseHighlightedText(project.imageCaption3)}
                 </p>
               </div>
             </div>
@@ -212,7 +214,7 @@ const ProjectPage = () => {
                   {project.title2}
                 </h4>
                 <p className='text-md max-w-130 text-center font-light text-pretty md:max-w-7/8'>
-                  {project.imageCaption4}
+                  {parseHighlightedText(project.imageCaption4)}
                 </p>
               </div>
             </div>
@@ -227,7 +229,7 @@ const ProjectPage = () => {
           <>
             {project.paragraph3 && (
               <p className='text mt-5 text-left text-pretty sm:text-center'>
-                {project.paragraph3}
+                {parseHighlightedText(project.paragraph3)}
               </p>
             )}
 
@@ -246,7 +248,7 @@ const ProjectPage = () => {
 
             {project.paragraph4 && (
               <p className='text mt-5 text-left text-pretty sm:text-center'>
-                {project.paragraph4}
+                {parseHighlightedText(project.paragraph4)}
               </p>
             )}
           </>

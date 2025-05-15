@@ -44,9 +44,11 @@ const Intro = () => {
         <p className='text text-md mt-3 font-light text-pretty sm:text-lg'>
           With over 4 years of experience as a
           <span className='font-bold'> Front-End Developer</span> and additional
-          years as a Web Designer, I am skilled in HTML, CSS, JavaScript and
-          React. I have a strong focus on writing clean, maintainable code and
-          performance to build efficient, user-friendly web applications.
+          years as a Web Designer, I am skilled in{' '}
+          <span className='font-bold'>HTML, CSS, JavaScript</span> and{' '}
+          <span className='font-bold'>React.</span> I have a strong focus on
+          writing clean, maintainable code and performance to build efficient,
+          user-friendly web applications.
         </p>
       </div>
     </section>

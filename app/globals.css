@@ -189,6 +189,10 @@
     color: var(--tagFontColor);
   }
 
+  .highlight {
+    font-weight: bold;
+  }
+
   @keyframes roll-down {
     0% {
       opacity: 0;
