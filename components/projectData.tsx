@@ -11,7 +11,7 @@ export const projects = [
       '/static/images/vansippy-mobile2.png',
       ''
     ],
-    tags: ['New', 'Development', 'React', 'MongoDB'],
+    tags: ['New', 'React', 'MongoDB'],
     title: 'Vansippy',
     subtitle: 'Happy Hour Finder Web App',
     title1: 'Mobile version',
