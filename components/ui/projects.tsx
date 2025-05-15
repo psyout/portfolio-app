@@ -32,8 +32,8 @@ export default function ProjectCard({
                 key={index}
                 className={`card-tag px-4 py-2 text-xs ${
                   isNew
-                    ? 'bg-amber-300 text-white'
-                    : 'bg-[var(--tertiary)] text-[var(--social-color)] dark:bg-[var(--social-color)] dark:text-[var(--text-color)]'
+                    ? 'tagFontColor bg-amber-400 uppercase dark:bg-[var(--primary)]'
+                    : 'bg-[var(--iconColor)] font-normal text-[var(--social-color)] dark:bg-[var(--social-color)] dark:text-[var(--text-color)]'
                 }`}
               >
                 {tag}

@@ -1,26 +1,12 @@
-'use client'
-
-import React, { useEffect, useRef } from 'react'
 import Head from 'next/head'
 import Resume from '@/components/resume'
+import ScrollToTitle from '@/components/ui/ScrollToTittle'
 import Image from 'next/image'
 import ProfilePicture from '../../public/static/images/profile-picture.jpg'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 
 const About = () => {
-  const titleRef = useRef<HTMLHeadingElement>(null)
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (titleRef.current) {
-        titleRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      }
-    }, 200)
-
-    return () => clearTimeout(timer)
-  }, [])
-
   return (
     <div className='container mx-auto max-w-6xl py-40'>
       <Head>
@@ -32,12 +18,7 @@ const About = () => {
       </Head>
       <section className='flex flex-col gap-3 sm:justify-between sm:gap-10 md:flex-row'>
         <div className='flex-1 md:mt-0'>
-          <h1
-            ref={titleRef}
-            className='title scroll-mt-10 font-extrabold no-underline'
-          >
-            About Me
-          </h1>
+          <ScrollToTitle>About Me</ScrollToTitle>
           <p className='text mt-3 max-w-2xl font-light sm:text-lg'>
             I&apos;m driven by a relentless desire to learn and explore novel
             ideas. Presently located in the vibrant city of Vancouver where

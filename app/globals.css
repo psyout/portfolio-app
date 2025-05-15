@@ -66,11 +66,12 @@
     --span: hsl(187, 100%, 40%);
     --button-text: hsl(0, 0%, 99%);
     --button-bg: hsl(142.1 76.2% 36.3%);
+    --tagFontColor: #454545;
   }
 
   .dark {
     --text-color: hsl(0, 0%, 100%);
-    --background: 224 71.4% 4.1%;
+    --background: hsl(210, 15%, 12%); /* Darker blue-gray */
     --foreground: 210 20% 98%;
     --card: 224 71.4% 4.1%;
     --card-foreground: 210 20% 98%;
@@ -79,12 +80,13 @@
     --secondary: 215 27.9% 16.9%;
     --secondary-foreground: 210 20% 98%;
     --tertiary: hsl(0, 0%, 95%);
-    --iconColor: #81e6d9;
+    --iconColor: #455d7a;
     --social-color: #8b8b8b;
     --title-color: hsl(0, 0%, 100%);
     --highlight-color: #fcfcfc;
     --button-text: #454545;
     --button-bg: hsl(142.1 76.2% 36.3%);
+    --tagFontColor: #454545;
   }
 }
 
@@ -181,6 +183,10 @@
     transition:
       transform 0.5s ease-in-out,
       opacity 0.5s ease-in-out;
+  }
+
+  .tagFontColor {
+    color: var(--tagFontColor);
   }
 
   @keyframes roll-down {
