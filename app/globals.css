@@ -62,7 +62,7 @@
     --muted-foreground: 220 8.9% 46.1%;
     --tertiary: hsl(0, 0%, 57%);
     --iconColor: #455d7a;
-    --highlight-color: hsl(230, 34%, 53%);
+    --highlight-color: #455d7a;
     --span: hsl(187, 100%, 40%);
     --button-text: hsl(0, 0%, 99%);
     --button-bg: hsl(142.1 76.2% 36.3%);

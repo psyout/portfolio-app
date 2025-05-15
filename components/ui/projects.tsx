@@ -33,7 +33,7 @@ export default function ProjectCard({
                 className={`card-tag px-4 py-2 text-xs ${
                   isNew
                     ? 'tagFontColor bg-amber-400 uppercase dark:bg-[var(--primary)]'
-                    : 'bg-[var(--iconColor)] font-normal text-[var(--social-color)] dark:bg-[var(--social-color)] dark:text-[var(--text-color)]'
+                    : 'bg-[var(--highlight-color)] font-normal text-[var(--social-color)] dark:bg-[var(--social-color)] dark:text-[var(--text-color)]'
                 }`}
               >
                 {tag}

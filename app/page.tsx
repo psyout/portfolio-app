@@ -15,8 +15,8 @@ import { projects } from '@/components/projectData'
 import { links } from '@/components/links'
 
 export default function Home() {
-  const [visibleCount, setVisibleCount] = useState(2)
-  const handleLoadMore = () => setVisibleCount(prev => prev + 2)
+  const [visibleCount, setVisibleCount] = useState(3) // Start with 3 cards visible
+  const handleLoadMore = () => setVisibleCount(prev => prev + 1)
 
   return (
     <main className='pb-10'>
@@ -32,7 +32,7 @@ export default function Home() {
               <div className='relative'>
                 <div
                   className={`grid grid-cols-1 gap-10 transition-all duration-500 md:grid-cols-1 ${
-                    visibleCount === 2 ? 'max-h-[800px] overflow-hidden' : ''
+                    visibleCount === 3 ? 'max-h-[1100px] overflow-hidden' : ''
                   }`}
                 >
                   {projects.slice(0, visibleCount).map((project, index) => (
@@ -45,9 +45,8 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
-
                 {/* Fade gradient if not all projects are visible */}
-                {visibleCount === 2 && (
+                {visibleCount === 3 && (
                   <div className='pointer-events-none absolute bottom-0 left-0 z-10 h-32 w-full bg-gradient-to-t from-white to-transparent dark:from-black'></div>
                 )}
               </div>
