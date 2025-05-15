@@ -32,7 +32,7 @@ export default function Home() {
               <div className='relative'>
                 <div
                   className={`grid grid-cols-1 gap-10 transition-all duration-500 md:grid-cols-1 ${
-                    visibleCount === 2 ? 'max-h-[600px] overflow-hidden' : ''
+                    visibleCount === 2 ? 'max-h-[800px] overflow-hidden' : ''
                   }`}
                 >
                   {projects.slice(0, visibleCount).map((project, index) => (
