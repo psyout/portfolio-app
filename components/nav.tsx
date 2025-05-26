@@ -2,12 +2,24 @@
 
 import Link from 'next/link'
 import ThemeToggle from '@/components/theme-toggle'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import LogoIcon from './ui/logo'
 
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false)
 
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'auto'
+    }
+    return () => {
+      document.body.style.overflow = 'auto' // Cleanup on unmount
+    }
+  }, [menuOpen])
+
+  // Toggle menu state
   const toggleMenu = () => setMenuOpen(prev => !prev)
   const closeMenu = () => setMenuOpen(false)
 
