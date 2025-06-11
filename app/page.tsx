@@ -30,21 +30,32 @@ export default function Home() {
                <div className='w-full space-y-8 md:w-1/2 md:px-6'>
                   <div id='projects' className='scroll-mt-10'>
                      <div className='relative'>
-                        <div className={`grid grid-cols-1 gap-10 transition-all duration-500 md:grid-cols-1 ${visibleCount === 3 ? 'max-h-[1100px] overflow-hidden' : ''}`}>
+                        <div
+                           className={`grid grid-cols-1 gap-10 transition-all duration-500 md:grid-cols-1 ${visibleCount === 3 ? 'max-h-[1100px] overflow-hidden' : ''}`}
+                        >
                            {projects.slice(0, visibleCount).map((project, index) => (
-                              <div key={index} className='project-card-container' style={{ animationDelay: `${index * 0.2}s` }}>
+                              <div
+                                 key={index}
+                                 className='project-card-container'
+                                 style={{ animationDelay: `${index * 0.2}s` }}
+                              >
                                  <ProjectCard {...project} />
                               </div>
                            ))}
                         </div>
                         {/* Fade gradient if not all projects are visible */}
-                        {visibleCount === 3 && <div className='pointer-events-none absolute bottom-0 left-0 z-10 h-32 w-full bg-gradient-to-t from-[rgba(255,255,255,0.9)] via-[rgba(255,255,255,0.5)] to-transparent dark:from-[rgba(0,0,0,0.9)] dark:via-[rgba(0,0,0,0.5)]'></div>}
+                        {visibleCount === 3 && <div className='card-gradient'></div>}
                      </div>
 
                      {/* Load More Button */}
                      {visibleCount < projects.length && (
                         <div className='relative z-20 mt-6 flex flex-col items-center justify-center text-center'>
-                           <Button variant='ghost' size='lg' className='button mt-5 cursor-pointer rounded-[0.3rem] transition-colors hover:bg-[var(--primary)] hover:text-white dark:hover:bg-[var(--button-bg)]' onClick={handleLoadMore}>
+                           <Button
+                              variant='ghost'
+                              size='lg'
+                              className='button mt-5 cursor-pointer rounded-[0.3rem] transition-colors hover:bg-[var(--primary)] hover:text-white dark:hover:bg-[var(--button-bg)]'
+                              onClick={handleLoadMore}
+                           >
                               Load more
                            </Button>
                         </div>
