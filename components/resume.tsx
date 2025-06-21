@@ -7,7 +7,9 @@ const Resume = () => {
       <>
          <Link
             className='group mt-6 flex items-center gap-3'
-            href={'https://www.felipegonzalez.io/felipe-gonzalez-resume.pdf'}
+            href={
+               'https://drive.google.com/file/d/1AM5rzC8EJeevNH7R7KYJJPEkwO2RBX-_/view?usp=sharing'
+            }
             target='_blank'
          >
             <Download className='text animate-bounce transition-transform duration-500' />

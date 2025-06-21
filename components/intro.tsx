@@ -1,8 +1,6 @@
 'use client'
 
-import React from 'react'
 import { useEffect, useRef } from 'react'
-
 import { TypeAnimation } from 'react-type-animation'
 
 const Intro = () => {
@@ -14,13 +12,11 @@ const Intro = () => {
             titleRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
          }
       }, 1000)
-
       return () => clearTimeout(timer)
    }, [])
 
    return (
       <section className='fade-in grid grid-cols-1 items-center justify-center sm:grid-cols-1 md:grid-cols-1'>
-         {/* Content Section */}
          <div className='col-span-1 mx-auto flex flex-col items-start gap-1'>
             <h1
                className='title lh- scroll-mt-10 leading-10 font-extrabold text-pretty no-underline'
@@ -28,7 +24,7 @@ const Intro = () => {
             >
                Hey there, I&#39;m Felipe
             </h1>
-            <div style={{ minHeight: '2.5em' }}>
+            <div className='type-animation-block'>
                <TypeAnimation
                   sequence={[
                      'Full-Stack Developer',

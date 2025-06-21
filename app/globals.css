@@ -239,6 +239,10 @@
       animation: fadeIn 1.2s ease-in forwards;
    }
 
+   .type-animation-block {
+      min-height: 2.5em;
+   }
+
    @keyframes fadeIn {
       to {
          opacity: 1;
