@@ -9,42 +9,42 @@ import Header from '@/components/header'
 import Footer from '@/components/footer'
 
 const ubuntu = Ubuntu({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '700'],
-  variable: '--font-sans'
+   subsets: ['latin'],
+   weight: ['300', '400', '500', '700'],
+   variable: '--font-sans'
 })
 const aleo = Aleo({
-  subsets: ['latin'],
-  variable: '--font-serif',
-  weight: '400'
+   subsets: ['latin'],
+   variable: '--font-serif',
+   weight: '400'
 })
 export const metadata: Metadata = {
-  title: 'Felipe Gonzalez Front-End Developer',
-  description: 'Helping you look good on the internet',
-  icons: {
-    icon: '/favicon.ico'
-  }
+   title: 'Felipe Gonzalez Full-Stack Developer',
+   description: 'Helping you look good on the internet',
+   icons: {
+      icon: '/favicon.ico'
+   }
 }
 export default function RootLayout({
-  children
+   children
 }: Readonly<{
-  children: React.ReactNode
+   children: React.ReactNode
 }>) {
-  return (
-    <html lang='en' suppressHydrationWarning>
-      <body
-        className={cn(
-          'font-lato flex min-h-screen flex-col antialiased',
-          ubuntu.variable,
-          aleo.variable
-        )}
-      >
-        <Providers>
-          <Header />
-          <main className='grow'>{children}</main>
-          <Footer />
-        </Providers>
-      </body>
-    </html>
-  )
+   return (
+      <html lang='en' suppressHydrationWarning>
+         <body
+            className={cn(
+               'font-lato flex min-h-screen flex-col antialiased',
+               ubuntu.variable,
+               aleo.variable
+            )}
+         >
+            <Providers>
+               <Header />
+               <main className='grow'>{children}</main>
+               <Footer />
+            </Providers>
+         </body>
+      </html>
+   )
 }
