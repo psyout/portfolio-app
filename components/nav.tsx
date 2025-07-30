@@ -2,28 +2,35 @@
 
 import Link from 'next/link'
 import ThemeToggle from '@/components/theme-toggle'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import LogoIcon from './ui/logo'
 
 const Nav = () => {
    const [menuOpen, setMenuOpen] = useState(false)
-   // Effect to handle body overflow when menu is open
+
    useEffect(() => {
       if (menuOpen) {
          document.body.style.overflow = 'hidden'
       } else {
          document.body.style.overflow = 'auto'
       }
+      // Close menu on Escape key
+      const handleEsc = (e: KeyboardEvent) => {
+         if (e.key === 'Escape') setMenuOpen(false)
+      }
+      window.addEventListener('keydown', handleEsc)
+      return () => window.removeEventListener('keydown', handleEsc)
    }, [menuOpen])
 
-   // Toggle menu state
-   const toggleMenu = () => setMenuOpen(prev => !prev)
-   const closeMenu = () => setMenuOpen(false)
+   const toggleMenu = useCallback(() => setMenuOpen(prev => !prev), [])
+   const closeMenu = useCallback(() => setMenuOpen(false), [])
 
-   const menuClasses = menuOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
+   const menuClasses = menuOpen
+      ? 'translate-x-0 opacity-100 pointer-events-auto'
+      : 'translate-x-full opacity-0 pointer-events-none'
 
    return (
-      <nav className='mx-auto flex max-w-6xl items-center justify-between'>
+      <nav role='navigation' className='mx-auto flex max-w-6xl items-center justify-between'>
          {/* Logo */}
          <Link
             title='Home'
@@ -50,6 +57,10 @@ const Nav = () => {
                className={`hamburger ${menuOpen ? 'active' : ''} sm:hidden`}
                onClick={toggleMenu}
                aria-label='Toggle menu'
+               aria-expanded={menuOpen}
+               aria-controls='main-menu'
+               tabIndex={0}
+               role='button'
             >
                <span className='bar z-50'></span>
                <span className='bar z-50'></span>
@@ -58,6 +69,7 @@ const Nav = () => {
 
             {/* Navigation Menu */}
             <div
+               id='main-menu'
                className={`bg-social--color fixed inset-0 z-40 transform backdrop-blur-xs transition-all duration-300 ease-in-out sm:static sm:flex sm:translate-x-0 sm:bg-transparent sm:opacity-100 ${menuClasses}`}
             >
                <ul className='text-muted-foreground mt-30 mr-7 flex h-full flex-col items-end gap-6 justify-self-end font-medium sm:hidden'>

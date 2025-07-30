@@ -306,3 +306,15 @@
       transform: translateY(-8px) rotate(-45deg);
    }
 }
+
+.fade-in-on-scroll {
+   opacity: 0;
+   transform: translateY(30px);
+   transition:
+      opacity 0.8s ease,
+      transform 0.8s ease;
+}
+.fade-in-on-scroll.visible {
+   opacity: 1;
+   transform: translateY(0);
+}
