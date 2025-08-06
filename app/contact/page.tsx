@@ -53,9 +53,9 @@ const Contact = () => {
                      <h3 className='text text-lg font-bold'>Email</h3>
                      <div className='flex gap-3'>
                         <Link className='text' href='mailto:hello@felipegonzalez.io'>
-                           hello@felipegonzalez.io
+                           hello@felipegonzalez.dev
                         </Link>
-                        {copied === 'hello@felipegonzalez.io' ? (
+                        {copied === 'hello@felipegonzalez.dev' ? (
                            <CircleCheck aria-label='Copied' className='text-[var(--primary)]' />
                         ) : (
                            <Files
