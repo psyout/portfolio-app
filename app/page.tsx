@@ -38,7 +38,7 @@ export default function Home() {
                               <div
                                  key={index}
                                  className='project-card-container'
-                                 style={{ animationDelay: `${index * 0.2}s` }}
+                                 style={{ animationDelay: `${index * 0.5}s` }}
                               >
                                  <ProjectCard {...project} />
                               </div>

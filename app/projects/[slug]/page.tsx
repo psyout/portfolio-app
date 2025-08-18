@@ -11,11 +11,33 @@ import { TbBrandGithub } from 'react-icons/tb'
 
 import { projects } from '../../../components/projectData'
 import ProjectCard from '@/components/ui/projects'
-
 import { parseHighlightedText } from '@/components/ui/highlight'
 
+const useSimpleScrollReveal = () => {
+   const ref = useRef<HTMLDivElement>(null)
+   const [visible, setVisible] = useState(false)
+
+   useEffect(() => {
+      const node = ref.current
+      if (!node) return
+
+      const observer = new window.IntersectionObserver(
+         ([entry]) => {
+            if (entry.isIntersecting) {
+               setVisible(true)
+               observer.disconnect()
+            }
+         },
+         { threshold: 0.15 }
+      )
+      observer.observe(node)
+      return () => observer.disconnect()
+   }, [])
+
+   return [ref, visible] as const
+}
+
 const ProjectPage = () => {
-   // Scroll to the title after a short delay
    const titleRef = useRef<HTMLHeadingElement>(null)
    useEffect(() => {
       const timer = setTimeout(() => {
@@ -23,33 +45,27 @@ const ProjectPage = () => {
             titleRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
          }
       }, 300)
-
       return () => clearTimeout(timer)
    }, [])
 
-   // Get the slug from the URL
    const params = useParams()
-   const slug = params?.slug // Use slug from the URL
-
-   // State to manage the number of visible projects
+   const slug = params?.slug
    const [visibleCount, setVisibleCount] = useState(2)
 
-   // Find the project by slug
+   // Scroll reveal hooks for each main block
+   const [mainRef, mainVisible] = useSimpleScrollReveal()
+   const [imgRef, imgVisible] = useSimpleScrollReveal()
+   const [descRef, descVisible] = useSimpleScrollReveal()
+   const [featuresRef, featuresVisible] = useSimpleScrollReveal()
+   const [peekRef, peekVisible] = useSimpleScrollReveal()
+
    const project = projects.find(p => p.slug === slug)
 
    if (!project) {
-      return notFound() // Show a 404 page if the project is not found
+      return notFound()
    }
 
-   // Handle loading more projects
-   // This function increases the number of visible projects by 2
-   // and is called when the "Load more" button is clicked
-   const handleLoadMore = () => {
-      setVisibleCount(prevCount => prevCount + 2)
-   }
-
-   // Handle click event for the button
-   // This function checks if the button link is valid
+   const handleLoadMore = () => setVisibleCount(prevCount => prevCount + 2)
    const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
       if (!project.buttonHref || project.buttonHref === '#') {
          e.preventDefault()
@@ -60,7 +76,12 @@ const ProjectPage = () => {
    return (
       <section className='text mx-auto max-w-6xl py-40'>
          {/* Title & Description */}
-         <div className='flex flex-col md:flex-row md:gap-20'>
+         <div
+            ref={mainRef}
+            className={`transition-all duration-700 ease-in-out ${
+               mainVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+            } flex flex-col md:flex-row md:gap-20`}
+         >
             <div className='flex-1'>
                <h1 ref={titleRef} className='logo mb-1 scroll-mt-10 text-4xl font-bold md:text-5xl'>
                   {project.title}
@@ -70,8 +91,6 @@ const ProjectPage = () => {
                   {parseHighlightedText(project.fullDescription)}
                </p>
             </div>
-
-            {/* Skills */}
             {project.skills && (
                <section className='mb-8 md:mt-24 md:flex-1'>
                   <h3 className='logo mb-2 text-2xl font-semibold'>Skills Used</h3>
@@ -98,7 +117,6 @@ const ProjectPage = () => {
                   {project.buttonVisit || 'View Site'}
                </Link>
             </Button>
-
             {project.gitHub && (
                <Link href={project.gitHub} target='_blank'>
                   <TbBrandGithub className='p-1.5 text-5xl transition-all hover:rounded-full hover:bg-[var(--tertiary)] hover:text-[var(--button-text)]' />
@@ -107,11 +125,16 @@ const ProjectPage = () => {
          </div>
 
          {/* Project Main Image */}
-         <div className='mb-10'>
+         <div
+            ref={imgRef}
+            className={`mb-10 transition-all duration-700 ease-in-out ${
+               imgVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+            }`}
+         >
             <Image
                src={project.imageUrl}
                alt={project.title}
-               layout='intrinsic' // Let the image size adjust to its intrinsic dimensions
+               layout='intrinsic'
                priority
                width={1200}
                height={675}
@@ -120,33 +143,34 @@ const ProjectPage = () => {
             <p className='mx-auto mt-5 w-full text-justify text-sm font-light sm:text-center md:w-130'>
                {project.imageCaption1}
             </p>
+         </div>
 
-            {/* Paragraph */}
-            <div className='text-md mx-auto my-20 flex w-full flex-col items-center font-light md:w-2/3 md:text-lg'>
-               <p className='text mt-5 text-left text-pretty sm:text-center'>
-                  {parseHighlightedText(project.paragraph1)}
-               </p>
-               {project.list1 && project.list1.length > 0 && (
-                  <ul className='ml-5 flex list-disc flex-col py-5'>
-                     {project.list1.map((item, index) => (
-                        <li key={index}>
-                           <span className='font-semibold'>{item.title.split('–')[0].trim()}</span>{' '}
-                           – {item.title.split('–')[1].trim()}
-                        </li>
-                     ))}
-                  </ul>
-               )}
-
-               <p className='text mt-5 text-left text-pretty sm:text-center'>
-                  {project.paragraph2}
-               </p>
-            </div>
-
+         {/* Description Paragraphs */}
+         <div
+            ref={descRef}
+            className={`text-md mx-auto my-20 flex w-full flex-col items-center font-light transition-all duration-700 ease-in-out md:w-2/3 md:text-lg ${
+               descVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+            }`}
+         >
+            <p className='text mt-5 text-left text-pretty sm:text-center'>
+               {parseHighlightedText(project.paragraph1)}
+            </p>
+            {project.list1 && project.list1.length > 0 && (
+               <ul className='ml-5 flex list-disc flex-col py-5'>
+                  {project.list1.map((item, index) => (
+                     <li key={index}>
+                        <span className='font-semibold'>{item.title.split('–')[0].trim()}</span> –{' '}
+                        {item.title.split('–')[1].trim()}
+                     </li>
+                  ))}
+               </ul>
+            )}
+            <p className='text mt-5 text-left text-pretty sm:text-center'>{project.paragraph2}</p>
             {project.imageSmall?.[0] ? (
                <Image
                   src={project.imageSmall[0]}
                   alt={project.title}
-                  layout='intrinsic' // Let the image size adjust to its intrinsic dimensions
+                  layout='intrinsic'
                   width={1200}
                   height={675}
                   className='rounded bg-cover shadow md:h-150'
@@ -162,7 +186,12 @@ const ProjectPage = () => {
             project.imageSmall?.[2] ||
             project.title1 ||
             project.title2) && (
-            <section className='flex flex-col md:flex-row md:gap-10'>
+            <section
+               ref={featuresRef}
+               className={`flex flex-col transition-all duration-700 ease-in-out md:flex-row md:gap-10 ${
+                  featuresVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+               }`}
+            >
                {/* First Image Block */}
                {project.imageSmall?.[1] && (
                   <div className='mb-10 flex flex-col items-center md:mb-0 md:w-1/2'>
@@ -243,12 +272,14 @@ const ProjectPage = () => {
          <hr className='mt-10' />
 
          {/* Sneak Peek Section */}
-         <div className='mt-10 w-full'>
+         <div
+            ref={peekRef}
+            className={`mt-10 w-full transition-all duration-700 ease-in-out ${
+               peekVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+            }`}
+         >
             <h2 className='mb-6 text-2xl font-bold'>Browse Other Projects</h2>
-
-            {/* Sneak Peek Wrapper */}
             <div className='relative'>
-               {/* Cards Container - initially limited height */}
                <div
                   className={`grid grid-cols-1 gap-x-30 gap-y-10 transition-all duration-500 md:grid-cols-2 ${visibleCount === 2 ? 'max-h-[600px] overflow-hidden' : ''}`}
                >
