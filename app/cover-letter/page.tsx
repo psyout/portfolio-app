@@ -58,7 +58,7 @@ const styles = {
 const paragraphs: ReactNode[] = [
    'Dear Hiring Manager,',
    <>
-      I’m excited to apply for the <span style={styles.bold}>Junior Software Engineer</span>{' '}
+      I&apos;m excited to apply for the <span style={styles.bold}>Junior Software Engineer</span>{' '}
       position at <span style={styles.bold}>WOW 1 DAY PAINTING</span>. With over four years of
       experience building responsive, user-focused web applications using HTML, CSS, JavaScript and
       React, I have a strong foundation in front-end development and full-stack project work.
@@ -72,17 +72,17 @@ const paragraphs: ReactNode[] = [
    </>,
    <>
       What excites me even more about this role is that WOW 1 DAY PAINTING is part of the same group
-      as <span style={styles.bold}>1-800-GOT-JUNK</span>, whose apps I’ve used extensively in my
-      daily work. This gives me a unique perspective on the user experience, workflows, and
+      as <span style={styles.bold}>1-800-GOT-JUNK</span>, whose apps I&apos;ve used extensively in
+      my daily work. This gives me a unique perspective on the user experience, workflows, and
       opportunities for improvement, allowing me to contribute not only as a developer but also with
-      practical insights that can enhance the application’s functionality and usability.
+      practical insights that can enhance the applications functionality and usability.
    </>,
    <>
-      I’m particularly drawn to this role because of the opportunity to contribute to a greenfield
-      Next.js application. I have experience with React and JavaScript and am eager to expand my
-      skills in TypeScript, Next.js, and cloud-based development. I thrive in fast-paced,
-      collaborative environments, enjoy learning from experienced team members and I'm committed to
-      writing clean, maintainable code that aligns with best practices.
+      I&apos;m particularly drawn to this role because of the opportunity to contribute to a
+      greenfield Next.js application. I have experience with React and JavaScript and am eager to
+      expand my skills in TypeScript, Next.js, and cloud-based development. I thrive in fast-paced,
+      collaborative environments, enjoy learning from experienced team members and I&apos;m
+      committed to writing clean, maintainable code that aligns with best practices.
    </>,
    <>
       I would love the chance to bring my experience, curiosity, and unique user perspective to WOW
