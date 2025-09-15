@@ -194,6 +194,12 @@
       font-weight: bold;
    }
 
+   .signature {
+      font-family: var(--font-mono), monospace;
+      color: var(--span);
+      font-size: 1rem;
+   }
+
    @keyframes roll-down {
       0% {
          opacity: 0;
