@@ -63,7 +63,7 @@
       --tertiary: hsl(0, 0%, 57%);
       --iconColor: #455d7a;
       --highlight-color: #455d7a;
-      --span: hsl(187, 100%, 40%);
+      --span: #6a7efc;
       --button-text: hsl(0, 0%, 99%);
       --button-bg: hsl(142.1 76.2% 36.3%);
       --tagFontColor: #454545;
@@ -87,6 +87,7 @@
       --button-text: #454545;
       --button-bg: hsl(142.1 76.2% 36.3%);
       --tagFontColor: #454545;
+      --span: #6a7efc;
    }
 }
 
