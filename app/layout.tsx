@@ -8,6 +8,8 @@ import Providers from '@/components/providers'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 
+import { GoogleAnalytics } from '@next/third-parties/google'
+
 const ubuntu = Ubuntu({
    subsets: ['latin'],
    weight: ['300', '400', '500', '700'],
@@ -45,6 +47,7 @@ export default function RootLayout({
                <Footer />
             </Providers>
          </body>
+         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID ?? ''} />
       </html>
    )
 }
