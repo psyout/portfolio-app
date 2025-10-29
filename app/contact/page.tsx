@@ -53,13 +53,13 @@ const Contact = () => {
                      <h3 className='text text-lg font-bold'>Email</h3>
                      <div className='flex gap-3'>
                         <Link className='text' href='mailto:hello@felipegonzalez.io'>
-                           hello@felipegonzalez.dev
+                           hello@felipegonzalez.io
                         </Link>
                         {copied === 'hello@felipegonzalez.dev' ? (
                            <CircleCheck aria-label='Copied' className='text-[var(--primary)]' />
                         ) : (
                            <Files
-                              onClick={() => copyToClipboard('hello@felipegonzalez.io')}
+                              onClick={() => copyToClipboard('hello@felipegonzalez.dev')}
                               aria-label='Copy email'
                               className='scale-150 cursor-pointer rounded-full py-1 transition-all hover:rounded-full hover:bg-gray-200 dark:hover:bg-gray-700'
                            />
