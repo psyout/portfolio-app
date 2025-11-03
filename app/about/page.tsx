@@ -1,6 +1,6 @@
 'use client'
+
 import React, { useEffect, useRef } from 'react'
-import Head from 'next/head'
 import Resume from '@/components/resume'
 import Image from 'next/image'
 import ProfilePicture from '../../public/static/images/profile-picture.jpg'
@@ -77,13 +77,6 @@ const About = () => {
 
    return (
       <div className='container mx-auto max-w-6xl py-40'>
-         <Head>
-            <title>About Me - Felipe</title>
-            <meta
-               name='description'
-               content='Felipe, a creative and driven developer based in Vancouver.'
-            />
-         </Head>
          <motion.section
             ref={sectionRef}
             className='flex flex-col gap-3 sm:justify-between sm:gap-10 md:flex-row'
