@@ -5,26 +5,27 @@ const paragraphs: ReactNode[] = [
    <>
       My name is <span className='signature font-bold'>Felipe</span>, and I am a{' '}
       <span className='signature font-bold'>Full Stack Developer</span> with a background in web
-      design and a passion for building user-focused, scalable applications. I was excited to come
-      across the <span className='signature font-bold'>Senior Full Stack Developer</span> position
-      at <span className='signature font-bold'>O2E Brands</span>. As a current team member at{' '}
+      design and a passion for building user-focused, scalable web and mobile applications. I was
+      excited to come across the{' '}
+      <span className='signature font-bold'>Senior Full Stack Developer</span> position at{' '}
+      <span className='signature font-bold'>O2E Brands</span>. As a current team member at{' '}
       <span className='signature font-bold'>1-800-GOT-JUNK?</span>, I’ve had firsthand experience
-      using the digital tools O2E develops to support daily operations—and I’m eager to contribute
+      using the digital tools O2E develops to support daily operations and I’m eager to contribute
       to building and improving those platforms from the development side.
    </>,
    <>
       I built <span className='signature font-bold'>VanSippy</span>, a full-stack web application
       developed with the MERN stack (MongoDB, Express, React, Node.js). I designed the app
-      architecture, implemented RESTful APIs, and deployed it to the web. This project strengthened
-      my skills in full-stack development, API design, and performance optimization while
-      maintaining a strong focus on usability and accessibility.
+      architecture, implemented RESTful APIs, and deployed it to the web (currently working on the
+      mobile app). This project strengthened my skills in full-stack development, API design, and
+      performance optimization while maintaining a strong focus on usability and accessibility.
    </>,
    <>
       With a foundation in web design, I bring an eye for clean UI and an understanding of user
       experience that complements my technical abilities. I enjoy collaborating in Agile teams,
       conducting code reviews, and improving processes for performance and maintainability. I’m also
-      expanding my experience with CI/CD pipelines, Docker, and cloud services—areas I’m eager to
-      deepen within O2E’s innovative environment.
+      expanding my experience with CI/CD pipelines, Docker, and cloud services. I’m eager to deepen
+      within O2E’s innovative environment.
    </>,
    <>
       While I may not yet hold a senior title, I am fully committed to doing whatever it takes to
