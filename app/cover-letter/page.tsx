@@ -14,25 +14,21 @@ const paragraphs: ReactNode[] = [
       to building and improving those platforms from the development side.
    </>,
    <>
-      I built <span className='signature font-bold'>VanSippy</span>, a full-stack web application
-      developed with the MERN stack (MongoDB, Express, React, Node.js). I designed the app
-      architecture, implemented RESTful APIs, and deployed it to the web (currently working on the
-      mobile app). This project strengthened my skills in full-stack development, API design, and
-      performance optimization while maintaining a strong focus on usability and accessibility.
+      I built <span className='signature font-bold'>VanSippy</span>, a full-stack web app using the
+      MERN stack (MongoDB, Express, React, Node.js), where I designed the architecture, implemented
+      RESTful APIs, and deployed it to the web (now extending it to mobile). With a background in
+      web design, I bring an eye for clean UI and strong user experience, complemented by solid
+      technical skills in full-stack development, API design, and performance optimization. I’m also
+      expanding my knowledge of CI/CD pipelines, Docker, and cloud services, and I’m eager to
+      continue growing within O2E’s innovative environment.
    </>,
    <>
-      With a foundation in web design, I bring an eye for clean UI and an understanding of user
-      experience that complements my technical abilities. I enjoy collaborating in Agile teams,
-      conducting code reviews, and improving processes for performance and maintainability. I’m also
-      expanding my experience with CI/CD pipelines, Docker, and cloud services. I’m eager to deepen
-      within O2E’s innovative environment.
-   </>,
-   <>
-      While I may not yet hold a senior title, I am fully committed to doing whatever it takes to
-      grow into one. I’m constantly learning, refining my skills, and pushing myself to deliver
-      high-quality, maintainable code that makes a real impact. I believe this drive, combined with
-      my hands-on experience and creative problem-solving, allows me to bring real value to your
-      team.
+      I believe my passion for both UX/UI design and web development gives me a unique perspective
+      on how technology can enhance user experience. I’m a self-driven, detail-oriented thinker with
+      strong problem-solving skills and a commitment to delivering high-quality, maintainable code.
+      While I may not yet hold a senior title, I’m fully committed to doing whatever it takes to
+      grow into one continuously learning, refining my craft, and contributing real value through
+      creativity, curiosity, and hard work.
    </>,
    <>
       What excites me most about this role is the opportunity to combine my{' '}
@@ -57,7 +53,7 @@ const paragraphs: ReactNode[] = [
 const CoverLetter: React.FC = () => (
    <div className='bg-background text mt-10 flex min-h-screen flex-col'>
       <header className='font-primary align text-color flex items-center justify-center'>
-         <h1 className='m-0 text-3xl font-bold tracking-wide drop-shadow'>Cover Letter</h1>
+         <h1 className='m-0 text-3xl font-bold tracking-wide'>Cover Letter</h1>
       </header>
       <main className='text mx-auto mt-8 mb-8 max-w-2xl flex-1 rounded-2xl'>
          {paragraphs.map((text, idx) => (
