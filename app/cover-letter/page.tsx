@@ -4,42 +4,50 @@ const paragraphs: ReactNode[] = [
    'Dear Hiring Manager,',
    <>
       My name is <span className='signature font-bold'>Felipe</span>, and I am a{' '}
-      <span className='signature font-bold'>Full Stack Developer</span> with a background in web
-      design and a passion for building user-focused, scalable web and mobile applications. I was
-      excited to come across the{' '}
-      <span className='signature font-bold'>Senior Full Stack Developer</span> position at{' '}
+      <span className='signature font-bold'>
+         Web Developer with a strong background in UI design
+      </span>
+      . I was excited to come across the{' '}
+      <span className='signature font-bold'>Web Experience Designer</span> role at{' '}
       <span className='signature font-bold'>O2E Brands</span>. As a current team member at{' '}
-      <span className='signature font-bold'>1-800-GOT-JUNK?</span>, I’ve had firsthand experience
-      using the digital tools O2E develops to support daily operations and I’m eager to contribute
-      to building and improving those platforms from the development side.
+      <span className='signature font-bold'>1-800-GOT-JUNK?</span>, I already use the digital
+      experiences your team creates, which gives me a unique perspective on how these tools support
+      real users in day-to-day operations.
    </>,
    <>
-      I built <span className='signature font-bold'>VanSippy</span>, a full-stack web app using the
-      MERN stack (MongoDB, Express, React, Node.js), where I designed the architecture, implemented
-      RESTful APIs, and deployed it to the web (now extending it to mobile). With a background in
-      web design, I bring an eye for clean UI and strong user experience, complemented by solid
-      technical skills in full-stack development, API design, and performance optimization. I’m also
-      expanding my knowledge of CI/CD pipelines, Docker, and cloud services, and I’m eager to
-      continue growing within O2E’s innovative environment.
+      My experience sits at the intersection of design and implementation. I have a background in
+      web design, where I create high-fidelity mockups in tools like Figma, and I bring those
+      designs to life using modern front-end technologies such as React, HTML, and CSS. I understand
+      how to structure clean, reusable components and build responsive interfaces that are both
+      visually consistent and functional.
    </>,
    <>
-      I believe my passion for both UX/UI design and web development gives me a unique perspective
-      on how technology can enhance user experience. I’m a self-driven, detail-oriented thinker with
-      strong problem-solving skills and a commitment to delivering high-quality, maintainable code.
-      While I may not yet hold a senior title, I’m fully committed to doing whatever it takes to
-      grow into one continuously learning, refining my craft, and contributing real value through
-      creativity, curiosity, and hard work.
+      I recently built <span className='signature font-bold'>VanSippy</span>, a full-stack web
+      application where I handled both the UI design and development. This strengthened my ability
+      to think not just about how a page looks, but how it performs, scales, and supports user
+      interaction. While my implementation has been mostly in code, I’m very interested in applying
+      the same structured approach to tools like Webflow, treating it as a visual development
+      platform rather than just a design tool.
    </>,
    <>
-      What excites me most about this role is the opportunity to combine my{' '}
-      <span className='signature font-bold'>hands-on experience using O2E’s products</span> with my{' '}
-      <span className='signature font-bold'>technical expertise</span> to enhance the systems that
-      support teams like mine in the field. I’m inspired by O2E’s culture of collaboration and
-      innovation, and I would be proud to contribute to the company’s digital growth.
+      I’m comfortable collaborating with cross-functional teams and working from briefs to deliver
+      polished, user-focused solutions. I value feedback, pay attention to detail, and aim to create
+      clean, consistent experiences that align with both user needs and business goals.
    </>,
    <>
-      Thank you for your time and consideration. I look forward to the opportunity to discuss how my
-      experience, dedication, and perspective can add value to your team.
+      I want to be transparent that I am continuing to grow my experience with Webflow specifically,
+      but I bring a strong foundation in layout systems, responsive design, and front-end logic that
+      allows me to learn quickly and contribute effectively. I’m especially interested in building
+      reusable components and improving design consistency across platforms.
+   </>,
+   <>
+      What excites me most about this role is the opportunity to work closely with design,
+      marketing, and development teams to build real, user-facing experiences, and to continue
+      growing in UX, accessibility, and design systems within O2E’s collaborative environment.
+   </>,
+   <>
+      Thank you for your time and consideration. I would welcome the opportunity to contribute to
+      your team and continue developing my skills in this space.
    </>,
    <>
       <span className='signature mt-6 font-bold'>
