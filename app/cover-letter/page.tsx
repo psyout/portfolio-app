@@ -5,49 +5,41 @@ const paragraphs: ReactNode[] = [
    <>
       My name is <span className='signature font-bold'>Felipe</span>, and I am a{' '}
       <span className='signature font-bold'>
-         Web Developer with a strong background in UI design
+         Frontend Developer with a background in web design
       </span>
-      . I was excited to come across the{' '}
-      <span className='signature font-bold'>Web Experience Designer</span> role at{' '}
-      <span className='signature font-bold'>O2E Brands</span>. As a current team member at{' '}
-      <span className='signature font-bold'>1-800-GOT-JUNK?</span>, I already use the digital
-      experiences your team creates, which gives me a unique perspective on how these tools support
-      real users in day-to-day operations.
+      . I am interested in the <span className='signature font-bold'>Web Developer (Liquid)</span>{' '}
+      role at <span className='signature font-bold'>Versapay</span>, as it combines frontend
+      development with problem solving and client interaction.
    </>,
    <>
-      My experience sits at the intersection of design and implementation. I have a background in
-      web design, where I create high-fidelity mockups in tools like Figma, and I bring those
-      designs to life using modern front-end technologies such as React, HTML, and CSS. I understand
-      how to structure clean, reusable components and build responsive interfaces that are both
-      visually consistent and functional.
+      I do not have a formal Computer Science degree, but I bring several years of hands-on
+      experience with HTML and CSS, along with over three years working as a developer. My
+      background in design helps me build solutions that are both practical and user-focused.
    </>,
    <>
-      I recently built <span className='signature font-bold'>VanSippy</span>, a full-stack web
-      application where I handled both the UI design and development. This strengthened my ability
-      to think not just about how a page looks, but how it performs, scales, and supports user
-      interaction. While my implementation has been mostly in code, I’m very interested in applying
-      the same structured approach to tools like Webflow, treating it as a visual development
-      platform rather than just a design tool.
+      In my freelance work, I build and customize web interfaces using HTML, CSS, and JavaScript,
+      integrating APIs and dynamic data. I regularly troubleshoot issues and work directly with
+      clients to deliver clear, reliable solutions.
    </>,
    <>
-      I’m comfortable collaborating with cross-functional teams and working from briefs to deliver
-      polished, user-focused solutions. I value feedback, pay attention to detail, and aim to create
-      clean, consistent experiences that align with both user needs and business goals.
+      Previously, I worked at <span className='signature font-bold'>1-800-GOT-JUNK?</span>, where I
+      developed strong communication and problem-solving skills by working directly with customers
+      in fast-paced situations. This experience shapes how I approach development today.
    </>,
    <>
-      I want to be transparent that I am continuing to grow my experience with Webflow specifically,
-      but I bring a strong foundation in layout systems, responsive design, and front-end logic that
-      allows me to learn quickly and contribute effectively. I’m especially interested in building
-      reusable components and improving design consistency across platforms.
+      I have also built projects like <span className='signature font-bold'>VanSippy</span>, a
+      data-driven app with filtering, maps, and API integration. I have basic experience with
+      Shopify and Liquid templating, and I recently completed an online Shopify course focused on
+      template and app development. I can quickly grow in this area.
    </>,
    <>
-      What excites me most about this role is the opportunity to work closely with design,
-      marketing, and development teams to build real, user-facing experiences, and to continue
-      growing in UX, accessibility, and design systems within O2E’s collaborative environment.
+      I’m comfortable working in team environments, using Git and Agile workflows, and writing
+      clean, maintainable code. I’m especially interested in roles where I can solve problems and
+      keep improving my frontend skills.
    </>,
    <>
       Thank you for your time and consideration. I would welcome the opportunity to contribute to
-      your team and continue developing my skills in this space.
+      your team.
    </>,
    <>
       <span className='signature mt-6 font-bold'>
