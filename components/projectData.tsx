@@ -6,7 +6,7 @@ export const projects = [
       imageThumb: '/static/images/puretide-products.jpg',
       imageUrl: '/static/images/puretide-products.jpg',
       imageSmall: [
-         '/static/images/puretide-products.jpg',
+         '/static/images/puretide-product-item.jpg',
          '/static/images/vansippy-mobile1.png',
          '/static/images/vansippy-mobile2.png',
          ''
