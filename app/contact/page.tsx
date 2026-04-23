@@ -80,7 +80,7 @@ const Contact = () => {
                            <Files
                               onClick={() => copyToClipboard('+17786977909')}
                               aria-label='Copy phone number'
-                              className='scale-140 cursor-pointer rounded-full py-1 transition-all hover:rounded-full hover:bg-gray-200 dark:hover:bg-gray-700'
+                              className='scale-150 cursor-pointer rounded-full py-1 transition-all hover:rounded-full hover:bg-gray-200 dark:hover:bg-gray-700'
                            />
                         )}
                      </div>
