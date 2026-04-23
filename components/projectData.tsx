@@ -1,4 +1,60 @@
 export const projects = [
+   // Puretide
+   {
+      id: 'puretide',
+      slug: 'puretide',
+      imageThumb: '/static/images/puretide-products.jpg',
+      imageUrl: '/static/images/puretide-products.jpg',
+      imageSmall: [
+         '/static/images/puretide-products.jpg',
+         '/static/images/vansippy-mobile1.png',
+         '/static/images/vansippy-mobile2.png',
+         ''
+      ],
+      tags: ['New', 'Next.js', 'Privacy'],
+      title: 'Puretide',
+      subtitle: 'E-Commerce Web App',
+      title1: '',
+      subtitle1: '',
+      title2: '',
+      subtitle2: '',
+      title3: '',
+      subtitle3: '',
+      list1: [
+         { title: 'Next.js 14 – App Router architecture with modern React patterns' },
+         { title: 'TypeScript – Type-safe components, API routes, and utilities' },
+         { title: 'Tailwind CSS – Responsive dark theme UI styling' },
+         { title: 'React Context – Client-side cart state persisted to localStorage' },
+         { title: 'SQLite (sql.js) – Local order persistence via a SQLite-backed store' },
+         { title: 'Google Sheets API – Inventory and promo source of truth (with caching)' },
+         { title: 'Zoho Mail (SMTP) – Order confirmations, contact submissions, and alerts' }
+      ],
+      list2: [{ title: '' }, { title: '' }],
+      fullDescription:
+         'A privacy-focused e-commerce platform built with Next.js, designed to minimize tracking surface area while still delivering a full shopping experience. It avoids external analytics and third-party cookies, and keeps user data client-side by default.',
+      description:
+         'Privacy-first e-commerce built with Next.js, no tracking, no analytics, and no data collection by default.',
+      imageCaption1: '',
+      imageCaption2: '',
+      imageCaption3: '',
+      imageCaption4: '',
+      paragraph1:
+         'Puretide is a privacy-first e-commerce web app that focuses on shipping a modern store experience without surveillance-by-default. There are **no tracking scripts**, **no external analytics**, and **no telemetry collection**. The UX stays fast and responsive thanks to a lightweight UI built with **Next.js** and **Tailwind CSS**.',
+      paragraph2: '',
+      paragraph3:
+         'The frontend uses the Next.js **App Router** with React components, and keeps interactive flows (cart and checkout) in client components. Cart state is managed via **React Context** and persisted in `localStorage` so the browsing and cart experience works without requiring user accounts or server-side sessions.',
+      paragraph4:
+         'On the backend, API routes handle order creation and payment initiation, with idempotency safeguards to reduce duplicate submissions. Orders are persisted with a SQLite-backed store via **sql.js**, and stock/promo data can be synced from **Google Sheets** (cached to avoid excessive calls). Security headers such as CSP and `X-Robots-Tag: noindex` are applied to support a more private deployment posture.',
+      paragraph5:
+         'Operationally, Puretide uses Zoho Mail (SMTP) for order confirmations, contact submissions, and low-stock alerts. SMTP configuration is provided via environment variables (`SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, `SMTP_FROM`) and can be verified using the included test scripts.',
+      buttonText: 'Go to Project',
+      gitHub: '',
+      buttonVisit: 'View Site',
+      buttonLink: '/projects/puretide',
+      buttonHref: 'https://puretide.ca',
+      skills: ['Next.js', 'TypeScript', 'Tailwind CSS', 'SQLite']
+   },
+
    // Vansippy
    {
       id: 'vansippy',
@@ -11,7 +67,7 @@ export const projects = [
          '/static/images/vansippy-mobile2.png',
          ''
       ],
-      tags: ['New', 'React', 'MongoDB'],
+      tags: ['API', 'React', 'MongoDB'],
       title: 'Vansippy',
       subtitle: 'Happy Hour Finder Web App',
       title1: 'Mobile version',
