@@ -52,14 +52,14 @@ const Contact = () => {
                   <div className='flex flex-col'>
                      <h3 className='text text-lg font-bold'>Email</h3>
                      <div className='flex gap-3'>
-                        <Link className='text' href='mailto:info@felipegonzalez.dev'>
-                           info@felipegonzalez.dev
+                        <Link className='text' href='mailto:hello@felipegonzalez.dev'>
+                           hello@felipegonzalez.dev
                         </Link>
-                        {copied === 'info@felipegonzalez.dev' ? (
+                        {copied === 'hello@felipegonzalez.dev' ? (
                            <CircleCheck aria-label='Copied' className='text-[var(--primary)]' />
                         ) : (
                            <Files
-                              onClick={() => copyToClipboard('info@felipegonzalez.dev')}
+                              onClick={() => copyToClipboard('hello@felipegonzalez.dev')}
                               aria-label='Copy email'
                               className='scale-150 cursor-pointer rounded-full py-1 transition-all hover:rounded-full hover:bg-gray-200 dark:hover:bg-gray-700'
                            />
