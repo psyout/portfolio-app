@@ -4,7 +4,6 @@ import React, { useState, useMemo, useCallback } from 'react'
 
 // Components
 import Intro from '@/components/intro'
-import Anchor from '@/components/ui/anchor'
 import ProjectCard from '@/components/ui/projects'
 import Skills from '@/components/skills'
 import Contact from './contact/page'
@@ -12,7 +11,6 @@ import { Button } from '@/components/ui/button'
 
 // Data
 import { projects } from '@/components/projectData'
-import { links } from '@/components/links'
 
 export default function Home() {
    const [visibleCount, setVisibleCount] = useState(3)
@@ -25,7 +23,6 @@ export default function Home() {
             <section className='flex flex-col gap-20 border-b md:flex-row md:items-start'>
                <div className='w-full space-y-8 md:w-1/2'>
                   <Intro />
-                  <Anchor links={links} />
                </div>
                <div className='w-full space-y-8 md:w-1/2 md:px-6'>
                   <div id='projects' className='scroll-mt-10'>

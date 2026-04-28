@@ -7,8 +7,8 @@ export const projects = [
       imageUrl: '/static/images/puretide-products.jpg',
       imageSmall: [
          '/static/images/puretide-product-item.jpg',
-         '/static/images/vansippy-mobile1.png',
-         '/static/images/vansippy-mobile2.png',
+         '/static/images/puretide-mobile1.png',
+         '/static/images/puretide-mobile2.png',
          ''
       ],
       tags: ['New', 'Next.js', 'Privacy'],
@@ -39,12 +39,12 @@ export const projects = [
       imageCaption3: '',
       imageCaption4: '',
       paragraph1:
-         'Puretide is a privacy-first e-commerce web app that focuses on shipping a modern store experience without surveillance-by-default. There are **no tracking scripts**, **no external analytics**, and **no telemetry collection**. The UX stays fast and responsive thanks to a lightweight UI built with **Next.js** and **Tailwind CSS**.',
+         'Puretide is a privacy-first e-commerce app built around a simple idea: an online store should work well without tracking people. There are no analytics scripts, no third-party trackers, and no hidden data collection. It’s just a fast, clean shopping experience that respects the user.The frontend is built with Next.js and Tailwind, keeping things lightweight and responsive. I used modern React patterns with the App Router, and TypeScript across the project to keep everything consistent and easier to maintain.',
       paragraph2: '',
       paragraph3:
-         'The frontend uses the Next.js **App Router** with React components, and keeps interactive flows (cart and checkout) in client components. Cart state is managed via **React Context** and persisted in `localStorage` so the browsing and cart experience works without requiring user accounts or server-side sessions.',
+         'The frontend is built with the Next.js App Router and React, with interactive features like the cart and checkout handled through client-side components. Cart data is managed using React Context and stored in localStorage, allowing users to browse and manage their cart without needing an account or server-side session.',
       paragraph4:
-         'On the backend, API routes handle order creation and payment initiation, with idempotency safeguards to reduce duplicate submissions. Orders are persisted with a SQLite-backed store via **sql.js**, and stock/promo data can be synced from **Google Sheets** (cached to avoid excessive calls). Security headers such as CSP and `X-Robots-Tag: noindex` are applied to support a more private deployment posture.',
+         'On the backend, API routes handle order creation and payment processing, with safeguards in place to prevent duplicate submissions. Orders are stored using a lightweight SQLite setup (via sql.js), while product and promotion data can be synced from Google Sheets and cached to reduce unnecessary requests. ',
       paragraph5:
          'Operationally, Puretide uses Zoho Mail (SMTP) for order confirmations, contact submissions, and low-stock alerts. SMTP configuration is provided via environment variables (`SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, `SMTP_FROM`) and can be verified using the included test scripts.',
       buttonText: 'Go to Project',

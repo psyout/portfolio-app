@@ -4,6 +4,7 @@ import Link from 'next/link'
 import ThemeToggle from '@/components/theme-toggle'
 import { useState, useEffect, useCallback } from 'react'
 import LogoIcon from './ui/logo'
+import { links } from '@/components/links'
 
 const Nav = () => {
    const [menuOpen, setMenuOpen] = useState(false)
@@ -25,10 +26,6 @@ const Nav = () => {
    const toggleMenu = useCallback(() => setMenuOpen(prev => !prev), [])
    const closeMenu = useCallback(() => setMenuOpen(false), [])
 
-   const menuClasses = menuOpen
-      ? 'translate-x-0 opacity-100 pointer-events-auto'
-      : 'translate-x-full opacity-0 pointer-events-none'
-
    return (
       <nav role='navigation' className='mx-auto flex max-w-6xl items-center justify-between'>
          {/* Logo */}
@@ -48,8 +45,25 @@ const Nav = () => {
          </Link>
 
          <div className='flex items-center'>
+            <ul className='hidden items-center gap-6 font-sans font-medium text-[var(--text-color)] sm:flex'>
+               {links.map(link => (
+                  <li key={link.label}>
+                     <Link
+                        href={link.href}
+                        onClick={closeMenu}
+                        className='group relative flex w-fit items-center pb-0.5 text-[var(--text-color)] transition-colors duration-200 ease-out hover:text-[var(--primary)] focus-visible:rounded-sm focus-visible:ring-2 focus-visible:ring-[var(--primary)] focus-visible:ring-offset-2 focus-visible:outline-none'
+                     >
+                        <span className='flex items-center gap-1 transition-colors duration-200 ease-out group-hover:text-[var(--primary)]'>
+                           {link.icon}
+                           {link.label}
+                        </span>
+                        <span className='absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-[var(--primary)] transition-transform duration-200 ease-out group-hover:scale-x-100' />
+                     </Link>
+                  </li>
+               ))}
+            </ul>
             {/* Theme Toggle */}
-            <div className={`ml-1 ${menuOpen ? 'relative z-50' : ''}`}>
+            <div className={`ml-3 ${menuOpen ? 'relative z-50' : ''}`}>
                <ThemeToggle />
             </div>
             {/* Animated Hamburger Icon */}
@@ -67,25 +81,29 @@ const Nav = () => {
                <span className='bar z-50'></span>
             </div>
 
-            {/* Navigation Menu */}
-            <div
-               id='main-menu'
-               className={`bg-social--color fixed inset-0 z-40 transform backdrop-blur-xs transition-all duration-300 ease-in-out sm:static sm:flex sm:translate-x-0 sm:bg-transparent sm:opacity-100 ${menuClasses}`}
-            >
-               <ul className='text-muted-foreground mt-30 mr-7 flex h-full flex-col items-end gap-6 justify-self-end font-medium sm:hidden'>
-                  {['About', 'Contact'].map(item => (
-                     <li key={item}>
+            {menuOpen && (
+               <div
+                  id='main-menu'
+                  className='bg-social--color fixed inset-0 z-40 backdrop-blur-xs sm:hidden'
+               >
+                  <div className='mt-30 mr-7 flex h-full flex-col items-end gap-6 justify-self-end font-sans font-medium text-[var(--text-color)]'>
+                     {links.map(link => (
                         <Link
-                           href={`/${item.toLowerCase()}`}
+                           key={link.label}
+                           href={link.href}
                            onClick={closeMenu}
-                           className='cursor-pointer text-2xl'
+                           className='group relative flex w-fit items-center pb-0.5 text-2xl text-[var(--text-color)] transition-colors duration-200 ease-out hover:text-[var(--primary)] focus-visible:rounded-sm focus-visible:ring-2 focus-visible:ring-[var(--primary)] focus-visible:ring-offset-2 focus-visible:outline-none'
                         >
-                           {item}
+                           <span className='flex items-center gap-3 transition-colors duration-200 ease-out group-hover:text-[var(--primary)]'>
+                              {link.icon}
+                              {link.label}
+                           </span>
+                           <span className='absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-[var(--primary)] transition-transform duration-200 ease-out group-hover:scale-x-100' />
                         </Link>
-                     </li>
-                  ))}
-               </ul>
-            </div>
+                     ))}
+                  </div>
+               </div>
+            )}
          </div>
       </nav>
    )
