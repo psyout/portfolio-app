@@ -17,6 +17,7 @@ const Form = () => {
       const name = formData.get('user_name') as string
       const email = formData.get('user_email') as string
       const message = formData.get('message') as string
+      const website = formData.get('website') as string
 
       try {
          const response = await fetch('/api/send-email', {
@@ -24,7 +25,7 @@ const Form = () => {
             headers: {
                'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ name, email, message })
+            body: JSON.stringify({ name, email, message, website })
          })
 
          if (response.ok) {
@@ -58,6 +59,16 @@ const Form = () => {
       <div className='relative'>
          <form ref={form} onSubmit={sendEmail}>
             <h3 className='title mb-6 text-lg font-semibold'>or use the form below</h3>
+            <div className='absolute -left-[9999px]' aria-hidden='true'>
+               <label htmlFor='website'>Website</label>
+               <input
+                  id='website'
+                  name='website'
+                  type='text'
+                  tabIndex={-1}
+                  autoComplete='off'
+               />
+            </div>
             <div className='grid grid-cols-1 gap-3'>
                <input
                   placeholder='Name'
