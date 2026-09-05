@@ -2,14 +2,11 @@
 
 /* eslint-disable @next/next/no-img-element */
 import { useEffect, useRef, useState } from "react";
+import type { ProjectSlide } from "@/data/portfolio";
 
 type ProjectGalleryProps = {
   project: string;
-  slides: Array<{
-    image: string;
-    label: string;
-    fit?: "cover" | "contain";
-  }>;
+  slides: ProjectSlide[];
   tone: number;
 };
 
