@@ -2,6 +2,10 @@
 import { ArrowDownToLine, Code2, Languages, UsersRound } from "lucide-react";
 import { ProjectGallery } from "./project-gallery";
 
+// Hostinger can retain Next.js' static HTML cache across deployments, leaving
+// the page pointing at CSS chunks that no longer exist in the new build.
+export const dynamic = "force-dynamic";
+
 const projects = [
   {
     id: "puretide",
