@@ -45,7 +45,7 @@ export function ProjectSection({ project, tone }: ProjectSectionProps) {
               transition={{ duration: reduceMotion ? 0 : 0.46, ease: [0.22, 1, 0.36, 1] }}
               className="overflow-hidden"
             >
-        <div className="border-t border-portfolio-line pb-5 pt-5 min-[761px]:pb-6">
+        <div className="border-t border-portfolio-line pb-9 pt-5 min-[761px]:pb-10">
           <ProjectGallery project={project.title} slides={project.slides} tone={tone} />
 
           <div className="grid grid-cols-[minmax(220px,.72fr)_minmax(0,1.28fr)] gap-[clamp(44px,7vw,84px)] px-1 pt-8 max-[760px]:grid-cols-1 max-[760px]:gap-8">
