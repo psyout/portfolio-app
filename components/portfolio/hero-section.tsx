@@ -35,7 +35,7 @@ export function HeroSection() {
 					</div>
 				</div>
 
-				<div className='mt-9 flex flex-wrap gap-2.5 border-t border-portfolio-line pt-6'>
+				<div className='mt-9 flex flex-wrap gap-2.5 border-portfolio-line pt-6'>
 					<a
 						className='button-hover group inline-flex min-h-11 items-center gap-3 rounded-full bg-portfolio-button-bg px-5 text-[14px] font-semibold text-portfolio-button-text no-underline hover:bg-portfolio-title'
 						href='#work'>

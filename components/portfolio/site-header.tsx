@@ -9,7 +9,7 @@ export function SiteHeader() {
 					{`{Felipe}`}
 				</a>
 				<nav
-					className='flex items-center gap-5 text-[13px]'
+					className='flex items-center gap-5 font-semibold text-[0.9rem]'
 					aria-label='Main navigation'>
 					<a
 						className='no-underline transition-colors hover:text-portfolio-title'

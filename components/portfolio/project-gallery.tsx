@@ -81,9 +81,7 @@ export function ProjectGallery({ project, slides, tone }: ProjectGalleryProps) {
 						<img
 							src={slide.image}
 							alt=''
-							className={`absolute inset-0 h-full w-full ${
-								slide.fit === 'contain' ? 'bg-portfolio-secondary object-contain p-[clamp(28px,5vw,72px)]' : 'object-cover'
-							}`}
+							className={`absolute inset-0 h-full w-full ${slide.fit === 'contain' ? 'bg-portfolio-secondary object-contain p-[clamp(28px,5vw,72px)]' : 'object-cover'}`}
 						/>
 						<span
 							className='absolute inset-0 bg-[linear-gradient(180deg,transparent_42%,rgb(7_12_10_/_72%)_100%)]'
