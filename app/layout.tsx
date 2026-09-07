@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 	creator: 'Felipe Gonzalez',
 	keywords: ['Felipe Gonzalez', 'full-stack developer', 'web developer', 'React developer', 'Next.js developer', 'Vancouver'],
 	alternates: { canonical: '/' },
-	icons: { icon: '/favicon.svg', shortcut: '/favicon.svg' },
+	icons: { icon: '/favicon.ico', shortcut: '/favicon.ico' },
 	openGraph: {
 		title,
 		description,
