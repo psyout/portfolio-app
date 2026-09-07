@@ -1,9 +1,8 @@
 export function SiteFooter() {
   return (
-    <footer className="flex justify-between bg-portfolio-ink px-[4vw] py-[30px] text-xs tracking-[.04em] text-white max-[760px]:flex-wrap max-[760px]:gap-[18px]">
-      <span>FELIPE GONZALEZ</span>
-      <span>Full-stack developer · Vancouver, BC</span>
-      <a href="#top">Back to top ↑</a>
+    <footer className="mx-auto flex max-w-[960px] justify-between px-5 pb-12 pt-7 text-[13px] text-portfolio-text/65 max-[620px]:flex-col max-[620px]:gap-3">
+      <span>© 2026 Felipe Gonzalez</span>
+      <span>Designed and developed in Vancouver, BC</span>
     </footer>
   );
 }

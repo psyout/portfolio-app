@@ -1,23 +1,63 @@
-import { SectionLabel } from "./section-label";
+import { ArrowDown, ArrowUpRight, MapPin } from 'lucide-react';
 
 export function HeroSection() {
-  return (
-    <section
-      className="relative min-h-[calc(100svh-88px)] overflow-hidden px-[4vw] pb-[42px] pt-[clamp(50px,7vw,105px)] min-[761px]:min-h-[calc(88svh-88px)] min-[761px]:pt-[clamp(52px,5vw,78px)] max-[760px]:min-h-[calc(100svh-72px)]"
-      id="top"
-    >
-      <SectionLabel>Full-stack developer · Design background</SectionLabel>
-      <h1 className="relative z-[1] my-[4vh] mb-[11vh] max-w-[1050px] text-[clamp(66px,10.4vw,160px)] font-medium leading-[.82] tracking-[-.072em] min-[761px]:my-[3vh] min-[761px]:mb-[7vh] min-[761px]:max-w-[980px] min-[761px]:text-[clamp(58px,7.2vw,112px)] min-[761px]:leading-[.88] min-[761px]:tracking-[-.065em] max-[760px]:mt-[8vh]">
-        Code that works.<br />Design that connects.
-      </h1>
-      <div className="relative z-[1] flex items-end justify-end gap-[9vw] max-[760px]:justify-between">
-        <p className="m-0 max-w-[460px] text-[clamp(17px,1.5vw,22px)] leading-[1.45]">
-          I&apos;m Felipe, a Vancouver-based developer who turns complex ideas
-          into clear, accessible digital products.
-        </p>
-        <a className="grid size-[66px] shrink-0 place-items-center rounded-full border border-portfolio-ink text-[25px] no-underline" href="#work" aria-label="Explore selected work">↓</a>
-      </div>
-      <div className="blueprint-lines absolute right-[-5vw] top-[13%] aspect-square w-[46vw] rotate-[14deg] border border-[rgb(49_89_238_/_18%)] max-[760px]:right-[-30vw] max-[760px]:top-[30%] max-[760px]:w-[80vw]" aria-hidden="true" />
-    </section>
-  );
+	return (
+		<section
+			className='scroll-mt-20 flex min-h-[90svh] items-center px-5 py-10 min-[761px]:px-8'
+			id='top'>
+			<div className='mx-auto w-full max-w-[960px] border-portfolio-line'>
+				<div className='flex flex-wrap items-center justify-between gap-3 text-[13px] text-portfolio-text/65'>
+					<span className='font-bold uppercase tracking-[.13em] text-portfolio-title'>Full-stack developer · Web designer</span>
+					<span className='inline-flex items-center gap-2'>
+						<span
+							className='size-2 rounded-full bg-portfolio-title'
+							aria-hidden='true'
+						/>
+						Available for opportunities
+					</span>
+				</div>
+
+				<div className='mt-[clamp(44px,7vw,72px)] grid gap-10 min-[800px]:grid-cols-[minmax(0,1fr)_280px] min-[800px]:items-end min-[800px]:gap-12'>
+					<h1 className='m-0 max-w-[650px] text-[clamp(44px,6vw,68px)] font-bold leading-[.98] tracking-[-.045em]'>I build thoughtful digital products from interface to backend.</h1>
+
+					<div>
+						<p className='m-0 text-[17px] leading-[1.65] text-portfolio-text/70 text-pretty'>
+							I&apos;m Felipe. I combine product-minded design with practical full-stack development to make complex ideas feel clear and useful.
+						</p>
+						<p className='mb-0 mt-4 inline-flex items-center gap-2 text-[13px] text-portfolio-text/55'>
+							<MapPin
+								size={16}
+								strokeWidth={1.8}
+								aria-hidden='true'
+							/>{' '}
+							Vancouver, BC
+						</p>
+					</div>
+				</div>
+
+				<div className='mt-9 flex flex-wrap gap-2.5 border-t border-portfolio-line pt-6'>
+					<a
+						className='button-hover group inline-flex min-h-11 items-center gap-3 rounded-full bg-portfolio-button-bg px-5 text-[14px] font-semibold text-portfolio-button-text no-underline hover:bg-portfolio-title'
+						href='#work'>
+						View projects
+						<ArrowDown
+							className='transition-transform duration-300 group-hover:translate-y-0.5'
+							size={17}
+							aria-hidden='true'
+						/>
+					</a>
+					<a
+						className='button-hover group inline-flex min-h-11 items-center gap-3 rounded-full border border-portfolio-line px-5 text-[14px] font-semibold no-underline hover:border-portfolio-title hover:bg-portfolio-title hover:text-white'
+						href='#contact'>
+						Let&apos;s work together
+						<ArrowUpRight
+							className='transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5'
+							size={17}
+							aria-hidden='true'
+						/>
+					</a>
+				</div>
+			</div>
+		</section>
+	);
 }

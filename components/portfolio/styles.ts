@@ -1,11 +1,11 @@
 export const sectionSpacing =
-  "px-[4vw] py-[clamp(80px,11vw,170px)] min-[761px]:py-[clamp(72px,8vw,120px)]";
+  "px-5 py-[clamp(64px,8vw,104px)] min-[761px]:px-8";
 
 export const displayHeading =
-  "max-w-[1050px] text-[clamp(45px,7vw,105px)] font-normal leading-[.94] tracking-[-.06em] min-[761px]:max-w-[900px] min-[761px]:text-[clamp(44px,5.4vw,82px)]";
+  "max-w-[760px] text-[clamp(36px,5vw,64px)] font-medium leading-[1.02] tracking-[-.045em]";
 
 export const contentHeading =
-  "text-[clamp(42px,6vw,90px)] font-normal leading-[.95] tracking-[-.06em] min-[761px]:text-[clamp(40px,4.8vw,70px)]";
+  "text-[clamp(34px,4vw,52px)] font-medium leading-[1.05] tracking-[-.04em]";
 
 export const darkButton =
-  "inline-flex bg-portfolio-ink px-[17px] py-[13px] text-[13px] font-bold text-white no-underline transition-colors hover:bg-portfolio-blue";
+  "button-hover inline-flex rounded-full bg-portfolio-button-bg px-[17px] py-[11px] text-[13px] font-semibold text-portfolio-button-text no-underline hover:bg-portfolio-title";

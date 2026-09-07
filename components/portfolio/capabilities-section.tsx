@@ -1,27 +1,49 @@
-import type { Capability } from "@/data/portfolio";
-import { SectionLabel } from "./section-label";
-import { contentHeading, sectionSpacing } from "./styles";
+import { MonitorSmartphone, PenTool, ServerCog } from 'lucide-react';
+import type { Capability } from '@/data/portfolio';
+
+const capabilityIcons = [MonitorSmartphone, ServerCog, PenTool];
 
 type CapabilitiesSectionProps = {
-  capabilities: Capability[];
+	capabilities: Capability[];
 };
 
 export function CapabilitiesSection({ capabilities }: CapabilitiesSectionProps) {
-  return (
-    <section className={`${sectionSpacing} grid grid-cols-[.85fr_1.15fr] gap-[9vw] max-[760px]:grid-cols-1`} aria-labelledby="capabilities-title">
-      <div>
-        <SectionLabel>Capabilities</SectionLabel>
-        <h2 className={`${contentHeading} mb-[38px] mt-6`} id="capabilities-title">One person.<br />The full product picture.</h2>
-      </div>
-      <div className="border-t border-portfolio-line">
-        {capabilities.map((capability) => (
-          <article className="grid grid-cols-[50px_1fr_1.2fr] gap-6 border-b border-portfolio-line py-[34px] max-[760px]:grid-cols-[36px_1fr]" key={capability.number}>
-            <span className="text-xs font-bold text-portfolio-blue">{capability.number}</span>
-            <h3 className="m-0 text-[clamp(20px,2vw,28px)] tracking-[-.03em]">{capability.title}</h3>
-            <p className="m-0 text-base leading-[1.55] max-[760px]:col-start-2">{capability.body}</p>
-          </article>
-        ))}
-      </div>
-    </section>
-  );
+	return (
+		<section
+			className='px-5 py-[clamp(64px,8vw,88px)] min-[761px]:px-8'
+			aria-labelledby='capabilities-title'>
+			<div className='mx-auto max-w-[960px]'>
+				<div className='mb-4 flex items-baseline justify-between gap-5'>
+					<h2
+						className='m-0 text-xl font-semibold'
+						id='capabilities-title'>
+						Capabilities
+					</h2>
+					<span className='text-[12px] text-portfolio-text/50'>What I bring to a product</span>
+				</div>
+				<div className='border-y border-portfolio-line'>
+					{capabilities.map((capability, index) => {
+						const Icon = capabilityIcons[index] ?? PenTool;
+
+						return (
+						<article
+							className='group grid grid-cols-[36px_52px_1fr_1.4fr] items-center gap-5 border-b border-portfolio-line px-5 py-6 transition-colors duration-300 last:border-b-0 hover:bg-portfolio-muted/55 max-[700px]:grid-cols-[30px_44px_1fr] max-[700px]:gap-3'
+							key={capability.number}>
+							<span className='text-xs font-bold text-portfolio-title'>{capability.number}</span>
+							<span className='grid size-11 place-items-center rounded-full bg-portfolio-muted text-portfolio-text/60 transition-[background-color,color,transform] duration-300 group-hover:-translate-y-0.5 group-hover:bg-portfolio-title group-hover:text-white'>
+								<Icon
+									size={21}
+									strokeWidth={1.8}
+									aria-hidden='true'
+								/>
+							</span>
+							<h3 className='m-0 text-[16px] font-semibold'>{capability.title}</h3>
+							<p className='m-0 text-[14px] leading-[1.6] text-portfolio-text/65 max-[700px]:col-span-2 max-[700px]:col-start-2'>{capability.body}</p>
+						</article>
+						);
+					})}
+				</div>
+			</div>
+		</section>
+	);
 }
