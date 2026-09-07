@@ -5,7 +5,7 @@ export function HeroSection() {
 		<section
 			className='scroll-mt-20 flex min-h-[90svh] items-center px-5 py-10 min-[761px]:px-8'
 			id='top'>
-			<div className='mx-auto w-full max-w-[960px] border-portfolio-line'>
+			<div className='mx-auto w-full max-w-240 border-portfolio-line'>
 				<div className='flex flex-wrap items-center justify-between gap-3 text-[13px] text-portfolio-text/65'>
 					<span className='font-bold uppercase tracking-[.13em] text-portfolio-title'>Full-stack developer · Web designer</span>
 					<span className='inline-flex items-center gap-2'>

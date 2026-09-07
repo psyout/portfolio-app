@@ -69,7 +69,7 @@ export function ContactSection() {
 		<section
 			className='px-5 pb-5 pt-[clamp(64px,8vw,88px)] min-[761px]:px-8'
 			id='contact'>
-			<div className='mx-auto grid max-w-[960px] gap-12 border-y border-portfolio-line py-[clamp(60px,8vw,88px)] min-[820px]:grid-cols-[.85fr_1.15fr] min-[820px]:gap-16'>
+			<div className='mx-auto grid max-w-240 gap-12 border-y border-portfolio-line py-[clamp(60px,8vw,88px)] min-[820px]:grid-cols-[.85fr_1.15fr] min-[820px]:gap-16'>
 				<div>
 					<p className={`m-0 ${sectionEyebrow}`}>Contact</p>
 					<h2 className={`mb-0 mt-4 max-w-[430px] ${featureTitle}`}>Have a problem worth solving?</h2>

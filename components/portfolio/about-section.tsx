@@ -12,7 +12,7 @@ export function AboutSection() {
 		<section
 			className='scroll-mt-6 px-5 pb-[clamp(64px,8vw,88px)] min-[761px]:px-8'
 			id='about'>
-			<div className='mx-auto max-w-[960px] border-y border-portfolio-line px-1 py-7 min-[761px]:py-9'>
+			<div className='mx-auto max-w-240 border-y border-portfolio-line px-1 py-7 min-[761px]:py-9'>
 				<div className='flex flex-wrap items-center justify-between gap-4'>
 					<p className={`m-0 ${sectionEyebrow}`}>About</p>
 					<a
@@ -30,9 +30,13 @@ export function AboutSection() {
 				</div>
 
 				<div className='mt-8 grid gap-6 min-[700px]:grid-cols-[.78fr_1.22fr] min-[700px]:items-start min-[700px]:gap-14'>
-					<h2 className={`m-0 max-w-[360px] ${featureTitle}`}>Design-aware.<br />Systems-minded.</h2>
+					<h2 className={`m-0 max-w-[360px] ${featureTitle}`}>
+						Design-aware.
+						<br />
+						Systems-minded.
+					</h2>
 					<p className='m-0 max-w-[620px] text-[17px] leading-[1.75] text-portfolio-text/70'>
-						I build clean, accessible web products across React and Next.js interfaces, Node.js APIs, databases, and product design—with a focus on performance, maintainability, and
+						I build clean, accessible web products across React and Next.js interfaces, Node.js APIs, databases, and product design, with a focus on performance, maintainability, and
 						useful user experiences.
 					</p>
 				</div>

@@ -13,7 +13,7 @@ export function CapabilitiesSection({ capabilities }: CapabilitiesSectionProps) 
 		<section
 			className='px-5 py-[clamp(64px,8vw,88px)] min-[761px]:px-8'
 			aria-labelledby='capabilities-title'>
-			<div className='mx-auto max-w-[960px]'>
+			<div className='mx-auto max-w-240'>
 				<div className='mb-5 flex items-end justify-between gap-5'>
 					<div>
 						<p className={`m-0 ${sectionEyebrow}`}>Expertise</p>

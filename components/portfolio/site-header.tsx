@@ -1,7 +1,7 @@
 export function SiteHeader() {
 	return (
 		<header className='sticky top-0 z-10 border-b border-portfolio-line bg-portfolio-background/95 px-5 backdrop-blur min-[761px]:px-8'>
-			<div className='mx-auto flex h-[68px] max-w-[960px] items-center justify-between'>
+			<div className='mx-auto flex h-[68px] max-w-240 items-center justify-between'>
 				<a
 					className='gridplace-items-center text-[1.8rem] font-extrabold no-underline '
 					href='#top'

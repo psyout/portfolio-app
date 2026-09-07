@@ -19,7 +19,7 @@ export function ProjectSection({ project, tone }: ProjectSectionProps) {
 
   return (
     <article className="scroll-mt-6 px-5 min-[761px]:px-8" id={project.id}>
-      <div className={`mx-auto max-w-[960px] border-b border-portfolio-line bg-portfolio-background px-1 ${tone === 0 ? "border-t" : ""}`}>
+      <div className={`mx-auto max-w-240 border-b border-portfolio-line bg-portfolio-background px-1 ${tone === 0 ? "border-t" : ""}`}>
         <h2 className="sr-only">{project.title}</h2>
         <button
           className="group grid w-full cursor-pointer grid-cols-[1fr_auto] items-center gap-4 border-0 bg-transparent px-1 py-6 text-left text-portfolio-text"
