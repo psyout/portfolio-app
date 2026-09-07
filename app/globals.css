@@ -127,6 +127,23 @@ button:focus-visible {
   }
 }
 
+@keyframes image-skeleton-shimmer {
+  to {
+    background-position-x: -200%;
+  }
+}
+
+.image-skeleton {
+  background: linear-gradient(
+    105deg,
+    rgb(25 27 26 / 8%) 20%,
+    rgb(255 255 255 / 52%) 38%,
+    rgb(25 27 26 / 8%) 56%
+  );
+  background-size: 200% 100%;
+  animation: image-skeleton-shimmer 1.35s linear infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -138,5 +155,9 @@ button:focus-visible {
   .button-hover::before {
     translate: none;
     transition: none;
+  }
+
+  .image-skeleton {
+    animation: none;
   }
 }
