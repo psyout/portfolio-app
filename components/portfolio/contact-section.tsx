@@ -4,6 +4,7 @@ import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { Check, Copy } from 'lucide-react';
 import { FaLinkedinIn } from 'react-icons/fa6';
 import { SiGithub } from 'react-icons/si';
+import { featureTitle, sectionEyebrow } from './styles';
 
 const field =
 	'w-full rounded-[10px] border border-portfolio-line bg-transparent px-4 py-3.5 text-base text-portfolio-text outline-none transition-colors placeholder:text-portfolio-text/35 focus:border-portfolio-title';
@@ -70,8 +71,8 @@ export function ContactSection() {
 			id='contact'>
 			<div className='mx-auto grid max-w-[960px] gap-12 border-y border-portfolio-line py-[clamp(60px,8vw,88px)] min-[820px]:grid-cols-[.85fr_1.15fr] min-[820px]:gap-16'>
 				<div>
-					<p className='m-0 text-xs font-bold uppercase tracking-[.15em] text-portfolio-title'>Contact</p>
-					<h2 className='mb-0 mt-5 max-w-[430px] text-[clamp(38px,5vw,58px)] font-semibold leading-[1.02] tracking-[-.05em]'>Have a problem worth solving?</h2>
+					<p className={`m-0 ${sectionEyebrow}`}>Contact</p>
+					<h2 className={`mb-0 mt-4 max-w-[430px] ${featureTitle}`}>Have a problem worth solving?</h2>
 					<p className='mb-0 mt-6 max-w-[430px] text-[16px] leading-[1.7] text-portfolio-text/65'>
 						I&apos;m open to full-time developer roles, contract work, and thoughtful collaborations.
 					</p>
@@ -145,7 +146,7 @@ export function ContactSection() {
 							autoComplete='off'
 						/>
 					</div>
-					<h3 className='m-0 text-2xl font-semibold'>Send a message</h3>
+					<h3 className='m-0 text-[22px] font-semibold tracking-[-.02em]'>Send a message</h3>
 					<div className='mt-7 grid gap-5 sm:grid-cols-2'>
 						<label className='grid gap-2 text-[13px] font-semibold'>
 							Your name

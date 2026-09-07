@@ -1,5 +1,6 @@
 import { MonitorSmartphone, PenTool, ServerCog } from 'lucide-react';
 import type { Capability } from '@/data/portfolio';
+import { sectionEyebrow, sectionTitle } from './styles';
 
 const capabilityIcons = [MonitorSmartphone, ServerCog, PenTool];
 
@@ -13,12 +14,15 @@ export function CapabilitiesSection({ capabilities }: CapabilitiesSectionProps) 
 			className='px-5 py-[clamp(64px,8vw,88px)] min-[761px]:px-8'
 			aria-labelledby='capabilities-title'>
 			<div className='mx-auto max-w-[960px]'>
-				<div className='mb-4 flex items-baseline justify-between gap-5'>
-					<h2
-						className='m-0 text-xl font-semibold'
-						id='capabilities-title'>
-						Capabilities
-					</h2>
+				<div className='mb-5 flex items-end justify-between gap-5'>
+					<div>
+						<p className={`m-0 ${sectionEyebrow}`}>Expertise</p>
+						<h2
+							className={`mb-0 mt-3 ${sectionTitle}`}
+							id='capabilities-title'>
+							Capabilities
+						</h2>
+					</div>
 					<span className='text-[12px] text-portfolio-text/50'>What I bring to a product</span>
 				</div>
 				<div className='border-y border-portfolio-line'>
