@@ -61,7 +61,7 @@ export function TechnologyStack({ items, project }: TechnologyStackProps) {
 
 				return (
 					<li
-						className='grid size-8 place-items-center transition-[filter,transform] duration-300 ease-out hover:-translate-y-0.5 hover:brightness-110'
+						className='grid size-8 place-items-center transition-[filter] duration-200 hover:brightness-110'
 						key={item}
 						style={{ color: technology.color }}
 						title={item}>

@@ -2,6 +2,7 @@ import { AboutSection } from "@/components/portfolio/about-section";
 import { CapabilitiesSection } from "@/components/portfolio/capabilities-section";
 import { ContactSection } from "@/components/portfolio/contact-section";
 import { HeroSection } from "@/components/portfolio/hero-section";
+import { ExperienceSection } from "@/components/portfolio/experience-section";
 import { ProjectSection } from "@/components/portfolio/project-section";
 import { SiteHeader } from "@/components/portfolio/site-header";
 import { SiteFooter } from "@/components/portfolio/site-footer";
@@ -22,14 +23,17 @@ export default function Home() {
         <MotionReveal>
           <AboutSection />
         </MotionReveal>
-        <MotionReveal>
-          <WorkIntro />
-        </MotionReveal>
-        {projects.map((project, index) => (
-          <MotionReveal delay={Math.min(index * 0.06, 0.18)} frame key={project.id}>
-            <ProjectSection project={project} tone={index} />
+        <ExperienceSection />
+        <div className="project-field pb-[clamp(72px,9vw,112px)]">
+          <MotionReveal>
+            <WorkIntro />
           </MotionReveal>
-        ))}
+          {projects.map((project, index) => (
+            <MotionReveal delay={Math.min(index * 0.06, 0.18)} frame key={project.id}>
+              <ProjectSection project={project} tone={index} />
+            </MotionReveal>
+          ))}
+        </div>
         <MotionReveal>
           <CapabilitiesSection capabilities={capabilities} />
         </MotionReveal>

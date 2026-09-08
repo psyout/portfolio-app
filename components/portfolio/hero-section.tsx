@@ -1,61 +1,56 @@
-import { ArrowDown, ArrowUpRight, MapPin } from 'lucide-react';
+import { ArrowDown, ArrowUpRight } from 'lucide-react';
+import { LocationMarker } from './location-marker';
+import { TypingRole } from './typing-role';
 
 export function HeroSection() {
 	return (
 		<section
-			className='scroll-mt-20 flex min-h-[90svh] items-center px-5 py-10 min-[761px]:px-8'
+			className='relative flex min-h-[90svh] scroll-mt-20 items-center overflow-hidden px-5 py-12 min-[761px]:px-8 min-[900px]:py-16'
 			id='top'>
-			<div className='mx-auto w-full max-w-240 border-portfolio-line'>
-				<div className='flex flex-wrap items-center justify-between gap-3 text-[13px] text-portfolio-text/65'>
-					<span className='font-bold uppercase tracking-[.13em] text-portfolio-title'>Full-stack developer · Web designer</span>
-					<span className='inline-flex items-center gap-2'>
-						<span
-							className='size-2 rounded-full bg-portfolio-title'
-							aria-hidden='true'
-						/>
-						Available for opportunities
-					</span>
+			<div className='relative mx-auto w-full max-w-240'>
+				<div className='flex min-h-16 items-center border-portfolio-pine/15 pb-4 text-[13px] text-portfolio-text/65'>
+					<TypingRole />
 				</div>
 
-				<div className='mt-[clamp(44px,7vw,72px)] grid gap-10 min-[800px]:grid-cols-[minmax(0,1fr)_280px] min-[800px]:items-end min-[800px]:gap-12'>
-					<h1 className='m-0 max-w-[650px] text-[clamp(44px,6vw,68px)] font-bold leading-[.98] tracking-[-.045em]'>I build thoughtful digital products from interface to backend.</h1>
-
+				<div className='grid gap-10 pt-[clamp(32px,7vw,42px)] min-[880px]:grid-cols-[minmax(0,1fr)_300px] min-[880px]:gap-12 min-[1040px]:grid-cols-[minmax(0,1fr)_330px] min-[1040px]:gap-16'>
 					<div>
-						<p className='m-0 text-[17px] leading-[1.65] text-portfolio-text/70 text-pretty'>
+						<h1 className='m-0 max-w-[760px] text-[clamp(52px,7.4vw,88px)] font-bold leading-[.9] tracking-[-.058em]'>
+							<span className='block'>Thoughtful products.</span>
+							<span className='mt-2 block text-portfolio-title'>Built all the way through.</span>
+						</h1>
+
+						<div className='mt-10 flex flex-wrap gap-2.5'>
+							<a
+								className='button-hover group inline-flex min-h-11 items-center gap-3 rounded-full bg-portfolio-pine px-5 text-[14px] font-semibold text-white no-underline hover:bg-portfolio-turquoise'
+								href='#work'>
+								View projects
+								<ArrowDown
+									size={17}
+									aria-hidden='true'
+								/>
+							</a>
+							<a
+								className='button-hover group inline-flex min-h-11 items-center gap-3 rounded-full border border-portfolio-pine/25 bg-white/60 px-5 text-[14px] font-semibold no-underline hover:border-portfolio-title hover:bg-portfolio-title hover:text-white'
+								href='#contact'>
+								Let&apos;s work together
+								<ArrowUpRight
+									size={17}
+									aria-hidden='true'
+								/>
+							</a>
+						</div>
+					</div>
+
+					<aside className='border-t border-portfolio-pine/20 pt-6 min-[880px]:border-l min-[880px]:border-t-0 min-[880px]:pl-8 min-[880px]:pt-1'>
+						<p className='m-0 text-[11px] font-bold uppercase tracking-[.16em] text-portfolio-title'>Design × engineering</p>
+						<p className='mb-0 mt-4 text-[17px] leading-[1.65] text-portfolio-text/72 text-pretty'>
 							I&apos;m Felipe. I combine product-minded design with practical full-stack development to make complex ideas feel clear and useful.
 						</p>
-						<p className='mb-0 mt-4 inline-flex items-center gap-2 text-[13px] text-portfolio-text/55'>
-							<MapPin
-								size={16}
-								strokeWidth={1.8}
-								aria-hidden='true'
-							/>{' '}
-							Vancouver, BC
-						</p>
-					</div>
-				</div>
 
-				<div className='mt-9 flex flex-wrap gap-2.5 border-portfolio-line pt-6'>
-					<a
-						className='button-hover group inline-flex min-h-11 items-center gap-3 rounded-full bg-portfolio-button-bg px-5 text-[14px] font-semibold text-portfolio-button-text no-underline hover:bg-portfolio-title'
-						href='#work'>
-						View projects
-						<ArrowDown
-							className='transition-transform duration-300 group-hover:translate-y-0.5'
-							size={17}
-							aria-hidden='true'
-						/>
-					</a>
-					<a
-						className='button-hover group inline-flex min-h-11 items-center gap-3 rounded-full border border-portfolio-line px-5 text-[14px] font-semibold no-underline hover:border-portfolio-title hover:bg-portfolio-title hover:text-white'
-						href='#contact'>
-						Let&apos;s work together
-						<ArrowUpRight
-							className='transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5'
-							size={17}
-							aria-hidden='true'
-						/>
-					</a>
+						<div className='mt-7 border-portfolio-pine/15 pt-6'>
+							<LocationMarker />
+						</div>
+					</aside>
 				</div>
 			</div>
 		</section>
