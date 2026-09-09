@@ -2,6 +2,7 @@
 
 /* eslint-disable @next/next/no-img-element */
 import { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { ChevronLeft, ChevronRight, Expand, X } from 'lucide-react';
 import type { ProjectSlide } from '@/data/portfolio';
 
@@ -17,7 +18,7 @@ const galleryArrowClass =
 	'absolute top-1/2 z-[4] grid size-11 -translate-y-1/2 cursor-pointer place-items-center rounded-full border border-white/70 bg-white/90 text-portfolio-pine backdrop-blur transition-[background-color,border-color,color] duration-200 hover:border-portfolio-turquoise hover:bg-portfolio-turquoise hover:text-white';
 
 const lightboxArrowClass =
-	'absolute top-1/2 z-[2] grid size-[52px] -translate-y-1/2 cursor-pointer place-items-center rounded-full border border-white/45 bg-[rgb(10_14_11_/_50%)] text-[22px] text-white transition-colors hover:bg-white hover:text-black max-[760px]:bottom-[62px] max-[760px]:top-auto max-[760px]:size-[46px] max-[760px]:translate-y-0';
+	'absolute top-1/2 z-[6] grid size-[52px] -translate-y-1/2 cursor-pointer place-items-center rounded-full border border-white/45 bg-[rgb(10_14_11_/_50%)] text-[22px] text-white transition-colors hover:bg-white hover:text-black max-[760px]:bottom-[calc(16px+env(safe-area-inset-bottom))] max-[760px]:top-auto max-[760px]:size-[46px] max-[760px]:translate-y-0';
 
 export function ProjectGallery({ project, slides, tone }: ProjectGalleryProps) {
 	const [active, setActive] = useState(0);
@@ -113,7 +114,7 @@ export function ProjectGallery({ project, slides, tone }: ProjectGalleryProps) {
 				))}
 
 				<button
-					className='absolute right-5 top-5 z-[5] inline-flex cursor-pointer items-center gap-2 rounded-full border border-white/25 bg-portfolio-pine/80 px-4 py-2.5 text-[11px] font-bold uppercase tracking-[.12em] text-white backdrop-blur transition-colors hover:bg-portfolio-turquoise'
+					className='absolute right-5 top-5 z-5 inline-flex cursor-pointer items-center gap-2 rounded-full border border-white/25 bg-portfolio-pine/80 px-4 py-2.5 text-[11px] font-bold uppercase tracking-[.12em] text-white backdrop-blur transition-colors hover:bg-portfolio-turquoise'
 					type='button'
 					onClick={() => setLightboxOpen(true)}
 					aria-label={`Open ${project} gallery in full view`}>
@@ -166,16 +167,17 @@ export function ProjectGallery({ project, slides, tone }: ProjectGalleryProps) {
 				</div>
 			</div>
 
-			{lightboxOpen && (
+			{lightboxOpen &&
+				createPortal(
 				<div
-					className='fixed inset-0 z-[100] grid animate-[lightbox-in_.2s_ease-out] place-items-center bg-[rgb(10_14_11_/_96%)] px-[clamp(18px,5vw,76px)] pb-[54px] pt-[clamp(72px,8vw,110px)] text-white motion-reduce:animate-none max-[760px]:px-3 max-[760px]:pb-[58px] max-[760px]:pt-[84px]'
+					className='fixed inset-0 z-100 grid h-[100svh] w-screen animate-[lightbox-in_.2s_ease-out] place-items-center bg-[rgb(10_14_11/96%)] px-[clamp(18px,5vw,76px)] pb-13.5 pt-[clamp(72px,8vw,110px)] text-white motion-reduce:animate-none max-[760px]:p-0'
 					role='dialog'
 					aria-modal='true'
 					aria-label={`${project} full-size image viewer`}>
-					<div className='absolute inset-x-0 top-0 z-[5] flex min-h-[68px] items-center justify-between border-b border-white/20 px-[max(14px,4vw)]'>
-						<p className='m-0 min-w-0 truncate pr-3 text-xs font-bold uppercase tracking-[.1em]'>
-							{project}{' '}
-							<span className='ml-4 text-portfolio-tertiary'>
+					<div className='absolute inset-x-0 top-0 z-[7] flex min-h-17 items-center justify-between border-b border-white/20 px-[max(14px,4vw)] max-[760px]:min-h-[calc(68px+env(safe-area-inset-top))] max-[760px]:pt-[env(safe-area-inset-top)]'>
+						<p className='m-0 min-w-0 truncate pr-3 text-xs font-bold uppercase tracking-widest'>
+							<span className='max-[760px]:hidden'>{project}</span>
+							<span className='ml-4 text-portfolio-tertiary max-[760px]:ml-0 max-[760px]:text-white'>
 								{String(active + 1).padStart(2, '0')} / {String(slides.length).padStart(2, '0')}
 							</span>
 						</p>
@@ -193,7 +195,7 @@ export function ProjectGallery({ project, slides, tone }: ProjectGalleryProps) {
 						</button>
 					</div>
 					<div
-						className='relative h-[min(78vh,950px)] w-[min(100%,1500px)] touch-pan-y overflow-hidden bg-[#101512] max-[760px]:h-[min(76svh,780px)] max-[760px]:w-full'
+						className='relative h-[min(78vh,950px)] w-[min(100%,1500px)] touch-pan-y overflow-hidden bg-[#101512] max-[760px]:h-[100svh] max-[760px]:w-screen max-[760px]:pb-[calc(76px+env(safe-area-inset-bottom))] max-[760px]:pt-[calc(68px+env(safe-area-inset-top))]'
 						onTouchStart={(event) => {
 							touchStart.current = event.touches[0].clientX;
 						}}
@@ -212,7 +214,7 @@ export function ProjectGallery({ project, slides, tone }: ProjectGalleryProps) {
 							onLoad={() => markImageLoaded(slides[active].image)}
 							onError={() => markImageFailed(slides[active].image)}
 						/>
-						<span className='absolute bottom-5 left-5 bg-[rgb(7_12_10_/_75%)] px-[11px] py-2 text-xs uppercase tracking-[.08em] text-white'>{slides[active].label}</span>
+						<span className='absolute bottom-5 left-5 bg-[rgb(7_12_10/75%)] px-2.75 py-2 text-xs uppercase tracking-[.08em] text-white max-[760px]:hidden'>{slides[active].label}</span>
 					</div>
 					<button
 						className={`${lightboxArrowClass} left-[max(8px,1.5vw)] max-[760px]:left-5`}
@@ -234,8 +236,9 @@ export function ProjectGallery({ project, slides, tone }: ProjectGalleryProps) {
 							aria-hidden='true'
 						/>
 					</button>
-					<p className='absolute bottom-[17px] m-0 text-[11px] uppercase tracking-[.08em] text-portfolio-tertiary'>Swipe or use arrow keys</p>
-				</div>
+					<p className='absolute bottom-4.25 m-0 text-[11px] uppercase tracking-[.08em] text-portfolio-tertiary max-[760px]:hidden'>Swipe or use arrow keys</p>
+				</div>,
+				document.body,
 			)}
 		</div>
 	);

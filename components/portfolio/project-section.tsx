@@ -42,7 +42,7 @@ export function ProjectSection({ project, tone }: ProjectSectionProps) {
 						aria-label={`${project.title} technology stack`}>
 						{project.details.map((technology) => (
 							<li
-								className='rounded-full border border-portfolio-mint bg-portfolio-mint/30 px-3 py-1.5 text-[11px] font-semibold text-portfolio-text/75 transition-colors duration-300 even:border-portfolio-lime/70 even:bg-portfolio-lime/18 [&:nth-child(3n)]:border-portfolio-tertiary/55 [&:nth-child(3n)]:bg-portfolio-tertiary/15 group-hover:border-portfolio-turquoise/55'
+								className='rounded-full border border-portfolio-mint bg-portfolio-mint/30 px-3 py-1.5 text-[11px] font-semibold text-portfolio-text/75 transition-colors duration-300 even:border-portfolio-lime/70 even:bg-portfolio-lime/18 &:nth-[3n]:border-portfolio-tertiary/55 &:nth-[3n]:bg-portfolio-tertiary/15 group-hover:border-portfolio-turquoise/55'
 								key={technology}>
 								{technology}
 							</li>
@@ -52,7 +52,7 @@ export function ProjectSection({ project, tone }: ProjectSectionProps) {
 					<span
 						className='col-start-2 row-start-1 justify-self-end text-portfolio-title min-[760px]:col-start-3'
 						aria-hidden='true'>
-						<span className='grid size-9 place-items-center rounded-full border border-portfolio-line bg-white/70 text-[22px] font-light leading-none transition-[background-color,border-color,color] duration-200 group-hover:border-portfolio-turquoise group-hover:bg-portfolio-turquoise group-hover:text-white'>
+						<span className='grid size-9 place-items-center rounded-full border border-portfolio-line bg-portfolio-surface/70 text-[22px] font-light leading-none transition-[background-color,border-color,color] duration-200 group-hover:border-portfolio-turquoise group-hover:bg-portfolio-turquoise group-hover:text-white'>
 							{isOpen ? '−' : '+'}
 						</span>
 					</span>
@@ -72,7 +72,7 @@ export function ProjectSection({ project, tone }: ProjectSectionProps) {
 									<p className='m-0 border-l-4 border-portfolio-lime py-1 pl-4 text-[11px] font-bold uppercase tracking-[.14em] text-portfolio-title'>
 										Case study · {project.number}
 									</p>
-									<p className='m-0 max-w-[620px] text-[clamp(17px,2vw,18px)] font-regular leading-[1.55] tracking-[-.015em] text-portfolio-text/75'>{project.intro}</p>
+									<p className='m-0 max-w-155 text-[clamp(17px,2vw,18px)] font-regular leading-[1.55] tracking-[-.015em] text-portfolio-text/75'>{project.intro}</p>
 								</div>
 
 								<div>
@@ -86,7 +86,7 @@ export function ProjectSection({ project, tone }: ProjectSectionProps) {
 								<div className='grid grid-cols-[minmax(220px,.62fr)_minmax(0,1.38fr)] gap-[clamp(44px,7vw,84px)] px-1 pt-10 max-[760px]:grid-cols-1 max-[760px]:gap-8'>
 									<div>
 										<p className='m-0 text-[13px] font-bold uppercase tracking-[.14em] text-portfolio-title'>Role &amp; stack</p>
-										<p className='mb-0 mt-3 text-[1rem] leading-[1.5] text-portfolio-text/60'>
+										<p className='mb-0 mt-3 text-[1rem] leading-normal text-portfolio-text/60'>
 											{project.type}
 											<br />
 											Development &amp; interface design

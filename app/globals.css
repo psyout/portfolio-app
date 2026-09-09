@@ -27,8 +27,41 @@
 	--mint: #b8dce8;
 	--sea-glass: #e6f2f6;
 	--lime: #72dcb2;
+	--surface: #ffffff;
 	--font-title: 'Ubuntu', 'Ubuntu Fallback', Arial, Helvetica, sans-serif;
 	--font-logo: 'Ubuntu', 'Ubuntu Fallback', Arial, Helvetica, sans-serif;
+	color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+	--text-color: #e9f3f6;
+	--social-color: #102636;
+	--title-color: #8fc6d6;
+	--background: #0e2230;
+	--foreground: 195 40% 94%;
+	--card: 203 45% 15%;
+	--card-foreground: 195 40% 94%;
+	--primary: #e9f3f6;
+	--primary-foreground: #0e2230;
+	--secondary: 197 29% 30%;
+	--secondary-foreground: #b8dce8;
+	--muted: 202 35% 18%;
+	--muted-foreground: 196 20% 70%;
+	--tertiary: #90aab5;
+	--iconColor: #72dcb2;
+	--highlight-color: #b8dce8;
+	--span: #9dc5d1;
+	--button-text: #0e2230;
+	--button-bg: #72dcb2;
+	--tagFontColor: #e9f3f6;
+	--line: rgb(184 220 232 / 20%);
+	--pine: #102c3d;
+	--turquoise: #5e91a1;
+	--mint: #9ccbd8;
+	--sea-glass: #173447;
+	--lime: #72dcb2;
+	--surface: #173246;
+	color-scheme: dark;
 }
 
 @theme inline {
@@ -53,6 +86,7 @@
 	--color-portfolio-mint: var(--mint);
 	--color-portfolio-sea-glass: var(--sea-glass);
 	--color-portfolio-lime: var(--lime);
+	--color-portfolio-surface: var(--surface);
 	--font-sans: 'Google Sans Flex', Arial, Helvetica, sans-serif;
 }
 
@@ -67,6 +101,9 @@ body {
 	font-family: 'Google Sans Flex', Arial, Helvetica, sans-serif;
 	font-size: 16px;
 	line-height: 1.5;
+	transition:
+		background-color 220ms ease,
+		color 220ms ease;
 }
 
 ::selection {
@@ -90,7 +127,7 @@ body {
 }
 
 .project-field {
-	background: var(--sea-glass);
+	background: linear-gradient(to bottom, var(--sea-glass) 0%, var(--sea-glass) calc(100% - 160px), var(--background) 100%);
 }
 
 h1,
@@ -105,6 +142,18 @@ h6,
 
 .logo-font {
 	font-family: var(--font-logo);
+}
+
+.theme-icon-dark {
+	display: none;
+}
+
+:root[data-theme='dark'] .theme-icon-light {
+	display: none;
+}
+
+:root[data-theme='dark'] .theme-icon-dark {
+	display: block;
 }
 
 a:focus-visible,
@@ -157,6 +206,26 @@ button:focus-visible {
 @keyframes image-skeleton-pulse {
 	50% {
 		opacity: 0.55;
+	}
+}
+
+@keyframes send-plane {
+	0%,
+	100% {
+		transform: translate(0, 0);
+	}
+	50% {
+		transform: translate(6px, -6px);
+	}
+}
+
+.send-plane {
+	animation: send-plane 650ms ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.send-plane {
+		animation: none;
 	}
 }
 

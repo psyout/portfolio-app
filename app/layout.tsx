@@ -5,6 +5,16 @@ import './globals.css';
 const title = 'Felipe Gonzalez | Full-Stack Developer';
 const description = 'Portfolio of Felipe Gonzalez, a Full Stack Web Developer and Web Designer based in Vancouver, BC.';
 
+const themeScript = `
+	(() => {
+		try {
+			const savedTheme = localStorage.getItem('portfolio-theme');
+			const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+			document.documentElement.dataset.theme = savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : systemTheme;
+		} catch {}
+	})();
+`;
+
 export const metadata: Metadata = {
 	metadataBase: new URL('https://felipegonzalez.dev'),
 	title,
@@ -37,8 +47,11 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang='en'>
+		<html
+			lang='en'
+			suppressHydrationWarning>
 			<head>
+				<script dangerouslySetInnerHTML={{ __html: themeScript }} />
 				<link
 					rel='preconnect'
 					href='https://fonts.googleapis.com'

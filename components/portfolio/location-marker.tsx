@@ -11,7 +11,7 @@ export function LocationMarker() {
 			<span className='relative grid size-11 shrink-0 place-items-center  rounded-full border-portfolio-lime/70 bg-portfolio-sea-glass text-portfolio-title'>
 				<motion.span
 					animate={reduceMotion ? undefined : { y: [0, -4, 0] }}
-					transition={reduceMotion ? undefined : { duration: 2.2, ease: 'easeInOut', repeat: Infinity }}>
+					transition={reduceMotion ? undefined : { duration: 6.2, ease: 'easeInOut', repeat: Infinity }}>
 					<MapPin
 						size={21}
 						strokeWidth={1.9}
@@ -21,7 +21,7 @@ export function LocationMarker() {
 				<motion.span
 					className='absolute bottom-1.5 left-1/2 h-px -translate-x-1/2 bg-portfolio-title'
 					animate={reduceMotion ? undefined : { opacity: [0.25, 0.75, 0.25], width: ['22%', '52%', '22%'] }}
-					transition={reduceMotion ? undefined : { duration: 2.2, ease: 'easeInOut', repeat: Infinity }}
+					transition={reduceMotion ? undefined : { duration: 6.2, ease: 'easeInOut', repeat: Infinity }}
 					aria-hidden='true'
 				/>
 			</span>

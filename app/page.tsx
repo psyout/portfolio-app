@@ -20,9 +20,7 @@ export default function Home() {
       <SiteHeader />
       <main>
         <HeroSection />
-        <MotionReveal>
-          <AboutSection />
-        </MotionReveal>
+        <AboutSection />
         <ExperienceSection />
         <div className="project-field pb-[clamp(72px,9vw,112px)]">
           <MotionReveal>
@@ -34,12 +32,8 @@ export default function Home() {
             </MotionReveal>
           ))}
         </div>
-        <MotionReveal>
-          <CapabilitiesSection capabilities={capabilities} />
-        </MotionReveal>
-        <MotionReveal>
-          <ContactSection />
-        </MotionReveal>
+        <CapabilitiesSection capabilities={capabilities} />
+        <ContactSection />
         <SiteFooter />
       </main>
     </>

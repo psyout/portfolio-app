@@ -35,7 +35,7 @@ const experience = [
 		company: 'The Cut Fashion School',
 		place: 'Remote · Canada',
 		body: 'Created detailed website concepts and brand-aligned digital work while supporting marketing and web teams through a rebrand.',
-		tone: 'bg-white text-portfolio-pine',
+		tone: 'bg-portfolio-surface text-portfolio-text',
 	},
 	{
 		period: 'Jan 2018 — May 2020',
@@ -51,7 +51,7 @@ const experience = [
 		company: 'Cencosud Paris',
 		place: 'Chile',
 		body: 'Developed responsive websites and internal React applications, improving performance, mobile engagement, and everyday usability.',
-		tone: 'bg-white text-portfolio-pine',
+		tone: 'bg-portfolio-surface text-portfolio-text',
 	},
 ];
 
@@ -72,14 +72,14 @@ export function ExperienceSection() {
 							The path to full-stack.
 						</h2>
 					</div>
-					<p className='m-0 max-w-[470px] text-[16px] leading-[1.7] text-portfolio-text/65'>
-						Development, design, and hands-on team experience all shape how I understand a problem—and how I work with the people behind it.
+					<p className='m-0 max-w-117.5 text-[16px] leading-[1.7] text-portfolio-text/65'>
+						Full-stack development, design, and team leadership taught me to solve technical problems without losing sight of the people using and building the product.
 					</p>
 				</div>
 
 				<div className='relative mt-10'>
 					<motion.div
-						className='absolute bottom-0 left-[11px] top-0 w-px origin-top bg-portfolio-title min-[760px]:left-1/2'
+						className='absolute bottom-0 left-2.75 top-0 w-px origin-top bg-portfolio-title min-[760px]:left-1/2'
 						initial={{ scaleY: reduceMotion ? 1 : 0 }}
 						whileInView={{ scaleY: 1 }}
 						viewport={{ once: true, amount: 0.1 }}
@@ -93,11 +93,11 @@ export function ExperienceSection() {
 								className={`relative pl-10 min-[760px]:grid min-[760px]:grid-cols-2 min-[760px]:pl-0 ${index % 2 ? 'min-[760px]:[&>article]:col-start-2 min-[760px]:[&>article]:ml-10' : 'min-[760px]:[&>article]:mr-10'}`}
 								key={`${item.period}-${item.role}`}>
 								<span
-									className='absolute left-[5px] top-8 z-[2] size-[13px] rounded-full border-[3px] border-portfolio-sea-glass bg-portfolio-lime ring-1 ring-portfolio-title min-[760px]:left-1/2 min-[760px]:-translate-x-1/2'
+									className='absolute left-1.25 top-8 z-2 size-3.25 rounded-full border-[3px] border-portfolio-sea-glass bg-portfolio-lime ring-1 ring-portfolio-title min-[760px]:left-1/2 min-[760px]:-translate-x-1/2'
 									aria-hidden='true'
 								/>
 								<motion.article
-									className={`rounded-[22px] border border-portfolio-pine/10 p-6 shadow-[0_18px_50px_rgb(46_69_77_/_10%)] min-[760px]:p-7 ${item.tone}`}
+									className={`rounded-[22px] border border-portfolio-pine/10 p-6 shadow-[0_18px_50px_rgb(46_69_77/10%)] min-[760px]:p-7 ${item.tone}`}
 									initial={reduceMotion ? { opacity: 1 } : { opacity: 0, x: index % 2 ? 36 : -36, y: 18 }}
 									whileInView={{ opacity: 1, x: 0, y: 0 }}
 									viewport={{ once: true, amount: 0.35 }}
@@ -112,7 +112,7 @@ export function ExperienceSection() {
 									{item.company && <p className='mb-0 mt-1 text-[14px] font-bold opacity-75'>{item.company}</p>}
 									<p className='m-0 text-[10px] font-semibold uppercase tracking-[.14em] opacity-65'>{item.period}</p>
 
-									<p className='mb-0 mt-4 text-[15px] leading-[1.65] opacity-70'>{item.body}</p>
+									<p className='mb-0 mt-4 text-[15px] leading-[1.65] opacity-70 text-pretty'>{item.body}</p>
 									<p className='mb-0 mt-5 inline-flex items-center gap-2 text-[12px] font-semibold opacity-60'>
 										<MapPin
 											size={18}
