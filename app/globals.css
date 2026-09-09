@@ -357,6 +357,44 @@ button:focus-visible {
 	color: var(--pine);
 }
 
+@media (max-width: 879px) {
+	.hero-grid {
+		display: flex;
+		flex-direction: column;
+		gap: 0;
+	}
+
+	.hero-main,
+	.hero-aside {
+		display: contents;
+	}
+
+	.hero-role-reveal {
+		order: 1;
+	}
+
+	.hero-title-reveal {
+		order: 2;
+		margin-top: 1.25rem;
+	}
+
+	.hero-summary-reveal {
+		order: 3;
+	}
+
+	.hero-summary {
+		margin-top: 1.25rem;
+	}
+
+	.hero-location-reveal {
+		order: 4;
+	}
+
+	.hero-actions-reveal {
+		order: 5;
+	}
+}
+
 .marker-highlight-stroke {
 	position: absolute;
 	right: -0.12em;

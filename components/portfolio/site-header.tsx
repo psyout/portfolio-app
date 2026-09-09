@@ -1,6 +1,6 @@
 'use client';
 
-import { Moon, Sun } from 'lucide-react';
+import { Moon, Sun, UserRound } from 'lucide-react';
 
 export function SiteHeader() {
 	function toggleTheme() {
@@ -23,9 +23,14 @@ export function SiteHeader() {
 					className='flex items-baseline gap-3 text-[0.9rem] font-semibold uppercase tracking-wider'
 					aria-label='Main navigation'>
 					<a
-						className='leading-none no-underline transition-colors hover:text-portfolio-title max-[520px]:text-[0.9rem] max-[520px]:tracking-normal'
+						className='inline-flex items-center gap-1.5 leading-none underline transition-colors hover:text-portfolio-title max-[520px]:text-[0.9rem] max-[520px]:tracking-normal'
 						href='#about'>
 						About me
+						<UserRound
+							size={15}
+							strokeWidth={2}
+							aria-hidden='true'
+						/>
 					</a>
 
 					<button

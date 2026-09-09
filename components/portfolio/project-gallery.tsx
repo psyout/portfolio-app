@@ -170,11 +170,11 @@ export function ProjectGallery({ project, slides, tone }: ProjectGalleryProps) {
 			{lightboxOpen &&
 				createPortal(
 					<div
-						className='fixed inset-0 z-100 grid h-[100svh] w-screen animate-[lightbox-in_.2s_ease-out] place-items-center bg-[rgb(10_14_11/96%)] px-[clamp(18px,5vw,76px)] pb-13.5 pt-[clamp(72px,8vw,110px)] text-white motion-reduce:animate-none max-[760px]:p-0'
+						className='fixed inset-0 z-100 grid h-svh w-screen animate-[lightbox-in_.2s_ease-out] place-items-center bg-[rgb(10_14_11/96%)] px-[clamp(18px,5vw,76px)] pb-13.5 pt-[clamp(72px,8vw,110px)] text-white motion-reduce:animate-none max-[760px]:p-0'
 						role='dialog'
 						aria-modal='true'
 						aria-label={`${project} full-size image viewer`}>
-						<div className='absolute inset-x-0 top-0 z-[7] flex min-h-17 items-center justify-between border-b border-white/20 px-[max(14px,4vw)] max-[760px]:min-h-[calc(68px+env(safe-area-inset-top))] max-[760px]:pt-[env(safe-area-inset-top)]'>
+						<div className='absolute inset-x-0 top-0 z-7 flex min-h-17 items-center justify-between border-b border-white/20 px-[max(14px,4vw)] max-[760px]:min-h-[calc(68px+env(safe-area-inset-top))] max-[760px]:pt-[env(safe-area-inset-top)]'>
 							<p className='m-0 min-w-0 truncate pr-3 text-xs font-bold uppercase tracking-widest'>
 								<span className='max-[760px]:hidden'>{project}</span>
 								<span className='ml-4 text-portfolio-tertiary max-[760px]:ml-0 max-[760px]:text-white'>
@@ -195,7 +195,7 @@ export function ProjectGallery({ project, slides, tone }: ProjectGalleryProps) {
 							</button>
 						</div>
 						<div
-							className='relative h-[min(78vh,950px)] w-[min(100%,1500px)] touch-pan-y overflow-hidden bg-[#101512] max-[760px]:h-[100svh] max-[760px]:w-screen max-[760px]:pb-[calc(76px+env(safe-area-inset-bottom))] max-[760px]:pt-[calc(68px+env(safe-area-inset-top))]'
+							className='relative h-[min(78vh,950px)] w-[min(100%,1500px)] touch-pan-y overflow-hidden bg-[#101512] max-[760px]:h-svh max-[760px]:w-screen max-[760px]:pb-[calc(76px+env(safe-area-inset-bottom))] max-[760px]:pt-[calc(68px+env(safe-area-inset-top))]'
 							onTouchStart={(event) => {
 								touchStart.current = event.touches[0].clientX;
 							}}

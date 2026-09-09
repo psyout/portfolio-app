@@ -88,7 +88,7 @@ export function ProjectSection({ project, tone }: ProjectSectionProps) {
 								<div className='grid grid-cols-[minmax(0,7fr)_minmax(200px,3fr)] gap-x-[clamp(44px,7vw,84px)] px-1 pt-10 max-[760px]:grid-cols-1 max-[760px]:gap-y-8'>
 									<div className='max-[760px]:order-1'>
 										<p className='m-0 text-[13px] font-bold uppercase tracking-[.14em] text-portfolio-title'>Overview</p>
-										<p className='mb-0 mt-4 text-[16px] leading-[1.8] text-portfolio-text/70'>{project.story}</p>
+										<p className='mb-0 mt-4 text-[16px] leading-[1.8] text-portfolio-text/70 text-pretty'>{project.story}</p>
 									</div>
 									<div className='max-[760px]:order-2'>
 										<p className='m-0 text-[13px] font-bold uppercase tracking-[.14em] text-portfolio-title'>Stack</p>
