@@ -32,14 +32,31 @@ export type AboutValue = {
 
 export const projects: Project[] = [
 	{
+		id: 'andes-builders',
+		number: '07',
+		title: 'Andes Builders',
+		eyebrow: 'Construction and renovation',
+		type: 'WordPress website',
+		intro: 'A polished service-business website for a residential construction company, designed to establish trust and turn project interest into enquiries.',
+		story: 'Built with WordPress and Elementor, the site pairs strong project photography with clear service positioning, an approachable four-step process, responsive layouts, and direct conversion paths. WooCommerce provides a flexible foundation for future service and product needs.',
+		details: ['WordPress', 'PHP'],
+		liveUrl: 'https://andesbuilders.com/',
+		githubUrl: '',
+		slides: [
+			{ image: '/static/images/andes-builders-craftsmanship.webp', label: 'Craftsmanship' },
+			{ image: '/static/images/andes-builders-renovation.webp', label: 'Interior renovation' },
+			{ image: '/static/images/andes-builders-project.jpg', label: 'Completed project' },
+		],
+	},
+	{
 		id: 'puretide',
 		number: '01',
 		title: 'Puretide',
 		eyebrow: 'Privacy-first commerce',
-		type: 'E-commerce web app',
+		type: 'E-commerce Web App',
 		intro: 'A privacy-focused online store built to deliver a complete shopping experience without analytics scripts, third-party trackers, or unnecessary data collection.',
 		story: 'Built with the Next.js App Router and TypeScript, Puretide combines a responsive storefront with a persistent client-side cart, SQLite-backed orders, Google Sheets inventory, and automated transactional email.',
-		details: ['Next.js', 'TypeScript', 'Tailwind CSS', 'SQLite'],
+		details: ['Next.js', 'TypeScript', 'Tailwind CSS'],
 		liveUrl: 'https://puretide.ca',
 		githubUrl: '',
 		slides: [
@@ -54,7 +71,7 @@ export const projects: Project[] = [
 		number: '02',
 		title: 'Vansippy',
 		eyebrow: 'Location-based discovery',
-		type: 'Happy hour finder',
+		type: 'Happy hour Finder Web App',
 		intro: 'A full-stack web application that helps people discover curated happy-hour deals at restaurants and bars around Vancouver.',
 		story: 'Vansippy pairs a React and Material UI interface with a Node, Express, and MongoDB backend. Browser geolocation and Mapbox turn curated venue data into useful, nearby results in real time.',
 		details: ['React', 'Node.js', 'MongoDB', 'Mapbox'],
@@ -142,17 +159,17 @@ export const projects: Project[] = [
 export const capabilities: Capability[] = [
 	{
 		number: '01',
-		title: 'Frontend development',
+		title: 'Frontend Development',
 		body: 'React, Next.js, TypeScript, and responsive interfaces that stay clear and accessible across devices.',
 	},
 	{
 		number: '02',
-		title: 'Backend development',
+		title: 'Backend Development',
 		body: 'Node.js, Express, REST APIs, databases, and third-party integrations that support real product workflows.',
 	},
 	{
 		number: '03',
-		title: 'Interface design',
+		title: 'Interface Design',
 		body: 'Figma, prototypes, design systems, and practical UI decisions shaped by a background in web design.',
 	},
 ];

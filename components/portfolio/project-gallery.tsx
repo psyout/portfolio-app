@@ -11,7 +11,7 @@ type ProjectGalleryProps = {
 	tone: number;
 };
 
-const slideClass = 'pointer-events-none absolute inset-0 w-full cursor-zoom-in border-0 bg-[#b7c7cc] p-0 opacity-0 transition-opacity duration-500 motion-reduce:transition-none';
+const slideClass = 'pointer-events-none absolute inset-0 w-full cursor-zoom-in border-0 bg-portfolio-mint p-0 opacity-0 transition-opacity duration-500 motion-reduce:transition-none';
 
 const galleryArrowClass =
 	'absolute top-1/2 z-[4] grid size-11 -translate-y-1/2 cursor-pointer place-items-center rounded-full border border-white/70 bg-white/90 text-portfolio-pine backdrop-blur transition-[background-color,border-color,color] duration-200 hover:border-portfolio-turquoise hover:bg-portfolio-turquoise hover:text-white';
@@ -157,7 +157,7 @@ export function ProjectGallery({ project, slides, tone }: ProjectGalleryProps) {
 						<button
 							type='button'
 							key={slide.image}
-							className={`h-2.5 cursor-pointer rounded-full border-0 p-0 transition-[width,background-color] duration-300 ${active === index ? 'w-8 bg-[#4c7380]' : 'w-2.5 bg-[#b7c7cc] hover:bg-[#7ab8cc]'}`}
+							className={`h-2.5 cursor-pointer rounded-full border-0 p-0 transition-[width,background-color] duration-300 ${active === index ? 'w-8 bg-portfolio-turquoise' : 'w-2.5 bg-portfolio-mint hover:bg-portfolio-lime'}`}
 							onClick={() => setActive(index)}
 							aria-label={`Show image ${index + 1}: ${slide.label}`}
 							aria-current={active === index ? 'true' : undefined}
@@ -172,26 +172,24 @@ export function ProjectGallery({ project, slides, tone }: ProjectGalleryProps) {
 					role='dialog'
 					aria-modal='true'
 					aria-label={`${project} full-size image viewer`}>
-					<div className='absolute inset-x-0 top-0 z-[2] flex min-h-[68px] items-center justify-between border-b border-white/20 px-[4vw]'>
-						<p className='m-0 text-xs font-bold uppercase tracking-[.1em]'>
+					<div className='absolute inset-x-0 top-0 z-[5] flex min-h-[68px] items-center justify-between border-b border-white/20 px-[max(14px,4vw)]'>
+						<p className='m-0 min-w-0 truncate pr-3 text-xs font-bold uppercase tracking-[.1em]'>
 							{project}{' '}
 							<span className='ml-4 text-portfolio-tertiary'>
 								{String(active + 1).padStart(2, '0')} / {String(slides.length).padStart(2, '0')}
 							</span>
 						</p>
 						<button
-							className='button-hover cursor-pointer rounded-full border border-white/30 bg-transparent px-4 py-2 text-white hover:bg-white hover:text-black'
+							className='button-hover grid size-11 shrink-0 cursor-pointer place-items-center rounded-full border border-white bg-white text-portfolio-pine hover:border-portfolio-lime hover:bg-portfolio-lime min-[761px]:inline-flex min-[761px]:w-auto min-[761px]:gap-2 min-[761px]:border-white/30 min-[761px]:bg-transparent min-[761px]:px-4 min-[761px]:text-white min-[761px]:hover:border-white min-[761px]:hover:bg-white min-[761px]:hover:text-black'
 							ref={closeButton}
 							type='button'
 							onClick={closeLightbox}
 							aria-label='Close full-size image'>
-							<span className='inline-flex items-center gap-2'>
-								Close{' '}
-								<X
-									size={16}
-									aria-hidden='true'
-								/>
-							</span>
+							<span className='hidden min-[761px]:inline'>Close</span>
+							<X
+								size={20}
+								aria-hidden='true'
+							/>
 						</button>
 					</div>
 					<div

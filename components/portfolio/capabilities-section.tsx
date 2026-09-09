@@ -18,7 +18,7 @@ export function CapabilitiesSection({ capabilities }: CapabilitiesSectionProps) 
 					<div>
 						<p className={`m-0 ${sectionEyebrow}`}>Expertise</p>
 						<h2
-							className={`mb-0 mt-3 ${sectionTitle}`}
+							className={`mb-0 mt-1 ${sectionTitle}`}
 							id='capabilities-title'>
 							Capabilities
 						</h2>
@@ -35,16 +35,16 @@ export function CapabilitiesSection({ capabilities }: CapabilitiesSectionProps) 
 								key={capability.number}>
 								<div className='flex items-center justify-between'>
 									<span className='text-xs font-bold text-portfolio-title'>{capability.number}</span>
-									<span className='grid size-11 place-items-center rounded-full bg-portfolio-sea-glass text-portfolio-title'>
+									<span className='grid size-12 place-items-center rounded-full bg-portfolio-sea-glass text-portfolio-title'>
 										<Icon
-											size={21}
+											size={30}
 											strokeWidth={1.8}
 											aria-hidden='true'
 										/>
 									</span>
 								</div>
 								<h3 className='mb-0 mt-8 text-[20px] font-semibold'>{capability.title}</h3>
-								<p className='mb-0 mt-3 text-[14px] leading-[1.65] text-portfolio-text/65'>{capability.body}</p>
+								<p className='mb-0 mt-3 text-[1rem] leading-[1.65] text-portfolio-text/65'>{capability.body}</p>
 							</article>
 						);
 					})}

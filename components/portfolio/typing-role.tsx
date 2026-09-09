@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 
-const roles = ['Full-stack developer', 'Web developer', 'Web designer', 'Human'];
+const roles = ['I`m Full Stack developer', 'Web developer', 'Web designer', 'a Human'];
 
 export function TypingRole() {
 	const reduceMotion = useReducedMotion();
@@ -23,7 +23,7 @@ export function TypingRole() {
 				setPhase('waiting');
 				setRoleIndex((current) => (current + 1) % roles.length);
 			},
-			phase === 'waiting' ? 520 : 1650,
+			phase === 'waiting' ? 1100 : 1650,
 		);
 
 		return () => window.clearTimeout(timer);
@@ -39,27 +39,22 @@ export function TypingRole() {
 				initial={false}>
 				{reduceMotion || phase === 'message' ? (
 					<motion.span
-						className='inline-flex rounded-[20px] rounded-bl-[6px]  bg-[#b7c7cc]/45 px-4 py-2.5 text-[13px] font-bold uppercase tracking-[.12em] text-portfolio-pine shadow-sm'
+						className='inline-flex rounded-[20px] rounded-bl-[6px] bg-portfolio-mint/45 px-4 py-2.5 text-[13px] font-bold uppercase tracking-[.12em] text-portfolio-pine shadow-sm'
 						key={`message-${reduceMotion ? 0 : roleIndex}`}
 						initial={reduceMotion ? false : { opacity: 0, scale: 0.82, y: 10, transformOrigin: 'bottom left' }}
 						animate={{ opacity: 1, scale: 1, y: 0 }}
-						exit={reduceMotion ? undefined : { opacity: 0, scale: 0.94, y: -4 }}
 						transition={reduceMotion ? { duration: 0 } : { type: 'spring', stiffness: 420, damping: 25 }}>
 						{roles[reduceMotion ? 0 : roleIndex]}
 					</motion.span>
 				) : (
-					<motion.span
-						className='inline-flex min-h-10 items-center gap-1.5 rounded-[20px] rounded-bl-[6px] bg-[#b7c7cc]/55 px-4'
+					<span
+						className='inline-flex min-h-10 items-center gap-1.5 rounded-[20px] rounded-bl-[6px] bg-portfolio-mint/55 px-4'
 						key={`waiting-${roleIndex}`}
-						initial={{ opacity: 0, scale: 0.9, y: 6, transformOrigin: 'bottom left' }}
-						animate={{ opacity: 1, scale: 1, y: 0 }}
-						exit={{ opacity: 0, scale: 0.94 }}
-						transition={{ duration: 0.18 }}
 						aria-hidden='true'>
 						<span className='message-dot size-1.5 rounded-full bg-portfolio-tertiary' />
 						<span className='message-dot size-1.5 rounded-full bg-portfolio-tertiary' />
 						<span className='message-dot size-1.5 rounded-full bg-portfolio-tertiary' />
-					</motion.span>
+					</span>
 				)}
 			</AnimatePresence>
 		</div>

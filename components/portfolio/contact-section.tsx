@@ -73,7 +73,7 @@ export function ContactSection() {
 				<div>
 					<p className={`m-0 !text-white ${sectionEyebrow}`}>Contact</p>
 					<h2 className={`mb-0 mt-4 max-w-[430px] ${featureTitle}`}>Have a problem worth solving?</h2>
-					<p className='mb-0 mt-6 max-w-[430px] text-[16px] leading-[1.7] text-white/80'>I&apos;m open to full-time developer roles, contract work, and thoughtful collaborations.</p>
+					<p className='mb-0 mt-6 max-w-[430px] text-[16px] leading-[1.5] text-white/80'>I&apos;m open to full-time developer roles, contract work, and thoughtful collaborations.</p>
 
 					<div className='mt-9 flex items-center gap-3'>
 						<a

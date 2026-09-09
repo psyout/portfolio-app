@@ -7,7 +7,7 @@ export function WorkIntro() {
 			id='work'>
 			<div className='mx-auto max-w-240'>
 				<p className={`m-0 ${sectionEyebrow}`}>Selected work</p>
-				<div className='mt-3 flex flex-wrap items-end justify-between gap-5'>
+				<div className='mt-1 flex flex-wrap items-end justify-between gap-5'>
 					<h2 className={`m-0 ${sectionTitle}`}>Featured projects</h2>
 				</div>
 			</div>

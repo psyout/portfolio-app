@@ -49,7 +49,7 @@ export default function RootLayout({
 					crossOrigin='anonymous'
 				/>
 				<link
-					href='https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&family=Ubuntu:wght@400;500;700&display=swap'
+					href='https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600;700&family=Titillium+Web:wght@800&family=Roboto+Slab:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap'
 					rel='stylesheet'
 				/>
 			</head>

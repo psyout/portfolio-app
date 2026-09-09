@@ -4,7 +4,7 @@ export const displayHeading = 'max-w-[760px] text-[clamp(36px,5vw,64px)] font-me
 
 export const contentHeading = 'text-[clamp(34px,4vw,52px)] font-medium leading-[1.05] tracking-[-.04em]';
 
-export const sectionEyebrow = 'text-[1rem] font-bold uppercase tracking-[.16em] text-portfolio-title';
+export const sectionEyebrow = 'text-[1rem] font-regular uppercase tracking-[.16em] text-portfolio-title';
 
 export const sectionTitle = 'text-[clamp(28px,3.5vw,40px)] font-semibold leading-[1.08] tracking-[-.035em]';
 

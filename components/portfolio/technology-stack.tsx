@@ -10,12 +10,15 @@ import {
 	SiMysql,
 	SiNextdotjs,
 	SiNodedotjs,
+	SiPhp,
 	SiReact,
 	SiSass,
 	SiScrumalliance,
 	SiSqlite,
 	SiTailwindcss,
 	SiTypescript,
+	SiWoocommerce,
+	SiWordpress,
 } from 'react-icons/si';
 import { TbApi } from 'react-icons/tb';
 
@@ -48,6 +51,9 @@ const technologyIcons: Record<string, TechnologyIcon> = {
 	Axios: { icon: SiAxios, color: '#5a29e4' },
 	Figma: { icon: SiFigma, color: '#f24e1e' },
 	'Agile / Scrum': { icon: SiScrumalliance, color: '#009fda' },
+	WordPress: { icon: SiWordpress, color: '#21759b' },
+	WooCommerce: { icon: SiWoocommerce, color: '#96588a' },
+	PHP: { icon: SiPhp, color: '#777bb4' },
 };
 
 export function TechnologyStack({ items, project }: TechnologyStackProps) {

@@ -7,7 +7,8 @@ import { sectionEyebrow, sectionTitle } from './styles';
 const experience = [
 	{
 		period: 'Apr 2023 — Now',
-		role: 'Freelance Full-Stack Developer',
+		role: 'Full Stack Developer',
+		company: 'Self-employed',
 		place: 'Vancouver · Remote',
 		body: 'Taking web products from early requirements to production across Next.js, React, Node.js, databases, integrations, deployment, and ongoing maintenance.',
 		tone: 'bg-portfolio-pine text-white',
@@ -22,7 +23,7 @@ const experience = [
 	},
 	{
 		period: 'Apr 2022 — Jan 2023',
-		role: 'Frontend Developer',
+		role: 'Front End Developer',
 		company: 'NotCo',
 		place: 'Remote · Chile',
 		body: 'Maintained production React applications, built reusable UI, and collaborated across code reviews, testing, and CI/CD workflows.',
@@ -71,7 +72,7 @@ export function ExperienceSection() {
 							The path to full-stack.
 						</h2>
 					</div>
-					<p className='m-0 max-w-[470px] text-[15px] leading-[1.7] text-portfolio-text/65'>
+					<p className='m-0 max-w-[470px] text-[16px] leading-[1.7] text-portfolio-text/65'>
 						Development, design, and hands-on team experience all shape how I understand a problem—and how I work with the people behind it.
 					</p>
 				</div>
@@ -102,16 +103,16 @@ export function ExperienceSection() {
 									viewport={{ once: true, amount: 0.35 }}
 									transition={{ duration: reduceMotion ? 0 : 0.65, delay: reduceMotion ? 0 : 0.08, ease: [0.22, 1, 0.36, 1] }}>
 									<BriefcaseBusiness
-										className='mt-1 opacity-60'
+										className='mt-1 opacity-90'
 										size={25}
 										strokeWidth={1.8}
 										aria-hidden='true'
 									/>
 									<h3 className='mb-0 mt-3 text-[20px] font-semibold leading-tight'>{item.role}</h3>
 									{item.company && <p className='mb-0 mt-1 text-[14px] font-bold opacity-75'>{item.company}</p>}
-									<p className='m-0 text-[11px] font-bold uppercase tracking-[.14em] opacity-65'>{item.period}</p>
+									<p className='m-0 text-[10px] font-semibold uppercase tracking-[.14em] opacity-65'>{item.period}</p>
 
-									<p className='mb-0 mt-4 text-[14px] leading-[1.65] opacity-70'>{item.body}</p>
+									<p className='mb-0 mt-4 text-[15px] leading-[1.65] opacity-70'>{item.body}</p>
 									<p className='mb-0 mt-5 inline-flex items-center gap-2 text-[12px] font-semibold opacity-60'>
 										<MapPin
 											size={18}

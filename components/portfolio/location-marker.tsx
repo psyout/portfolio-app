@@ -8,7 +8,7 @@ export function LocationMarker() {
 
 	return (
 		<div className='flex items-center gap-3'>
-			<span className='relative grid size-11 shrink-0 place-items-center border border-portfolio-lime/70 bg-portfolio-sea-glass text-portfolio-title'>
+			<span className='relative grid size-11 shrink-0 place-items-center  rounded-full border-portfolio-lime/70 bg-portfolio-sea-glass text-portfolio-title'>
 				<motion.span
 					animate={reduceMotion ? undefined : { y: [0, -4, 0] }}
 					transition={reduceMotion ? undefined : { duration: 2.2, ease: 'easeInOut', repeat: Infinity }}>
