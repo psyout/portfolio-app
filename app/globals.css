@@ -241,6 +241,12 @@ h6,
 	color: #fff;
 }
 
+@media (max-width: 760px) {
+	.theme-toggle-sun svg {
+		transform: translateX(-1px);
+	}
+}
+
 :root[data-theme='dark'] .theme-toggle-sun {
 	color: var(--tertiary);
 }
