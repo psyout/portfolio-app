@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 
 :root {
-	--text-color: #19344a;
+	--text-color: #08083b;
 	--social-color: #f4f9fb;
 	--title-color: #4c7380;
 	--background: #f4f9fb;
@@ -28,6 +28,7 @@
 	--sea-glass: #e6f2f6;
 	--lime: #72dcb2;
 	--surface: #ffffff;
+	--work-field-base: #ffffff;
 	--font-title: 'Ubuntu', 'Ubuntu Fallback', Arial, Helvetica, sans-serif;
 	--font-logo: 'Ubuntu', 'Ubuntu Fallback', Arial, Helvetica, sans-serif;
 	color-scheme: light;
@@ -61,6 +62,7 @@
 	--sea-glass: #173447;
 	--lime: #72dcb2;
 	--surface: #173246;
+	--work-field-base: #0a0a0f;
 	color-scheme: dark;
 }
 
@@ -126,8 +128,65 @@ body {
 	pointer-events: none;
 }
 
-.project-field {
-	background: linear-gradient(to bottom, var(--sea-glass) 0%, var(--sea-glass) calc(100% - 160px), var(--background) 100%);
+.work-field {
+	position: relative;
+	isolation: isolate;
+	overflow: clip;
+	background: var(--work-field-base);
+}
+
+.work-field::before {
+	content: '';
+	position: sticky;
+	top: 0;
+	z-index: 0;
+	display: block;
+	width: 100%;
+	height: 100svh;
+	margin-bottom: -100svh;
+	pointer-events: none;
+	background:
+		radial-gradient(ellipse 600px 400px at 15% 10%, rgb(59 130 246 / 8%), transparent 70%),
+		radial-gradient(ellipse 500px 350px at 85% 20%, rgb(168 85 247 / 7%), transparent 70%),
+		radial-gradient(ellipse 400px 300px at 50% 60%, rgb(236 72 153 / 5%), transparent 70%),
+		radial-gradient(ellipse 500px 400px at 80% 80%, rgb(52 211 153 / 6%), transparent 70%),
+		radial-gradient(ellipse 450px 350px at 10% 75%, rgb(251 191 36 / 5%), transparent 70%);
+	animation: work-glow-drift 20s ease-in-out infinite alternate;
+}
+
+.work-field > * {
+	position: relative;
+	z-index: 1;
+}
+
+:root[data-theme='dark'] .work-field::before {
+	background:
+		radial-gradient(ellipse 600px 400px at 15% 10%, rgb(59 130 246 / 15%), transparent 70%),
+		radial-gradient(ellipse 500px 350px at 85% 20%, rgb(168 85 247 / 12%), transparent 70%),
+		radial-gradient(ellipse 400px 300px at 50% 60%, rgb(236 72 153 / 10%), transparent 70%),
+		radial-gradient(ellipse 500px 400px at 80% 80%, rgb(52 211 153 / 10%), transparent 70%),
+		radial-gradient(ellipse 450px 350px at 10% 75%, rgb(251 191 36 / 8%), transparent 70%);
+}
+
+@keyframes work-glow-drift {
+	0% {
+		opacity: 1;
+		transform: scale(1) translateY(0);
+	}
+	50% {
+		opacity: 0.8;
+		transform: scale(1.05) translateY(-20px);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1) translateY(10px);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.work-field::before {
+		animation: none;
+	}
 }
 
 h1,
@@ -144,16 +203,56 @@ h6,
 	font-family: var(--font-logo);
 }
 
-.theme-icon-dark {
-	display: none;
+.theme-toggle {
+	overflow: hidden;
+	transition:
+		background-color 180ms ease,
+		border-color 180ms ease;
 }
 
-:root[data-theme='dark'] .theme-icon-light {
-	display: none;
+.theme-toggle::before {
+	content: '';
+	position: absolute;
+	top: 4px;
+	left: 7px;
+	z-index: -1;
+	width: 34px;
+	height: 34px;
+	border-radius: 999px;
+	background: var(--turquoise);
+	box-shadow: 0 2px 8px rgb(25 52 74 / 18%);
+	transform: translateX(0);
+	transition:
+		transform 280ms cubic-bezier(0.22, 1, 0.36, 1),
+		background-color 180ms ease,
+		box-shadow 180ms ease;
 }
 
-:root[data-theme='dark'] .theme-icon-dark {
-	display: block;
+.theme-toggle-option {
+	display: grid;
+	height: 34px;
+	place-items: center;
+	border-radius: 999px;
+	color: var(--tertiary);
+	transition: color 180ms ease;
+}
+
+.theme-toggle-sun {
+	color: #fff;
+}
+
+:root[data-theme='dark'] .theme-toggle-sun {
+	color: var(--tertiary);
+}
+
+:root[data-theme='dark'] .theme-toggle::before {
+	background: var(--mint);
+	box-shadow: 0 2px 8px rgb(0 0 0 / 22%);
+	transform: translateX(41px);
+}
+
+:root[data-theme='dark'] .theme-toggle-moon {
+	color: var(--pine);
 }
 
 a:focus-visible,
@@ -167,6 +266,101 @@ button:focus-visible {
 		background-color 160ms ease,
 		border-color 160ms ease,
 		color 160ms ease;
+}
+
+:root[data-theme='dark'] .technology-stack-item {
+	color: #fff !important;
+}
+
+:root[data-theme='dark'] .capability-icon {
+	border: 1px solid rgb(184 220 232 / 38%);
+	background: #294b5c;
+	color: #fff;
+	box-shadow:
+		inset 0 0 0 1px rgb(255 255 255 / 5%),
+		0 8px 20px rgb(0 0 0 / 12%);
+}
+
+:root[data-theme='dark'] .capability-card:hover {
+	border-color: var(--lime);
+	background: #203f50;
+}
+
+:root[data-theme='dark'] .hero-section .hero-title,
+:root[data-theme='dark'] .hero-section .hero-title span {
+	color: #fff;
+}
+
+:root[data-theme='dark'] .hero-aside {
+	border-color: rgb(255 255 255 / 22%);
+}
+
+:root[data-theme='dark'] .hero-summary {
+	color: rgb(255 255 255 / 84%);
+}
+
+:root[data-theme='dark'] .hero-role-bubble {
+	border: 1px solid rgb(255 255 255 / 22%);
+	background: rgb(255 255 255 / 12%);
+	color: #fff;
+}
+
+:root[data-theme='dark'] .hero-role-bubble .message-dot {
+	background: #fff;
+}
+
+:root[data-theme='dark'] .hero-location-marker {
+	border-color: rgb(255 255 255 / 40%);
+	background: rgb(255 255 255 / 10%);
+	color: #fff;
+}
+
+:root[data-theme='dark'] .hero-location-shadow {
+	background: #fff;
+}
+
+:root[data-theme='dark'] .hero-location-label {
+	color: rgb(255 255 255 / 66%);
+}
+
+:root[data-theme='dark'] .hero-location-value {
+	color: #fff;
+}
+
+:root[data-theme='dark'] .hero-projects-cta {
+	border: 1px solid rgb(255 255 255 / 28%);
+	background: rgb(255 255 255 / 8%);
+	color: #fff;
+}
+
+:root[data-theme='dark'] .hero-projects-cta:hover {
+	border-color: #fff;
+	background: #fff;
+	color: var(--pine);
+}
+
+:root[data-theme='dark'] .hero-contact-cta {
+	border-color: var(--lime);
+	background: var(--lime);
+	color: var(--pine);
+}
+
+:root[data-theme='dark'] .hero-contact-cta:hover {
+	border-color: #fff;
+	background: #fff;
+	color: var(--pine);
+}
+
+.marker-highlight-stroke {
+	position: absolute;
+	right: -0.12em;
+	bottom: 0.02em;
+	left: -0.12em;
+	z-index: 0;
+	height: 0.68em;
+	transform-origin: left center;
+	background: rgb(114 220 178 / 42%);
+	pointer-events: none;
 }
 
 .email-link {

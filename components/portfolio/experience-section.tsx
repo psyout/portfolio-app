@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from 'motion/react';
 import { BriefcaseBusiness, MapPin } from 'lucide-react';
+import MotionReveal from '@/components/ui/motion-reveal';
 import { sectionEyebrow, sectionTitle } from './styles';
 
 const experience = [
@@ -60,21 +61,25 @@ export function ExperienceSection() {
 
 	return (
 		<section
-			className='overflow-hidden bg-portfolio-sea-glass px-5 py-[clamp(76px,10vw,124px)] text-portfolio-pine min-[761px]:px-8'
+			className='overflow-hidden px-5 py-[clamp(76px,10vw,124px)] text-portfolio-text min-[761px]:px-8'
 			aria-labelledby='experience-title'>
 			<div className='mx-auto max-w-240'>
-				<div className='grid gap-6 border-b border-portfolio-line pb-8 min-[760px]:grid-cols-[1fr_.7fr] min-[760px]:items-end'>
-					<div>
-						<p className={`m-0 ${sectionEyebrow}`}>Experience</p>
-						<h2
-							className={`mb-0 mt-3 ${sectionTitle}`}
-							id='experience-title'>
-							The path to full-stack.
-						</h2>
-					</div>
-					<p className='m-0 max-w-117.5 text-[16px] leading-[1.7] text-portfolio-text/65'>
-						Full-stack development, design, and team leadership taught me to solve technical problems without losing sight of the people using and building the product.
-					</p>
+				<div className='grid gap-1 border-b border-portfolio-line pb-8 min-[760px]:grid-cols-[1fr_.7fr] min-[760px]:items-end'>
+					<MotionReveal>
+						<div>
+							<p className={`m-0 ${sectionEyebrow}`}>Experience</p>
+							<h2
+								className={`mb-0 mt-3 ${sectionTitle}`}
+								id='experience-title'>
+								The path to Full Stack
+							</h2>
+						</div>
+					</MotionReveal>
+					<MotionReveal
+						className='max-w-117.5'
+						delay={0.1}>
+						<p className='m-0 text-[16px] leading-[1.7] text-portfolio-text/65'>I build useful products with solid code, clear thinking, and good communication.</p>
+					</MotionReveal>
 				</div>
 
 				<div className='relative mt-10'>

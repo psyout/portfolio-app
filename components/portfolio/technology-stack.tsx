@@ -59,7 +59,7 @@ const technologyIcons: Record<string, TechnologyIcon> = {
 export function TechnologyStack({ items, project }: TechnologyStackProps) {
 	return (
 		<ul
-			className='m-0 flex list-none flex-wrap items-center gap-x-5 gap-y-4 p-0'
+			className='m-0 flex list-none flex-wrap items-center gap-x-6 gap-y-5 p-0'
 			aria-label={`${project} technology stack`}>
 			{items.map((item) => {
 				const technology = technologyIcons[item] ?? technologyIcons['REST API'];
@@ -67,12 +67,12 @@ export function TechnologyStack({ items, project }: TechnologyStackProps) {
 
 				return (
 					<li
-						className='grid size-8 place-items-center transition-[filter] duration-200 hover:brightness-110'
+						className='technology-stack-item grid size-10 place-items-center transition-[filter,color] duration-200 hover:brightness-110'
 						key={item}
 						style={{ color: technology.color }}
 						title={item}>
 						<Icon
-							size={32}
+							size={38}
 							aria-hidden='true'
 						/>
 						<span className='sr-only'>{item}</span>

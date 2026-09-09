@@ -39,7 +39,7 @@ export function TypingRole() {
 				initial={false}>
 				{reduceMotion || phase === 'message' ? (
 					<motion.span
-						className='inline-flex rounded-[20px] rounded-bl-md bg-portfolio-mint/45 px-4 py-2.5 text-[13px] font-bold uppercase tracking-[.12em] text-portfolio-pine shadow-sm'
+						className='hero-role-bubble inline-flex rounded-[20px] rounded-bl-md bg-portfolio-mint/45 px-4 py-2.5 text-[13px] font-bold uppercase tracking-[.12em] text-portfolio-pine shadow-sm'
 						key={`message-${reduceMotion ? 0 : roleIndex}`}
 						initial={reduceMotion ? false : { opacity: 0, scale: 0.82, y: 10, transformOrigin: 'bottom left' }}
 						animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -48,7 +48,7 @@ export function TypingRole() {
 					</motion.span>
 				) : (
 					<span
-						className='inline-flex min-h-10 items-center gap-1.5 rounded-[20px] rounded-bl-md bg-portfolio-mint/55 px-4'
+						className='hero-role-bubble inline-flex min-h-10 items-center gap-1.5 rounded-[20px] rounded-bl-md bg-portfolio-mint/55 px-4'
 						key={`waiting-${roleIndex}`}
 						aria-hidden='true'>
 						<span className='message-dot size-1.5 rounded-full bg-portfolio-tertiary' />

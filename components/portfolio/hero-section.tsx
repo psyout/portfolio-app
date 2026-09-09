@@ -21,7 +21,7 @@ export function HeroSection() {
 						<LoadReveal delay={0.2}>
 							<div className='hero-actions mt-6 flex flex-wrap gap-2.5 min-[761px]:mt-10'>
 								<a
-									className='button-hover group inline-flex min-h-11 items-center gap-2.5 rounded-full bg-portfolio-pine px-4 text-[13px] font-semibold text-white no-underline hover:bg-portfolio-turquoise min-[420px]:gap-3 min-[420px]:px-5 min-[420px]:text-[14px]'
+									className='hero-projects-cta button-hover group inline-flex min-h-11 items-center gap-2.5 rounded-full bg-portfolio-pine px-4 text-[13px] font-semibold text-white no-underline hover:bg-portfolio-turquoise min-[420px]:gap-3 min-[420px]:px-5 min-[420px]:text-[14px]'
 									href='#work'>
 									View projects
 									<BriefcaseBusiness
@@ -30,7 +30,7 @@ export function HeroSection() {
 									/>
 								</a>
 								<a
-									className='button-hover group inline-flex min-h-11 items-center gap-2.5 rounded-full border border-portfolio-line bg-portfolio-surface/60 px-4 text-[13px] font-semibold no-underline hover:border-portfolio-title hover:bg-portfolio-title hover:text-white min-[420px]:gap-3 min-[420px]:px-5 min-[420px]:text-[14px]'
+									className='hero-contact-cta button-hover group inline-flex min-h-11 items-center gap-2.5 rounded-full border border-portfolio-line bg-portfolio-surface/60 px-4 text-[13px] font-semibold no-underline hover:border-portfolio-title hover:bg-portfolio-title hover:text-white min-[420px]:gap-3 min-[420px]:px-5 min-[420px]:text-[14px]'
 									href='#contact'>
 									Contact me
 									<Send

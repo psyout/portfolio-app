@@ -1,13 +1,17 @@
+'use client';
+
 import Image from 'next/image';
-import { Code2, FileDown, Hand, Languages, MessageCircle, Users } from 'lucide-react';
+import { useState, type ReactNode } from 'react';
+import { ChevronDown, Code2, FileDown, Hand, Languages, MessageCircle, Users } from 'lucide-react';
+import { motion, useReducedMotion } from 'motion/react';
 import MotionReveal from '@/components/ui/motion-reveal';
 import { ScrollUnderline } from './scroll-underline';
-import { featureTitle, sectionEyebrow } from './styles';
+import { sectionEyebrow } from './styles';
 
 const focusAreas = [
 	{
 		icon: Code2,
-		title: 'Design + engineering',
+		title: 'Design + development',
 		body: 'I bring design thinking to every layer, from the interface to the systems behind it.',
 	},
 	{
@@ -22,7 +26,27 @@ const focusAreas = [
 	},
 ];
 
+function MarkerHighlight({ children }: { children: ReactNode }) {
+	const reduceMotion = useReducedMotion();
+
+	return (
+		<span className='relative isolate inline-block px-[0.08em]'>
+			<motion.span
+				className='marker-highlight-stroke'
+				initial={reduceMotion ? { scaleX: 1, opacity: 1 } : { scaleX: 0, opacity: 0.25 }}
+				whileInView={{ scaleX: 1, opacity: 1 }}
+				viewport={{ once: true, amount: 0.9 }}
+				transition={{ duration: reduceMotion ? 0 : 0.72, delay: reduceMotion ? 0 : 0.16, ease: [0.22, 1, 0.36, 1] }}
+				aria-hidden='true'
+			/>
+			<span className='relative z-1'>{children}</span>
+		</span>
+	);
+}
+
 export function AboutSection() {
+	const [detailsOpen, setDetailsOpen] = useState(false);
+
 	return (
 		<section
 			className='grain scroll-mt-6 overflow-hidden bg-portfolio-pine px-5 py-[clamp(72px,9vw,112px)] text-white min-[761px]:px-8'
@@ -63,23 +87,46 @@ export function AboutSection() {
 					<MotionReveal
 						delay={0.08}
 						frame>
-						<h2 className={`m-0 text-pretty max-w-150 ${featureTitle}`}>I build complete products, from interface to backend.</h2>
-						<p className='mb-0 mt-7 max-w-155 text-[17px] leading-normal text-white/75'>
-							I&apos;m a Vancouver-based Full Stack Developer with a background in web design. I care about the moment an idea becomes clear: when the interface feels intuitive,
-							the technology gets out of the way, and the product starts being genuinely useful.
+						<h2 className='m-0 max-w-150 text-pretty text-[clamp(32px,8vw,42px)] font-medium leading-[1.07] tracking-[-.02em] min-[780px]:text-[clamp(36px,4.8vw,52px)]'>
+							Developer first, curious about the whole product.
+						</h2>
+						<p className='mb-0 mt-6 max-w-155 text-[16px] leading-[1.6] text-white/75 min-[780px]:mt-7 min-[780px]:text-[17px]'>
+							I&apos;m Felipe, a Full Stack Developer based in Vancouver. I started in web design, and that background still shapes how I build. I care about clean code,
+							thoughtful interfaces, and understanding the real problem before reaching for a solution.{' '}
+							<button
+								className='button-hover inline-flex no-underline cursor-pointer items-center gap-1 border-0 bg-transparent p-0 pb-px align-baseline text-[14px] font-medium text-portfolio-mint hover:border-white hover:text-white'
+								type='button'
+								onClick={() => setDetailsOpen((open) => !open)}
+								aria-expanded={detailsOpen}
+								aria-controls='about-details'>
+								{detailsOpen ? 'Less' : 'More'}
+								<ChevronDown
+									className={`transition-transform duration-300 ${detailsOpen ? 'rotate-180' : ''}`}
+									size={14}
+									aria-hidden='true'
+								/>
+							</button>
 						</p>
-						<p className='mb-0 mt-5 max-w-155 text-[17px] leading-normal text-white/75'>
-							That mix lets me move comfortably between a Figma conversation, a React component, and the API behind it, while keeping the person using the product at the centre.
-						</p>
+						<div
+							className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${detailsOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
+							id='about-details'
+							aria-hidden={!detailsOpen}>
+							<div className='overflow-hidden'>
+								<p className='mb-0 mt-4 max-w-155 text-[16px] leading-[1.6] text-white/75 min-[780px]:mt-5 min-[780px]:text-[17px]'>
+									I like building things all the way through, from the first conversation to the interface and the systems behind it. I don&apos;t pretend to have every
+									answer, but I ask good questions, learn quickly, and stay with the details until the product feels solid and useful.
+								</p>
+							</div>
+						</div>
 						<a
-							className='mt-7 inline-flex items-center gap-2 font-semibold text-portfolio-mint no-underline'
+							className='mt-6 inline-flex items-center gap-2 text-[15px] font-medium text-portfolio-mint no-underline'
 							href='#contact'>
 							<ScrollUnderline>Start a conversation</ScrollUnderline>
 							<span
 								className='inline-flex items-center gap-1'
 								aria-hidden='true'>
-								<MessageCircle size={18} />
-								<Hand size={17} />
+								<MessageCircle size={17} />
+								<Hand size={16} />
 							</span>
 						</a>
 					</MotionReveal>
@@ -99,7 +146,9 @@ export function AboutSection() {
 									strokeWidth={1.8}
 									aria-hidden='true'
 								/>
-								<p className='mb-0 mt-6 text-[20px] font-semibold leading-tight text-white'>{title}</p>
+								<p className='mb-0 mt-6 text-[20px] font-semibold leading-tight text-white'>
+									<MarkerHighlight>{title}</MarkerHighlight>
+								</p>
 								<p className='mb-0 mt-3 text-pretty text-[1rem] leading-[1.6] text-white/65'>{body}</p>
 							</div>
 						</MotionReveal>

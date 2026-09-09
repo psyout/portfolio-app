@@ -21,16 +21,18 @@ export default function Home() {
       <main>
         <HeroSection />
         <AboutSection />
-        <ExperienceSection />
-        <div className="project-field pb-[clamp(72px,9vw,112px)]">
-          <MotionReveal>
-            <WorkIntro />
-          </MotionReveal>
-          {projects.map((project, index) => (
-            <MotionReveal delay={Math.min(index * 0.06, 0.18)} frame key={project.id}>
-              <ProjectSection project={project} tone={index} />
+        <div className="work-field">
+          <ExperienceSection />
+          <div className="pb-[clamp(72px,9vw,112px)]">
+            <MotionReveal>
+              <WorkIntro />
             </MotionReveal>
-          ))}
+            {projects.map((project, index) => (
+              <MotionReveal delay={Math.min(index * 0.06, 0.18)} frame key={project.id}>
+                <ProjectSection project={project} tone={index} />
+              </MotionReveal>
+            ))}
+          </div>
         </div>
         <CapabilitiesSection capabilities={capabilities} />
         <ContactSection />

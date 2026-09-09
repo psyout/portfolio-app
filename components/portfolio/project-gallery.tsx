@@ -75,12 +75,12 @@ export function ProjectGallery({ project, slides, tone }: ProjectGalleryProps) {
 
 	return (
 		<div
-			className='mx-auto w-full max-w-[1120px]'
+			className='mx-auto w-full max-w-280'
 			data-tone={tone}
 			role='region'
 			aria-roledescription='carousel'
 			aria-label={`${project} image gallery`}>
-			<div className='relative h-[clamp(340px,47vw,540px)] overflow-hidden rounded-[18px] bg-portfolio-secondary max-[760px]:h-[52svh] max-[760px]:min-h-[340px]'>
+			<div className='relative h-[clamp(340px,47vw,540px)] overflow-hidden rounded-[18px] bg-portfolio-secondary max-[760px]:h-[40svh] max-[760px]:min-h-85'>
 				{slides.map((slide, index) => (
 					<button
 						type='button'
@@ -169,77 +169,79 @@ export function ProjectGallery({ project, slides, tone }: ProjectGalleryProps) {
 
 			{lightboxOpen &&
 				createPortal(
-				<div
-					className='fixed inset-0 z-100 grid h-[100svh] w-screen animate-[lightbox-in_.2s_ease-out] place-items-center bg-[rgb(10_14_11/96%)] px-[clamp(18px,5vw,76px)] pb-13.5 pt-[clamp(72px,8vw,110px)] text-white motion-reduce:animate-none max-[760px]:p-0'
-					role='dialog'
-					aria-modal='true'
-					aria-label={`${project} full-size image viewer`}>
-					<div className='absolute inset-x-0 top-0 z-[7] flex min-h-17 items-center justify-between border-b border-white/20 px-[max(14px,4vw)] max-[760px]:min-h-[calc(68px+env(safe-area-inset-top))] max-[760px]:pt-[env(safe-area-inset-top)]'>
-						<p className='m-0 min-w-0 truncate pr-3 text-xs font-bold uppercase tracking-widest'>
-							<span className='max-[760px]:hidden'>{project}</span>
-							<span className='ml-4 text-portfolio-tertiary max-[760px]:ml-0 max-[760px]:text-white'>
-								{String(active + 1).padStart(2, '0')} / {String(slides.length).padStart(2, '0')}
+					<div
+						className='fixed inset-0 z-100 grid h-[100svh] w-screen animate-[lightbox-in_.2s_ease-out] place-items-center bg-[rgb(10_14_11/96%)] px-[clamp(18px,5vw,76px)] pb-13.5 pt-[clamp(72px,8vw,110px)] text-white motion-reduce:animate-none max-[760px]:p-0'
+						role='dialog'
+						aria-modal='true'
+						aria-label={`${project} full-size image viewer`}>
+						<div className='absolute inset-x-0 top-0 z-[7] flex min-h-17 items-center justify-between border-b border-white/20 px-[max(14px,4vw)] max-[760px]:min-h-[calc(68px+env(safe-area-inset-top))] max-[760px]:pt-[env(safe-area-inset-top)]'>
+							<p className='m-0 min-w-0 truncate pr-3 text-xs font-bold uppercase tracking-widest'>
+								<span className='max-[760px]:hidden'>{project}</span>
+								<span className='ml-4 text-portfolio-tertiary max-[760px]:ml-0 max-[760px]:text-white'>
+									{String(active + 1).padStart(2, '0')} / {String(slides.length).padStart(2, '0')}
+								</span>
+							</p>
+							<button
+								className='button-hover grid size-11 shrink-0 cursor-pointer place-items-center rounded-full border border-white bg-white text-portfolio-pine hover:border-portfolio-lime hover:bg-portfolio-lime min-[761px]:inline-flex min-[761px]:w-auto min-[761px]:gap-2 min-[761px]:border-white/30 min-[761px]:bg-transparent min-[761px]:px-4 min-[761px]:text-white min-[761px]:hover:border-white min-[761px]:hover:bg-white min-[761px]:hover:text-black'
+								ref={closeButton}
+								type='button'
+								onClick={closeLightbox}
+								aria-label='Close full-size image'>
+								<span className='hidden min-[761px]:inline'>Close</span>
+								<X
+									size={20}
+									aria-hidden='true'
+								/>
+							</button>
+						</div>
+						<div
+							className='relative h-[min(78vh,950px)] w-[min(100%,1500px)] touch-pan-y overflow-hidden bg-[#101512] max-[760px]:h-[100svh] max-[760px]:w-screen max-[760px]:pb-[calc(76px+env(safe-area-inset-bottom))] max-[760px]:pt-[calc(68px+env(safe-area-inset-top))]'
+							onTouchStart={(event) => {
+								touchStart.current = event.touches[0].clientX;
+							}}
+							onTouchEnd={(event) => finishSwipe(event.changedTouches[0].clientX)}>
+							{!loadedImages[slides[active].image] && !failedImages[slides[active].image] && (
+								<span
+									className='image-skeleton absolute inset-0'
+									aria-hidden='true'
+								/>
+							)}
+							{failedImages[slides[active].image] && <span className='absolute inset-0 grid place-items-center text-sm font-semibold text-white/60'>Image unavailable</span>}
+							<img
+								src={slides[active].image}
+								alt={`${project}: ${slides[active].label}`}
+								className={`h-full w-full object-contain transition-opacity duration-500 motion-reduce:transition-none ${loadedImages[slides[active].image] ? 'opacity-100' : 'opacity-0'} ${slides[active].fit === 'contain' ? 'p-[clamp(18px,3vw,48px)]' : ''}`}
+								onLoad={() => markImageLoaded(slides[active].image)}
+								onError={() => markImageFailed(slides[active].image)}
+							/>
+							<span className='absolute bottom-5 left-5 bg-[rgb(7_12_10/75%)] px-2.75 py-2 text-xs uppercase tracking-[.08em] text-white max-[760px]:hidden'>
+								{slides[active].label}
 							</span>
-						</p>
+						</div>
 						<button
-							className='button-hover grid size-11 shrink-0 cursor-pointer place-items-center rounded-full border border-white bg-white text-portfolio-pine hover:border-portfolio-lime hover:bg-portfolio-lime min-[761px]:inline-flex min-[761px]:w-auto min-[761px]:gap-2 min-[761px]:border-white/30 min-[761px]:bg-transparent min-[761px]:px-4 min-[761px]:text-white min-[761px]:hover:border-white min-[761px]:hover:bg-white min-[761px]:hover:text-black'
-							ref={closeButton}
+							className={`${lightboxArrowClass} left-[max(8px,1.5vw)] max-[760px]:left-5`}
 							type='button'
-							onClick={closeLightbox}
-							aria-label='Close full-size image'>
-							<span className='hidden min-[761px]:inline'>Close</span>
-							<X
-								size={20}
+							onClick={() => move(-1)}
+							aria-label='Previous full-size image'>
+							<ChevronLeft
+								size={22}
 								aria-hidden='true'
 							/>
 						</button>
-					</div>
-					<div
-						className='relative h-[min(78vh,950px)] w-[min(100%,1500px)] touch-pan-y overflow-hidden bg-[#101512] max-[760px]:h-[100svh] max-[760px]:w-screen max-[760px]:pb-[calc(76px+env(safe-area-inset-bottom))] max-[760px]:pt-[calc(68px+env(safe-area-inset-top))]'
-						onTouchStart={(event) => {
-							touchStart.current = event.touches[0].clientX;
-						}}
-						onTouchEnd={(event) => finishSwipe(event.changedTouches[0].clientX)}>
-						{!loadedImages[slides[active].image] && !failedImages[slides[active].image] && (
-							<span
-								className='image-skeleton absolute inset-0'
+						<button
+							className={`${lightboxArrowClass} right-[max(8px,1.5vw)] max-[760px]:right-5`}
+							type='button'
+							onClick={() => move(1)}
+							aria-label='Next full-size image'>
+							<ChevronRight
+								size={22}
 								aria-hidden='true'
 							/>
-						)}
-						{failedImages[slides[active].image] && <span className='absolute inset-0 grid place-items-center text-sm font-semibold text-white/60'>Image unavailable</span>}
-						<img
-							src={slides[active].image}
-							alt={`${project}: ${slides[active].label}`}
-							className={`h-full w-full object-contain transition-opacity duration-500 motion-reduce:transition-none ${loadedImages[slides[active].image] ? 'opacity-100' : 'opacity-0'} ${slides[active].fit === 'contain' ? 'p-[clamp(18px,3vw,48px)]' : ''}`}
-							onLoad={() => markImageLoaded(slides[active].image)}
-							onError={() => markImageFailed(slides[active].image)}
-						/>
-						<span className='absolute bottom-5 left-5 bg-[rgb(7_12_10/75%)] px-2.75 py-2 text-xs uppercase tracking-[.08em] text-white max-[760px]:hidden'>{slides[active].label}</span>
-					</div>
-					<button
-						className={`${lightboxArrowClass} left-[max(8px,1.5vw)] max-[760px]:left-5`}
-						type='button'
-						onClick={() => move(-1)}
-						aria-label='Previous full-size image'>
-						<ChevronLeft
-							size={22}
-							aria-hidden='true'
-						/>
-					</button>
-					<button
-						className={`${lightboxArrowClass} right-[max(8px,1.5vw)] max-[760px]:right-5`}
-						type='button'
-						onClick={() => move(1)}
-						aria-label='Next full-size image'>
-						<ChevronRight
-							size={22}
-							aria-hidden='true'
-						/>
-					</button>
-					<p className='absolute bottom-4.25 m-0 text-[11px] uppercase tracking-[.08em] text-portfolio-tertiary max-[760px]:hidden'>Swipe or use arrow keys</p>
-				</div>,
-				document.body,
-			)}
+						</button>
+						<p className='absolute bottom-4.25 m-0 text-[11px] uppercase tracking-[.08em] text-portfolio-tertiary max-[760px]:hidden'>Swipe or use arrow keys</p>
+					</div>,
+					document.body,
+				)}
 		</div>
 	);
 }

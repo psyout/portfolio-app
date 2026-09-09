@@ -33,12 +33,12 @@ export type AboutValue = {
 export const projects: Project[] = [
 	{
 		id: 'andes-builders',
-		number: '07',
+		number: '01',
 		title: 'Andes Builders',
 		eyebrow: 'Construction and renovation',
 		type: 'WordPress website',
 		intro: 'A polished service-business website for a residential construction company, designed to establish trust and turn project interest into enquiries.',
-		story: 'Built with WordPress and Elementor, the site pairs strong project photography with clear service positioning, an approachable four-step process, responsive layouts, and direct conversion paths. WooCommerce provides a flexible foundation for future service and product needs.',
+		story: 'I installed and customized the WordPress theme, using custom CSS and PHP to create responsive layouts, clear service positioning, and direct conversion paths. Elementor keeps content editing flexible, while WooCommerce provides room for future service and product needs.',
 		details: ['WordPress', 'PHP'],
 		liveUrl: 'https://andesbuilders.com/',
 		githubUrl: '',
@@ -50,7 +50,7 @@ export const projects: Project[] = [
 	},
 	{
 		id: 'puretide',
-		number: '01',
+		number: '02',
 		title: 'Puretide',
 		eyebrow: 'Privacy-first commerce',
 		type: 'E-commerce Web App',
@@ -68,13 +68,13 @@ export const projects: Project[] = [
 	},
 	{
 		id: 'vansippy',
-		number: '02',
+		number: '03',
 		title: 'Vansippy',
 		eyebrow: 'Location-based discovery',
 		type: 'Happy hour Finder Web App',
 		intro: 'A full-stack web application that helps people discover curated happy-hour deals at restaurants and bars around Vancouver.',
 		story: 'Vansippy pairs a React and Material UI interface with a Node, Express, and MongoDB backend. Browser geolocation and Mapbox turn curated venue data into useful, nearby results in real time.',
-		details: ['React', 'Node.js', 'MongoDB', 'Mapbox'],
+		details: ['React', 'Node.js', 'MongoDB'],
 		liveUrl: 'https://vansippy.com/',
 		githubUrl: 'https://github.com/psyout/capstone-client',
 		slides: [
@@ -86,7 +86,7 @@ export const projects: Project[] = [
 	},
 	{
 		id: 'instock',
-		number: '03',
+		number: '04',
 		title: 'InStock',
 		eyebrow: 'Inventory operations',
 		type: 'Management system',
@@ -104,7 +104,7 @@ export const projects: Project[] = [
 	},
 	{
 		id: 'transportes-moran',
-		number: '04',
+		number: '05',
 		title: 'Transportes Moran',
 		eyebrow: 'Service business platform',
 		type: 'Corporate website',
@@ -122,7 +122,7 @@ export const projects: Project[] = [
 	},
 	{
 		id: 'brainflix',
-		number: '05',
+		number: '06',
 		title: 'BrainFlix',
 		eyebrow: 'Video platform',
 		type: 'Full-stack React app',
@@ -140,7 +140,7 @@ export const projects: Project[] = [
 	},
 	{
 		id: 'bandsite',
-		number: '06',
+		number: '07',
 		title: 'Bandsite',
 		eyebrow: 'Music and community',
 		type: 'Interactive band website',

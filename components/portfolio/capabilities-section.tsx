@@ -37,17 +37,14 @@ export function CapabilitiesSection({ capabilities }: CapabilitiesSectionProps) 
 								delay={index * 0.08}
 								frame
 								key={capability.number}>
-								<article className='h-full rounded-[22px] border border-portfolio-line bg-portfolio-surface p-6 transition-[background-color,border-color] duration-200 hover:border-portfolio-lime hover:bg-portfolio-sea-glass'>
-									<div className='flex items-center justify-between'>
-										<span className='text-xs font-bold text-portfolio-title'>{capability.number}</span>
-										<span className='grid size-12 place-items-center rounded-full bg-portfolio-sea-glass text-portfolio-title'>
-											<Icon
-												size={30}
-												strokeWidth={1.8}
-												aria-hidden='true'
-											/>
-										</span>
-									</div>
+								<article className='capability-card h-full rounded-[22px] border border-portfolio-line bg-portfolio-surface p-6 transition-[background-color,border-color] duration-200 hover:border-portfolio-lime hover:bg-portfolio-sea-glass'>
+									<span className='capability-icon grid size-12 place-items-center rounded-full bg-portfolio-sea-glass text-portfolio-title'>
+										<Icon
+											size={30}
+											strokeWidth={1.8}
+											aria-hidden='true'
+										/>
+									</span>
 									<h3 className='mb-0 mt-8 text-[20px] font-semibold'>{capability.title}</h3>
 									<p className='mb-0 mt-3 text-[1rem] leading-[1.65] text-portfolio-text/65'>{capability.body}</p>
 								</article>
