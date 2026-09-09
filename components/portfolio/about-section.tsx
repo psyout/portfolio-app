@@ -27,7 +27,7 @@ export function AboutSection() {
 			id='about'>
 			<div className='mx-auto max-w-240'>
 				<div className='flex flex-wrap items-center justify-between gap-4 border-b border-white/20 pb-5'>
-					<p className={`m-0 !text-portfolio-mint ${sectionEyebrow}`}>About Felipe</p>
+					<p className={`m-0 text-white ${sectionEyebrow}`}>About Felipe</p>
 					<a
 						className='button-hover inline-flex min-h-10 items-center gap-2 rounded-full border border-white/30 px-4 text-[13px] font-semibold text-white no-underline hover:border-portfolio-mint hover:bg-portfolio-mint hover:text-portfolio-pine'
 						href='https://felipegonzalez.dev/felipe-gonzalez-resume.pdf'
@@ -43,9 +43,9 @@ export function AboutSection() {
 				</div>
 
 				<div className='mt-10 grid gap-10 min-[780px]:grid-cols-[176px_1fr] min-[780px]:items-start min-[780px]:gap-[clamp(48px,8vw,96px)]'>
-					<div className='relative mx-auto size-[200px] overflow-hidden rounded-full border-4 border-portfolio-mint bg-white shadow-[0_18px_45px_rgb(0_0_0_/_24%)] min-[780px]:mx-0 min-[780px]:size-[200px]'>
+					<div className='relative mx-auto size-50 overflow-hidden rounded-full border-4 border-portfolio-mint bg-white shadow-[0_18px_45px_rgb(0_0_0/24%)] min-[780px]:mx-0 min-[780px]:size-50'>
 						<Image
-							className='origin-[50%_40%] scale-[1.8] object-contain translate-y-4 saturate-50'
+							className='origin-[50%_40%] scale-[2.8] object-contain saturate-50'
 							src='/static/images/profile-picture.jpg'
 							alt='Felipe Gonzalez smiling'
 							fill
@@ -53,12 +53,12 @@ export function AboutSection() {
 						/>
 					</div>
 					<div>
-						<h2 className={`m-0 text-pretty max-w-[600px] ${featureTitle}`}>I build complete products, from interface to backend.</h2>
-						<p className='mb-0 mt-7 max-w-[620px] text-[17px] leading-[1.5] text-white/75'>
+						<h2 className={`m-0 text-pretty max-w-150 ${featureTitle}`}>I build complete products, from interface to backend.</h2>
+						<p className='mb-0 mt-7 max-w-155 text-[17px] leading-normal text-white/75'>
 							I&apos;m a Vancouver-based Full Stack Developer with a background in web design. I care about the moment an idea becomes clear: when the interface feels intuitive,
 							the technology gets out of the way, and the product starts being genuinely useful.
 						</p>
-						<p className='mb-0 mt-5 max-w-[620px] text-[17px] leading-[1.5] text-white/75'>
+						<p className='mb-0 mt-5 max-w-155 text-[17px] leading-normal text-white/75'>
 							That mix lets me move comfortably between a Figma conversation, a React component, and the API behind it—while keeping the person using the product at the centre.
 						</p>
 						<a
@@ -85,7 +85,7 @@ export function AboutSection() {
 								aria-hidden='true'
 							/>
 							<p className='mb-0 mt-6 text-[20px] font-semibold leading-tight text-white'>{title}</p>
-							<p className='mb-0 mt-3 max-w-[310px] text-[1rem] leading-[1.6] text-white/65'>{body}</p>
+							<p className='mb-0 mt-3 max-w-77.5 text-[1rem] leading-[1.6] text-white/65'>{body}</p>
 						</div>
 					))}
 				</div>

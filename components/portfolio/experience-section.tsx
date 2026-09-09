@@ -42,7 +42,7 @@ const experience = [
 		role: 'Graphic Designer',
 		company: 'Natura Cosmetics',
 		place: 'Remote · Chile',
-		body: 'Translated campaign ideas into digital and print systems, landing-page assets, Figma handoffs, and reusable brand guidelines.',
+		body: 'Translated campaign ideas into digital and print systems, landing page assets, Figma handoffs, and reusable brand guidelines.',
 		tone: 'bg-portfolio-mint text-portfolio-pine',
 	},
 	{
