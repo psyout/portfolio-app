@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 
-const roles = ['I`m Full Stack developer', 'Web developer', 'Web designer', 'a Human'];
+const roles = ['Full Stack Developer', 'Web Developer', 'CSS Enthusiast', 'a Human'];
 
 export function TypingRole() {
 	const reduceMotion = useReducedMotion();

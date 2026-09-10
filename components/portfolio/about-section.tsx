@@ -1,10 +1,10 @@
 'use client';
 
 import Image from 'next/image';
-import { useState, type ReactNode } from 'react';
-import { ChevronDown, Code2, FileDown, Hand, Languages, MessageCircle, Users } from 'lucide-react';
-import { motion, useReducedMotion } from 'motion/react';
+import { useState } from 'react';
+import { ChevronDown, Code2, FileDown, Languages, MessageCircle, Users } from 'lucide-react';
 import MotionReveal from '@/components/ui/motion-reveal';
+import { MarkerHighlight } from './marker-highlight';
 import { ScrollUnderline } from './scroll-underline';
 import { sectionEyebrow } from './styles';
 
@@ -25,24 +25,6 @@ const focusAreas = [
 		body: 'Fluent in English and Spanish, with experience working across Canada and Chile.',
 	},
 ];
-
-function MarkerHighlight({ children }: { children: ReactNode }) {
-	const reduceMotion = useReducedMotion();
-
-	return (
-		<span className='relative isolate inline-block px-[0.08em]'>
-			<motion.span
-				className='marker-highlight-stroke'
-				initial={reduceMotion ? { scaleX: 1, opacity: 1 } : { scaleX: 0, opacity: 0.25 }}
-				whileInView={{ scaleX: 1, opacity: 1 }}
-				viewport={{ once: true, amount: 0.9 }}
-				transition={{ duration: reduceMotion ? 0 : 0.72, delay: reduceMotion ? 0 : 0.16, ease: [0.22, 1, 0.36, 1] }}
-				aria-hidden='true'
-			/>
-			<span className='relative z-1'>{children}</span>
-		</span>
-	);
-}
 
 export function AboutSection() {
 	const [detailsOpen, setDetailsOpen] = useState(false);
@@ -91,8 +73,8 @@ export function AboutSection() {
 							Developer first, curious about the whole product.
 						</h2>
 						<p className='mb-0 mt-6 max-w-155 text-[16px] leading-[1.6] text-white/75 min-[780px]:mt-7 min-[780px]:text-[17px]'>
-							I&apos;m Felipe, a Full Stack Developer based in Vancouver. I started in web design, and that background still shapes how I build. I care about clean code,
-							thoughtful interfaces, and understanding the real problem before reaching for a solution.{' '}
+							I&apos;m a Full Stack Developer based in Vancouver. I started in web design, and that background still shapes how I build. I care about clean code, thoughtful
+							interfaces, and understanding the real problem before reaching for a solution.{' '}
 							<button
 								className='button-hover inline-flex no-underline cursor-pointer items-center gap-1 border-0 bg-transparent p-0 pb-px align-baseline text-[14px] font-medium text-portfolio-mint hover:border-white hover:text-white'
 								type='button'
@@ -126,7 +108,6 @@ export function AboutSection() {
 								className='inline-flex items-center gap-1'
 								aria-hidden='true'>
 								<MessageCircle size={17} />
-								<Hand size={16} />
 							</span>
 						</a>
 					</MotionReveal>

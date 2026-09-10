@@ -3,6 +3,7 @@
 import { motion, useReducedMotion } from 'motion/react';
 import { BriefcaseBusiness, MapPin } from 'lucide-react';
 import MotionReveal from '@/components/ui/motion-reveal';
+import { MarkerHighlight } from './marker-highlight';
 import { sectionEyebrow, sectionTitle } from './styles';
 
 const experience = [
@@ -21,6 +22,7 @@ const experience = [
 		place: 'Metro Vancouver',
 		body: 'Built another side of product work: calm communication, customer empathy, training, and practical problem-solving in fast-moving situations.',
 		tone: 'bg-portfolio-lime text-portfolio-pine',
+		whiteHighlight: true,
 	},
 	{
 		period: 'Apr 2022 — Jan 2023',
@@ -45,6 +47,7 @@ const experience = [
 		place: 'Remote · Chile',
 		body: 'Translated campaign ideas into digital and print systems, landing page assets, Figma handoffs, and reusable brand guidelines.',
 		tone: 'bg-portfolio-mint text-portfolio-pine',
+		whiteHighlight: true,
 	},
 	{
 		period: 'Sep 2016 — Jan 2018',
@@ -108,17 +111,23 @@ export function ExperienceSection() {
 									viewport={{ once: true, amount: 0.35 }}
 									transition={{ duration: reduceMotion ? 0 : 0.65, delay: reduceMotion ? 0 : 0.08, ease: [0.22, 1, 0.36, 1] }}>
 									<BriefcaseBusiness
-										className='mt-1 opacity-90'
+										className='mt-1'
 										size={25}
 										strokeWidth={1.8}
 										aria-hidden='true'
 									/>
-									<h3 className='mb-0 mt-3 text-[20px] font-semibold leading-tight'>{item.role}</h3>
-									{item.company && <p className='mb-0 mt-1 text-[14px] font-bold opacity-75'>{item.company}</p>}
-									<p className='m-0 text-[10px] font-semibold uppercase tracking-[.14em] opacity-65'>{item.period}</p>
+									<h3 className='mb-0 mt-3 text-[20px] font-semibold leading-tight'>
+										<MarkerHighlight
+											centered
+											white={item.whiteHighlight}>
+											{item.role}
+										</MarkerHighlight>
+									</h3>
+									{item.company && <p className='mb-0 mt-1 text-[14px] font-bold'>{item.company}</p>}
+									<p className='m-0 text-[10px] font-semibold uppercase tracking-[.14em]'>{item.period}</p>
 
-									<p className='mb-0 mt-4 text-[15px] leading-[1.65] opacity-70 text-pretty'>{item.body}</p>
-									<p className='mb-0 mt-5 inline-flex items-center gap-2 text-[12px] font-semibold opacity-60'>
+									<p className='mb-0 mt-4 text-[15px] leading-[1.65] text-pretty text-portfolio-text-muted'>{item.body}</p>
+									<p className='mb-0 mt-5 inline-flex items-center gap-2 text-[12px] font-semibold'>
 										<MapPin
 											size={18}
 											aria-hidden='true'

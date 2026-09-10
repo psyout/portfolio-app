@@ -5,6 +5,7 @@ import { MoonIcon, SunIcon } from 'lucide-react';
 import { SiGithub } from 'react-icons/si';
 import { Label } from '@/components/ui/label';
 import { Switch } from '@/components/ui/switch';
+import Link from 'next/link';
 
 export function SiteHeader() {
 	const darkMode = useSyncExternalStore(
@@ -28,20 +29,22 @@ export function SiteHeader() {
 	return (
 		<header className='border-b border-portfolio-line bg-portfolio-background px-5 min-[761px]:px-8'>
 			<div className='mx-auto flex h-17 max-w-240 items-center justify-between'>
-				<a
-					className='logo-font grid place-items-center text-[1.5rem] font-extrabold no-underline tracking-tight'
-					href='#top'
+				<Link
+					className='logo-font inline-flex items-center text-[1.7rem] font-extrabold no-underline tracking-tight'
+					href=''
 					aria-label='Home'>
-					{`[Felipe]`}
-				</a>
+					<span className='text-[var(--lime)]'>[</span>
+					<span>Felipe</span>
+					<span className='text-[var(--lime)]'>]</span>
+				</Link>
 				<nav
 					className='flex items-center gap-3 text-[0.95rem] font-normal min-[521px]:gap-4'
 					aria-label='Main navigation'>
-					<a
+					<Link
 						className='leading-none no-underline transition-colors hover:text-portfolio-title'
 						href='#about'>
 						About me
-					</a>
+					</Link>
 
 					<span
 						className='h-7 w-px bg-portfolio-line'
@@ -79,7 +82,7 @@ export function SiteHeader() {
 						aria-hidden='true'
 					/>
 
-					<a
+					<Link
 						className='grid size-8 place-items-center text-portfolio-text no-underline transition-colors hover:text-portfolio-title'
 						href='https://github.com/psyout'
 						target='_blank'
@@ -89,7 +92,7 @@ export function SiteHeader() {
 							size={23}
 							aria-hidden='true'
 						/>
-					</a>
+					</Link>
 				</nav>
 			</div>
 		</header>

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { ArrowUpRight } from 'lucide-react';
 import type { Project } from '@/data/portfolio';
+import { MarkerHighlight } from './marker-highlight';
 import { ProjectGallery } from './project-gallery';
 import { TechnologyStack } from './technology-stack';
 import { darkButton } from './styles';
@@ -69,12 +70,10 @@ export function ProjectSection({ project, tone }: ProjectSectionProps) {
 							className='overflow-hidden'>
 							<div className='border-b border-portfolio-line pb-12 pt-8'>
 								<div className='grid gap-5 px-1 pb-8 min-[760px]:grid-cols-[.45fr_1.55fr] min-[760px]:items-start min-[760px]:gap-12'>
-									<p className='m-0 border-l-4 border-portfolio-lime py-1 pl-4 text-[11px] font-bold uppercase tracking-[.14em] text-portfolio-title'>
+									<p className='m-0 border-l-4 border-portfolio-lime py-1 pl-4 text-[13px] font-bold uppercase tracking-[.14em] text-portfolio-title'>
 										Case study · {project.number}
 									</p>
-									<p className='m-0 max-w-155 text-[clamp(17px,2vw,18px)] font-regular leading-[1.55] tracking-[-.015em] text-portfolio-text/75 text-pretty'>
-										{project.intro}
-									</p>
+									<p className='m-0 max-w-155 text-[clamp(17px,2vw,18px)] font-regular leading-normal text-portfolio-text/75 text-pretty'>{project.intro}</p>
 								</div>
 
 								<div>
@@ -87,11 +86,15 @@ export function ProjectSection({ project, tone }: ProjectSectionProps) {
 
 								<div className='grid grid-cols-[minmax(0,7fr)_minmax(200px,3fr)] gap-x-[clamp(44px,7vw,84px)] px-1 pt-10 max-[760px]:grid-cols-1 max-[760px]:gap-y-8'>
 									<div className='max-[760px]:order-1'>
-										<p className='m-0 text-[13px] font-bold uppercase tracking-[.14em] text-portfolio-title'>Overview</p>
-										<p className='mb-0 mt-4 text-[16px] leading-[1.8] text-portfolio-text/70 text-pretty'>{project.story}</p>
+										<p className='m-0 text-[16px] font-bold uppercase tracking-[.14em]'>
+											<MarkerHighlight>Overview</MarkerHighlight>
+										</p>
+										<p className='mb-0 mt-4 text-[16px] leading-normal text-portfolio-text/70 text-pretty'>{project.story}</p>
 									</div>
 									<div className='max-[760px]:order-2'>
-										<p className='m-0 text-[13px] font-bold uppercase tracking-[.14em] text-portfolio-title'>Stack</p>
+										<p className='m-0 text-[16px] font-bold uppercase tracking-[.14em]'>
+											<MarkerHighlight>Stack</MarkerHighlight>
+										</p>
 										<div className='mt-4 border-t border-portfolio-line pt-5'>
 											<TechnologyStack
 												items={project.details}

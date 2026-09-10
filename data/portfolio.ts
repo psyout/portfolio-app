@@ -45,7 +45,7 @@ export const projects: Project[] = [
 		slides: [
 			{ image: '/static/images/andes-builders-craftsmanship.webp', label: 'Craftsmanship' },
 			{ image: '/static/images/andes-builders-renovation.webp', label: 'Interior renovation' },
-			{ image: '/static/images/andes-builders-project.jpg', label: 'Completed project' },
+			{ image: '/static/images/andes-builders-project.webp', label: 'Completed project' },
 		],
 	},
 	{
@@ -60,8 +60,8 @@ export const projects: Project[] = [
 		liveUrl: 'https://puretide.ca',
 		githubUrl: '',
 		slides: [
-			{ image: '/static/images/puretide-products.jpg', label: 'Product collection' },
-			{ image: '/static/images/puretide-product-item.jpg', label: 'Product details' },
+			{ image: '/static/images/puretide-products.webp', label: 'Product collection' },
+			{ image: '/static/images/puretide-product-item.webp', label: 'Product details' },
 			{ image: '/static/images/puretide-mobile1.png', label: 'Mobile storefront', fit: 'contain' },
 			{ image: '/static/images/puretide-mobile2.png', label: 'Mobile checkout', fit: 'contain' },
 		],
@@ -78,8 +78,7 @@ export const projects: Project[] = [
 		liveUrl: 'https://vansippy.com/',
 		githubUrl: 'https://github.com/psyout/capstone-client',
 		slides: [
-			{ image: '/static/images/vansippy-card.jpg', label: 'Venue discovery' },
-			{ image: '/static/images/vansippy-location.jpg', label: 'Map experience' },
+			{ image: '/static/images/vansippy-location.webp', label: 'Map experience' },
 			{ image: '/static/images/vansippy-mobile1.png', label: 'Mobile results', fit: 'contain' },
 			{ image: '/static/images/vansippy-mobile2.png', label: 'Deal details', fit: 'contain' },
 		],
@@ -147,7 +146,7 @@ export const projects: Project[] = [
 		intro: 'A responsive website for an independent band, combining editorial content, photography, tour dates, and a community comment experience.',
 		story: 'Semantic HTML, BEM-style Sass, and JavaScript create a lightweight front end. Axios connects the comments interface to an Express API, allowing visitors to read and add content dynamically.',
 		details: ['HTML5', 'JavaScript', 'Axios', 'Sass'],
-		liveUrl: 'https://felipegonzalez.io/bandsite/',
+		liveUrl: 'https://felipegonzalez.dev/bandsite/',
 		githubUrl: '',
 		slides: [
 			{ image: '/static/images/bandsite.jpg', label: 'Band story' },
