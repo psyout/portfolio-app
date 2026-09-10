@@ -1,9 +1,11 @@
 import { Send, BriefcaseBusiness } from 'lucide-react';
 import { LoadReveal } from '@/components/ui/load-reveal';
+import { siteContent } from '@/data/portfolio';
 import { LocationMarker } from './location-marker';
 import { TypingRole } from './typing-role';
 
 export function HeroSection() {
+	const { hero } = siteContent;
 	return (
 		<section
 			className='hero-section relative flex min-h-[calc(100svh-68px)] scroll-mt-20 items-center overflow-hidden px-5 py-7 min-[600px]:py-10 min-[761px]:px-8 min-[880px]:py-16'
@@ -15,8 +17,8 @@ export function HeroSection() {
 							className='hero-title-reveal'
 							frame>
 							<h1 className='hero-title m-0 max-w-190 text-[clamp(38px,12vw,52px)] font-bold leading-[.9] tracking-[-.058em] min-[761px]:text-[clamp(52px,7.4vw,88px)]'>
-								<span className='block'>Thoughtful products.</span>
-								<span className='mt-1.5 block text-portfolio-title min-[761px]:mt-2'>Built all the way through.</span>
+								<span className='block'>{hero.title}</span>
+								<span className='mt-1.5 block text-portfolio-title min-[761px]:mt-2'>{hero.titleAccent}</span>
 							</h1>
 						</LoadReveal>
 
@@ -51,20 +53,20 @@ export function HeroSection() {
 							className='hero-role-reveal'
 							delay={0.08}
 							frame>
-							<TypingRole />
+							<TypingRole roles={hero.roles} />
 						</LoadReveal>
 						<LoadReveal
 							className='hero-summary-reveal'
 							delay={0.22}>
 							<p className='hero-summary mb-0 mt-3 text-pretty text-[1rem] leading-normal text-portfolio-text/72 min-[600px]:mt-4 min-[600px]:text-[17px] min-[600px]:leading-[1.65]'>
-								I&apos;m Felipe. I combine product-minded design with practical full-stack development to make complex ideas feel clear and useful.
+								{hero.summary}
 							</p>
 						</LoadReveal>
 						<LoadReveal
 							className='hero-location-reveal'
 							delay={0.3}>
 							<div className='hero-location mt-4 border-portfolio-pine/15 min-[880px]:mt-7 min-[880px]:pt-6'>
-								<LocationMarker />
+								<LocationMarker location={hero.location} />
 							</div>
 						</LoadReveal>
 					</aside>

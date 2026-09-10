@@ -3,9 +3,7 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 
-const roles = ['Full Stack Developer', 'Web Developer', 'CSS Enthusiast', 'a Human'];
-
-export function TypingRole() {
+export function TypingRole({ roles }: { roles: readonly string[] }) {
 	const reduceMotion = useReducedMotion();
 	const [roleIndex, setRoleIndex] = useState(0);
 	const [phase, setPhase] = useState<'waiting' | 'message'>('waiting');
@@ -27,13 +25,13 @@ export function TypingRole() {
 		);
 
 		return () => window.clearTimeout(timer);
-	}, [phase, reduceMotion]);
+	}, [phase, reduceMotion, roles.length]);
 
 	return (
 		<div
 			className='flex min-h-12 items-center'
 			data-testid='role-message'
-			aria-label='Felipe is a full-stack developer, web developer, web designer, and human'>
+			aria-label='Felipe is a Full Stack Developer, web developer, web designer, and human'>
 			<AnimatePresence
 				mode='wait'
 				initial={false}>

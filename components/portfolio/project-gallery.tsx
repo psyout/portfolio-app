@@ -1,6 +1,6 @@
 'use client';
 
-/* eslint-disable @next/next/no-img-element */
+import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { ChevronLeft, ChevronRight, Expand, X } from 'lucide-react';
@@ -27,6 +27,7 @@ export function ProjectGallery({ project, slides, tone }: ProjectGalleryProps) {
 	const [failedImages, setFailedImages] = useState<Record<string, boolean>>({});
 	const closeButton = useRef<HTMLButtonElement>(null);
 	const touchStart = useRef<number | null>(null);
+	const activeSlide = slides[active];
 
 	const markImageLoaded = (image: string) => {
 		setLoadedImages((current) => ({ ...current, [image]: true }));
@@ -81,37 +82,36 @@ export function ProjectGallery({ project, slides, tone }: ProjectGalleryProps) {
 			aria-roledescription='carousel'
 			aria-label={`${project} image gallery`}>
 			<div className='relative h-[clamp(340px,47vw,540px)] overflow-hidden rounded-[18px] bg-portfolio-secondary max-[760px]:h-[40svh] max-[760px]:min-h-85'>
-				{slides.map((slide, index) => (
-					<button
-						type='button'
-						className={`${slideClass} ${active === index ? 'pointer-events-auto opacity-100' : ''}`}
-						key={slide.image}
-						aria-hidden={active !== index}
-						tabIndex={active === index ? 0 : -1}
-						aria-label={`Open ${project}: ${slide.label} at full size`}
-						onClick={() => setLightboxOpen(true)}>
-						{!loadedImages[slide.image] && !failedImages[slide.image] && (
+				<button
+					type='button'
+					className={`${slideClass} pointer-events-auto opacity-100`}
+					key={activeSlide.image}
+					aria-label={`Open ${project}: ${activeSlide.label} at full size`}
+					onClick={() => setLightboxOpen(true)}>
+						{!loadedImages[activeSlide.image] && !failedImages[activeSlide.image] && (
 							<span
 								className='image-skeleton absolute inset-0'
 								aria-hidden='true'
 							/>
 						)}
-						{failedImages[slide.image] && (
+						{failedImages[activeSlide.image] && (
 							<span className='absolute inset-0 grid place-items-center bg-portfolio-secondary text-sm font-semibold text-portfolio-text/55'>Image unavailable</span>
 						)}
-						<img
-							src={slide.image}
+						<Image
+							src={activeSlide.image}
 							alt=''
-							className={`absolute inset-0 h-full w-full transition-opacity duration-500 motion-reduce:transition-none ${loadedImages[slide.image] ? 'opacity-100' : 'opacity-0'} ${slide.fit === 'contain' ? 'bg-portfolio-secondary object-contain p-[clamp(28px,5vw,72px)]' : 'object-cover'}`}
-							onLoad={() => markImageLoaded(slide.image)}
-							onError={() => markImageFailed(slide.image)}
+							fill
+							sizes='(max-width: 760px) 100vw, (max-width: 1120px) calc(100vw - 64px), 1120px'
+							quality={82}
+							className={`transition-opacity duration-500 motion-reduce:transition-none ${loadedImages[activeSlide.image] ? 'opacity-100' : 'opacity-0'} ${activeSlide.fit === 'contain' ? 'bg-portfolio-secondary object-contain p-[clamp(28px,5vw,72px)]' : 'object-cover'}`}
+							onLoad={() => markImageLoaded(activeSlide.image)}
+							onError={() => markImageFailed(activeSlide.image)}
 						/>
 						<span
 							className='absolute inset-0 bg-portfolio-pine/8'
 							aria-hidden='true'
 						/>
 					</button>
-				))}
 
 				<button
 					className='absolute right-5 top-5 z-5 inline-flex cursor-pointer items-center gap-2 rounded-full border border-white/25 bg-portfolio-pine/80 px-4 py-2.5 text-[11px] font-bold uppercase tracking-[.12em] text-white backdrop-blur transition-colors hover:bg-portfolio-turquoise'
@@ -200,22 +200,24 @@ export function ProjectGallery({ project, slides, tone }: ProjectGalleryProps) {
 								touchStart.current = event.touches[0].clientX;
 							}}
 							onTouchEnd={(event) => finishSwipe(event.changedTouches[0].clientX)}>
-							{!loadedImages[slides[active].image] && !failedImages[slides[active].image] && (
+							{!loadedImages[activeSlide.image] && !failedImages[activeSlide.image] && (
 								<span
 									className='image-skeleton absolute inset-0'
 									aria-hidden='true'
 								/>
 							)}
-							{failedImages[slides[active].image] && <span className='absolute inset-0 grid place-items-center text-sm font-semibold text-white/60'>Image unavailable</span>}
-							<img
-								src={slides[active].image}
-								alt={`${project}: ${slides[active].label}`}
-								className={`h-full w-full object-contain transition-opacity duration-500 motion-reduce:transition-none ${loadedImages[slides[active].image] ? 'opacity-100' : 'opacity-0'} ${slides[active].fit === 'contain' ? 'p-[clamp(18px,3vw,48px)]' : ''}`}
-								onLoad={() => markImageLoaded(slides[active].image)}
-								onError={() => markImageFailed(slides[active].image)}
+							<Image
+								src={activeSlide.image}
+								alt={`${project}: ${activeSlide.label}`}
+								fill
+								sizes='100vw'
+								quality={90}
+								className={`object-contain transition-opacity duration-500 motion-reduce:transition-none ${loadedImages[activeSlide.image] ? 'opacity-100' : 'opacity-0'} ${activeSlide.fit === 'contain' ? 'p-[clamp(18px,3vw,48px)]' : ''}`}
+								onLoad={() => markImageLoaded(activeSlide.image)}
+								onError={() => markImageFailed(activeSlide.image)}
 							/>
 							<span className='absolute bottom-5 left-5 bg-[rgb(7_12_10/75%)] px-2.75 py-2 text-xs uppercase tracking-[.08em] text-white max-[760px]:hidden'>
-								{slides[active].label}
+								{activeSlide.label}
 							</span>
 						</div>
 						<button

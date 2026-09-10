@@ -8,11 +8,7 @@ import { SiteHeader } from "@/components/portfolio/site-header";
 import { SiteFooter } from "@/components/portfolio/site-footer";
 import { WorkIntro } from "@/components/portfolio/work-intro";
 import MotionReveal from '@/components/ui/motion-reveal';
-import { capabilities, projects } from "@/data/portfolio";
-
-// Hostinger can retain Next.js' static HTML cache across deployments, leaving
-// the page pointing at CSS chunks that no longer exist in the new build.
-export const dynamic = "force-dynamic";
+import { projects } from "@/data/portfolio";
 
 export default function Home() {
   return (
@@ -29,12 +25,12 @@ export default function Home() {
             </MotionReveal>
             {projects.map((project, index) => (
               <MotionReveal delay={Math.min(index * 0.06, 0.18)} frame key={project.id}>
-                <ProjectSection project={project} tone={index} />
+				<ProjectSection defaultOpen={index === 0} project={project} tone={index} />
               </MotionReveal>
             ))}
           </div>
         </div>
-        <CapabilitiesSection capabilities={capabilities} />
+        <CapabilitiesSection />
         <ContactSection />
         <SiteFooter />
       </main>

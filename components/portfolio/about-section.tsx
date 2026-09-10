@@ -1,33 +1,20 @@
-'use client';
-
 import Image from 'next/image';
-import { useState } from 'react';
-import { ChevronDown, Code2, FileDown, Languages, MessageCircle, Users } from 'lucide-react';
+import { Code2, FileDown, Languages, MessageCircle, Users } from 'lucide-react';
 import MotionReveal from '@/components/ui/motion-reveal';
+import { focusAreas, siteContent, type FocusArea } from '@/data/portfolio';
+import { AboutDetails } from './about-details';
 import { MarkerHighlight } from './marker-highlight';
 import { ScrollUnderline } from './scroll-underline';
 import { sectionEyebrow } from './styles';
 
-const focusAreas = [
-	{
-		icon: Code2,
-		title: 'Design + development',
-		body: 'I bring design thinking to every layer, from the interface to the systems behind it.',
-	},
-	{
-		icon: Users,
-		title: 'Clear communication',
-		body: 'Client work and team training taught me to explain trade-offs clearly and keep projects moving.',
-	},
-	{
-		icon: Languages,
-		title: 'Bilingual perspective',
-		body: 'Fluent in English and Spanish, with experience working across Canada and Chile.',
-	},
-];
+const focusIcons: Record<FocusArea['icon'], typeof Code2> = {
+	code: Code2,
+	people: Users,
+	languages: Languages,
+};
 
 export function AboutSection() {
-	const [detailsOpen, setDetailsOpen] = useState(false);
+	const { about } = siteContent;
 
 	return (
 		<section
@@ -36,10 +23,10 @@ export function AboutSection() {
 			<div className='mx-auto max-w-240'>
 				<MotionReveal>
 					<div className='flex flex-wrap items-center justify-between gap-4 border-b border-white/20 pb-5'>
-						<p className={`m-0 text-white ${sectionEyebrow}`}>About me</p>
+						<p className={`m-0 text-white ${sectionEyebrow}`}>{about.eyebrow}</p>
 						<a
 							className='button-hover inline-flex min-h-10 items-center gap-2 rounded-full border border-white/30 px-4 text-[13px] font-semibold text-white no-underline hover:border-portfolio-mint hover:bg-portfolio-mint hover:text-portfolio-pine'
-							href='https://felipegonzalez.dev/felipe-gonzalez-resume.pdf'
+							href={about.resumeUrl}
 							target='_blank'
 							rel='noreferrer'>
 							<FileDown
@@ -70,36 +57,12 @@ export function AboutSection() {
 						delay={0.08}
 						frame>
 						<h2 className='m-0 max-w-150 text-pretty text-[clamp(32px,8vw,42px)] font-medium leading-[1.07] tracking-[-.02em] min-[780px]:text-[clamp(36px,4.8vw,52px)]'>
-							Developer first, curious about the whole product.
+							{about.title}
 						</h2>
-						<p className='mb-0 mt-6 max-w-155 text-[16px] leading-[1.6] text-white/75 min-[780px]:mt-7 min-[780px]:text-[17px]'>
-							I&apos;m a Full Stack Developer based in Vancouver. I started in web design, and that background still shapes how I build. I care about clean code, thoughtful
-							interfaces, and understanding the real problem before reaching for a solution.{' '}
-							<button
-								className='button-hover inline-flex no-underline cursor-pointer items-center gap-1 border-0 bg-transparent p-0 pb-px align-baseline text-[14px] font-medium text-portfolio-mint hover:border-white hover:text-white'
-								type='button'
-								onClick={() => setDetailsOpen((open) => !open)}
-								aria-expanded={detailsOpen}
-								aria-controls='about-details'>
-								{detailsOpen ? 'Less' : 'More'}
-								<ChevronDown
-									className={`transition-transform duration-300 ${detailsOpen ? 'rotate-180' : ''}`}
-									size={14}
-									aria-hidden='true'
-								/>
-							</button>
-						</p>
-						<div
-							className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${detailsOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
-							id='about-details'
-							aria-hidden={!detailsOpen}>
-							<div className='overflow-hidden'>
-								<p className='mb-0 mt-4 max-w-155 text-[16px] leading-[1.6] text-white/75 min-[780px]:mt-5 min-[780px]:text-[17px]'>
-									I like building things all the way through, from the first conversation to the interface and the systems behind it. I don&apos;t pretend to have every
-									answer, but I ask good questions, learn quickly, and stay with the details until the product feels solid and useful.
-								</p>
-							</div>
-						</div>
+						<AboutDetails
+							intro={about.intro}
+							details={about.details}
+						/>
 						<a
 							className='mt-6 inline-flex items-center gap-2 text-[15px] font-medium text-portfolio-mint no-underline'
 							href='#contact'>
@@ -114,26 +77,31 @@ export function AboutSection() {
 				</div>
 
 				<div className='mt-14 grid border-y border-white/20 min-[680px]:grid-cols-3'>
-					{focusAreas.map(({ icon: Icon, title, body }, index) => (
-						<MotionReveal
-							className='h-full'
-							delay={index * 0.08}
-							frame
-							key={title}>
-							<div className={`group h-full py-8 min-[680px]:px-8 ${index === 0 ? 'min-[680px]:pl-0' : 'border-t border-white/20 min-[680px]:border-l min-[680px]:border-t-0'}`}>
-								<Icon
-									className='text-portfolio-mint transition-colors duration-200 group-hover:text-portfolio-lime'
-									size={27}
-									strokeWidth={1.8}
-									aria-hidden='true'
-								/>
-								<p className='mb-0 mt-6 text-[20px] font-semibold leading-tight text-white'>
-									<MarkerHighlight>{title}</MarkerHighlight>
-								</p>
-								<p className='mb-0 mt-3 text-pretty text-[1rem] leading-[1.6] text-white/65'>{body}</p>
-							</div>
-						</MotionReveal>
-					))}
+					{focusAreas.map(({ icon, title, body }, index) => {
+						const Icon = focusIcons[icon];
+
+						return (
+							<MotionReveal
+								className='h-full'
+								delay={index * 0.08}
+								frame
+								key={title}>
+								<div
+									className={`group h-full py-8 min-[680px]:px-8 ${index === 0 ? 'min-[680px]:pl-0' : 'border-t border-white/20 min-[680px]:border-l min-[680px]:border-t-0'}`}>
+									<Icon
+										className='text-portfolio-mint transition-colors duration-200 group-hover:text-portfolio-lime'
+										size={27}
+										strokeWidth={1.8}
+										aria-hidden='true'
+									/>
+									<p className='title-font mb-0 mt-6 text-[20px] font-semibold leading-tight text-white'>
+										<MarkerHighlight>{title}</MarkerHighlight>
+									</p>
+									<p className='mb-0 mt-3 text-pretty text-[1rem] leading-[1.6] text-white/65'>{body}</p>
+								</div>
+							</MotionReveal>
+						);
+					})}
 				</div>
 			</div>
 		</section>

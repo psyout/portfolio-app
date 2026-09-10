@@ -3,7 +3,7 @@
 import { MapPin } from 'lucide-react';
 import { motion, useReducedMotion } from 'motion/react';
 
-export function LocationMarker() {
+export function LocationMarker({ location }: { location: string }) {
 	const reduceMotion = useReducedMotion();
 
 	return (
@@ -28,7 +28,7 @@ export function LocationMarker() {
 
 			<p className='m-0 leading-tight'>
 				<span className='hero-location-label block text-[11px] font-semibold uppercase tracking-[.14em] text-portfolio-text/50'>Based in</span>
-				<span className='hero-location-value mt-1 block text-[14px] font-semibold text-portfolio-pine'>Vancouver, BC</span>
+				<span className='hero-location-value mt-1 block text-[14px] font-semibold text-portfolio-pine'>{location}</span>
 			</p>
 		</div>
 	);

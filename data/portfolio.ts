@@ -24,11 +24,71 @@ export type Capability = {
 	body: string;
 };
 
-export type AboutValue = {
+export type FocusArea = {
 	icon: 'code' | 'people' | 'languages';
 	title: string;
 	body: string;
 };
+
+export type Experience = {
+	period: string;
+	role: string;
+	company: string;
+	place: string;
+	body: string;
+	tone: string;
+	whiteHighlight?: boolean;
+};
+
+export const siteContent = {
+	metadata: {
+		title: 'Felipe Gonzalez | Full-Stack Developer',
+		description: 'Portfolio of Felipe Gonzalez, a Full Stack Web Developer and Web Designer based in Vancouver, BC.',
+	},
+	navigation: {
+		homeLabel: 'Home',
+		aboutLabel: 'About me',
+	},
+	hero: {
+		title: 'Thoughtful products.',
+		titleAccent: 'Built all the way through.',
+		summary: "I'm Felipe. I combine product-minded design with practical full-stack development to make complex ideas feel clear and useful.",
+		location: 'Vancouver, BC',
+		roles: ['Full Stack Developer', 'Web Developer', 'CSS Enthusiast', 'a Human'],
+	},
+	about: {
+		eyebrow: 'About me',
+		title: 'Developer first, curious about the whole product.',
+		intro: "I'm a Full Stack Developer based in Vancouver. I started in web design, and that background still shapes how I build. I care about clean code, thoughtful interfaces, and understanding the real problem before reaching for a solution.",
+		details: "I like building things all the way through, from the first conversation to the interface and the systems behind it. I don't pretend to have every answer, but I ask good questions, learn quickly, and stay with the details until the product feels solid and useful.",
+		resumeUrl: 'https://felipegonzalez.dev/felipe-gonzalez-resume.pdf',
+	},
+	experience: {
+		eyebrow: 'Experience',
+		title: 'The path to Full Stack',
+		summary: 'I build useful products with solid code, clear thinking, and good communication.',
+	},
+	work: {
+		eyebrow: 'Selected work',
+		title: 'Featured projects',
+	},
+	capabilities: {
+		eyebrow: 'Expertise',
+		title: 'Capabilities',
+	},
+	contact: {
+		eyebrow: 'Contact',
+		title: 'Have a problem worth solving?',
+		summary: "I'm open to full-time developer roles, contract work, and thoughtful collaborations.",
+		email: 'hello@felipegonzalez.dev',
+		linkedinUrl: 'https://www.linkedin.com/in/felipegonzalezcare/',
+		githubUrl: 'https://github.com/psyout',
+	},
+	footer: {
+		copyright: '© 2026 Felipe Gonzalez',
+		note: 'Designed and developed with ❤️ in Vancouver, BC',
+	},
+} as const;
 
 export const projects: Project[] = [
 	{
@@ -173,20 +233,73 @@ export const capabilities: Capability[] = [
 	},
 ];
 
-export const aboutValues: AboutValue[] = [
+export const focusAreas: FocusArea[] = [
 	{
 		icon: 'code',
-		title: 'Built to last',
-		body: 'Clean, maintainable code and deliberate technical choices—not quick patches.',
+		title: 'Design + development',
+		body: 'I bring design thinking to every layer, from the interface to the systems behind it.',
 	},
 	{
 		icon: 'people',
-		title: 'Made for people',
-		body: 'Accessible interfaces and clear flows that reduce friction for real users.',
+		title: 'Clear communication',
+		body: 'Client work and team training taught me to explain trade-offs clearly and keep projects moving.',
 	},
 	{
 		icon: 'languages',
-		title: 'Easy collaboration',
-		body: 'Bilingual in English and Spanish, comfortable across design and development.',
+		title: 'Bilingual perspective',
+		body: 'Fluent in English and Spanish, with experience working across Canada and Chile.',
+	},
+];
+
+export const experience: Experience[] = [
+	{
+		period: 'Apr 2023 — Now',
+		role: 'Full Stack Developer',
+		company: 'Self-employed',
+		place: 'Vancouver · Remote',
+		body: 'Taking web products from early requirements to production across Next.js, React, Node.js, databases, integrations, deployment, and ongoing maintenance.',
+		tone: 'bg-portfolio-pine text-white',
+	},
+	{
+		period: 'Jan 2024 — Mar 2026',
+		role: 'Operations & Team Trainer',
+		company: '1-800-GOT-JUNK?',
+		place: 'Metro Vancouver',
+		body: 'Built another side of product work: calm communication, customer empathy, training, and practical problem-solving in fast-moving situations.',
+		tone: 'bg-portfolio-lime text-portfolio-pine',
+		whiteHighlight: true,
+	},
+	{
+		period: 'Apr 2022 — Jan 2023',
+		role: 'Front End Developer',
+		company: 'NotCo',
+		place: 'Remote · Chile',
+		body: 'Maintained production React applications, built reusable UI, and collaborated across code reviews, testing, and CI/CD workflows.',
+		tone: 'bg-portfolio-turquoise text-white',
+	},
+	{
+		period: 'May 2020 — Apr 2022',
+		role: 'Web Designer',
+		company: 'The Cut Fashion School',
+		place: 'Remote · Canada',
+		body: 'Created detailed website concepts and brand-aligned digital work while supporting marketing and web teams through a rebrand.',
+		tone: 'bg-portfolio-surface text-portfolio-text',
+	},
+	{
+		period: 'Jan 2018 — May 2020',
+		role: 'Graphic Designer',
+		company: 'Natura Cosmetics',
+		place: 'Remote · Chile',
+		body: 'Translated campaign ideas into digital and print systems, landing page assets, Figma handoffs, and reusable brand guidelines.',
+		tone: 'bg-portfolio-mint text-portfolio-pine',
+		whiteHighlight: true,
+	},
+	{
+		period: 'Sep 2016 — Jan 2018',
+		role: 'Frontend Developer',
+		company: 'Cencosud Paris',
+		place: 'Chile',
+		body: 'Developed responsive websites and internal React applications, improving performance, mobile engagement, and everyday usability.',
+		tone: 'bg-portfolio-surface text-portfolio-text',
 	},
 ];

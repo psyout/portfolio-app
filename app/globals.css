@@ -34,7 +34,7 @@
 	--surface: #ffffff;
 	--work-field-base: #ffffff;
 	--font-title: 'Ubuntu', 'Ubuntu Fallback', Arial, Helvetica, sans-serif;
-	--font-logo: 'Ubuntu', 'Ubuntu Fallback', Arial, Helvetica, sans-serif;
+	--font-logo: 'Titillium Web', Arial, Helvetica, sans-serif;
 	color-scheme: light;
 	--popover: #fff;
 	--popover-foreground: #19344a;
@@ -312,6 +312,11 @@ button:focus-visible {
 
 :root[data-theme='dark'] .capability-card:hover .capability-icon {
 	border-color: var(--lime);
+	background: var(--lime);
+	color: var(--pine);
+}
+
+:root[data-theme='dark'] .capability-icon-scroll-contrast {
 	background: var(--lime);
 	color: var(--pine);
 }

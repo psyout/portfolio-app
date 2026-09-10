@@ -1,9 +1,9 @@
 /* eslint-disable @next/next/no-page-custom-font */
 import type { Metadata } from 'next';
+import { siteContent } from '@/data/portfolio';
 import './globals.css';
 
-const title = 'Felipe Gonzalez | Full-Stack Developer';
-const description = 'Portfolio of Felipe Gonzalez, a Full Stack Web Developer and Web Designer based in Vancouver, BC.';
+const { title, description } = siteContent.metadata;
 
 const themeScript = `
 	(() => {
@@ -62,7 +62,7 @@ export default function RootLayout({
 					crossOrigin='anonymous'
 				/>
 				<link
-					href='https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600;700&family=Titillium+Web:wght@800&family=Roboto+Slab:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap'
+					href='https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600;700&family=Titillium+Web:wght@800;900&family=Ubuntu:wght@400;500;700&family=Roboto+Slab:wght@400;500;600;700&display=swap'
 					rel='stylesheet'
 				/>
 			</head>
