@@ -1,10 +1,25 @@
 'use client';
 
-import { Moon, Sun } from 'lucide-react';
+import { useSyncExternalStore } from 'react';
+import { MoonIcon, SunIcon } from 'lucide-react';
+import { SiGithub } from 'react-icons/si';
+import { Label } from '@/components/ui/label';
+import { Switch } from '@/components/ui/switch';
 
 export function SiteHeader() {
-	function toggleTheme() {
-		const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+	const darkMode = useSyncExternalStore(
+		(onStoreChange) => {
+			const observer = new MutationObserver(onStoreChange);
+
+			observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+			return () => observer.disconnect();
+		},
+		() => document.documentElement.dataset.theme === 'dark',
+		() => false,
+	);
+
+	function toggleTheme(checked: boolean) {
+		const nextTheme = checked ? 'dark' : 'light';
 
 		document.documentElement.dataset.theme = nextTheme;
 		localStorage.setItem('portfolio-theme', nextTheme);
@@ -20,38 +35,61 @@ export function SiteHeader() {
 					{`[Felipe]`}
 				</a>
 				<nav
-					className='flex items-baseline gap-3 text-[0.9rem] font-semibold uppercase tracking-wider'
+					className='flex items-center gap-3 text-[0.95rem] font-normal min-[521px]:gap-4'
 					aria-label='Main navigation'>
-					{/*<a
-						className='inline-flex items-center gap-1.5 leading-none underline transition-colors hover:text-portfolio-title max-[520px]:text-[0.9rem] max-[520px]:tracking-normal'
+					<a
+						className='leading-none no-underline transition-colors hover:text-portfolio-title'
 						href='#about'>
 						About me
-						<UserRound
-							size={15}
-							strokeWidth={2}
+					</a>
+
+					<span
+						className='h-7 w-px bg-portfolio-line'
+						aria-hidden='true'
+					/>
+
+					<div className='inline-flex items-center gap-2'>
+						<Switch
+							id='theme-switch'
+							checked={darkMode}
+							onCheckedChange={toggleTheme}
+							className='border-portfolio-line data-checked:bg-portfolio-title data-unchecked:bg-portfolio-sea-glass'
+							aria-label='Toggle color theme'
+						/>
+						<Label
+							className='grid size-5 cursor-pointer place-items-center text-portfolio-title'
+							htmlFor='theme-switch'>
+							<span className='sr-only'>Toggle color theme</span>
+							{darkMode ? (
+								<MoonIcon
+									className='size-4'
+									aria-hidden='true'
+								/>
+							) : (
+								<SunIcon
+									className='size-4'
+									aria-hidden='true'
+								/>
+							)}
+						</Label>
+					</div>
+
+					<span
+						className='h-7 w-px bg-portfolio-line'
+						aria-hidden='true'
+					/>
+
+					<a
+						className='grid size-8 place-items-center text-portfolio-text no-underline transition-colors hover:text-portfolio-title'
+						href='https://github.com/psyout'
+						target='_blank'
+						rel='noreferrer'
+						aria-label='GitHub'>
+						<SiGithub
+							size={23}
 							aria-hidden='true'
 						/>
-					</a> */}
-
-					<button
-						type='button'
-						className='theme-toggle relative isolate grid h-11 w-23 cursor-pointer grid-cols-2 items-center rounded-full border border-portfolio-line bg-portfolio-sea-glass p-1 hover:border-portfolio-title'
-						onClick={toggleTheme}
-						aria-label='Toggle color theme'
-						title='Toggle color theme'>
-						<span className='theme-toggle-option theme-toggle-sun'>
-							<Sun
-								size={18}
-								aria-hidden='true'
-							/>
-						</span>
-						<span className='theme-toggle-option theme-toggle-moon'>
-							<Moon
-								size={18}
-								aria-hidden='true'
-							/>
-						</span>
-					</button>
+					</a>
 				</nav>
 			</div>
 		</header>
