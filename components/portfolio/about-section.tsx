@@ -43,7 +43,7 @@ export function AboutSection() {
 					<MotionReveal
 						className='mx-auto min-[780px]:mx-0'
 						frame>
-						<div className='relative size-50 overflow-hidden rounded-full border-4 border-portfolio-mint bg-white shadow-[0_18px_45px_rgb(0_0_0/24%)]'>
+						<div className='relative size-50 overflow-hidden rounded-full border-4 border-portfolio-mint bg-white'>
 							<Image
 								className='origin-[50%_40%] scale-[2.8] object-contain saturate-50'
 								src='/static/images/profile-picture.jpg'
