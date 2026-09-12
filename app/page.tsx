@@ -24,9 +24,7 @@ export default function Home() {
               <WorkIntro />
             </MotionReveal>
             {projects.map((project, index) => (
-              <MotionReveal delay={Math.min(index * 0.06, 0.18)} frame key={project.id}>
-				<ProjectSection defaultOpen={index === 0} project={project} tone={index} />
-              </MotionReveal>
+				<ProjectSection defaultOpen={index === 0} key={project.id} project={project} tone={index} />
             ))}
           </div>
         </div>

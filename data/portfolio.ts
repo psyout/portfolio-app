@@ -10,8 +10,11 @@ export type Project = {
 	title: string;
 	eyebrow: string;
 	type: string;
+	status?: string;
 	intro: string;
 	story: string;
+	description: string;
+	highlights?: string[];
 	details: string[];
 	liveUrl: string;
 	githubUrl: string;
@@ -92,33 +95,20 @@ export const siteContent = {
 
 export const projects: Project[] = [
 	{
-		id: 'andes-builders',
-		number: '01',
-		title: 'Andes Builders',
-		eyebrow: 'Construction and renovation',
-		type: 'WordPress website',
-		intro: 'A polished service-business website for a residential construction company, designed to establish trust and turn project interest into enquiries.',
-		story: 'I installed and customized the WordPress theme, using custom CSS and PHP to create responsive layouts, clear service positioning, and direct conversion paths. Elementor keeps content editing flexible, while WooCommerce provides room for future service and product needs.',
-		details: ['WordPress', 'PHP'],
-		liveUrl: 'https://andesbuilders.com/',
-		githubUrl: '',
-		slides: [
-			{ image: '/static/images/andes-builders-craftsmanship.webp', label: 'Craftsmanship' },
-			{ image: '/static/images/andes-builders-renovation.webp', label: 'Interior renovation' },
-			{ image: '/static/images/andes-builders-project.webp', label: 'Completed project' },
-		],
-	},
-	{
 		id: 'puretide',
-		number: '02',
+		number: '',
 		title: 'Puretide',
 		eyebrow: 'Privacy-first commerce',
 		type: 'E-commerce Web App',
-		intro: 'A privacy-focused online store built to deliver a complete shopping experience without analytics scripts, third-party trackers, or unnecessary data collection.',
-		story: 'Built with the Next.js App Router and TypeScript, Puretide combines a responsive storefront with a persistent client-side cart, SQLite-backed orders, Google Sheets inventory, and automated transactional email.',
+		status: 'Active Development',
+		intro: 'Puretide is an online shopping application focused on privacy and designed to provide a complete customer experience without analytics scripts, third party trackers, or unnecessary data collection.',
+		story: 'Built from scratch with the Next.js, TypeScript, and Tailwind CSS, Puretide features a responsive storefront and a persistent shopping cart.',
 		details: ['Next.js', 'TypeScript', 'Tailwind CSS'],
+		description:
+			'Behind the interface, secure server side APIs connect Zoho for inventory management and Wrike for order tracking, task management, and fulfillment. Automated transactional emails and CI/CD workflows support reliable communication, efficient operations, and consistent deployments.',
+		highlights: ['Next.js', 'TypeScript', 'Tailwind CSS', 'APIs', 'Zoho', 'CI/CD workflows'],
 		liveUrl: 'https://puretide.ca',
-		githubUrl: '',
+		githubUrl: 'https://github.com/psyout/puretide',
 		slides: [
 			{ image: '/static/images/puretide-products.webp', label: 'Product collection' },
 			{ image: '/static/images/puretide-product-item.webp', label: 'Product details' },
@@ -128,13 +118,17 @@ export const projects: Project[] = [
 	},
 	{
 		id: 'vansippy',
-		number: '03',
+		number: '',
 		title: 'Vansippy',
+		status: 'Active Development',
 		eyebrow: 'Location-based discovery',
 		type: 'Happy hour Finder Web App',
-		intro: 'A full-stack web application that helps people discover curated happy-hour deals at restaurants and bars around Vancouver.',
-		story: 'Vansippy pairs a React and Material UI interface with a Node, Express, and MongoDB backend. Browser geolocation and Mapbox turn curated venue data into useful, nearby results in real time.',
+		intro: 'Vansippy is a full stack web application that helps people discover happy hour deals across Vancouver. Browser geolocation and Mapbox provide relevant nearby results in real time, making it easier to find the right place without searching through multiple websites.',
+		story: 'The application combines a responsive React and Material UI interface with a Node.js, Express, and MongoDB backend. A RESTful API manages venue information, location data, and search results, while middleware handles validation, errors, and communication between the client and server.',
 		details: ['React', 'Node.js', 'MongoDB'],
+		description:
+			'The project uses GitHub for version control and an automated deployment pipeline to Hostinger. This setup supports consistent releases, faster updates, and a reliable path from development to production.',
+		highlights: ['React', 'Node.js', 'MongoDB', 'Mapbox', 'RESTful API', 'GitHub', 'Express'],
 		liveUrl: 'https://vansippy.com/',
 		githubUrl: 'https://github.com/psyout/capstone-client',
 		slides: [
@@ -144,14 +138,35 @@ export const projects: Project[] = [
 		],
 	},
 	{
+		id: 'andes-builders',
+		number: '',
+		title: 'Andes Builders',
+		eyebrow: 'Construction and renovation',
+		type: 'WordPress website',
+		intro: 'A polished service-business website for a residential construction company, designed to establish trust and turn project interest into enquiries.',
+		story: 'I installed and customized the WordPress theme, using custom CSS and PHP to create responsive layouts, clear service positioning, and direct conversion paths. Elementor keeps content editing flexible, while WooCommerce provides room for future service and product needs.',
+		details: ['WordPress', 'PHP'],
+		description: '',
+		highlights: ['WordPress', 'PHP', 'WooCommerce', 'custom CSS'],
+		liveUrl: 'https://andesbuilders.com/',
+		githubUrl: '',
+		slides: [
+			{ image: '/static/images/andes-builders-craftsmanship.webp', label: 'Craftsmanship' },
+			{ image: '/static/images/andes-builders-renovation.webp', label: 'Interior renovation' },
+			{ image: '/static/images/andes-builders-project.webp', label: 'Completed project' },
+		],
+	},
+	{
 		id: 'instock',
-		number: '04',
+		number: '',
 		title: 'InStock',
 		eyebrow: 'Inventory operations',
 		type: 'Management system',
 		intro: 'A modern inventory and warehouse management system developed collaboratively using an Agile workflow and a scalable full-stack architecture.',
 		story: 'The product supports core CRUD workflows, dynamic search, responsive tables, and real-time validation. React and Sass power the interface while Node, Express, MySQL, and Knex handle the API and data layer.',
 		details: ['React', 'Express', 'MySQL'],
+		description: '',
+		highlights: ['React', 'Express', 'MySQL', 'Knex', 'Node', 'Sass', 'API'],
 		liveUrl: '',
 		githubUrl: 'https://github.com/mannyv123/instock-client',
 		slides: [
@@ -163,13 +178,15 @@ export const projects: Project[] = [
 	},
 	{
 		id: 'transportes-moran',
-		number: '05',
+		number: '',
 		title: 'Transportes Moran',
 		eyebrow: 'Service business platform',
 		type: 'Corporate website',
 		intro: 'A focused digital presence for an aggregate transport business, designed to make its services clear and help customers start a conversation quickly.',
 		story: 'The responsive single-page experience uses reusable React components and modular SCSS. I worked across interface design and front-end development, from early Figma decisions through production implementation.',
 		details: ['React', 'SCSS', 'JavaScript', 'Figma'],
+		description: '',
+		highlights: ['React', 'SCSS', 'JavaScript', 'Figma'],
 		liveUrl: 'https://www.transportesmoran.cl/',
 		githubUrl: 'https://github.com/psyout/transportes-moran',
 		slides: [
@@ -181,13 +198,15 @@ export const projects: Project[] = [
 	},
 	{
 		id: 'brainflix',
-		number: '06',
+		number: '',
 		title: 'BrainFlix',
 		eyebrow: 'Video platform',
 		type: 'Full-stack React app',
 		intro: 'A responsive video platform built around dynamic routing, API-driven content, reusable interface components, and familiar viewing interactions.',
 		story: 'React Router handles video selection while Axios connects the interface to a Node and Express REST API. The component structure keeps video, upload, and comment experiences modular and maintainable.',
 		details: ['React', 'REST API', 'Node.js', 'Sass'],
+		description: '',
+		highlights: ['React Router', 'REST API', 'Node', 'Express', 'Axios'],
 		liveUrl: '',
 		githubUrl: 'https://github.com/psyout/felipe-gonzalez-brainflix',
 		slides: [
@@ -199,13 +218,15 @@ export const projects: Project[] = [
 	},
 	{
 		id: 'bandsite',
-		number: '07',
+		number: '',
 		title: 'Bandsite',
 		eyebrow: 'Music and community',
 		type: 'Interactive band website',
 		intro: 'A responsive website for an independent band, combining editorial content, photography, tour dates, and a community comment experience.',
 		story: 'Semantic HTML, BEM-style Sass, and JavaScript create a lightweight front end. Axios connects the comments interface to an Express API, allowing visitors to read and add content dynamically.',
 		details: ['HTML5', 'JavaScript', 'Axios', 'Sass'],
+		description: '',
+		highlights: ['JavaScript', 'Axios', 'BEM-style Sass', 'Express'],
 		liveUrl: 'https://felipegonzalez.dev/bandsite/',
 		githubUrl: '',
 		slides: [
@@ -219,17 +240,17 @@ export const capabilities: Capability[] = [
 	{
 		number: '01',
 		title: 'Frontend Development',
-		body: 'React, Next.js, TypeScript, and responsive interfaces that stay clear and accessible across devices.',
+		body: 'Responsive interfaces and reusable component systems designed to stay fast, clear, and consistent across devices.',
 	},
 	{
 		number: '02',
 		title: 'Backend Development',
-		body: 'Node.js, Express, REST APIs, databases, and third-party integrations that support real product workflows.',
+		body: 'Reliable APIs and data flows that connect products to business tools, automate workflows, and support production growth.',
 	},
 	{
 		number: '03',
 		title: 'Interface Design',
-		body: 'Figma, prototypes, design systems, and practical UI decisions shaped by a background in web design.',
+		body: 'Practical product experiences that turn complex requirements into clear user journeys and scalable visual systems.',
 	},
 ];
 

@@ -1,8 +1,10 @@
 import type { IconType } from 'react-icons';
 import {
 	SiAxios,
+	SiCss,
 	SiExpress,
 	SiFigma,
+	SiGit,
 	SiHtml5,
 	SiJavascript,
 	SiMapbox,
@@ -19,11 +21,13 @@ import {
 	SiTypescript,
 	SiWoocommerce,
 	SiWordpress,
+	SiVercel,
 } from 'react-icons/si';
-import { TbApi } from 'react-icons/tb';
+import { TbApi, TbBrandAdobeIllustrator, TbBrandAdobePhotoshop, TbBrandAdobeXd } from 'react-icons/tb';
 
 type TechnologyStackProps = {
 	items: string[];
+	monochrome?: boolean;
 	project: string;
 };
 
@@ -38,6 +42,7 @@ const technologyIcons: Record<string, TechnologyIcon> = {
 	TypeScript: { icon: SiTypescript, color: '#3178c6' },
 	JavaScript: { icon: SiJavascript, color: '#e8c828' },
 	HTML5: { icon: SiHtml5, color: '#e34f26' },
+	CSS3: { icon: SiCss, color: '#1572b6' },
 	'Tailwind CSS': { icon: SiTailwindcss, color: '#06b6d4' },
 	SCSS: { icon: SiSass, color: '#cc6699' },
 	Sass: { icon: SiSass, color: '#cc6699' },
@@ -50,13 +55,18 @@ const technologyIcons: Record<string, TechnologyIcon> = {
 	'REST API': { icon: TbApi, color: '#e04b2f' },
 	Axios: { icon: SiAxios, color: '#5a29e4' },
 	Figma: { icon: SiFigma, color: '#f24e1e' },
+	Illustrator: { icon: TbBrandAdobeIllustrator, color: '#ff9a00' },
+	Photoshop: { icon: TbBrandAdobePhotoshop, color: '#31a8ff' },
+	XD: { icon: TbBrandAdobeXd, color: '#ff61f6' },
+	Git: { icon: SiGit, color: '#f05032' },
 	'Agile / Scrum': { icon: SiScrumalliance, color: '#009fda' },
 	WordPress: { icon: SiWordpress, color: '#21759b' },
 	WooCommerce: { icon: SiWoocommerce, color: '#96588a' },
 	PHP: { icon: SiPhp, color: '#777bb4' },
+	Vercel: { icon: SiVercel, color: '#000000' },
 };
 
-export function TechnologyStack({ items, project }: TechnologyStackProps) {
+export function TechnologyStack({ items, monochrome = false, project }: TechnologyStackProps) {
 	return (
 		<ul
 			className='m-0 flex list-none flex-wrap items-center gap-x-6 gap-y-5 p-0'
@@ -67,9 +77,13 @@ export function TechnologyStack({ items, project }: TechnologyStackProps) {
 
 				return (
 					<li
-						className='technology-stack-item grid size-10 place-items-center transition-[filter,color] duration-200 hover:brightness-110'
+						className={`technology-stack-item grid size-10 place-items-center duration-300 ${
+							monochrome
+								? 'text-portfolio-title transition-colors hover:text-portfolio-turquoise'
+								: 'transition-[filter,transform] hover:-translate-y-0.5 hover:brightness-110'
+						}`}
 						key={item}
-						style={{ color: technology.color }}
+						style={monochrome ? undefined : { color: technology.color }}
 						title={item}>
 						<Icon
 							size={38}
