@@ -46,7 +46,7 @@ export type Experience = {
 export const siteContent = {
 	metadata: {
 		title: 'Felipe Gonzalez | Full-Stack Developer',
-		description: 'Portfolio of Felipe Gonzalez, a Full Stack Web Developer and Web Designer based in Vancouver, BC.',
+		description: 'Felipe Gonzalez is a Full Stack Web Developer based in Vancouver, BC.',
 	},
 	navigation: {
 		homeLabel: 'Home',

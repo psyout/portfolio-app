@@ -41,7 +41,7 @@ export function ProjectSection({ defaultOpen = false, project, tone }: ProjectSe
 								</span>
 							)}
 							<span className='block text-[12px] font-semibold uppercase tracking-[.14em] text-portfolio-title'>{project.type}</span>
-							<span className='title-font mt-0.5 block text-[clamp(21px,2.2vw,28px)] font-semibold leading-tight tracking-[-.035em]'>{project.title}</span>
+							<span className='title-font mt-0.5 block text-[clamp(26px,2.1vw,28px)] font-semibold leading-tight tracking-[-.035em]'>{project.title}</span>
 						</div>
 
 						<ul

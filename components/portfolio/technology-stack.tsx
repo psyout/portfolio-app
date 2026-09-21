@@ -26,6 +26,7 @@ import {
 import { TbApi, TbBrandAdobeIllustrator, TbBrandAdobePhotoshop, TbBrandAdobeXd } from 'react-icons/tb';
 
 type TechnologyStackProps = {
+	compact?: boolean;
 	items: string[];
 	monochrome?: boolean;
 	project: string;
@@ -66,10 +67,10 @@ const technologyIcons: Record<string, TechnologyIcon> = {
 	Vercel: { icon: SiVercel, color: '#000000' },
 };
 
-export function TechnologyStack({ items, monochrome = false, project }: TechnologyStackProps) {
+export function TechnologyStack({ compact = false, items, monochrome = false, project }: TechnologyStackProps) {
 	return (
 		<ul
-			className='m-0 flex list-none flex-wrap items-center gap-x-6 gap-y-5 p-0'
+			className={`m-0 flex list-none flex-wrap items-center p-0 ${compact ? 'gap-x-3.5 gap-y-3' : 'gap-x-6 gap-y-5'}`}
 			aria-label={`${project} technology stack`}>
 			{items.map((item) => {
 				const technology = technologyIcons[item] ?? technologyIcons['REST API'];
@@ -77,7 +78,7 @@ export function TechnologyStack({ items, monochrome = false, project }: Technolo
 
 				return (
 					<li
-						className={`technology-stack-item grid size-10 place-items-center duration-300 ${
+						className={`technology-stack-item grid place-items-center duration-300 ${compact ? 'size-8' : 'size-10'} ${
 							monochrome
 								? 'text-portfolio-title transition-colors hover:text-portfolio-turquoise'
 								: 'transition-[filter,transform] hover:-translate-y-0.5 hover:brightness-110'
@@ -86,7 +87,7 @@ export function TechnologyStack({ items, monochrome = false, project }: Technolo
 						style={monochrome ? undefined : { color: technology.color }}
 						title={item}>
 						<Icon
-							size={38}
+							size={compact ? 30 : 38}
 							aria-hidden='true'
 						/>
 						<span className='sr-only'>{item}</span>
