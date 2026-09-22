@@ -291,7 +291,7 @@ export const experience: Experience[] = [
 		whiteHighlight: true,
 	},
 	{
-		period: 'Apr 2022 — Jan 2023',
+		period: 'Apr 2022 — Apr 2023',
 		role: 'Front End Developer',
 		company: 'NotCo',
 		place: 'Remote · Chile',

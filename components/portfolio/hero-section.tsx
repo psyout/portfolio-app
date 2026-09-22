@@ -16,7 +16,7 @@ export function HeroSection() {
 						<LoadReveal
 							className='hero-title-reveal'
 							frame>
-							<h1 className='hero-title m-0 max-w-190 text-[clamp(38px,12vw,52px)] font-bold leading-[.9] tracking-[-.058em] min-[761px]:text-[clamp(52px,7.4vw,88px)]'>
+							<h1 className='hero-title m-0 max-w-190 text-[clamp(38px,12vw,52px)] font-bold leading-[.9] tracking-[-.058em] min-[761px]:text-[clamp(45px,6.4vw,70px)]'>
 								<span className='block'>{hero.title}</span>
 								<span className='mt-1.5 block text-portfolio-title min-[761px]:mt-2'>{hero.titleAccent}</span>
 							</h1>
