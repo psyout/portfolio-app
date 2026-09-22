@@ -6,11 +6,11 @@ import { sectionEyebrow, sectionTitle } from './styles';
 const capabilityDetails = [
 	{
 		tools: ['HTML5', 'CSS3', 'JavaScript', 'TypeScript', 'React', 'Next.js', 'Tailwind CSS', 'Sass'],
-		skills: ['Accessibility', 'Reusable Components', 'State Management', 'Performance', 'Responsive Design'],
+		skills: ['Accessibility', 'State Management', 'Performance', 'Responsive Design'],
 	},
 	{
 		tools: ['Node.js', 'Express', 'MongoDB', 'MySQL', 'PHP', 'Git', 'Vercel'],
-		skills: ['REST APIs', 'Database Design', 'Integrations', 'Testing & QA', 'CI/CD & Deployment', 'Hosting'],
+		skills: ['REST APIs', 'Database Design', 'Integrations', 'Testing & QA', 'CI/CD', 'Hosting'],
 	},
 	{
 		tools: ['Figma', 'Illustrator', 'Photoshop', 'XD'],
