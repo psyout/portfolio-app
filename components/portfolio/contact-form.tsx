@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef, useState, type FormEvent } from 'react';
-import { Send } from 'lucide-react';
 
 const field =
 	'w-full rounded-[12px] border border-white/25 bg-white/8 px-4 py-3.5 text-[15px] text-white outline-none transition-colors placeholder:text-[0.8rem] placeholder:text-white/40 focus:border-portfolio-mint focus:bg-white/12';
