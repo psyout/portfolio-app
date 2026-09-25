@@ -297,6 +297,73 @@ button:focus-visible {
 	color: #fff !important;
 }
 
+.technology-tooltip::before,
+.technology-tooltip::after {
+	position: absolute;
+	left: 50%;
+	z-index: 20;
+	opacity: 0;
+	pointer-events: none;
+	transform: translate(-50%, 7px) scale(0.86);
+	transform-origin: center bottom;
+	transition:
+		opacity 150ms ease,
+		transform 220ms cubic-bezier(0.22, 1.35, 0.36, 1);
+}
+
+.technology-tooltip::before {
+	content: attr(data-tooltip);
+	bottom: calc(100% + 10px);
+	padding: 0.42rem 0.65rem;
+	border: 1px solid rgb(255 255 255 / 18%);
+	border-radius: 0.55rem;
+	background: var(--pine);
+	box-shadow: 0 8px 20px rgb(0 0 0 / 18%);
+	color: #fff;
+	font-size: 0.75rem;
+	font-weight: 600;
+	line-height: 1;
+	letter-spacing: 0.01em;
+	white-space: nowrap;
+}
+
+.technology-tooltip::after {
+	content: '';
+	bottom: calc(100% + 1px);
+	border: 5px solid transparent;
+	border-top-color: var(--pine);
+}
+
+.technology-tooltip:hover::before,
+.technology-tooltip:hover::after,
+.technology-tooltip:focus-visible::before,
+.technology-tooltip:focus-visible::after {
+	opacity: 1;
+	transform: translate(-50%, 0) scale(1);
+}
+
+.technology-tooltip:focus-visible {
+	outline: 2px solid var(--title-color);
+	outline-offset: 4px;
+}
+
+:root[data-theme='dark'] .technology-tooltip::before {
+	border-color: rgb(16 44 61 / 28%);
+	background: var(--lime);
+	color: var(--pine);
+}
+
+:root[data-theme='dark'] .technology-tooltip::after {
+	border-top-color: var(--lime);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.technology-tooltip::before,
+	.technology-tooltip::after {
+		transition: opacity 100ms ease;
+	}
+}
+
 :root[data-theme='dark'] .capability-icon {
 	border: 1px solid rgb(184 220 232 / 38%);
 	background: #294b5c;
