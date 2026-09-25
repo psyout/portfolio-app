@@ -73,6 +73,7 @@ export function CapabilityCard({ capability, index, skills, tools }: CapabilityC
 							items={visibleTools}
 							monochrome
 							project={capability.title}
+							tooltips
 						/>
 					</div>
 					<button
@@ -110,6 +111,7 @@ export function CapabilityCard({ capability, index, skills, tools }: CapabilityC
 											items={additionalTools}
 											monochrome
 											project={`${capability.title} additional tools`}
+											tooltips
 										/>
 									</div>
 								</div>

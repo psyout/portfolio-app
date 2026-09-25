@@ -107,6 +107,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 									<TechnologyStack
 										items={project.details}
 										project={project.title}
+										tooltips
 									/>
 								</div>
 							</div>

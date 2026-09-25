@@ -101,6 +101,7 @@ export function ProjectSection({ defaultOpen = false, project, tone }: ProjectSe
 								<TechnologyStack
 									items={project.details}
 									project={project.title}
+									tooltips
 								/>
 							</div>
 						</MotionReveal>

@@ -30,6 +30,7 @@ type TechnologyStackProps = {
 	items: string[];
 	monochrome?: boolean;
 	project: string;
+	tooltips?: boolean;
 };
 
 type TechnologyIcon = {
@@ -67,7 +68,7 @@ const technologyIcons: Record<string, TechnologyIcon> = {
 	Vercel: { icon: SiVercel, color: '#000000' },
 };
 
-export function TechnologyStack({ compact = false, items, monochrome = false, project }: TechnologyStackProps) {
+export function TechnologyStack({ compact = false, items, monochrome = false, project, tooltips = false }: TechnologyStackProps) {
 	return (
 		<ul
 			className={`m-0 flex list-none flex-wrap items-center p-0 ${compact ? 'gap-x-3.5 gap-y-3' : 'gap-x-6 gap-y-5'}`}
@@ -85,11 +86,24 @@ export function TechnologyStack({ compact = false, items, monochrome = false, pr
 						}`}
 						key={item}
 						style={monochrome ? undefined : { color: technology.color }}
-						title={item}>
-						<Icon
-							size={compact ? 30 : 38}
-							aria-hidden='true'
-						/>
+						title={tooltips ? undefined : item}>
+						{tooltips ? (
+							<button
+								aria-label={item}
+								className='technology-tooltip relative grid size-full cursor-default place-items-center border-0 bg-transparent p-0 text-inherit'
+								data-tooltip={item}
+								type='button'>
+								<Icon
+									size={compact ? 30 : 38}
+									aria-hidden='true'
+								/>
+							</button>
+						) : (
+							<Icon
+								size={compact ? 30 : 38}
+								aria-hidden='true'
+							/>
+						)}
 						<span className='sr-only'>{item}</span>
 					</li>
 				);
