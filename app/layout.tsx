@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-page-custom-font */
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { siteContent } from '@/data/portfolio';
 import './globals.css';
 
@@ -32,13 +33,49 @@ export const metadata: Metadata = {
 		siteName: 'Felipe Gonzalez Portfolio',
 		locale: 'en_CA',
 		type: 'website',
+		images: [
+			{
+				url: '/static/images/profile-picture.jpg',
+				width: 1200,
+				height: 1200,
+				alt: 'Felipe Gonzalez',
+			},
+		],
 	},
 	twitter: {
-		card: 'summary',
+		card: 'summary_large_image',
 		title,
 		description,
+		images: ['/static/images/profile-picture.jpg'],
 	},
-	robots: { index: true, follow: true },
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			'max-image-preview': 'large',
+			'max-snippet': -1,
+			'max-video-preview': -1,
+		},
+	},
+};
+
+const personSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'Person',
+	name: 'Felipe Gonzalez',
+	url: 'https://felipegonzalez.dev',
+	image: 'https://felipegonzalez.dev/static/images/profile-picture.jpg',
+	jobTitle: 'Full-Stack Developer',
+	address: {
+		'@type': 'PostalAddress',
+		addressLocality: 'Vancouver',
+		addressRegion: 'BC',
+		addressCountry: 'CA',
+	},
+	sameAs: ['https://github.com/psyout', 'https://www.linkedin.com/in/felipegonzalezcare/'],
+	knowsAbout: ['React', 'Next.js', 'TypeScript', 'Node.js', 'Web Design'],
 };
 
 export default function RootLayout({
@@ -66,7 +103,30 @@ export default function RootLayout({
 					rel='stylesheet'
 				/>
 			</head>
-			<body>{children}</body>
+			<body>
+				{children}
+				<Script
+					id='person-schema'
+					type='application/ld+json'
+					dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+				/>
+				{process.env.NEXT_PUBLIC_GA_ID && (
+					<>
+						<Script
+							src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+							strategy='afterInteractive'
+						/>
+						<Script id='google-analytics' strategy='afterInteractive'>
+							{`
+								window.dataLayer = window.dataLayer || [];
+								function gtag(){dataLayer.push(arguments);}
+								gtag('js', new Date());
+								gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
+							`}
+						</Script>
+					</>
+				)}
+			</body>
 		</html>
 	);
 }
