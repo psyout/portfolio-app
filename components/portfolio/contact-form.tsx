@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState, type FormEvent } from 'react';
+import { ScrollUnderline } from './scroll-underline';
 
 const field =
 	'w-full rounded-[12px] border border-white/25 bg-white/8 px-4 py-3.5 text-[15px] text-white outline-none transition-colors placeholder:text-[0.8rem] placeholder:text-white/40 focus:border-portfolio-mint focus:bg-white/12';
@@ -71,7 +72,9 @@ export function ContactForm() {
 						autoComplete='off'
 					/>
 				</div>
-				<h3 className='m-0 text-[22px] font-semibold tracking-[-.02em]'>Send a message</h3>
+				<ScrollUnderline>
+					<h3 className='m-0 text-[22px] font-semibold tracking-[-.02em]'>Send a message</h3>
+				</ScrollUnderline>
 				<div className='mt-7 grid gap-5 sm:grid-cols-2'>
 					<label className='grid gap-2 text-[15px] font-normal'>
 						Your name
