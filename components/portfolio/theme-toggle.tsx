@@ -5,7 +5,11 @@ import { MoonIcon, SunIcon } from 'lucide-react';
 import { Label } from '@/components/ui/label';
 import { Switch } from '@/components/ui/switch';
 
-export function ThemeToggle() {
+type ThemeToggleProps = {
+	id?: string;
+};
+
+export function ThemeToggle({ id = 'theme-switch' }: ThemeToggleProps) {
 	const darkMode = useSyncExternalStore(
 		(onStoreChange) => {
 			const observer = new MutationObserver(onStoreChange);
@@ -25,13 +29,13 @@ export function ThemeToggle() {
 	return (
 		<div className='inline-flex items-center gap-2'>
 			<Switch
-				id='theme-switch'
+				id={id}
 				checked={darkMode}
 				onCheckedChange={toggleTheme}
 				className='border-portfolio-line data-checked:bg-portfolio-title data-unchecked:bg-portfolio-sea-glass'
 				aria-label='Toggle color theme'
 			/>
-			<Label className='grid size-5 cursor-pointer place-items-center text-portfolio-title' htmlFor='theme-switch'>
+			<Label className='grid size-5 cursor-pointer place-items-center text-portfolio-title' htmlFor={id}>
 				<span className='sr-only'>Toggle color theme</span>
 				{darkMode ? <MoonIcon className='size-4' aria-hidden='true' /> : <SunIcon className='size-4' aria-hidden='true' />}
 			</Label>

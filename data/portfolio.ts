@@ -51,6 +51,7 @@ export const siteContent = {
 	navigation: {
 		homeLabel: 'Home',
 		aboutLabel: 'About me',
+		projectsLabel: 'Projects',
 	},
 	hero: {
 		title: 'Thoughtful products.',
