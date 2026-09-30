@@ -124,7 +124,10 @@ export function CapabilityCard({ capability, index, skills, tools }: CapabilityC
 									<li
 										className='flex items-start gap-2 text-[12px] font-medium leading-snug text-portfolio-text/75'
 										key={skill}>
-										<span className='mt-[0.38em] size-1.5 shrink-0 rounded-full bg-portfolio-turquoise' aria-hidden='true' />
+										<span
+											className='mt-[0.38em] size-1.5 shrink-0 rounded-full bg-portfolio-turquoise'
+											aria-hidden='true'
+										/>
 										{skill}
 									</li>
 								))}
