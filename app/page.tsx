@@ -18,7 +18,6 @@ export default function Home() {
         <HeroSection />
         <AboutSection />
         <div className="work-field">
-          <ExperienceSection />
           <div className="pb-[clamp(72px,9vw,112px)]">
             <MotionReveal>
               <WorkIntro />
@@ -27,6 +26,7 @@ export default function Home() {
 				<ProjectSection defaultOpen={index === 0} key={project.id} project={project} tone={index} />
             ))}
           </div>
+          <ExperienceSection />
         </div>
         <CapabilitiesSection />
         <ContactSection />
