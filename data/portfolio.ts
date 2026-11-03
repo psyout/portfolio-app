@@ -39,8 +39,7 @@ export type Experience = {
 	company: string;
 	place: string;
 	body: string;
-	tone: string;
-	whiteHighlight?: boolean;
+	skills: string[];
 };
 
 export const siteContent = {
@@ -275,53 +274,59 @@ export const focusAreas: FocusArea[] = [
 
 export const experience: Experience[] = [
 	{
-		period: 'Apr 2023 — Now',
+		period: 'Apr 2023 — Present',
 		role: 'Full Stack Developer',
-		company: 'Self-employed',
+		company: 'Freelance',
 		place: 'Vancouver · Remote',
-		body: 'Taking web products from early requirements to production across Next.js, React, Node.js, databases, integrations, deployment, and ongoing maintenance.',
-		tone: 'bg-portfolio-pine text-white',
+		body: 'Designing, building, deploying, and maintaining production web applications, from responsive interfaces and reusable components to APIs, third-party integrations, and automated workflows.',
+		skills: ['React', 'Next.js', 'TypeScript', 'Node.js', 'REST APIs', 'Tailwind CSS', 'Git', 'CI/CD workflows', 'WordPress', 'Python', 'MySQL', 'MongoDB'],
 	},
 	{
 		period: 'Jan 2024 — Mar 2026',
 		role: 'Operations & Team Trainer',
 		company: '1-800-GOT-JUNK?',
-		place: 'Metro Vancouver',
-		body: 'Built another side of product work: calm communication, customer empathy, training, and practical problem-solving in fast-moving situations.',
-		tone: 'bg-portfolio-lime text-portfolio-pine',
-		whiteHighlight: true,
+		place: 'Vancouver',
+		body: 'Trained new team members and coordinated daily operations, strengthening leadership, communication, and practical problem-solving in a fast-paced environment.',
+		skills: ['Team Training', 'Operations', 'Leadership', 'Communication'],
 	},
 	{
 		period: 'Apr 2022 — Apr 2023',
-		role: 'Front End Developer',
-		company: 'NotCo',
-		place: 'Remote · Chile',
-		body: 'Maintained production React applications, built reusable UI, and collaborated across code reviews, testing, and CI/CD workflows.',
-		tone: 'bg-portfolio-turquoise text-white',
-	},
-	{
-		period: 'May 2020 — Apr 2022',
-		role: 'Web Designer',
-		company: 'The Cut Fashion School',
-		place: 'Remote · Canada',
-		body: 'Created detailed website concepts and brand-aligned digital work while supporting marketing and web teams through a rebrand.',
-		tone: 'bg-portfolio-surface text-portfolio-text',
+		role: 'Frontend Developer',
+		company: 'NotCo · Freelance',
+		place: 'Remote · Vancouver, BC',
+		body: 'Developed and maintained responsive React features, built reusable components, integrated REST APIs, and collaborated through Git, pull requests, and code reviews.',
+		skills: ['React', 'JavaScript', 'REST APIs', 'Responsive Design', 'Accessibility'],
 	},
 	{
 		period: 'Jan 2018 — May 2020',
-		role: 'Graphic Designer',
-		company: 'Natura Cosmetics',
-		place: 'Remote · Chile',
-		body: 'Translated campaign ideas into digital and print systems, landing page assets, Figma handoffs, and reusable brand guidelines.',
-		tone: 'bg-portfolio-mint text-portfolio-pine',
-		whiteHighlight: true,
+		role: 'Web Designer',
+		company: 'Natura · Freelance',
+		place: 'Remote · Vancouver, BC',
+		body: 'Designed digital and print campaign assets, landing page visuals, and reusable brand systems while collaborating with cross-functional teams and handing off Figma, SVG, and raster assets.',
+		skills: ['Figma', 'Adobe InDesign', 'Design Systems', 'Landing Pages', 'Collaboration'],
 	},
 	{
 		period: 'Sep 2016 — Jan 2018',
 		role: 'Frontend Developer',
-		company: 'Cencosud Paris',
+		company: 'Cencosud Paris S.A.',
 		place: 'Chile',
-		body: 'Developed responsive websites and internal React applications, improving performance, mobile engagement, and everyday usability.',
-		tone: 'bg-portfolio-surface text-portfolio-text',
+		body: 'Developed and maintained responsive web interfaces, implemented mobile-friendly layouts, and collaborated with development teams using Git and Agile workflows.',
+		skills: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design', 'Git', 'Agile Workflows'],
+	},
+	{
+		period: 'Oct 2012 — Sep 2016',
+		role: 'Web Designer',
+		company: 'Puntos Cencosud',
+		place: 'Chile',
+		body: 'Designed landing pages from wireframes and mockups through HTML and CSS implementation, built email campaigns across major marketing platforms, and adapted digital designs for offset printing.',
+		skills: ['HTML5', 'CSS3', 'Email Marketing', 'Salesforce Marketing Cloud', 'Campaign Design', 'Adobe Illustrator'],
+	},
+	{
+		period: 'Oct 2011 — Oct 2012',
+		role: 'Web Designer',
+		company: 'DDB Chile · Contract',
+		place: 'Chile',
+		body: 'Created print-ready campaign materials and designed user-friendly digital landing pages focused on clear communication, stronger user experiences, and conversions.',
+		skills: ['Wireframing', 'Adobe Photoshop', 'Landing Pages', 'Offset Printing', 'Email Marketing'],
 	},
 ];
